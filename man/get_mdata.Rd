@@ -7,9 +7,12 @@
 get_mdata()
 }
 \description{
-blah
+Retrieve data from the Macleish Field Station weather monitors
 }
 \examples{
 macleish <- get_mdata()
+if (require(lattice)) {
+ xyplot(Temp_C_Avg ~ when, data = macleish, type = c("l", "smooth"))
+}
 }
 
