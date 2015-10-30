@@ -2,3 +2,4 @@
 
 export(get_mdata)
 import(dplyr)
+importFrom(RCurl,getURL)

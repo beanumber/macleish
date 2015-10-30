@@ -3,6 +3,7 @@
 #' @description Retrieve data from the Macleish Field Station weather monitors
 #' 
 #' @import dplyr
+#' @importFrom RCurl getURL
 #' @export
 #' @examples 
 #' 
@@ -12,7 +13,8 @@
 #' }
 
 get_mdata <- function () {
-  x <- read.csv("https://scidb.smith.edu/~macleish/WhatelyMet_Met_10min.dat", skip = 1, stringsAsFactors = FALSE)
+  dat <- getURL("https://scidb.smith.edu/~macleish/WhatelyMet_Met_10min.dat")
+  x <- read.csv(textConnection(dat), skip = 1, stringsAsFactors = FALSE)
   metadata <- head(x, 2)
   out <- x[-(1:2),]
   out <- out %>%
