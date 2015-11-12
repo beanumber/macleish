@@ -1,3 +1,5 @@
-macleish <- get_mdata()
+whately <- get_whately()
+orchard <- get_orchard()
 
-save(macleish, file = "data/macleish.rda", compress = "xz")
+save(whately, file = "data/whately.rda", compress = "xz")
+save(orchard, file = "data/orchard.rda", compress = "xz")
