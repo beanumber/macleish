@@ -4,6 +4,7 @@
 #' 
 #' @import dplyr
 #' @importFrom RCurl getURL
+#' @importFrom lubridate ymd_hms
 #' @export
 #' @examples 
 #' 
@@ -12,7 +13,7 @@
 #'  xyplot(Temp_C_Avg ~ when, data = whately, type = c("l", "smooth"))
 #' }
 
-get_whately <- function () {
+get_whately <- function() {
   dat <- getURL("https://scidb.smith.edu/~macleish/WhatelyMet_Met_10min.dat")
   x <- read.csv(textConnection(dat), skip = 1, stringsAsFactors = FALSE)
   metadata <- head(x, 2)
@@ -20,7 +21,7 @@ get_whately <- function () {
   out <- out %>%
     rename_(record = ~RECORD) %>%
     rename_(when = ~TIMESTAMP) %>%
-    mutate_(when = ~strptime(when, "%y-%m-%d %H:%M:%S")) %>%
+    mutate_(when = ~ymd_hms(when)) %>%
     mutate_(record = ~as.numeric(record)) %>%
     mutate_(Temp_C_Avg = ~as.numeric(Temp_C_Avg)) %>%
     mutate_(WSpd_mps = ~as.numeric(WSpd_mps)) %>%
@@ -38,6 +39,7 @@ get_whately <- function () {
 #' 
 #' @import dplyr
 #' @importFrom RCurl getURL
+#' @importFrom lubridate ymd_hms
 #' @export
 #' @examples 
 #' 
@@ -46,7 +48,7 @@ get_whately <- function () {
 #'  xyplot(Temp_C_Avg ~ when, data = orchard, type = c("l", "smooth"))
 #' }
 
-get_orchard <- function () {
+get_orchard <- function() {
   dat <- getURL("https://scidb.smith.edu/~macleish/OrchardMet_Met_10min.dat")
   x <- read.csv(textConnection(dat), skip = 1, stringsAsFactors = FALSE)
   metadata <- head(x, 2)
@@ -54,7 +56,7 @@ get_orchard <- function () {
   out <- out %>%
     rename_(record = ~RECORD) %>%
     rename_(when = ~TIMESTAMP) %>%
-    mutate_(when = ~as.Date(when)) %>%
+    mutate_(when = ~ymd_hms(when)) %>%
     mutate_(record = ~as.numeric(record)) %>%
     mutate_(Temp_C_Avg = ~as.numeric(Temp_C_Avg)) %>%
     mutate_(WSpd_mps = ~as.numeric(WSpd_mps)) %>%
