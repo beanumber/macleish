@@ -11,12 +11,15 @@ Description: This R package allows the user to download weather data
     from the Macleish Field Station in Whately, MA.
 License: CC0
 LazyData: TRUE
-Imports:
+Imports: 
     dplyr,
     RCurl,
     lubridate
-Depends:
+Depends: 
     R (>= 2.10)
-Suggests:
-    lattice
+Suggests: 
+    lattice,
+    knitr,
+    rmarkdown
 RoxygenNote: 5.0.1
+VignetteBuilder: knitr
