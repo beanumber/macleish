@@ -20,6 +20,7 @@ Depends:
 Suggests: 
     lattice,
     knitr,
-    rmarkdown
+    rmarkdown,
+    mosaic
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr
