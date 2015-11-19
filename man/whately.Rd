@@ -25,7 +25,7 @@ All variables are averaged over the 10 minutes inverval unless otherwise noted.
   
 }}
 \source{
-These data are recorded at \url{http://www.smith.edu/ceeds/macleish.php}
+These data are recorded at \url{http://www.smith.edu/ceeds/macleish_monitoring.php}
 }
 \usage{
 whately

@@ -29,7 +29,7 @@
 #'   \item{PAR_Tot_Avg}{Measures total solar radiation. One of two solar measurements for Orchard}
 #'   
 #' }
-#' @source These data are recorded at \url{http://www.smith.edu/ceeds/macleish.php} 
+#' @source These data are recorded at \url{http://www.smith.edu/ceeds/macleish_monitoring.php} 
 "whately"
 
 #' @rdname whately
