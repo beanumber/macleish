@@ -1,7 +1,7 @@
 ---
 title: "Using the Macleish Weather Data"
 author: "Rose Goueth"
-date: "`r Sys.Date(11/28/2015)`"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Using Macleish Weather Data}
@@ -68,7 +68,7 @@ In order to use the data from the Machleish weather towers, you must import the 
 
 Using plots can help you see your data visually. This is a good tool, especially if you want to find anomolies within the data. 
 
-For example, the total Rainfall measurement may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this colim of data would be of best interest. To do so, use the code below to plot your data.
+For example, the total Rainfall measurement may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this column of data would be of best interest. To do so, use the code below to plot your data.
 
 Make a time series plot
 
