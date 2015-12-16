@@ -64,11 +64,11 @@ Also a quote using `>`:
 require(macleish)
 head(whately)
 ```
-In order to use the data from the Machleish weather towers, you must import the data set(s). The name of the data set corresponds to its tower. Note that the data set imported is using averages over 10 minutes. If you are calculating or plotting anything, remember this note.
+In order to use the data from the Machleish weather towers, you must import the data set(s). The name of the data set corresponds to its tower. Note that the data set imported is using averages over 10 minutes. If you need to calculate another time frame, such as hourly or daily, look at the section called "Compute Daily Averages" below.
 
 Using plots can help you see your data visually. This is a good tool, especially if you want to find anomolies within the data. 
 
-For example, the total Rainfall measurement may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this column of data would be of best interest. To do so, use the code below to plot your data.
+For example, the total rainfall measurement may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this column of data would be of best interest. To do so, use the code below to plot your data.
 
 Make a time series plot
 
@@ -89,3 +89,4 @@ daily <- whately %>%
   summarize(N = n(), avgTemp = mean(Temp_C_Avg))
 xyplot(avgTemp ~ when, data = daily, type = c("l", "smooth", "r"))
 ```
+
