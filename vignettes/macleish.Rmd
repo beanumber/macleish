@@ -1,7 +1,7 @@
 ---
 title: "Using the Macleish Weather Data"
 author: "Rose Goueth"
-date: "`r Sys.Date()`"
+date: "12-16-2015"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Using Macleish Weather Data}
@@ -14,17 +14,23 @@ This R package can be used to process and analyze data from the MacLeish weather
 
 To start using the package, you need to run the following code:
 
-head() will give you the first 6 readings within the data you are using, so head(whatley) gives you the first six data points within the whatley data set.
+```{r}
+require(macleish)
+```
+
+The data sets needed for this package already exists in the code. To explore the data, you can use the following tools:
+
+head() will give you the first 6 readings within the data set.
+head(whatley) gives you the first six data points within the whatley data set.
 tail() will give you the last 6 readings of the data set. 
 tail(whatley) will give you the last 6 readings, which in this context are also the most recent readings of the data collected.
 
 ```{r}
-require(macleish)
 head(whately)
 tail(whately)
 ```
 
-The data sets needed for this package already exists in the code. To explore the data, you can use the following tools:
+Analyzing the data:
 
 Using plots can help you see your data visually. This is a good tool, especially if you want to find anomolies within the data. 
 
@@ -67,5 +73,4 @@ daily <- whately %>%
 boxplot(avgRain ~ when, data = daily, type = c("l", "smooth", "r"))
 ```
 
-You can also see whether your data variables have any correlation with one another by interaction plots.
-
+These are some examples of you can explore and analyze data with this package.
