@@ -8,85 +8,64 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
-
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
-```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
-
-
 ## Using the Macleish Weather Data
+
+This R package can be used to process and analyze data from the MacLeish weather station. The following text will give you an outline of how to use the package.
+
+To start using the package, you need to run the following code:
+
+head() will give you the first 6 readings within the data you are using, so head(whatley) gives you the first six data points within the whatley data set.
+tail() will give you the last 6 readings of the data set. 
+tail(whatley) will give you the last 6 readings, which in this context are also the most recent readings of the data collected.
 
 ```{r}
 require(macleish)
 head(whately)
+tail(whately)
 ```
-In order to use the data from the Machleish weather towers, you must import the data set(s). The name of the data set corresponds to its tower. Note that the data set imported is using averages over 10 minutes. If you need to calculate another time frame, such as hourly or daily, look at the section called "Compute Daily Averages" below.
+
+The data sets needed for this package already exists in the code. To explore the data, you can use the following tools:
 
 Using plots can help you see your data visually. This is a good tool, especially if you want to find anomolies within the data. 
 
-For example, the total rainfall measurement may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this column of data would be of best interest. To do so, use the code below to plot your data.
+For example, the total rainfall measurement may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this column of data would be of best interest. 
 
-Make a time series plot
+In order to find anomolies, you should plot the temperature against the total rainfall. Use the code below.
 
-```{r, fig.width = 9, fig.height = 5, message=FALSE}
+```{r, fig.width = 7, fig.height = 5, message=FALSE}
 require(mosaic)
-xyplot(Temp_C_Avg ~ when, data = whately, type = "l")
+xyplot(Temp_C_Avg ~ Rain_mm_Tot, data = whately, type = "l")
 ```
+
+This graph shows you that for higher temperatures, there seems to be a lot of rainfall. I would double check your data values for 25 C (77 F) and see what happened at that temperature.
 
 If you want to compute averages other than the 10 minute one, you can do so using simple math ! The example below shows you how to compute daily averages. 
 
 CAUTION: If you would rather use the daily data set, you may do so, but it will take you longer to make sure you are getting the right results. If you are a novice at R, I would adivse you to compute the daily averages with simple math.
 
-Compute Daily averages
+Computing Daily averages
 
-```{r}
+The following plot will show you how much rainfall you would have per day over the course of the data.
+
+The "when" variable is used to plot the dates of each row of data. Since the data is updated very frequently, this plot will change on the rightmost side often throughtout the day.
+
+```{r, fig.width = 7, fig.height = 5, message=FALSE}
 daily <- whately %>%
   group_by(when) %>%
-  summarize(N = n(), avgTemp = mean(Temp_C_Avg))
-xyplot(avgTemp ~ when, data = daily, type = c("l", "smooth", "r"))
+  summarize(N = n(), avgRain = mean(Rain_mm_Tot))
+xyplot(avgRain ~ when, data = daily, type = c("l", "smooth", "r"))
 ```
+
+To see the spread of your data, you can use a boxplot to see the minimum and maximum for your data.
+
+The following plots the dates with the spreads:
+
+```{r, fig.width = 7, fig.height = 5, message=FALSE}
+daily <- whately %>%
+  group_by(when) %>%
+  summarize(N = n(), avgRain = mean(Rain_mm_Tot))
+boxplot(avgRain ~ when, data = daily, type = c("l", "smooth", "r"))
+```
+
+You can also see whether your data variables have any correlation with one another by interaction plots.
 
