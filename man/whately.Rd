@@ -34,7 +34,7 @@ orchard
 }
 \description{
 Weather data collected at the Macleish Field Station in Whately, 
-MA, from 2010 to present.
+MA, from 2010 to present. The most recent obsevations are from Jan. 2016.
 }
 \details{
 The Macleish Field Station is a remote outpost owned by Smith
