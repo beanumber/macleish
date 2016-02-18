@@ -12,7 +12,6 @@ The following variables are values that are found in both Whately and Orchard da
 All variables are averaged over the 10 minutes inverval unless otherwise noted.
 \describe{
   \item{when}{timestamp for each measurment set.}
-  \item{record}{Starting from the first measurements recorded from the year, goes up by 1 every 10 minutes.}
   \item{WSpd_mps}{Wind speed, in  meters per second}
   \item{Wdir_deg}{Wind direction, in degrees}
   \item{Temp_C_Avg}{average temperature, in Celsius}
@@ -34,7 +33,7 @@ orchard
 }
 \description{
 Weather data collected at the Macleish Field Station in Whately, 
-MA, from 2010 to present.
+MA, from 2010 to present. Jan.2016
 }
 \details{
 The Macleish Field Station is a remote outpost owned by Smith

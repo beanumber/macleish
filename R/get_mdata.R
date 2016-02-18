@@ -17,12 +17,10 @@ get_whately <- function() {
   dat <- getURL("https://scidb.smith.edu/~macleish/WhatelyMet_Met_10min.dat")
   x <- read.csv(textConnection(dat), skip = 1, stringsAsFactors = FALSE)
   metadata <- head(x, 2)
-  out <- x[-(1:2),]
+  out <- x[-(1:2), -2]
   out <- out %>%
-    rename_(record = ~RECORD) %>%
     rename_(when = ~TIMESTAMP) %>%
     mutate_(when = ~ymd_hms(when)) %>%
-    mutate_(record = ~as.numeric(record)) %>%
     mutate_(Temp_C_Avg = ~as.numeric(Temp_C_Avg)) %>%
     mutate_(WSpd_mps = ~as.numeric(WSpd_mps)) %>%
     mutate_(Wdir_deg = ~as.numeric(Wdir_deg)) %>%
@@ -52,12 +50,10 @@ get_orchard <- function() {
   dat <- getURL("https://scidb.smith.edu/~macleish/OrchardMet_Met_10min.dat")
   x <- read.csv(textConnection(dat), skip = 1, stringsAsFactors = FALSE)
   metadata <- head(x, 2)
-  out <- x[-(1:2),]
+  out <- x[-(1:2),-2]
   out <- out %>%
-    rename_(record = ~RECORD) %>%
     rename_(when = ~TIMESTAMP) %>%
     mutate_(when = ~ymd_hms(when)) %>%
-    mutate_(record = ~as.numeric(record)) %>%
     mutate_(Temp_C_Avg = ~as.numeric(Temp_C_Avg)) %>%
     mutate_(WSpd_mps = ~as.numeric(WSpd_mps)) %>%
     mutate_(Wdir_deg = ~as.numeric(Wdir_deg)) %>%
