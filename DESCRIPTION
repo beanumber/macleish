@@ -1,7 +1,7 @@
 Package: macleish
 Type: Package
 Title: Retrieve Data from Macleish Field Station
-Version: 0.1.1.9008
+Version: 0.1.1.9011
 Date: 2015-10-29
 Authors@R: as.person(c(
     "Ben Baumer <ben.baumer@gmail.com> [aut, cre]",
@@ -18,7 +18,8 @@ Imports:
     RCurl,
     lubridate
 Depends: 
-    R (>= 2.10)
+    R (>= 2.10),
+    etl
 Suggests: 
     lattice,
     knitr,
