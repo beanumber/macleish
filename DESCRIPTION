@@ -6,7 +6,8 @@ Date: 2015-10-29
 Authors@R: as.person(c(
     "Ben Baumer <ben.baumer@gmail.com> [aut, cre]",
     "Rose Goueth <rgoueth@smith.edu> [aut]",
-    "Wencong Li Priscilla <liwencong1995@gmail.com> [aut]"
+    "Wencong Li Priscilla <liwencong1995@gmail.com> [aut]",
+    "Weijia Zhang Vega <wzhang23@smith.edu> [aut]"
   ))
 Description: This R package allows the user to download weather data
     from the Macleish Field Station in Whately, MA.
