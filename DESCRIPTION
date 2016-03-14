@@ -1,6 +1,6 @@
 Package: macleish
 Type: Package
-Title: Retrieve Data from Macleish Field Station
+Title: Retrieve Data from MacLeish Field Station
 Version: 0.1.1.9011
 Date: 2015-10-29
 Authors@R: as.person(c(
@@ -10,7 +10,7 @@ Authors@R: as.person(c(
     "Weijia Zhang Vega <wzhang23@smith.edu> [aut]"
   ))
 Description: This R package allows the user to download weather data
-    from the Macleish Field Station in Whately, MA.
+    from the Ada and Archibald MacLeish Field Station in Whately, MA.
 License: CC0
 LazyData: TRUE
 Imports: 
