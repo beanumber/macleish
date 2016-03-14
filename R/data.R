@@ -1,7 +1,7 @@
 #' Weather data from Macleish Field Stations
 #'
 #' @description Weather data collected at the Macleish Field Station in Whately, 
-#' MA, from 2010 to present. The most recent obsevations are from Jan. 2016. 
+#' MA during 2015.
 #'
 #' @details The Macleish Field Station is a remote outpost owned by Smith
 #' College and used for field research. There are two weather stations on the 
@@ -10,11 +10,11 @@
 #' Solar radiation is measured in two different ways: see \code{SlrW_Avg}
 #' or the \code{PAR} variables for Photosynthetic Active Radiation.
 #' 
-#' @format A data frame with several hundred thousand row and 9 variables.
+#' @format A data frame with 52,566 rows and 9 variables.
 #' 
 #' The following variables are values that are found in both Whately and Orchard data tables.
 #' 
-#' All variables are averaged over the 10 minutes inverval unless otherwise noted.
+#' All variables are averaged over the 10 minute inverval unless otherwise noted.
 #' \describe{
 #'   \item{when}{timestamp for each measurment set.}
 #'   \item{record}{Starting from the first measurements recorded from the year, goes up by 1 every 10 minutes.}
@@ -30,7 +30,7 @@
 #'   
 #' }
 #' @source These data are recorded at \url{http://www.smith.edu/ceeds/macleish_monitoring.php} 
-"whately"
+"whately_2015"
 
-#' @rdname whately
-"orchard"
+#' @rdname whately_2015
+"orchard_2015"

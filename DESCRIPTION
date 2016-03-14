@@ -1,27 +1,34 @@
 Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
-Version: 0.1.1.9011
+Version: 0.1.1.9012
 Date: 2015-10-29
 Authors@R: as.person(c(
     "Ben Baumer <ben.baumer@gmail.com> [aut, cre]",
     "Rose Goueth <rgoueth@smith.edu> [aut]",
     "Wencong Li Priscilla <liwencong1995@gmail.com> [aut]",
-    "Weijia Zhang Vega <wzhang23@smith.edu> [aut]"
+    "Weijia Zhang Vega <wzhang23@smith.edu> [aut]",
+    "Nicholas J. Horton <nhorton@amherst.edu> [aut]"
   ))
-Description: This R package allows the user to download weather data
-    from the Ada and Archibald MacLeish Field Station in Whately, MA.
+Description: Download weather data from the Ada and Archibald MacLeish Field 
+    Station in Whately, MA. The Ada 
+    and Archibald MacLeish Field Station is a 240-acre patchwork of 
+    forest and farmland located in West Whately, MA that provides opportunities 
+    for faculty and students to pursue environmental research, outdoor 
+    education, and low-impact recreation. Reid Bertone-Johnson serves as the 
+    Field Station Manager and five faculty and staff sit on the field station's 
+    Advisory Board. 
 License: CC0
 LazyData: TRUE
 Imports: 
     dplyr,
-    RCurl,
+    DBI,
     lubridate
 Depends: 
     R (>= 2.10),
     etl
 Suggests: 
-    lattice,
+    ggplot2,
     knitr,
     rmarkdown,
     mosaic

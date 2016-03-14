@@ -12,8 +12,13 @@
 
 \method{etl_load}{etl_macleish}(obj, ...)
 }
+\arguments{
+\item{obj}{an \code{\link{etl}} object}
+
+\item{...}{arguments passed to methods}
+}
 \description{
-Extract weather data
+Retrieve data from the Macleish Field Station weather monitors
 }
 \examples{
 

@@ -1,20 +1,20 @@
 ---
-title: "Using the Macleish Weather Data"
+title: "Using the MacLeish Weather Data"
 author: "Rose Goueth"
 date: "12-16-2015"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Using Macleish Weather Data}
+  %\VignetteIndexEntry{Using MacLeish Weather Data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-## Using the Macleish Weather Data
+## Using the MacLeish Weather Data
 
 This R package can be used to process and analyze data from the MacLeish weather station. The following text will give you an outline of how to use the package.
 
 To start using the package, you need to run the following code:
 
-```{r}
+```{r, message=FALSE}
 require(macleish)
 ```
 
@@ -26,11 +26,11 @@ tail() will give you the last 6 readings of the data set.
 tail(whatley) will give you the last 6 readings, which in this context are also the most recent readings of the data collected.
 
 ```{r}
-head(whately)
-tail(whately)
+head(whately_2015)
+tail(whately_2015)
 ```
 
-Analyzing the data:
+## Analyzing the data:
 
 Using plots can help you see your data visually. This is a good tool, especially if you want to find anomolies within the data. 
 
@@ -39,8 +39,11 @@ For example, the total rainfall measurement may be off because someone bumped in
 In order to find anomolies, you should plot the temperature against the total rainfall. Use the code below.
 
 ```{r, fig.width = 7, fig.height = 5, message=FALSE}
-require(mosaic)
-xyplot(Temp_C_Avg ~ Rain_mm_Tot, data = whately, type = "l")
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+ggplot(data = whately_2015, aes(x = Rain_mm_Tot, y = Temp_C_Avg)) +
+  geom_point() + geom_smooth()
 ```
 
 This graph shows you that for higher temperatures, there seems to be a lot of rainfall. I would double check your data values for 25 C (77 F) and see what happened at that temperature.
@@ -49,28 +52,34 @@ If you want to compute averages other than the 10 minute one, you can do so usin
 
 CAUTION: If you would rather use the daily data set, you may do so, but it will take you longer to make sure you are getting the right results. If you are a novice at R, I would adivse you to compute the daily averages with simple math.
 
-Computing Daily averages
+## Computing Daily averages
 
 The following plot will show you how much rainfall you would have per day over the course of the data.
 
 The "when" variable is used to plot the dates of each row of data. Since the data is updated very frequently, this plot will change on the rightmost side often throughtout the day.
 
 ```{r, fig.width = 7, fig.height = 5, message=FALSE}
-daily <- whately %>%
-  group_by(when) %>%
+daily <- whately_2015 %>%
+  mutate(day_of_year = yday(when)) %>%
+  group_by(day_of_year) %>%
   summarize(N = n(), avgRain = mean(Rain_mm_Tot))
-xyplot(avgRain ~ when, data = daily, type = c("l", "smooth", "r"))
+ggplot(data = daily, aes(x = day_of_year, y = avgRain)) +
+  geom_point()
 ```
 
 To see the spread of your data, you can use a boxplot to see the minimum and maximum for your data.
 
 The following plots the dates with the spreads:
 
-```{r, fig.width = 7, fig.height = 5, message=FALSE}
-daily <- whately %>%
-  group_by(when) %>%
-  summarize(N = n(), avgRain = mean(Rain_mm_Tot))
-boxplot(avgRain ~ when, data = daily, type = c("l", "smooth", "r"))
-```
-
 These are some examples of you can explore and analyze data with this package.
+
+## Temperature Trends
+
+```{r, fig.width = 7, fig.height = 5, message=FALSE}
+daily <- whately_2015 %>%
+  mutate(day_of_year = yday(when)) %>%
+  group_by(day_of_year) %>%
+  summarize(N = n(), avgTemp = mean(Temp_C_Avg))
+ggplot(data = daily, aes(x = day_of_year, y = avgTemp)) +
+  geom_point() + geom_smooth()
+```
