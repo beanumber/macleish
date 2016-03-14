@@ -30,7 +30,6 @@ Depends:
 Suggests: 
     ggplot2,
     knitr,
-    rmarkdown,
-    mosaic
+    rmarkdown
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr
