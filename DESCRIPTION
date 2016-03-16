@@ -29,12 +29,14 @@ Depends:
     etl
 Suggests: 
     ggplot2,
+    RSQLite,
+    knitr,
+    rmarkdown
+Enhances:
     ggmap,
     leaflet,
     sp,
     rgdal,
-    rgeos,
-    knitr,
-    rmarkdown
+    rgeos
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr

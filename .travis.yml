@@ -6,6 +6,9 @@ sudo: required
 
 r_binary_packages:
  - dplyr
+ - DBI
+ - RSQlite
+ 
 
 r_github_packages:
  - beanumber/etl
