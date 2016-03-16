@@ -10,6 +10,7 @@
 #' Solar radiation is measured in two different ways: see \code{SlrW_Avg}
 #' or the \code{PAR} variables for Photosynthetic Active Radiation.
 #' 
+#' @docType data
 #' @format A data frame with 52,566 rows and 9 variables.
 #' 
 #' The following variables are values that are found in both Whately and Orchard data tables.
@@ -34,3 +35,15 @@
 
 #' @rdname whately_2015
 "orchard_2015"
+
+#' MacLeish spatial data
+#' 
+#' @description Shapefiles from the MacLeish Field Station
+#' @docType data
+#' @format A \code{list} of \code{\link[sp]{Spatial}} objects, each providing a different layer.
+#' 
+#' \describe{
+#'  \item{buildings}{Buildings at MacLeish}
+#' }
+#' 
+"macleish_layers"

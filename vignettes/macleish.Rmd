@@ -83,3 +83,22 @@ daily <- whately_2015 %>%
 ggplot(data = daily, aes(x = day_of_year, y = avgTemp)) +
   geom_point() + geom_smooth()
 ```
+
+#### Maps
+
+```{r, fig.width=7, fig.height=7}
+library(ggmap)
+macleish <- data.frame(lat = 42.449167, lon = -72.679389)
+library(leaflet)
+
+forest_pal <- colorFactor(topo.colors(8), macleish_layers[["forests"]]$Sheet1__Na)
+
+m <- leaflet() %>%
+  addTiles() %>%
+  addMarkers(lng = ~lon, lat = ~lat, data = macleish, 
+    popup = "MacLeish Field Station") %>%
+  addPolygons(data = macleish_layers[["buildings"]], weight = 1, popup = ~ Feature) %>%
+  addPolygons(data = macleish_layers[["forests"]], color = ~forest_pal(Sheet1__Na), weight = 1, popup = ~ Sheet1__Na)
+m
+```
+
