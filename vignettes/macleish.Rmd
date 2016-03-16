@@ -87,7 +87,6 @@ ggplot(data = daily, aes(x = day_of_year, y = avgTemp)) +
 #### Maps
 
 ```{r, fig.width=7, fig.height=7}
-library(ggmap)
 macleish <- data.frame(lat = 42.449167, lon = -72.679389)
 library(leaflet)
 

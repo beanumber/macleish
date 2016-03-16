@@ -29,6 +29,11 @@ Depends:
     etl
 Suggests: 
     ggplot2,
+    ggmap,
+    leaflet,
+    sp,
+    rgdal,
+    rgeos,
     knitr,
     rmarkdown
 RoxygenNote: 5.0.1
