@@ -31,6 +31,7 @@ Suggests:
     ggplot2,
     RSQLite,
     knitr,
+    leaflet,
     rmarkdown
 Enhances:
     ggmap,
