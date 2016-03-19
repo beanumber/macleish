@@ -7,13 +7,41 @@
 \format{A \code{list} of \code{\link[sp]{Spatial}} objects, each providing a different layer.
 
 \describe{
+ \item{landmarks}{Landmarks}
+ \item{vernal_pool}{A vernal pool}
+ \item{forests}{Type of dominant tree in individual forests, as 
+ noted by Jesse Bellemare}
+ \item{streams}{local streams}
+ \item{challenge_courses}{Challenge courses on the property}
+ \item{macleish_boundary}{boundary of the field station}
+ \item{reservoir}{a reservoir}
+ \item{property_boundary}{the boundary of the property}
  \item{buildings}{Buildings at MacLeish}
+ \item{slopes}{steep slopes}
+ \item{wetlands}{Wetland areas}
 }}
 \usage{
 macleish_layers
 }
 \description{
-Shapefiles from the MacLeish Field Station
+Shapefiles from the MacLeish Field Station. The field station
+itself is located at \code{lat = 42.449167}, \code{lon = -72.679389}. These
+data contains information about various man-made and natural structures
+surrounding the field station.
+}
+\details{
+Each of the \code{\link[sp]{Spatial}} objects are projected in 
+\code{epsg:4326} for easy integration with \code{\link[ggmap]{ggmap}} or
+\code{\link[leaflet]{leaflet}} objects.
+}
+\examples{
+names(macleish_layers)
+summary(macleish_layers[["buildings"]])
+
+if (require(sp)) {
+ plot(macleish_layers[["buildings"]])
+}
+
 }
 \keyword{datasets}
 

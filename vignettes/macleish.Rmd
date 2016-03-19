@@ -1,6 +1,6 @@
 ---
 title: "Using the MacLeish Weather Data"
-author: "Rose Goueth"
+author: "Ben Baumer and Rose Goueth"
 date: "12-16-2015"
 output: rmarkdown::html_vignette
 vignette: >
@@ -15,15 +15,12 @@ This R package can be used to process and analyze data from the MacLeish weather
 To start using the package, you need to run the following code:
 
 ```{r, message=FALSE}
-require(macleish)
+library(macleish)
 ```
 
 The data sets needed for this package already exists in the code. To explore the data, you can use the following tools:
 
-head() will give you the first 6 readings within the data set.
-head(whatley) gives you the first six data points within the whatley data set.
-tail() will give you the last 6 readings of the data set. 
-tail(whatley) will give you the last 6 readings, which in this context are also the most recent readings of the data collected.
+Note that `head` and `tail` will give you the first (last) 6 readings from 2015, respectively.
 
 ```{r}
 head(whately_2015)
@@ -36,21 +33,17 @@ Using plots can help you see your data visually. This is a good tool, especially
 
 For example, the total rainfall measurement may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this column of data would be of best interest. 
 
-In order to find anomolies, you should plot the temperature against the total rainfall. Use the code below.
+In order to find anomolies, you should plot the temperature against pressure.
 
 ```{r, fig.width = 7, fig.height = 5, message=FALSE}
 library(ggplot2)
 library(dplyr)
 library(lubridate)
-ggplot(data = whately_2015, aes(x = Rain_mm_Tot, y = Temp_C_Avg)) +
+ggplot(data = whately_2015, aes(x = Press_mb_Avg, y = Temp_C_Avg)) +
   geom_point() + geom_smooth()
 ```
 
-This graph shows you that for higher temperatures, there seems to be a lot of rainfall. I would double check your data values for 25 C (77 F) and see what happened at that temperature.
 
-If you want to compute averages other than the 10 minute one, you can do so using simple math ! The example below shows you how to compute daily averages. 
-
-CAUTION: If you would rather use the daily data set, you may do so, but it will take you longer to make sure you are getting the right results. If you are a novice at R, I would adivse you to compute the daily averages with simple math.
 
 ## Computing Daily averages
 
@@ -67,10 +60,6 @@ ggplot(data = daily, aes(x = day_of_year, y = avgRain)) +
   geom_point()
 ```
 
-To see the spread of your data, you can use a boxplot to see the minimum and maximum for your data.
-
-The following plots the dates with the spreads:
-
 These are some examples of you can explore and analyze data with this package.
 
 ## Temperature Trends
@@ -86,18 +75,58 @@ ggplot(data = daily, aes(x = day_of_year, y = avgTemp)) +
 
 #### Maps
 
+```{r}
+macleish <- data.frame( lon = -72.679389, lat = 42.449167)
+```
+
 ```{r, fig.width=7, fig.height=7}
-macleish <- data.frame(lat = 42.449167, lon = -72.679389)
+library(ggmap)
+map <- ggmap(get_map(location = macleish, maptype = "terrain", zoom = 16))
+library(broom)
+buildings_tidy <- tidy(macleish_layers[["buildings"]])
+map + geom_polygon(data = buildings_tidy, aes(x = long, y = lat, color = group))  
+```
+
+
+```{r, fig.width=7, fig.height=7}
 library(leaflet)
 
-forest_pal <- colorFactor(topo.colors(8), macleish_layers[["forests"]]$Sheet1__Na)
+forest_pal <- colorFactor("Greens", macleish_layers[["forests"]]$Sheet1__Na)
 
 m <- leaflet() %>%
   addTiles() %>%
-  addMarkers(lng = ~lon, lat = ~lat, data = macleish, 
-    popup = "MacLeish Field Station") %>%
-  addPolygons(data = macleish_layers[["buildings"]], weight = 1, popup = ~ Feature) %>%
-  addPolygons(data = macleish_layers[["forests"]], color = ~forest_pal(Sheet1__Na), weight = 1, popup = ~ Sheet1__Na)
+  # Boundaries
+  addPolygons(data = macleish_layers[["macleish_boundary"]], weight = 1, fillOpacity = 0.01, group = "Boundaries") %>%
+#  addPolygons(data = macleish_layers[["property_boundary"]], weight = 1, fill = "red", fillOpacity = 0.1) %>%
+  # Man-Made structures
+  addPolygons(data = macleish_layers[["buildings"]], 
+              weight = 1, popup = ~ Feature, group = "Structures") %>%
+#  addPolygons(data = macleish_layers[["reservoir"]], 
+#              weight = 1, group = "Structures") %>%
+  addMarkers(data = macleish_layers[["landmarks"]], 
+             popup = ~ Label, group = "Structures") %>%
+  # Natural elements
+  addPolygons(data = macleish_layers[["forests"]], 
+              color = ~forest_pal(Sheet1__Na), weight = 0.1, 
+              fillOpacity = 0.2,
+              popup = ~ Sheet1__Na, group = "Natural") %>%
+  addPolygons(data = macleish_layers[["vernal_pool"]], 
+              fillOpacity = 0.02,
+              weight = 0.1, group = "Natural") %>%
+  addPolygons(data = macleish_layers[["wetlands"]], 
+              weight = 1, group = "Natural") %>%
+  addPolygons(data = macleish_layers[["slopes"]], 
+              color = "darkgray", 
+              weight = 1, group = "Natural") %>%
+  addPolylines(data = macleish_layers[["streams"]], 
+               weight = 2, group = "Natural") %>%
+  # Layers control
+  addLayersControl(
+#    baseGroups = c("OSM (default)", "Toner", "Toner Lite"),
+    overlayGroups = c("Boundaries", "Structures", "Natural"),
+    options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  setView(lat = macleish$lat, lng = macleish$lon, zoom = 15)
 m
 ```
 
