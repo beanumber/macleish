@@ -32,10 +32,10 @@ Suggests:
     RSQLite,
     broom,
     knitr,
+    ggmap,
     leaflet,
     rmarkdown
 Enhances:
-    ggmap,
     sp,
     rgdal,
     rgeos
