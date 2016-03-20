@@ -25,16 +25,18 @@ library(rgdal)
 dsn <- path.expand("~/Dropbox/Data for Ben Baumer/")
 list.files(dsn)
 ogrListLayers(dsn)
-ogrInfo(dsn, layer = "Buildings")
+ogrInfo(dsn, layer = "Trails")
 
 layers <- c("Key Landmarks", "VernalPool", "VegType_2009_20101112", "Streams", 
             "ChallengeCourse_Elements", "MacLeishBoundary", "Reservoir", 
-            "Property Boundary", "Buildings", "Steep Slopes", "Wetlands")
+            "Property Boundary", "Buildings", "Steep Slopes", "Wetlands",
+            "Trails")
 macleish_layers <- lapply(layers, readOGR, dsn = dsn)
 
 names(macleish_layers) <- c("landmarks", "vernal_pool", "forests", "streams",
                             "challenge_courses", "macleish_boundary", "reservoir", 
-                            "property_boundary", "buildings", "slopes", "wetlands")
+                            "property_boundary", "buildings", "slopes", "wetlands",
+                            "trails")
 
 lapply(macleish_layers, proj4string)
 
