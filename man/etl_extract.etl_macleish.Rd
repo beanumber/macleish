@@ -25,6 +25,7 @@ Retrieve data from the Macleish Field Station weather monitors
 macleish <- etl("macleish")
 str(macleish)
 
+\dontrun{
 macleish \%>\%
   etl_extract() \%>\%
   etl_transform() \%>\%
@@ -34,5 +35,6 @@ whately <- macleish \%>\%
   
 whately \%>\%
   summarize(N = n(), avg_temp = mean(Temp_C_Avg))
+}
 }
 
