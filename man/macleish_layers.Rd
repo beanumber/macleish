@@ -19,6 +19,7 @@
  \item{buildings}{Buildings at MacLeish}
  \item{slopes}{steep slopes}
  \item{wetlands}{Wetland areas}
+ \item{trails}{Hiking trails}
 }}
 \usage{
 macleish_layers
