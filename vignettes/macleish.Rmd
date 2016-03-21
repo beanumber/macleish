@@ -120,7 +120,7 @@ m <- leaflet() %>%
   addPolygons(data = macleish_layers[["wetlands"]], 
               weight = 1, group = "Natural") %>%
   addPolygons(data = macleish_layers[["slopes"]], 
-              color = "darkgray", 
+              color = "darkgray", popup = ~SlopeTEXT,
               weight = 1, group = "Natural") %>%
   addPolylines(data = macleish_layers[["streams"]], 
                weight = 2, group = "Natural") %>%
