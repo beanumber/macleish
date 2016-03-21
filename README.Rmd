@@ -21,7 +21,7 @@ devtools::install_github("beanumber/macleish")
 
 ## Use 2015 weather data
 
-Weather data from 2015 is available immediately from two both the `Whately` and `Orchard` weather stations. 
+Weather data from 2015 is available immediately from both the `Whately` and `Orchard` weather stations. 
 
 ```{r, message=FALSE}
 library(macleish)
