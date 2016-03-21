@@ -2,5 +2,5 @@
 ^\.Rproj\.user$
 ^\.travis\.yml$
 ^data-raw$
-^.*\.Rmd$
-^.*\.html$
+^.*README\.Rmd$
+^.*README\.html$
