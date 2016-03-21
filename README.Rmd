@@ -80,6 +80,8 @@ names(macleish_layers)
 library(leaflet)
 leaflet() %>%
   addTiles() %>%
+  addPolygons(data = macleish_layers[["boundary"]], 
+              weight = 1, fillOpacity = 0.1) %>%
   addPolygons(data = macleish_layers[["buildings"]], 
               weight = 1, popup = ~ Feature) %>%
   addPolylines(data = macleish_layers[["trails"]], 

@@ -94,9 +94,13 @@ library(leaflet)
 forest_pal <- colorFactor("Greens", macleish_layers[["forests"]]$Sheet1__Na)
 
 m <- leaflet() %>%
-  addTiles() %>%
+  # Base groups
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldTopoMap", group = "Topography") %>%
+  addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
+  addProviderTiles("Stamen.TonerLite", group = "Toner Lite") %>%
   # Boundaries
-  addPolygons(data = macleish_layers[["macleish_boundary"]], weight = 1, fillOpacity = 0.01, group = "Boundaries") %>%
+  addPolygons(data = macleish_layers[["boundary"]], weight = 1, fillOpacity = 0.01, group = "Boundaries") %>%
 #  addPolygons(data = macleish_layers[["property_boundary"]], weight = 1, fill = "red", fillOpacity = 0.1) %>%
   # Man-Made structures
   addPolygons(data = macleish_layers[["buildings"]], 
@@ -113,9 +117,6 @@ m <- leaflet() %>%
               color = ~forest_pal(Sheet1__Na), weight = 0.1, 
               fillOpacity = 0.2,
               popup = ~ Sheet1__Na, group = "Natural") %>%
-  addPolygons(data = macleish_layers[["vernal_pool"]], 
-              fillOpacity = 0.02,
-              weight = 0.1, group = "Natural") %>%
   addPolygons(data = macleish_layers[["wetlands"]], 
               weight = 1, group = "Natural") %>%
   addPolygons(data = macleish_layers[["slopes"]], 
@@ -125,7 +126,7 @@ m <- leaflet() %>%
                weight = 2, group = "Natural") %>%
   # Layers control
   addLayersControl(
-#    baseGroups = c("OSM (default)", "Toner", "Toner Lite"),
+    baseGroups = c("OpenStreetMap", "Topography", "Satellite", "Toner Lite"),
     overlayGroups = c("Boundaries", "Structures", "Natural"),
     options = layersControlOptions(collapsed = FALSE)
   ) %>%

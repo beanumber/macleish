@@ -8,18 +8,17 @@
 
 \describe{
  \item{landmarks}{Landmarks}
- \item{vernal_pool}{A vernal pool}
  \item{forests}{Type of dominant tree in individual forests, as 
  noted by Jesse Bellemare}
  \item{streams}{local streams}
  \item{challenge_courses}{Challenge courses on the property}
- \item{macleish_boundary}{boundary of the field station}
  \item{reservoir}{a reservoir}
- \item{property_boundary}{the boundary of the property}
  \item{buildings}{Buildings at MacLeish}
- \item{slopes}{steep slopes}
  \item{wetlands}{Wetland areas}
  \item{trails}{Hiking trails}
+ \item{slopes}{steep slopes}
+ \item{schools}{Schools in Massachusetts}
+ \item{boundary}{the property boundary}
 }}
 \usage{
 macleish_layers
