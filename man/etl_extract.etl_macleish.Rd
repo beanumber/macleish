@@ -32,9 +32,18 @@ macleish \%>\%
   etl_load()
 whately <- macleish \%>\%
   tbl("whately") 
+orchard <- macleish \%>\%
+  tbl("orchard") 
   
 whately \%>\%
   summarize(N = n(), avg_temp = mean(Temp_C_Avg))
+orchard \%>\%
+  summarize(N = n(), avg_temp = mean(Temp_C_Avg))
+
+# show the most recent data -- should be within the past hour
+whately \%>\%
+  collect() \%>\%
+  tail()
 }
 }
 
