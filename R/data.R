@@ -63,6 +63,8 @@
 #'  \item{slopes}{steep slopes}
 #'  \item{schools}{Schools in Massachusetts}
 #'  \item{boundary}{the property boundary}
+#'  \item{research}{research plots}
+#'  \item{soil}{soil deposits used by Amy Rhodes}
 #' }
 #' 
 #' @examples 
