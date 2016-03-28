@@ -111,7 +111,7 @@ m <- leaflet() %>%
              popup = ~ Label, group = "Structures") %>%
   addPolylines(data = macleish_layers[["trails"]], 
                weight = 1, color = "brown",
-               popup = ~ Name, group = "Structures") %>%
+               popup = ~ trl_name, group = "Structures") %>%
   # Natural elements
   addPolygons(data = macleish_layers[["forests"]], 
               color = ~forest_pal(Sheet1__Na), weight = 0.1, 

@@ -30,15 +30,15 @@ ogrInfo(dsn, layer = "Trails")
 layers <- c("Key Landmarks", "VegType_2009_20101112", "Streams", 
             "ChallengeCourse_Elements", "Reservoir", 
             "Buildings", "Wetlands",
-            "Trails", "Slope2016", "SCHOOLS_PT", "2016_MacLeish_Boundary",
-            "Research_Poly", "Rhodes_soil")
+            "Slope2016", "SCHOOLS_PT", "2016_MacLeish_Boundary",
+            "Research_Poly", "Rhodes_soil", "Trails_20160328")
 macleish_layers <- lapply(layers, readOGR, dsn = dsn)
 
 names(macleish_layers) <- c("landmarks", "forests", "streams",
                             "challenge_courses", "reservoir", 
                             "buildings", "wetlands",
-                            "trails", "slopes", "schools", "boundary", 
-                            "research", "soil")
+                            "slopes", "schools", "boundary", 
+                            "research", "soil", "trails")
 
 lapply(macleish_layers, proj4string)
 
