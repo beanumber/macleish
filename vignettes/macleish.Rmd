@@ -1,6 +1,6 @@
 ---
 title: "Using the MacLeish Data"
-author: "Ben Baumer and Rose Goueth and Wencong Li"
+author: "Ben Baumer, Rose Goueth, Wencong Li and Weijia Zhang (Vega)"
 date: "03-28-2016"
 output: rmarkdown::html_vignette
 vignette: >
@@ -10,7 +10,7 @@ vignette: >
 ---
 ## Using the MacLeish Data
    
-This R package can be used to process and analyze data from the MacLeish weather station. The following text will give you an outline of how to use the package.
+This R package can be used to process and analyze data from the [MacLeish weather station](http://www.smith.edu/ceeds/macleish.php). The following text will give you an outline of how to use the package.
 
 To start using the package, you need to run the following code:
 
@@ -130,4 +130,34 @@ Now, we can creat a map to show where are the buildings at macleish field statio
 ```{r, fig.width=7, fig.height=7, message=FALSE}
 map + geom_polygon(data = buildings_tidy, aes(x = long, y = lat, color = group))  
 ```
+
+#### Example 5: Statistical Summary
+
+Variables:
+
+* Temp_C_Avg: the average temperature (c)
+* WSpd_mps: Average windspeed (mps)
+* Wdir_deg: Wind direction (deg)
+* RH_per_Avg: Relative Humidity (%)
+* Press_mb_Avg: Average atomspheric pressure (mb)
+* SlrW_Avg: Average Solar Radiance (W)
+* Rain_mm_Tot: Main Rainfall amount per day (mm)
+
+##### Lowest Temperature
+We can use the dplyr package to find some summary statistics.
+```{r}
+whately_2015 %>%
+  arrange(Temp_C_Avg) %>%
+  head()
+```
+As we can see, on Jan.8th the temperature at Whately dropped to -22.28 degrees celsius, which was the minimum of the year. However, that only appeared for once. Instead, on Feb.16th, the temperature reached the similar level for more than once.
+
+That's not the same case for Orchard.
+```{r}
+orchard_2015 %>%
+  arrange(Temp_C_Avg) %>%
+  head()
+```
+The temperature reached the minimum of around -90 degrees celsuis (-130 degrees fahrenheit) on Nov.23rd
+
 
