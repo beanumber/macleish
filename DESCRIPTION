@@ -12,7 +12,7 @@ Authors@R: as.person(c(
   ))
 Description: Download weather data from the Ada and Archibald MacLeish Field 
     Station in Whately, MA. The Ada 
-    and Archibald MacLeish Field Station is a 240-acre patchwork of 
+    and Archibald MacLeish Field Station is a 260-acre patchwork of 
     forest and farmland located in West Whately, MA that provides opportunities 
     for faculty and students to pursue environmental research, outdoor 
     education, and low-impact recreation. This package contains weather data
