@@ -1,16 +1,16 @@
 ---
-title: "Using the MacLeish Weather Data"
-author: "Ben Baumer and Rose Goueth"
-date: "12-16-2015"
+title: "Using the MacLeish Data"
+author: "Ben Baumer, Rose Goueth, Wencong Li and Weijia Zhang (Vega)"
+date: "03-28-2016"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Using MacLeish Weather Data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-## Using the MacLeish Weather Data
-
-This R package can be used to process and analyze data from the MacLeish weather station. The following text will give you an outline of how to use the package.
+## Using the MacLeish Data
+   
+This R package can be used to process and analyze data from the [MacLeish weather station](http://www.smith.edu/ceeds/macleish.php). The following text will give you an outline of how to use the package.
 
 To start using the package, you need to run the following code:
 
@@ -18,119 +18,146 @@ To start using the package, you need to run the following code:
 library(macleish)
 ```
 
-The data sets needed for this package already exists in the code. To explore the data, you can use the following tools:
 
-Note that `head` and `tail` will give you the first (last) 6 readings from 2015, respectively.
+## Getting started:
+
+A big part of this package is the macleish weather data. The first three examples will be based only on the macleish weather data. The data sets needed for this package already exists in the code. To explore the data, you can use the following tools:
+
+Note that `head` and `tail` will give you the first (last) 6 readings from the whately weather station from 2015, respectively.
 
 ```{r}
 head(whately_2015)
 tail(whately_2015)
 ```
 
-## Analyzing the data:
+You can do the same thing for the orchard weather station and add one more statement in order to specify how many readings you want. 
+```{r}
+head(orchard_2015,2)
+tail(orchard_2015,2)
+```
 
-Using plots can help you see your data visually. This is a good tool, especially if you want to find anomolies within the data. 
+## Visualizing the data:
+## Example 1: The Pressure Law
 
-For example, the total rainfall measurement may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this column of data would be of best interest. 
+Plots can help you to visualize your data. They are helpful, especially if you want to find anomalies within the data. 
 
-In order to find anomolies, you should plot the temperature against pressure.
+For example, the temperature recorder may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this column of data would be of best interest. 
 
+We need to use the following three packages in the following examples. 
 ```{r, fig.width = 7, fig.height = 5, message=FALSE}
 library(ggplot2)
 library(dplyr)
 library(lubridate)
+```
+
+Or you might be interested in the correlation between temperature and pressure, since pressure should be directly proportional to temperature (, for a fixed mass of gas, at a constant volumn, according to The Pressure Law).
+
+The graph below is a dotplot between average temperature and atomspheric pressure.
+```{r, fig.width = 7, fig.height = 5, message=FALSE}
 ggplot(data = whately_2015, aes(x = Press_mb_Avg, y = Temp_C_Avg)) +
   geom_point() + geom_smooth()
 ```
 
+As you can see from this plot, high average temperatures has been detected for more times, when the atomspheric pressure is between 980 and 985 millibars.
 
+## Analyzing the data:
+## Example 2: Computing Daily averages
 
-## Computing Daily averages
+The "when" variable is used to plot the dates of each row of macleish weather data. Since the data is updated very frequently, it is very likely that more data will be plotted on the rightmost side of this plot everytime you run it.
 
-The following plot will show you how much rainfall you would have per day over the course of the data.
-
-The "when" variable is used to plot the dates of each row of data. Since the data is updated very frequently, this plot will change on the rightmost side often throughtout the day.
+First, we need to modify our data in order to have it in the form we want. Since the data was recorded every ten minutes, we need to group the data in respect to days in order to get the mean rainfall amount per day.
 
 ```{r, fig.width = 7, fig.height = 5, message=FALSE}
-daily <- whately_2015 %>%
+daily2015 <- whately_2015 %>%
   mutate(day_of_year = yday(when)) %>%
   group_by(day_of_year) %>%
   summarize(N = n(), avgRain = mean(Rain_mm_Tot))
-ggplot(data = daily, aes(x = day_of_year, y = avgRain)) +
+```
+
+Now, we can creat a xyplot to show how much rainfall you would have per day over the course of the whately_2015 weather data.
+
+The following plot will show you how much rainfall you would have per day at macleish field station over 2015.
+
+```{r, fig.width = 7, fig.height = 5, message=FALSE}
+ggplot(data = daily2015, aes(x = day_of_year, y = avgRain)) +
   geom_point()
 ```
 
-These are some examples of you can explore and analyze data with this package.
+## More examples 
 
-## Temperature Trends
+These are some examples that you can explore and analyze data with this package.
+
+### Example 3: Temperature Trends
+This example is very similar to the second one. Instead of rainfall, we are trying to visualize the average temperature per day at macleish field station over 2015.
 
 ```{r, fig.width = 7, fig.height = 5, message=FALSE}
 daily <- whately_2015 %>%
   mutate(day_of_year = yday(when)) %>%
   group_by(day_of_year) %>%
   summarize(N = n(), avgTemp = mean(Temp_C_Avg))
+```
+
+The following plot will show you the average temperature per day at macleish field station over 2015.
+
+```{r, fig.width = 7, fig.height = 5, message=FALSE}
 ggplot(data = daily, aes(x = day_of_year, y = avgTemp)) +
   geom_point() + geom_smooth()
 ```
 
-#### Maps
+#### Example 4: Maps
+We can use the `ggmap` package to display a map of macleish field station.
 
+Here is the geographical location of macleish station.
 ```{r}
 macleish <- data.frame( lon = -72.679389, lat = 42.449167)
 ```
 
-```{r, fig.width=7, fig.height=7}
+We can get a map of macleish field station by using the following command in the `ggmap` package.
+```{r, fig.width=7, fig.height=7, message=FALSE}
 library(ggmap)
 map <- ggmap(get_map(location = macleish, maptype = "terrain", zoom = 16))
+```
+
+The  `tidy` command in the  `broom` package makes the building layer a data frame so that we can use `ggmap` to map the buildings on a static map.
+
+```{r, fig.width=7, fig.height=7, message=FALSE}
 library(broom)
 buildings_tidy <- tidy(macleish_layers[["buildings"]])
+```
+
+Now, we can creat a map to show where are the buildings at macleish field station.
+
+```{r, fig.width=7, fig.height=7, message=FALSE}
 map + geom_polygon(data = buildings_tidy, aes(x = long, y = lat, color = group))  
 ```
 
+#### Example 5: Statistical Summary
 
-```{r, fig.width=7, fig.height=7}
-library(leaflet)
+Variables:
 
-forest_pal <- colorFactor("Greens", macleish_layers[["forests"]]$Sheet1__Na)
+* Temp_C_Avg: the average temperature (c)
+* WSpd_mps: Average windspeed (mps)
+* Wdir_deg: Wind direction (deg)
+* RH_per_Avg: Relative Humidity (%)
+* Press_mb_Avg: Average atomspheric pressure (mb)
+* SlrW_Avg: Average Solar Radiance (W)
+* Rain_mm_Tot: Main Rainfall amount per day (mm)
 
-m <- leaflet() %>%
-  # Base groups
-  addTiles(group = "OpenStreetMap") %>%
-  addProviderTiles("Esri.WorldTopoMap", group = "Topography") %>%
-  addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
-  addProviderTiles("Stamen.TonerLite", group = "Toner Lite") %>%
-  # Boundaries
-  addPolygons(data = macleish_layers[["boundary"]], weight = 1, fillOpacity = 0.01, group = "Boundaries") %>%
-#  addPolygons(data = macleish_layers[["property_boundary"]], weight = 1, fill = "red", fillOpacity = 0.1) %>%
-  # Man-Made structures
-  addPolygons(data = macleish_layers[["buildings"]], 
-              weight = 1, popup = ~ Feature, group = "Structures") %>%
-#  addPolygons(data = macleish_layers[["reservoir"]], 
-#              weight = 1, group = "Structures") %>%
-  addMarkers(data = macleish_layers[["landmarks"]], 
-             popup = ~ Label, group = "Structures") %>%
-  addPolylines(data = macleish_layers[["trails"]], 
-               weight = 1, color = "brown",
-               popup = ~ trl_name, group = "Structures") %>%
-  # Natural elements
-  addPolygons(data = macleish_layers[["forests"]], 
-              color = ~forest_pal(Sheet1__Na), weight = 0.1, 
-              fillOpacity = 0.2,
-              popup = ~ Sheet1__Na, group = "Natural") %>%
-  addPolygons(data = macleish_layers[["wetlands"]], 
-              weight = 1, group = "Natural") %>%
-  addPolygons(data = macleish_layers[["slopes"]], 
-              color = "darkgray", popup = ~SlopeTEXT,
-              weight = 1, group = "Natural") %>%
-  addPolylines(data = macleish_layers[["streams"]], 
-               weight = 2, group = "Natural") %>%
-  # Layers control
-  addLayersControl(
-    baseGroups = c("OpenStreetMap", "Topography", "Satellite", "Toner Lite"),
-    overlayGroups = c("Boundaries", "Structures", "Natural"),
-    options = layersControlOptions(collapsed = FALSE)
-  ) %>%
-  setView(lat = macleish$lat, lng = macleish$lon, zoom = 15)
-m
+##### Lowest Temperature
+We can use the dplyr package to find some summary statistics.
+```{r}
+whately_2015 %>%
+  arrange(Temp_C_Avg) %>%
+  head()
 ```
+As we can see, on Jan.8th the temperature at Whately dropped to -22.28 degrees celsius, which was the minimum of the year. However, that only appeared for once. Instead, on Feb.16th, the temperature reached the similar level for more than once.
+
+That's not the same case for Orchard.
+```{r}
+orchard_2015 %>%
+  arrange(Temp_C_Avg) %>%
+  head()
+```
+The temperature reached the minimum of around -90 degrees celsuis (-130 degrees fahrenheit) on Nov.23rd
+
 
