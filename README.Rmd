@@ -33,13 +33,13 @@ glimpse(orchard_2015)
 
 Weather readings are logged every 10 minutes. Current and historical (dating back to 1/3/2012 for `whately` and 6/27/2014 for `orchard`) meteorological readings are available through the [ETL](http://www.github.com/beanumber/etl) framework. Please see the documentation for that package for more information about how this works. 
 
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 macleish <- etl("macleish")
 macleish %>%
   etl_update()
 ```
 
-```{r}
+```{r, eval=FALSE}
 whately <- macleish %>%
   tbl("whately")
 whately %>%
@@ -55,7 +55,7 @@ orchard %>%
 ```
 
 
-```{r, fig.width = 7, fig.height = 5, message=FALSE}
+```{r, eval=FALSE, fig.width = 7, fig.height = 5, message=FALSE}
 daily <- whately %>%
   mutate(the_date = date(when)) %>%
   group_by(the_date) %>%
@@ -86,7 +86,7 @@ leaflet() %>%
               weight = 1, popup = ~ Feature) %>%
   addPolylines(data = macleish_layers[["trails"]], 
                weight = 1, color = "brown",
-               popup = ~ Name) %>%
+               popup = ~ trl_name) %>%
   addPolylines(data = macleish_layers[["streams"]], 
                weight = 2)
 ```

@@ -5,7 +5,10 @@
 #'
 #' @details The Macleish Field Station is a remote outpost owned by Smith
 #' College and used for field research. There are two weather stations on the 
-#' premises. One is called \code{Whately} and the other is \code{Orchard}.
+#' premises. One is called \code{WhatelyMet} and the other is \code{OrchardMet}.
+#' 
+#' The \code{WhatelyMet} station is located at (42.448470, -72.680553) and
+#' the \code{OrchardMet} station is at (42.449653, -72.680315).
 #' 
 #' Solar radiation is measured in two different ways: see \code{SlrW_Avg}
 #' or the \code{PAR} variables for Photosynthetic Active Radiation.
