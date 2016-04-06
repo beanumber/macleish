@@ -1,4 +1,4 @@
-
+# Creates 2015 data for Whately and Orchard
 
 macleish <- etl("macleish") %>%
   etl_extract() %>%
@@ -20,6 +20,7 @@ orchard_2015 <- macleish %>%
 save(whately_2015, file = "data/whately_2015.rda", compress = "xz")
 save(orchard_2015, file = "data/orchard_2015.rda", compress = "xz")
 
+# Creates the macleish_layers list
 
 library(rgdal)
 dsn <- path.expand("~/Dropbox/Data for Ben Baumer/")
