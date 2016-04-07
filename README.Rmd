@@ -1,8 +1,8 @@
 ---
 title: "MacLeish"
 output:
-  html_document:
-    keep_md: true
+  github_document:
+    html_preview: true
 ---
 
 [![Travis-CI Build Status](https://travis-ci.org/beanumber/macleish.svg?branch=master)](https://travis-ci.org/beanumber/macleish)
@@ -76,7 +76,7 @@ names(macleish_layers)
 ```
 
 
-```{r, fig.width=7, fig.height=7, message=FALSE}
+```{r, eval=FALSE, fig.width=7, fig.height=7, message=FALSE}
 library(leaflet)
 leaflet() %>%
   addTiles() %>%
