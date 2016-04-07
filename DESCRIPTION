@@ -1,7 +1,7 @@
 Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
-Version: 0.2.1.9006
+Version: 0.2.1.9007
 Date: 2015-10-29
 Authors@R: as.person(c(
     "Ben Baumer <ben.baumer@gmail.com> [aut, cre]",
@@ -23,7 +23,8 @@ LazyData: TRUE
 Imports: 
     dplyr,
     DBI,
-    lubridate
+    lubridate,
+    readr
 Depends: 
     R (>= 2.10),
     etl

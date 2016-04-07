@@ -39,6 +39,16 @@ whately \%>\%
   summarize(N = n(), avg_temp = mean(Temp_C_Avg))
 orchard \%>\%
   summarize(N = n(), avg_temp = mean(Temp_C_Avg))
+  
+# check data types
+whately \%>\%
+  glimpse()
+
+# if using SQLite, datetimes will get converted to integers
+whately <- whately \%>\%
+  mutate(when_datetime = datetime(when, 'unixepoch'))
+whately \%>\%
+  glimpse()
 
 # show the most recent data -- should be within the past hour
 whately \%>\%

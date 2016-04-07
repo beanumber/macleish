@@ -23,6 +23,16 @@
 #'   summarize(N = n(), avg_temp = mean(Temp_C_Avg))
 #' orchard %>%
 #'   summarize(N = n(), avg_temp = mean(Temp_C_Avg))
+#'   
+#' # check data types
+#' whately %>%
+#'   glimpse()
+#' 
+#' # if using SQLite, datetimes will get converted to integers
+#' whately <- whately %>%
+#'   mutate(when_datetime = datetime(when, 'unixepoch'))
+#' whately %>%
+#'   glimpse()
 #' 
 #' # show the most recent data -- should be within the past hour
 #' whately %>%
@@ -86,22 +96,27 @@ etl_transform.etl_macleish <- function(obj, ...) {
 
 #' @rdname etl_extract.etl_macleish
 #' @importFrom DBI dbWriteTable
+#' @importFrom readr read_csv cols col_double
 #' @export
 
 etl_load.etl_macleish <- function(obj, ...) {
   # Whately
-  data <- read.csv(paste0(attr(obj, "load_dir"), "/whately.csv"))
+  data <- readr::read_csv(paste0(attr(obj, "load_dir"), "/whately.csv"), 
+                          col_types = readr::cols(Rain_mm_Tot = readr::col_double()))
   # write the table to the DB
   message("Writing whately data to the database...")
-  if (DBI::dbWriteTable(obj$con, "whately", data, overwrite = TRUE, row.names = FALSE, ...)) {
+  if (DBI::dbWriteTable(obj$con, "whately", as.data.frame(data), 
+                        overwrite = TRUE, row.names = FALSE, ...)) {
     message("Data was successfully written to database.")
     message(DBI::dbListTables(obj$con))
   }
   # Orchard
-  data <- read.csv(paste0(attr(obj, "load_dir"), "/orchard.csv"))
+  data <- readr::read_csv(paste0(attr(obj, "load_dir"), "/orchard.csv"), 
+                   col_types = readr::cols(Rain_mm_Tot = readr::col_double()))
   # write the table to the DB
   message("Writing orchard data to the database...")
-  if (DBI::dbWriteTable(obj$con, "orchard", data, overwrite = TRUE, row.names = FALSE, ...)) {
+  if (DBI::dbWriteTable(obj$con, "orchard", as.data.frame(data), 
+                        overwrite = TRUE, row.names = FALSE, ...)) {
     message("Data was successfully written to database.")
     message(DBI::dbListTables(obj$con))
   }
