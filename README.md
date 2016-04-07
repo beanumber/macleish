@@ -68,20 +68,20 @@ macleish %>%
 whately <- macleish %>%
   tbl("whately")
 whately %>%
-  mutate(the_year = strftime('%Y', when)) %>%
+  mutate(the_year = strftime('%Y', when, 'unixepoch')) %>%
   group_by(the_year) %>%
   summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(Temp_C_Avg))
 orchard <- macleish %>%
   tbl("orchard")
 orchard %>%
-  mutate(the_year = strftime('%Y', when)) %>%
+  mutate(the_year = strftime('%Y', when, 'unixepoch')) %>%
   group_by(the_year) %>%
   summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(Temp_C_Avg))
 ```
 
 ``` r
 daily <- whately %>%
-  mutate(the_date = date(when)) %>%
+  mutate(the_date = date(when, 'unixepoch')) %>%
   group_by(the_date) %>%
   summarize(N = n(), avgTemp = mean(Temp_C_Avg)) %>%
   collect()
