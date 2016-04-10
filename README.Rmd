@@ -1,8 +1,8 @@
 ---
 title: "MacLeish"
 output:
-  html_document:
-    keep_md: true
+  github_document:
+    html_preview: true
 ---
 
 [![Travis-CI Build Status](https://travis-ci.org/beanumber/macleish.svg?branch=master)](https://travis-ci.org/beanumber/macleish)
@@ -43,13 +43,13 @@ macleish %>%
 whately <- macleish %>%
   tbl("whately")
 whately %>%
-  mutate(the_year = strftime('%Y', when)) %>%
+  mutate(the_year = strftime('%Y', when, 'unixepoch')) %>%
   group_by(the_year) %>%
   summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(Temp_C_Avg))
 orchard <- macleish %>%
   tbl("orchard")
 orchard %>%
-  mutate(the_year = strftime('%Y', when)) %>%
+  mutate(the_year = strftime('%Y', when, 'unixepoch')) %>%
   group_by(the_year) %>%
   summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(Temp_C_Avg))
 ```
@@ -57,7 +57,7 @@ orchard %>%
 
 ```{r, eval=FALSE, fig.width = 7, fig.height = 5, message=FALSE}
 daily <- whately %>%
-  mutate(the_date = date(when)) %>%
+  mutate(the_date = date(when, 'unixepoch')) %>%
   group_by(the_date) %>%
   summarize(N = n(), avgTemp = mean(Temp_C_Avg)) %>%
   collect()
@@ -76,7 +76,7 @@ names(macleish_layers)
 ```
 
 
-```{r, fig.width=7, fig.height=7, message=FALSE}
+```{r, eval=FALSE, fig.width=7, fig.height=7, message=FALSE}
 library(leaflet)
 leaflet() %>%
   addTiles() %>%
