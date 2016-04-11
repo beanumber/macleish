@@ -34,34 +34,6 @@ This R package can be used to process and analyze data from [MacLeish Field Stat
 ## Definitions of Climatic Indicators 
 The precipitation and biological temperature indicators calculated for this doucumentation provide a method of comparing general, biologically meaningful climatic trends in di erent years. The indicators are based on average daily temperatures and rainfall summations. Even though days are in the name of the temperature indicators, they do not actually reflect periods of 24 hours. The indicators really measure the number of degrees the average temperature was above or below a threshold temperature each day of the year. These values are described at [Nelson Institute Center for Climate Research Webpage](http://ccr.aos.wisc.edu/climate_modeling/wisconsin_Climate/descriptions.php). All temperature terms were measured in degrees Celsius in this doucumentation. 
 
-#### Freezing Degree Days 
-The number of degrees Celsius that the daily mean temperature is below 0 °C. For example, two days with daily mean temperatures of -10 °C and 0 °C have 10 and 0 freezing degree days, respectively. Annual total freezing degree days are calculated by summing all of freezing degree days. 
-
-#### Growing Degree Days
-The number of degrees Celsius that the daily mean temperature exceeds 10 °C . For example, two days with daily mean temperatures of 15 °C and 10 °C have 5 and 0 growing degree days, respectively. Annual total growing degree days are calculated by summing all of growing degree days. 
-
-#### Spring Onset Date
-The first day of the year where the average high temperature of that day and the previous four days averages 10 °C and no subsequent ve day period until mid-summer has an average high temperature below 6.1 °C. 
-
-#### Last Spring Freeze Date
-The last day between January 1st and mid-summer with a low temperature below 0 °C. 
-
-#### First Autumn Freeze Date
-The first day a er mid-summer with a low temperature below 0 °C. 
-
-#### Length of the Growing Season
-The number of days between the last spring freeze and rst autumn freeze. 
-
-#### Frequency of 1” Precipitation Events
-The number of days per year with precipitation of at least one inch (25.4 mm). 
-
-#### Frequency of 2” Precipitation Events
-The number of days per year with precipitation of at least two inches (50.8 mm). 
-
-#### Frequency of 3” Precipitation Events
-The number of days per year with precipitation of at least three inches (76.2 mm). 
-
-
 ## Getting started:
 To start using the package, you need to run the following code in order to load the `macleish` package in to your R session:
 
@@ -116,6 +88,7 @@ ggplot(data = daily, aes(x = day_of_year, y = avgTemp)) +
   geom_point() + geom_smooth()
 ```
 
+
 The monthly average temperature in 2015 ranged from -6.4 °C in January to 21.6°C in July. The highest recorded temperature at WhatelyMet was 31.6 °C on July 23th. The lowest recorded temperature was -21.4 °C on January 6th. The average daily temperature range recorded from both stations (daily maximum-minimum) was -10.5 °C. The maximum daily temperature range was 20.8 °C at both stations but occurred on May 4th at OrchardMet and on May 8th at WhatleyMet. The daily minimum temperature range was 2.3 °C and occurred on January 26th. However daily temperature ranges of less than three degrees also occurred on February 9th, April 9th, June 1st and June 28th. 
 Percent average monthly relative humidity ranged from 56.4% (March) to 94% (December). Interestingly, WhatelyMet relative humidity values were noteably higher than OrchardMet values starting in August. It is unclear why this pattern occurred during the last part of the year. 
 
@@ -125,12 +98,35 @@ Percent average monthly relative humidity ranged from 56.4% (March) to 94% (Dece
 # Question: Do we want to recreat this part of the original 2015 report? We don't have any soil data.
 
 
-
 ## Example 3: Wind
-# Two plots are needed here! (Wind direction and speed summary for OrchardMet in 2015.)
-Wind speed and direction is measured every second and then averaged and logged every 10 minutes at both weather stations. OrchardMet measures wind midway up the forest canopy (10 m high) in a small woodland clearing while WhatleyMet measures wind 25.3 m above the ground which is above the tree canopy. 
-# Two plots are needed here! (Wind direction and speed summary for WhatleyMet in 2015.)
-Wind speed and direction varied between the 10 m OrchardMet and the 25 m WhatleyMet. OrchardMet is located in a woodland clearing where winds are buffeted by trees of the forest canopy. Most wind comes from the west and southwest, with 67% of the time less than 1 m/s. Wind speeds did not average over 3 m/s at any time of the year. 
+
+Wind speed and direction is measured every second and then averaged and logged every 10 minutes at both weather stations. OrchardMet measures wind midway up the forest canopy (10 m high) in a small woodland clearing while WhatleyMet measures wind 25.3 m above the ground which is above the tree canopy.
+
+#### orchard wind data summary
+
+plot a windrose of orchard 2015 by showing the wind speed and direction for given facets using `clifro` and `ggplot2`
+```{r,fig.width = 7, fig.height = 5, message=FALSE}
+require(clifro)
+wind.orchard<-orchard_2015 %>%
+  select(when,WSpd_mps,Wdir_deg)
+colnames(wind.orchard)[2]<-"wind_speeds"
+colnames(wind.orchard)[3]<-"wind_dirs"
+with(wind.orchard,windrose(wind_speeds,wind_dirs), ggtheme = "bw", col_pal = "Greys")
+```
+
+OrchardMet is located in a woodland clearing where winds are buffeted by trees of the forest canopy. Most wind comes from the west and southwest, with 67% of the time less than 1 m/s. Wind speeds did not average over 3 m/s at any time of the year. 
+
+#### whately wind data summary
+
+```{r,fig.width = 7, fig.height = 5, message=FALSE}
+require(clifro)
+wind.whately<-whately_2015 %>%
+  select(when,WSpd_mps,Wdir_deg)
+colnames(wind.whately)[2]<-"wind_speeds"
+colnames(wind.whately)[3]<-"wind_dirs"
+with(wind.whately,windrose(wind_speeds,wind_dirs),ggtheme = "bw", col_pal = "Greys")
+```
+
 WhatleyMet is above the forest canopy and recorded winds frequently from the northwest, west, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
 
 
@@ -152,13 +148,14 @@ Now, we can creat a xyplot to show how much rainfall you would have per day over
 The following plot will show you how much rainfall you would have per day at macleish field station over 2015.
 
 ```{r, fig.width = 7, fig.height = 5, message=FALSE}
+# daily precipitation
 ggplot(data = daily2015, aes(x = day_of_year, y = avgRain)) +
-  geom_point()
+  geom_bar(stat="identity")
+# cumulative precipitation 
+ggplot(daily2015,aes(x=day_of_year, y=cumsum(avgRain))) +geom_line()
 ```
 
-# A plot is needed here! (Daily precipitation totals (mm) and cumulative precipitation (mm) recorded at WhatelyMet.)
-A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015 (Table 4). Although precipitation is relatively evenly distributed across the year, precipitation totals were highest in June and lowest in March. February and March had the greatest number of precipitation events (Table 4, Figure 4). Annual precipitation accumulated at a low, but fairly steady rate through June (Figure 4). After June rainfall levels increased and total accumulation increased sharply to the end of the calendar year. 
-Starting in June a series of large rainfall events (40-50 mm) occurred regularly over the summer (Figure 4). The largest precipitation event in 2015 occurred on September 30th when 113.8 mm (8.7% of the annual total) of precipitation fell. During 2015, there were 15, 25.4 mm (1”) precipitation events; 2, 50.8 mm (2”) precipitation events; and 1, 76.2 mm (3”) precipitation event. 
+A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. Although precipitation is relatively evenly distributed across the year, precipitation totals were highest in June and lowest in March. February and March had the greatest number of precipitation events . Annual precipitation accumulated at a low, but fairly steady rate through June. After June rainfall levels increased and total accumulation increased sharply to the end of the calendar year. Starting in June a series of large rainfall events (40-50 mm) occurred regularly over the summer. The largest precipitation event in 2015 occurred on September 30th when 113.8 mm (8.7% of the annual total) of precipitation fell. During 2015, there were 15, 25.4 mm (1”) precipitation events; 2, 50.8 mm (2”) precipitation events; and 1, 76.2 mm (3”) precipitation event. 
 
 
 
