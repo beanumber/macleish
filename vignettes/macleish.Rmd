@@ -1,6 +1,6 @@
 ---
 title: "Ada & Archibald MacLeish Field Station Data"
-author: "Ben Baumer, Rose Goueth, Wencong Li (Priscilla) and Weijia Zhang (Vega)"
+author: "Ben Baumer, Rose Goueth, Wencong Li (Priscilla) and Weijia Zhang (Vega), Paul Wetzel"
 date: "04-10-2016"
 output: rmarkdown::html_vignette
 vignette: >
@@ -13,11 +13,11 @@ vignette: >
 
 You can download the orginal report as a PDF file from here: [MacLeish Field Station 2015 Weather Report](http://www.smith.edu/ceeds/macleish_monitoring.php)
 
-## Introduction
+## Introduction to Macleish Weather Stations
 Weather conditions at Smith College’s Ada & Archibald MacLeish Field Station are recorded at the WhatelyMet weather station. This weather collection site is located at the end of Poplar Hill Road in Whately, Massachusetts, USA (Latitude 42 deg. 26 min. 56 sec. N Longitude 72 deg. 40 min. 50 sec. W). The meteorological instruments of WhatelyMet (except the rain gauge) are mounted at the top of a tower 25.3 m tall, well above the surrounding forest canopy. The tower is located on a local ridge at an elevation 250.75m above sea level.
 The second weather data collection site, known as OrchardMet, is located about 250 m north of the first tower in an open field next to an apple orchard. Full canopy trees (~20 m tall) are within 30 m of this station. This station has a standard instrument configuration with temperature, relative humidity, solar radiation, and barometric pressure measured between 1.5 and 2.0 m above the ground. Wind speed and direction are measured on a 10 m tall tower and precipitation is measured on the ground. Ground temperature is measured at 15 and 30 cm below the ground surface 2 m south of the tower. The tower is located 258.1 m above sea level. Data collection at OrchardMet began on June 27th, 2014. 
 
-This doucumentation describes the weather data collected at WhatelyMet and OrchardMet during 2014. It provides highlights of the year’s weather as well as general trends that were observed. We hope that you find the doucumentation both interesting and useful. All data reported in this document are available electronically. Please direct all questions and data inquiries to Paul Wetzel at pwetzel@smith.edu or telephone 413.585.2646.
+This doucumentation describes the weather data collected at WhatelyMet and OrchardMet during 2015. It provides highlights of the year’s weather as well as general trends that were observed. We hope that you find the doucumentation both interesting and useful. All data reported in this document are available electronically. Please direct all questions and data inquiries to Paul Wetzel at pwetzel@smith.edu or telephone 413.585.2646.
 
 This R package can be used to process and analyze data from [MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php). The following text will give you an outline of how to use the package by showing demos of the 2015 weather data. 
 
@@ -88,15 +88,8 @@ ggplot(data = daily, aes(x = day_of_year, y = avgTemp)) +
   geom_point() + geom_smooth()
 ```
 
-
 The monthly average temperature in 2015 ranged from -6.4 °C in January to 21.6°C in July. The highest recorded temperature at WhatelyMet was 31.6 °C on July 23th. The lowest recorded temperature was -21.4 °C on January 6th. The average daily temperature range recorded from both stations (daily maximum-minimum) was -10.5 °C. The maximum daily temperature range was 20.8 °C at both stations but occurred on May 4th at OrchardMet and on May 8th at WhatleyMet. The daily minimum temperature range was 2.3 °C and occurred on January 26th. However daily temperature ranges of less than three degrees also occurred on February 9th, April 9th, June 1st and June 28th. 
 Percent average monthly relative humidity ranged from 56.4% (March) to 94% (December). Interestingly, WhatelyMet relative humidity values were noteably higher than OrchardMet values starting in August. It is unclear why this pattern occurred during the last part of the year. 
-
-
-## Example 2: Soil Temperature and Moisture
-# A plot is needed here! (time series: temperature vs. time)
-# Question: Do we want to recreat this part of the original 2015 report? We don't have any soil data.
-
 
 ## Example 3: Wind
 
@@ -159,12 +152,12 @@ A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. Alth
 
 
 
-## Using the Macleish Field Station Geographical Data
+## Using the Macleish Field Station Geographic Data
 ## Example 6: Maps
 We can use the `ggmap` package to display a map of macleish field station.
 
 Here is the geographical location of macleish station.
-```{r}
+```{r,fig.width=7, fig.height=7, message=FALSE}
 macleish <- data.frame( lon = -72.679389, lat = 42.449167)
 ```
 
