@@ -8,16 +8,23 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+```{r, include=FALSE}
+library(knitr)
+opts_chunk$set(fig.width = 6, fig.height = 4)
+```
+
+
 ## Using the MacLeish Field Station Data
 ### This doucumentation is a recreation of the Macleish Field Station 2015 Weather Report 
 
-You can download the orginal report as a PDF file from here: [MacLeish Field Station 2015 Weather Report](http://www.smith.edu/ceeds/macleish_monitoring.php)
+You can download the orginal report as a PDF file from here: [MacLeish Field Station 2015 Weather Report](http://www.smith.edu/ceeds/documents/DataInformation2015.pdf)
 
 ## Introduction to Macleish Weather Stations
 Weather conditions at Smith College’s Ada & Archibald MacLeish Field Station are recorded at the WhatelyMet weather station. This weather collection site is located at the end of Poplar Hill Road in Whately, Massachusetts, USA (Latitude 42 deg. 26 min. 56 sec. N Longitude 72 deg. 40 min. 50 sec. W). The meteorological instruments of WhatelyMet (except the rain gauge) are mounted at the top of a tower 25.3 m tall, well above the surrounding forest canopy. The tower is located on a local ridge at an elevation 250.75m above sea level.
 The second weather data collection site, known as OrchardMet, is located about 250 m north of the first tower in an open field next to an apple orchard. Full canopy trees (~20 m tall) are within 30 m of this station. This station has a standard instrument configuration with temperature, relative humidity, solar radiation, and barometric pressure measured between 1.5 and 2.0 m above the ground. Wind speed and direction are measured on a 10 m tall tower and precipitation is measured on the ground. Ground temperature is measured at 15 and 30 cm below the ground surface 2 m south of the tower. The tower is located 258.1 m above sea level. Data collection at OrchardMet began on June 27th, 2014. 
 
-This doucumentation describes the weather data collected at WhatelyMet and OrchardMet during 2015. It provides highlights of the year’s weather as well as general trends that were observed. We hope that you find the doucumentation both interesting and useful. All data reported in this document are available electronically. Please direct all questions and data inquiries to Paul Wetzel at pwetzel@smith.edu or telephone 413.585.2646.
+This documentation describes the weather data collected at WhatelyMet and OrchardMet during 2015. It provides highlights of the year’s weather as well as general trends that were observed. We hope that you find the doucumentation both interesting and useful. All data reported in this document are available electronically. Please direct all questions and data inquiries to Paul Wetzel at pwetzel@smith.edu or telephone 413.585.2646.
 
 This R package can be used to process and analyze data from [MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php). The following text will give you an outline of how to use the package by showing demos of the 2015 weather data. 
 
@@ -64,7 +71,7 @@ Plots can help you to visualize your data. They are helpful, especially if you w
 For example, the temperature recorder may be off because someone bumped into the instrument, or because it could have shut off by itself. So graphing this column of data would be of best interest. 
 
 You need to use the following three packages in the following examples. 
-```{r, fig.width = 7, fig.height = 5, message=FALSE}
+```{r, message=FALSE}
 library(ggplot2)
 library(dplyr)
 library(lubridate)
@@ -74,7 +81,7 @@ library(lubridate)
 ## Example 1: Air Temperature & Relative Humidity
 In this example we are trying to visualize the trend of average daily temperature at macleish field station over 2015.
 
-```{r, fig.width = 7, fig.height = 5, message=FALSE}
+```{r, message=FALSE}
 daily <- whately_2015 %>%
   mutate(day_of_year = yday(when)) %>%
   group_by(day_of_year) %>%
@@ -83,7 +90,7 @@ daily <- whately_2015 %>%
 
 The following plot will show you the average daily temperature at macleish field station over 2015.
 
-```{r, fig.width = 7, fig.height = 5, message=FALSE}
+```{r, message=FALSE}
 ggplot(data = daily, aes(x = day_of_year, y = avgTemp)) +
   geom_point() + geom_smooth()
 ```
@@ -98,7 +105,7 @@ Wind speed and direction is measured every second and then averaged and logged e
 #### orchard wind data summary
 
 plot a windrose of orchard 2015 by showing the wind speed and direction for given facets using `clifro` and `ggplot2`
-```{r,fig.width = 7, fig.height = 5, message=FALSE}
+```{r, message=FALSE}
 require(clifro)
 wind.orchard<-orchard_2015 %>%
   select(when,WSpd_mps,Wdir_deg)
@@ -111,7 +118,7 @@ OrchardMet is located in a woodland clearing where winds are buffeted by trees o
 
 #### whately wind data summary
 
-```{r,fig.width = 7, fig.height = 5, message=FALSE}
+```{r, message=FALSE}
 require(clifro)
 wind.whately<-whately_2015 %>%
   select(when,WSpd_mps,Wdir_deg)
@@ -129,7 +136,7 @@ The "when" variable is used to plot the dates of each row of macleish weather da
 
 First, we need to modify our data in order to have it in the form we want. Since the data was recorded every ten minutes, we need to group the data in respect to days in order to get the mean rainfall amount per day.
 
-```{r, fig.width = 7, fig.height = 5, message=FALSE}
+```{r, message=FALSE}
 daily2015 <- whately_2015 %>%
   mutate(day_of_year = yday(when)) %>%
   group_by(day_of_year) %>%
@@ -140,7 +147,7 @@ Now, we can creat a xyplot to show how much rainfall you would have per day over
 
 The following plot will show you how much rainfall you would have per day at macleish field station over 2015.
 
-```{r, fig.width = 7, fig.height = 5, message=FALSE}
+```{r, message=FALSE}
 # daily precipitation
 ggplot(data = daily2015, aes(x = day_of_year, y = avgRain)) +
   geom_bar(stat="identity")
@@ -157,25 +164,25 @@ A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. Alth
 We can use the `ggmap` package to display a map of macleish field station.
 
 Here is the geographical location of macleish station.
-```{r,fig.width=7, fig.height=7, message=FALSE}
+```{r, message=FALSE}
 macleish <- data.frame( lon = -72.679389, lat = 42.449167)
 ```
 
 We can get a map of macleish field station by using the following command in the `ggmap` package.
-```{r, fig.width=7, fig.height=7, message=FALSE}
+```{r, message=FALSE}
 library(ggmap)
 map <- ggmap(get_map(location = macleish, maptype = "terrain", zoom = 16))
 ```
 
 The  `tidy` command in the  `broom` package makes the building layer a data frame so that we can use `ggmap` to map the buildings on a static map.
 
-```{r, fig.width=7, fig.height=7, message=FALSE}
+```{r, message=FALSE}
 library(broom)
 buildings_tidy <- tidy(macleish_layers[["buildings"]])
 ```
 
 Now, we can creat a map to show where are the buildings at macleish field station.
 
-```{r, fig.width=7, fig.height=7, message=FALSE}
+```{r, message=FALSE}
 map + geom_polygon(data = buildings_tidy, aes(x = long, y = lat, color = group))  
 ```

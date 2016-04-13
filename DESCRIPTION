@@ -35,7 +35,8 @@ Suggests:
     knitr,
     ggmap,
     leaflet,
-    rmarkdown
+    rmarkdown,
+    clifro
 Enhances:
     sp,
     rgdal,
