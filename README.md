@@ -106,10 +106,9 @@ names(macleish_layers)
 ```
 
     ##  [1] "landmarks"         "forests"           "streams"          
-    ##  [4] "challenge_courses" "reservoir"         "buildings"        
-    ##  [7] "wetlands"          "slopes"            "schools"          
-    ## [10] "boundary"          "research"          "soil"             
-    ## [13] "trails"
+    ##  [4] "challenge_courses" "buildings"         "wetlands"         
+    ##  [7] "slopes"            "boundary"          "research"         
+    ## [10] "soil"              "trails"
 
 ``` r
 library(leaflet)
