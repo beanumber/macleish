@@ -21,12 +21,11 @@
 #' All variables are averaged over the 10 minute inverval unless otherwise noted.
 #' \describe{
 #'   \item{when}{timestamp for each measurment set.}
-#'   \item{record}{Starting from the first measurements recorded from the year, goes up by 1 every 10 minutes.}
+#'   \item{Temp_C_Avg}{average temperature, in Celsius}
 #'   \item{WSpd_mps}{Wind speed, in  meters per second}
 #'   \item{Wdir_deg}{Wind direction, in degrees}
-#'   \item{Temp_C_Avg}{average temperature, in Celsius}
-#'   \item{Press_mb_Avg}{Atmospheric pressure, in millibars}
 #'   \item{RH_per_Avg}{How much water there is in the air, in millimeters}
+#'   \item{Press_mb_Avg}{Atmospheric pressure, in millibars}
 #'   \item{Rain_mm_Tot}{Total rainfall, in millimeters}
 #'   \item{SlrW_Avg}{Amount of radiation coming from the sun, in Watts/meters^2. Solar measurement for Whatley}
 #'   \item{PAR_Den_Avg}{Measures solar radiation. One of two solar measurements for Orchard}
