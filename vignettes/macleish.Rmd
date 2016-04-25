@@ -72,10 +72,22 @@ This documentation describes the weather data collected at WhatelyMet and Orchar
 * PAR_Den_Avg: OrchardMet Measures solar radiation (W)
 * PAR_Tot_Avg: OrchardMet Measures total solar radiation (W)
 
-#### Definitions of Climatic Indicators 
+#### Climatic Indicators 
+Climatic indicators are used in this doucumentation to describe climatic events, and here we list the definitions for these terms for you to better understand this documentation.  
 The precipitation and biological temperature indicators calculated for this doucumentation provide a method of comparing general, biologically meaningful climatic trends in different years. The indicators are based on average daily temperatures and rainfall summations. Even though days are in the name of the temperature indicators, they do not actually reflect periods of 24 hours. The indicators really measure the number of degrees the average temperature was above or below a threshold temperature each day of the year. These values are described at [Nelson Institute Center for Climate Research Webpage](http://ccr.aos.wisc.edu/climate_modeling/wisconsin_Climate/descriptions.php). All temperature terms were measured in degrees Celsius. 
 
-> What? I don't understand what this is saying.
+Here are the definitions of Climatic Indicators:
+
+* Freezing Degree Days — The number of degrees Celsius that the daily mean temperature is below 0 °C.
+* Growing Degree Days — The number of degrees Celsius that the daily mean temperature exceeds 10 °C .
+* Spring Onset Date — The first day of the year where the average high temperature of that day and the previous four days averages 10 °C and no subsequent five day period until mid-summer has an average high temperature below 6.1 °C. 
+* Last Spring Freeze Date — The last day between January 1st and mid-summer with a low temperature below 0 °C. 
+* First Autumn Freeze Date — The first day after mid-summer with a low temperature below 0 °C. 
+* Length of the Growing Season — The number of days between the last spring freeze and first autumn freeze. 
+* Frequency of 1” Precipitation Events — The number of days per year with precipitation of at least 25.4 mm. 
+* Frequency of 2” Precipitation Events — The number of days per year with precipitation of at least 50.8 mm. 
+* Frequency of 3” Precipitation Events — The number of days per year with precipitation of at least 76.2 mm. 
+
 
 ### Example 1: Air Temperature & Relative Humidity
 In this example we visualize the trend of average daily temperature at the MacLeish Field Station over 2015.
