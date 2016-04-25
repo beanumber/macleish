@@ -67,8 +67,10 @@ This documentation describes the weather data collected at WhatelyMet and Orchar
 * Wdir_deg: Wind direction (degree)
 * RH_per_Avg: Relative Humidity (%)
 * Press_mb_Avg: Average atomspheric pressure (mb)
-* SlrW_Avg: Average Solar Radiance (W)
+* SlrW_Avg: WhatelyMet Average Solar Radiance (W)
 * Rain_mm_Tot: Main Rainfall amount per day (mm)
+* PAR_Den_Avg: OrchardMet Measures solar radiation (W)
+* PAR_Tot_Avg: OrchardMet Measures total solar radiation (W)
 
 #### Definitions of Climatic Indicators 
 The precipitation and biological temperature indicators calculated for this doucumentation provide a method of comparing general, biologically meaningful climatic trends in different years. The indicators are based on average daily temperatures and rainfall summations. Even though days are in the name of the temperature indicators, they do not actually reflect periods of 24 hours. The indicators really measure the number of degrees the average temperature was above or below a threshold temperature each day of the year. These values are described at [Nelson Institute Center for Climate Research Webpage](http://ccr.aos.wisc.edu/climate_modeling/wisconsin_Climate/descriptions.php). All temperature terms were measured in degrees Celsius. 
