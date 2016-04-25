@@ -69,8 +69,8 @@ This documentation describes the weather data collected at WhatelyMet and Orchar
 * Press_mb_Avg: Average atomspheric pressure (mb)
 * SlrW_Avg: WhatelyMet Average Solar Radiance (W)
 * Rain_mm_Tot: Main Rainfall amount per day (mm)
-* PAR_Den_Avg: OrchardMet Measures solar radiation (W)
-* PAR_Tot_Avg: OrchardMet Measures total solar radiation (W)
+* PAR_Den_Avg: Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average density (W/m^2)
+* PAR_Tot_Avg: Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average total over measurement period (W/m^2)
 
 #### Climatic Indicators 
 Climatic indicators are used in this doucumentation to describe climatic events, and here we list the definitions for these terms for you to better understand this documentation.  
