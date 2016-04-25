@@ -62,15 +62,16 @@ This documentation describes the weather data collected at WhatelyMet and Orchar
 
 #### Variables used in this doucumentation:
 
-* Temp_C_Avg: the average temperature (degrees C)
-* WSpd_mps: Average windspeed (meters per second)
+* when: Timestamp for each measurment set
+* Temp_C_Avg: Average temperature (°C)
+* WSpd_mps: Average windspeed (m/s)
 * Wdir_deg: Wind direction (degree)
-* RH_per_Avg: Relative Humidity (%)
+* RH_per_Avg: Relative Humidity (mm)
 * Press_mb_Avg: Average atomspheric pressure (mb)
-* SlrW_Avg: WhatelyMet Average Solar Radiance (W)
 * Rain_mm_Tot: Main Rainfall amount per day (mm)
-* PAR_Den_Avg: Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average density (W/m^2)
-* PAR_Tot_Avg: Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average total over measurement period (W/m^2)
+* SlrW_Avg: WhatelyMet Average Solar Radiance (W/m^2)
+* PAR_Den_Avg: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average density (W/m^2)
+* PAR_Tot_Avg: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average total over measurement period (W/m^2)
 
 #### Climatic Indicators 
 Climatic indicators are used in this doucumentation to describe climatic events, and here we list the definitions for these terms for you to better understand this documentation.  
