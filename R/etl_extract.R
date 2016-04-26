@@ -71,7 +71,7 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(Press_mb_Avg = ~as.numeric(Press_mb_Avg)) %>%
     mutate_(SlrW_Avg = ~as.numeric(SlrW_Avg)) %>%
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
-    distinct()
+    unique()
   write.csv(out, file = paste0(attr(obj, "load_dir"), "/whately.csv"), row.names = FALSE)
   # Orchard
   lcl <- paste0(attr(obj, "raw_dir"), "/OrchardMet_Met_10min.dat")
@@ -89,7 +89,7 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(PAR_Den_Avg = ~as.numeric(PAR_Den_Avg)) %>%
     mutate_(PAR_Tot_Avg = ~as.numeric(PAR_Tot_Avg)) %>%
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
-    distinct()
+    unique()
   write.csv(out, file = paste0(attr(obj, "load_dir"), "/orchard.csv"), row.names = FALSE)
   invisible(obj)
 }

@@ -83,10 +83,12 @@ leaflet() %>%
   addPolygons(data = macleish_layers[["boundary"]], 
               weight = 1, fillOpacity = 0.1) %>%
   addPolygons(data = macleish_layers[["buildings"]], 
-              weight = 1, popup = ~ Feature) %>%
+              weight = 1, popup = ~ name) %>%
   addPolylines(data = macleish_layers[["trails"]], 
                weight = 1, color = "brown",
-               popup = ~ trl_name) %>%
+               popup = ~ name) %>%
   addPolylines(data = macleish_layers[["streams"]], 
-               weight = 2)
+               weight = 2) %>%
+  addMarkers(data = subset(macleish_layers[["landmarks"]], grepl("Met", Label)), 
+             popup = ~Label)
 ```
