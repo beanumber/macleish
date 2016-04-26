@@ -262,7 +262,9 @@ map <- leaflet() %>%
   addTiles() %>%
   addPolygons(data = macleish_layers[["boundary"]],
               weight = 1) %>%
-  addMarkers(data = macleish_layers[["landmarks"]], 
+  addPolygons(data = macleish_layers[["buildings"]],
+              weight = 1) %>%
+  addMarkers(data = subset(macleish_layers[["landmarks"]], grepl("Met", Label)), 
              popup = ~Label)
 map
 ```
