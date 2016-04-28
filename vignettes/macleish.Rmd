@@ -101,7 +101,8 @@ daily <- whately_2015 %>%
   mutate(the_date = as.Date(when)) %>%
   group_by(the_date) %>%
   summarize(N = n(), avg_temp = mean(Temp_C_Avg), 
-            max_temp = max(Temp_C_Avg), min_temp = min(Temp_C_Avg))
+            max_temp = max(Temp_C_Avg), min_temp =
+              min(Temp_C_Avg))
 ```
 
 
@@ -130,49 +131,43 @@ monthly_w %>%
   inner_join(monthly_o, by = "the_month")
 ```
 
-The highest recorded temperature at WhatelyMet was 31.6 °C on July 23th. The lowest recorded temperature was -21.4 °C on January 6th. 
-
-> These don't seem to be correct. What is going on? 
-
 ```{r temp-extremes}
 daily %>%
   arrange(desc(max_temp)) %>%
-  head()
+  head(1)
 daily %>%
   arrange(min_temp) %>%
+  head(1)
+```
+The highest recorded temperature at WhatelyMet was 33.08 °C on Septemper 8th. The lowest recorded temperature was -22.28 °C on January 8th. 
+
+```{r}
+daily%>%
+  mutate(temp_range = max_temp-min_temp)%>%
+  arrange(desc(temp_range))%>%
+  head(1)
+daily%>%
+  mutate(temp_range = max_temp-min_temp)%>%
+  arrange(temp_range)%>%
   head()
 ```
 
-The average daily temperature range recorded from both stations (daily maximum-minimum) was -10.5 °C. The maximum daily temperature range was 20.8 °C at both stations but occurred on May 4th at OrchardMet and on May 8th at WhatleyMet. The daily minimum temperature range was 2.3 °C and occurred on January 26th. However daily temperature ranges of less than three degrees also occurred on February 9th, April 9th, June 1st, and June 28th. 
-
-> Again, these numbers don't seem to match up. 
-
-```{r temp-range}
-daily %>%
-  mutate(temp_range = max_temp - min_temp) %>%
-  summarize(avg_temp_range = mean(temp_range), 
-            max_temp_range = max(temp_range))
-daily %>%
-  mutate(temp_range = max_temp - min_temp) %>%
-  arrange(temp_range) %>%
-  head()
-```
-
-Percent average monthly relative humidity ranged from 56.4% (March) to 94% (December). Interestingly, WhatelyMet relative humidity values were notably higher than OrchardMet values starting in August. It is unclear why this pattern occurred during the last part of the year.
-
+The average daily temperature range recorded from both stations (daily maximum-minimum) was -10.5 °C. The maximum daily temperature range was 20.37 °C on May 24th at WhatelyMet. The minimum daily temperature range was 0.876 °C and occurred on January 1st at WhatelyMet. However, daily temperature ranges of less than three degrees also occurred on February 9th, April 9th, June 28th, and December 30th.
 
 ```{r humidity-table}
 monthly_w <- whately_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(avg_humidity = mean(RH_per_Avg))
+  summarize(avg_humidity_w = mean(RH_per_Avg))
 monthly_o <- orchard_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(avg_humidity = mean(RH_per_Avg))
+  summarize(avg_humidity_o = mean(RH_per_Avg))
 monthly_w %>%
   inner_join(monthly_o, by = "the_month")
 ```
+
+Percent average monthly relative humidity ranged from 56.4% (March) to 94% (December). Interestingly, WhatelyMet relative humidity values were notably higher than OrchardMet values starting in August. It is unclear why this pattern occurred during the last part of the year.
 
 ### Example 3: Wind
 
@@ -191,37 +186,33 @@ whately_2015 %>%
   with(windrose(WSpd_mps, Wdir_deg))
 ```
 
-WhatleyMet is above the forest canopy and recorded winds frequently from the northwest, west, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
+WhatleyMet is above the forest canopy and recorded winds frequently from the northwest, north, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
 
 
 ### Example 5: Precipitation
 
 The `when` variable records a timestamp for each row of the `macleish` weather data. The observations record the average of each measurement over a 10 minute interval. 
 
-A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. 
-
 ```{r}
 sum(whately_2015$Rain_mm_Tot)
 ```
 
-Although precipitation is relatively evenly distributed across the year, precipitation totals were highest in June and lowest in March.
+A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. 
 
 ```{r rain-table}
 monthly_w <- whately_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(total_precip = sum(Rain_mm_Tot))
+  summarize(total_precip_w = sum(Rain_mm_Tot))
 monthly_o <- orchard_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(total_precip = sum(Rain_mm_Tot))
+  summarize(total_precip_o = sum(Rain_mm_Tot))
 monthly_w %>%
   inner_join(monthly_o, by = "the_month")
 ```
 
-February and March had the greatest number of precipitation events. Annual precipitation accumulated at a low, but fairly steady rate through June. After June rainfall levels increased and total accumulation increased sharply to the end of the calendar year. Starting in June a series of large rainfall events (40-50 mm) occurred regularly over the summer. The largest precipitation event in 2015 occurred on September 30th when 113.8 mm (8.7% of the annual total) of precipitation fell. During 2015, there were 15, 25.4 mm (1”) precipitation events; 2, 50.8 mm (2”) precipitation events; and 1, 76.2 mm (3”) precipitation event. 
-
-
+Although precipitation is relatively evenly distributed across the year, precipitation totals were highest in June and lowest in May.
 
 Since the data was recorded every ten minutes, we need to group the data daily in order to get the mean rainfall amount per day.
 
@@ -243,6 +234,8 @@ ggplot(data = daily_precip,
   geom_line(aes(y = cum_rescale), color = "blue") + 
   ylab("Daily Precipitation (mm)") + xlab(NULL)
 ```
+
+February and March had the greatest number of precipitation events. Annual precipitation accumulated at a low, but fairly steady rate through June. After June rainfall levels increased and total accumulation increased sharply to the end of the calendar year. Starting in June a series of large rainfall events (40-50 mm) occurred regularly over the summer. The largest precipitation event in 2015 occurred on September 30th when 113.8 mm (8.7% of the annual total) of precipitation fell. During 2015, there were 15, 25.4 mm (1”) precipitation events; 2, 50.8 mm (2”) precipitation events; and 1, 76.2 mm (3”) precipitation event. 
 
 ## Using the Macleish Field Station Geographic Data
 
