@@ -16,10 +16,10 @@ opts_chunk$set(fig.width = 6, fig.height = 4)
 
 ## MacLeish
 
-The [`macleish`](http://www.github.com/beanumber/macleish) package for R contains weather data collection at the [Ada & Archibald MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php) in Whately, MA, as well as spatial data detailing various features of the property. This vignette will illustrate how these data can be used. 
+The [`macleish`](http://www.github.com/beanumber/macleish) package for R contains weather data collected at the [Ada & Archibald MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php) in Whately, MA, as well as spatial data detailing various features of the property. This vignette will illustrate how these data can be used. 
 
 ### Getting started:
-To start using the package, load the `macleish` package in to your R session:
+To start using the package, load the `macleish` package into your R session:
 
 ```{r, message=FALSE}
 library(macleish)
@@ -49,7 +49,7 @@ help("etl_extract.etl_macleish")
 
 ### The 2015 MacLeish weather report
 
-This portion of the vignette is largely a re-creation of the Macleish Field Station 2015 Weather Report. You can download [the orginal report](http://www.smith.edu/ceeds/documents/DataInformation2015.pdf) as a PDF file.]
+This portion of the vignette is largely a re-creation of the Macleish Field Station 2015 Weather Report. You can download [the orginal report](http://www.smith.edu/ceeds/documents/DataInformation2015.pdf) as a PDF file.
 
 #### Introduction to MacLeish Weather Stations
 Weather conditions at Smith College's [Ada & Archibald MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php) are recorded at the **WhatelyMet** weather station. This weather collection site is located at the end of Poplar Hill Road in Whately, Massachusetts, USA (Latitude 42 deg. 26 min. 56 sec. N Longitude 72 deg. 40 min. 50 sec. W). The meteorological instruments of WhatelyMet (except the rain gauge) are mounted at the top of a tower 25.3 m tall, well above the surrounding forest canopy. The tower is located on a local ridge at an elevation 250.75m above sea level.
@@ -58,7 +58,7 @@ Weather conditions at Smith College's [Ada & Archibald MacLeish Field Station](h
 
 The second weather data collection site, known as **OrchardMet**, is located about 250 m north of the first tower in an open field next to an apple orchard. Full canopy trees (~20 m tall) are within 30 m of this station. This station has a standard instrument configuration with temperature, relative humidity, solar radiation, and barometric pressure measured between 1.5 and 2.0 m above the ground. Wind speed and direction are measured on a 10 m tall tower and precipitation is measured on the ground. Ground temperature is measured at 15 and 30 cm below the ground surface 2 m south of the tower. The tower is located 258.1 m above sea level. Data collection at OrchardMet began on June 27th, 2014. 
 
-This documentation describes the weather data collected at WhatelyMet and OrchardMet during 2015. It provides highlights of the year's weather as well as general trends that were observed. We hope that you find the doucumentation both interesting and useful. All data reported in this document are available through the [`macleish`](http://www.github.com/beanumber/macleish) package for R. The following will give you an outline of how to use the package by showing demos of the 2015 weather data. 
+This documentation describes the weather data collected at WhatelyMet and OrchardMet during 2015. It provides highlights of the year's weather as well as general trends that were observed. We hope that you find the doucumentation both interesting and useful. All data reported in this document are available through the [`macleish`](http://www.github.com/beanumber/macleish) package for R. 
 
 #### Variables used in this doucumentation:
 
@@ -73,22 +73,6 @@ This documentation describes the weather data collected at WhatelyMet and Orchar
 * PAR_Den_Avg: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average density (W/m^2)
 * PAR_Tot_Avg: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average total over measurement period (W/m^2)
 
-#### Climatic Indicators 
-Climatic indicators are used in this doucumentation to describe climatic events, and here we list the definitions for these terms for you to better understand this documentation.  
-The precipitation and biological temperature indicators calculated for this doucumentation provide a method of comparing general, biologically meaningful climatic trends in different years. The indicators are based on average daily temperatures and rainfall summations. Even though days are in the name of the temperature indicators, they do not actually reflect periods of 24 hours. The indicators really measure the number of degrees the average temperature was above or below a threshold temperature each day of the year. These values are described at [Nelson Institute Center for Climate Research Webpage](http://ccr.aos.wisc.edu/climate_modeling/wisconsin_Climate/descriptions.php). All temperature terms were measured in degrees Celsius. 
-
-Here are the definitions of Climatic Indicators:
-
-* Freezing Degree Days — The number of degrees Celsius that the daily mean temperature is below 0 °C.
-* Growing Degree Days — The number of degrees Celsius that the daily mean temperature exceeds 10 °C .
-* Spring Onset Date — The first day of the year where the average high temperature of that day and the previous four days averages 10 °C and no subsequent five day period until mid-summer has an average high temperature below 6.1 °C. 
-* Last Spring Freeze Date — The last day between January 1st and mid-summer with a low temperature below 0 °C. 
-* First Autumn Freeze Date — The first day after mid-summer with a low temperature below 0 °C. 
-* Length of the Growing Season — The number of days between the last spring freeze and first autumn freeze. 
-* Frequency of 1” Precipitation Events — The number of days per year with precipitation of at least 25.4 mm. 
-* Frequency of 2” Precipitation Events — The number of days per year with precipitation of at least 50.8 mm. 
-* Frequency of 3” Precipitation Events — The number of days per year with precipitation of at least 76.2 mm. 
-
 
 ### Example 1: Air Temperature & Relative Humidity
 In this example we visualize the trend of average daily temperature at the MacLeish Field Station over 2015.
@@ -98,7 +82,7 @@ library(ggplot2)
 library(dplyr)
 library(lubridate)
 daily <- whately_2015 %>%
-  mutate(the_date = as.Date(when)) %>%
+  mutate(the_date = as.Date(when, tz = "EST")) %>%
   group_by(the_date) %>%
   summarize(N = n(), avg_temp = mean(Temp_C_Avg), 
             max_temp = max(Temp_C_Avg), min_temp =
@@ -131,28 +115,40 @@ monthly_w %>%
   inner_join(monthly_o, by = "the_month")
 ```
 
-```{r temp-extremes}
-daily %>%
-  arrange(desc(max_temp)) %>%
-  head(1)
-daily %>%
-  arrange(min_temp) %>%
-  head(1)
-```
 The highest recorded temperature at WhatelyMet was 33.08 °C on Septemper 8th. The lowest recorded temperature was -22.28 °C on January 8th. 
 
-```{r}
-daily%>%
-  mutate(temp_range = max_temp-min_temp)%>%
-  arrange(desc(temp_range))%>%
+```{r temp-extremes}
+whately_2015 %>%
+  arrange(desc(Temp_C_Avg)) %>%
   head(1)
-daily%>%
-  mutate(temp_range = max_temp-min_temp)%>%
-  arrange(temp_range)%>%
+whately_2015 %>%
+  arrange(Temp_C_Avg) %>%
+  head(1)
+```
+
+The average daily temperature range recorded from both stations (daily maximum-minimum) was 10.4 °C. The maximum daily temperature range was 21.1 °C on May 8th at WhatelyMet. 
+
+```{r}
+daily <- daily %>%
+  mutate(temp_range = max_temp - min_temp)
+daily %>%
+  select(temp_range) %>%
+  summary()
+```
+
+The minimum daily temperature range was 2.1 °C and occurred on April 9th at WhatelyMet. However, daily temperature ranges of less than three degrees also occurred on April 7th, February 9th, June 1st, June 28th.
+
+```{r}
+daily %>%
+  arrange(desc(temp_range)) %>%
+  head(1)
+daily %>%
+  arrange(temp_range) %>%
   head()
 ```
 
-The average daily temperature range recorded from both stations (daily maximum-minimum) was -10.5 °C. The maximum daily temperature range was 20.37 °C on May 24th at WhatelyMet. The minimum daily temperature range was 0.876 °C and occurred on January 1st at WhatelyMet. However, daily temperature ranges of less than three degrees also occurred on February 9th, April 9th, June 28th, and December 30th.
+
+Percent average monthly relative humidity ranged from 56.4% (March) to 94% (December). Interestingly, WhatelyMet relative humidity values were notably higher than OrchardMet values starting in August. It is unclear why this pattern occurred during the last part of the year.
 
 ```{r humidity-table}
 monthly_w <- whately_2015 %>%
@@ -167,11 +163,12 @@ monthly_w %>%
   inner_join(monthly_o, by = "the_month")
 ```
 
-Percent average monthly relative humidity ranged from 56.4% (March) to 94% (December). Interestingly, WhatelyMet relative humidity values were notably higher than OrchardMet values starting in August. It is unclear why this pattern occurred during the last part of the year.
 
 ### Example 3: Wind
 
 Wind speed and direction is measured every second and then averaged and logged every 10 minutes at both weather stations. OrchardMet measures wind midway up the forest canopy (10 m high) in a small woodland clearing while WhatleyMet measures wind 25.3 m above the ground which is above the tree canopy.
+
+OrchardMet is located in a woodland clearing where winds are buffeted by trees of the forest canopy. Most wind comes from the west and southwest, with 67% of the time less than 1 m/s. Wind speeds did not average over 3 m/s at any time of the year. 
 
 ```{r, message=FALSE, warning=FALSE}
 require(clifro)
@@ -179,25 +176,23 @@ orchard_2015 %>%
   with(windrose(WSpd_mps, Wdir_deg))
 ```
 
-OrchardMet is located in a woodland clearing where winds are buffeted by trees of the forest canopy. Most wind comes from the west and southwest, with 67% of the time less than 1 m/s. Wind speeds did not average over 3 m/s at any time of the year. 
+WhatleyMet is above the forest canopy and recorded winds frequently from the northwest, north, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
 
 ```{r, message=FALSE}
 whately_2015 %>%
   with(windrose(WSpd_mps, Wdir_deg))
 ```
 
-WhatleyMet is above the forest canopy and recorded winds frequently from the northwest, north, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
-
 
 ### Example 5: Precipitation
 
-The `when` variable records a timestamp for each row of the `macleish` weather data. The observations record the average of each measurement over a 10 minute interval. 
+A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. 
 
 ```{r}
 sum(whately_2015$Rain_mm_Tot)
 ```
 
-A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. 
+Although precipitation is relatively evenly distributed across the year, precipitation totals were highest in June and lowest in May.
 
 ```{r rain-table}
 monthly_w <- whately_2015 %>%
@@ -212,20 +207,18 @@ monthly_w %>%
   inner_join(monthly_o, by = "the_month")
 ```
 
-Although precipitation is relatively evenly distributed across the year, precipitation totals were highest in June and lowest in May.
-
 Since the data was recorded every ten minutes, we need to group the data daily in order to get the mean rainfall amount per day.
 
 ```{r, message=FALSE}
 daily_precip <- whately_2015 %>%
-  mutate(the_date = as.Date(when)) %>%
+  mutate(the_date = as.Date(when, tz = "EST")) %>%
   group_by(the_date) %>%
   summarize(N = n(), total_precip = sum(Rain_mm_Tot)) %>%
   mutate(cum_precip = cumsum(total_precip),
          cum_rescale = (cum_precip / max(cum_precip)) * max(total_precip))
 ```
 
-The following plot will show you how much rainfall you would have per day at macleish field station over 2015.
+The following plot will show you how much rainfall you would have per day at macleish field station over 2015, as well as the cumulative amount of rainfall over the course of the year.
 
 ```{r daily-precip, message=FALSE}
 ggplot(data = daily_precip, 
@@ -251,7 +244,7 @@ These layers can be combined to provide a fuller picture of the activity at the 
 
 ```{r, message=FALSE}
 library(leaflet)
-map <- leaflet() %>%
+leaflet() %>%
   addTiles() %>%
   addPolygons(data = macleish_layers[["boundary"]],
               weight = 1) %>%
@@ -259,6 +252,5 @@ map <- leaflet() %>%
               weight = 1) %>%
   addMarkers(data = subset(macleish_layers[["landmarks"]], grepl("Met", Label)), 
              popup = ~Label)
-map
 ```
 
