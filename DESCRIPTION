@@ -1,14 +1,14 @@
 Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
-Version: 0.2.1.9010
+Version: 0.2.1.9011
 Date: 2015-10-29
 Authors@R: as.person(c(
     "Ben Baumer <ben.baumer@gmail.com> [aut, cre]",
     "Rose Goueth <rgoueth@smith.edu> [aut]",
     "Wencong Li Priscilla <liwencong1995@gmail.com> [aut]",
     "Weijia Zhang Vega <wzhang23@smith.edu> [aut]",
-    "Nicholas J. Horton <nhorton@amherst.edu> [aut]"
+    "Nicholas J. Horton <nhorton@amherst.edu> [ctb]"
   ))
 Description: Download weather data from the Ada and Archibald MacLeish Field 
     Station in Whately, MA. The Ada 
