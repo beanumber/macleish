@@ -47,7 +47,7 @@ help("etl_extract.etl_macleish")
 ```
 
 
-### The 2015 MacLeish weather report
+## The 2015 MacLeish weather report
 
 This portion of the vignette is largely a re-creation of the Macleish Field Station 2015 Weather Report. You can download [the orginal report](http://www.smith.edu/ceeds/documents/DataInformation2015.pdf) as a PDF file.
 
@@ -60,7 +60,7 @@ The second weather data collection site, known as **OrchardMet**, is located abo
 
 This documentation describes the weather data collected at WhatelyMet and OrchardMet during 2015. It provides highlights of the year's weather as well as general trends that were observed. We hope that you find the doucumentation both interesting and useful. All data reported in this document are available through the [`macleish`](http://www.github.com/beanumber/macleish) package for R. 
 
-#### Variables used in this doucumentation:
+### Variables used in this doucumentation:
 
 * when: Timestamp for each measurment set
 * Temp_C_Avg: Average temperature (°C)
@@ -73,8 +73,8 @@ This documentation describes the weather data collected at WhatelyMet and Orchar
 * PAR_Den_Avg: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average density (W/m^2)
 * PAR_Tot_Avg: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average total over measurement period (W/m^2)
 
+### Air Temperature
 
-### Example 1: Air Temperature & Relative Humidity
 In this example we visualize the trend of average daily temperature at the MacLeish Field Station over 2015.
 
 ```{r daily, message=FALSE, warning=FALSE}
@@ -100,7 +100,7 @@ ggplot(data = whately_2015, aes(x = when, y = Temp_C_Avg)) +
 ```
 
 
-As shown in the table below, the monthly average temperature in 2015 ranged from -6.4 °C in January to 21.6°C in July. 
+As shown in the table below, the monthly average temperature in 2015 ranged from -6.4 °C in January to 21.6°C in July. The large difference in recorded temperatures between the two stations in November was the result of a loose wire that resulted in erroneous temperature readings at the OrchardMet station (see below). 
 
 ```{r temp-table}
 monthly_w <- whately_2015 %>%
@@ -147,6 +147,19 @@ daily %>%
   head()
 ```
 
+#### Anomalies
+
+In late November, a loose wire in the OrchardMet station resulted in some erroneous temperature readings. We have left these readings in, but you should exercise caution when summarizing data that includes this time period. Imputation of these data would be a terrific exercise.
+
+```{r orchard-anolomies}
+orchard_2015 %>%
+  filter(month(when) == 11) %>%
+  ggplot(aes(x = when, y = Temp_C_Avg)) +
+    geom_line() + geom_smooth()
+```
+
+
+### Relative Humidity
 
 Percent average monthly relative humidity ranged from 56.4% (March) to 94% (December). Interestingly, WhatelyMet relative humidity values were notably higher than OrchardMet values starting in August. It is unclear why this pattern occurred during the last part of the year.
 
@@ -164,7 +177,7 @@ monthly_w %>%
 ```
 
 
-### Example 3: Wind
+### Wind
 
 Wind speed and direction is measured every second and then averaged and logged every 10 minutes at both weather stations. OrchardMet measures wind midway up the forest canopy (10 m high) in a small woodland clearing while WhatleyMet measures wind 25.3 m above the ground which is above the tree canopy.
 
@@ -184,7 +197,7 @@ whately_2015 %>%
 ```
 
 
-### Example 5: Precipitation
+### Precipitation
 
 A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. 
 
@@ -232,7 +245,7 @@ February and March had the greatest number of precipitation events. Annual preci
 
 ## Using the Macleish Field Station Geographic Data
 
-### Example 6: Maps
+### Maps
 
 We can create a map of MacLeish using the `leaflet` package and the spatial data in the `macleish_layers` object. This is a `list` of `Spatial*DataFrame` objects that contain various pieces of information about the field station, including the location of buildings, streams, trails, and landmarks.
 

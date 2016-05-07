@@ -30,6 +30,9 @@
 #' \code{OrchardMet} during 2015. Solar radiation is measured in two different ways: 
 #' see \code{SlrW_Avg}or the \code{PAR} variables for Photosynthetic Active Radiation.
 #' 
+#' Note that a loose wire resulted in erroneous temperature reading at OrchardMet
+#' in late November, 2015. 
+#' 
 #' @docType data
 #' @format For both, a data frame (\code{\link[dplyr]{tbl_df}}) with roughly 52,560 rows and 8 or 9 variables.
 #' 
@@ -53,6 +56,15 @@
 "whately_2015"
 
 #' @rdname whately_2015
+#' @examples 
+#' 
+#' # loose wire anomalies
+#' if (require(ggplot2)) {
+#'  orchard_2015 %>%
+#'  filter(month(when) == 11) %>%
+#'    ggplot(aes(x = when, y = Temp_C_Avg)) +
+#'    geom_line() + geom_smooth()
+#' }
 "orchard_2015"
 
 #' MacLeish spatial data

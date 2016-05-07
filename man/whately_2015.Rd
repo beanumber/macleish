@@ -62,6 +62,19 @@ sea level. Data collection at OrchardMet began on June 27th, 2014.
 The variables shown above are weather data collected at \code{WhatelyMet} and 
 \code{OrchardMet} during 2015. Solar radiation is measured in two different ways: 
 see \code{SlrW_Avg}or the \code{PAR} variables for Photosynthetic Active Radiation.
+
+Note that a loose wire resulted in erroneous temperature reading at OrchardMet
+in late November, 2015.
+}
+\examples{
+
+# loose wire anomalies
+if (require(ggplot2)) {
+ orchard_2015 \%>\%
+ filter(month(when) == 11) \%>\%
+   ggplot(aes(x = when, y = Temp_C_Avg)) +
+   geom_line() + geom_smooth()
+}
 }
 \keyword{datasets}
 

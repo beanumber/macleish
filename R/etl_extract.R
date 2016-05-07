@@ -3,6 +3,7 @@
 #' @description Retrieve data from the Macleish Field Station weather monitors
 #' @inheritParams etl::etl_extract
 #' @import etl
+#' @importFrom utils download.file
 #' @export
 #' @examples 
 #' 
@@ -45,13 +46,14 @@ etl_extract.etl_macleish <- function(obj, ...) {
   files <- c("WhatelyMet_Met_10min.dat", "OrchardMet_Met_10min.dat")
   src <- paste0(url, files)
   lcl <- paste0(attr(obj, "raw_dir"), "/", files)
-  mapply(download.file, src, lcl)
+  mapply(utils::download.file, src, lcl)
   invisible(obj)
 }
 
 #' @rdname etl_extract.etl_macleish
 #' @import dplyr
 #' @importFrom lubridate ymd_hms
+#' @importFrom utils head read.csv write.csv
 #' @export
 
 

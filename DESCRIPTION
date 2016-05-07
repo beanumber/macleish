@@ -1,8 +1,8 @@
 Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
-Version: 0.2.1.9011
-Date: 2015-10-29
+Version: 0.2.1.9012
+Date: 2016-05-07
 Authors@R: as.person(c(
     "Ben Baumer <ben.baumer@gmail.com> [aut, cre]",
     "Rose Goueth <rgoueth@smith.edu> [aut]",
