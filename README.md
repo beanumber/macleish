@@ -3,11 +3,11 @@ MacLeish
 
 [![Travis-CI Build Status](https://travis-ci.org/beanumber/macleish.svg?branch=master)](https://travis-ci.org/beanumber/macleish)
 
-The Ada and Archibald MacLeish Field Station is a 260-acre patchwork of forest and farmland located in West Whately, MA that provides opportunities for faculty and students to pursue environmental research, outdoor education, and low-impact recreation. Reid Bertone-Johnson serves as the Field Station Manager and five faculty and staff sit on the field station's Advisory Board. More information can be found at (<http://www.smith.edu/ceeds/macleish.php>)
+The Ada and Archibald MacLeish Field Station is a 260-acre patchwork of forest and farmland located in West Whately, MA that provides opportunities for faculty and students to pursue environmental research, outdoor education, and low-impact recreation. More information can be found at (<http://www.smith.edu/ceeds/macleish.php>)
 
 ![MacLeish Field Station](inst/extdata/macleish_600px.jpg)
 
-This R package allows you to download and process weather data (as a time series) using the [ETL](http://www.github.com/beanumber/etl) framework from the MacLeish Field Station. It also contains shapefiles for contextualizing spatial information.
+This R package allows you to download and process weather data using the [ETL](http://www.github.com/beanumber/etl) framework from the MacLeish Field Station. It also contains shapefiles for contextualizing spatial information.
 
 To install
 ----------
@@ -29,8 +29,8 @@ glimpse(whately_2015)
 ```
 
     ## Observations: 52,560
-    ## Variables: 8
-    ## $ when         (time) 2015-01-01 00:00:00, 2015-01-01 00:10:00, 2015-0...
+    ## Variables: 9
+    ## $ when         (time) 2015-01-01, 2015-01-01, 2015-01-01, 2015-01-01, ...
     ## $ Temp_C_Avg   (dbl) -9.32, -9.46, -9.44, -9.30, -9.32, -9.34, -9.30, ...
     ## $ WSpd_mps     (dbl) 1.399, 1.506, 1.620, 1.141, 1.223, 1.090, 1.168, ...
     ## $ Wdir_deg     (dbl) 225.4, 248.2, 258.3, 243.8, 238.4, 241.7, 242.3, ...
@@ -38,13 +38,14 @@ glimpse(whately_2015)
     ## $ Press_mb_Avg (int) 985, 985, 985, 985, 984, 984, 984, 984, 984, 984,...
     ## $ SlrW_Avg     (dbl) 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0...
     ## $ Rain_mm_Tot  (dbl) 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0...
+    ## $ temperature  (dbl) -9.32, -9.46, -9.44, -9.30, -9.32, -9.34, -9.30, ...
 
 ``` r
 glimpse(orchard_2015)
 ```
 
     ## Observations: 52,552
-    ## Variables: 9
+    ## Variables: 10
     ## $ when         (time) 2015-01-01 00:00:00, 2015-01-01 00:10:00, 2015-0...
     ## $ Temp_C_Avg   (dbl) -9.990, -9.610, -9.700, -9.960, -9.820, -9.790, -...
     ## $ WSpd_mps     (dbl) 0.931, 1.014, 0.547, 0.727, 1.380, 0.965, 1.118, ...
@@ -54,6 +55,7 @@ glimpse(orchard_2015)
     ## $ PAR_Den_Avg  (dbl) 0.548, 0.548, 0.548, 0.548, 0.548, 0.548, 0.548, ...
     ## $ PAR_Tot_Avg  (dbl) 0.088, 0.088, 0.088, 0.088, 0.088, 0.088, 0.088, ...
     ## $ Rain_mm_Tot  (dbl) 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0...
+    ## $ temperature  (dbl) -9.990, -9.610, -9.700, -9.960, -9.820, -9.790, -...
 
 Live weather data
 -----------------
@@ -72,20 +74,20 @@ whately <- macleish %>%
 whately %>%
   mutate(the_year = strftime('%Y', when, 'unixepoch')) %>%
   group_by(the_year) %>%
-  summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(Temp_C_Avg))
+  summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(temperature))
 orchard <- macleish %>%
   tbl("orchard")
 orchard %>%
   mutate(the_year = strftime('%Y', when, 'unixepoch')) %>%
   group_by(the_year) %>%
-  summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(Temp_C_Avg))
+  summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(temperature))
 ```
 
 ``` r
 daily <- whately %>%
   mutate(the_date = date(when, 'unixepoch')) %>%
   group_by(the_date) %>%
-  summarize(N = n(), avgTemp = mean(Temp_C_Avg)) %>%
+  summarize(N = n(), avgTemp = mean(temperature)) %>%
   collect()
 library(ggplot2)
 ggplot(data = daily, aes(x = as.Date(the_date), y = avgTemp)) +

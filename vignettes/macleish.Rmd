@@ -62,16 +62,16 @@ This documentation describes the weather data collected at WhatelyMet and Orchar
 
 ### Variables used in this doucumentation:
 
-* when: Timestamp for each measurment set
-* Temp_C_Avg: Average temperature (°C)
-* WSpd_mps: Average windspeed (m/s)
-* Wdir_deg: Wind direction (degree)
-* RH_per_Avg: Relative Humidity (mm)
-* Press_mb_Avg: Average atomspheric pressure (mb)
-* Rain_mm_Tot: Main Rainfall amount per day (mm)
-* SlrW_Avg: WhatelyMet Average Solar Radiance (W/m^2)
-* PAR_Den_Avg: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average density (W/m^2)
-* PAR_Tot_Avg: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average total over measurement period (W/m^2)
+* `when`: Timestamp for each measurment set
+* `temperature`: Average temperature (°C)
+* `WSpd_mps`: Average windspeed (m/s)
+* `Wdir_deg`: Wind direction (degree)
+* `RH_per_Avg`: Relative Humidity (mm)
+* `Press_mb_Avg`: Average atomspheric pressure (mb)
+* `Rain_mm_Tot`: Main Rainfall amount per day (mm)
+* `SlrW_Avg`: WhatelyMet Average Solar Radiance (W/m^2)
+* `PAR_Den_Avg`: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average density (W/m^2)
+* `PAR_Tot_Avg`: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average total over measurement period (W/m^2)
 
 ### Air Temperature
 
@@ -84,14 +84,14 @@ library(lubridate)
 daily <- whately_2015 %>%
   mutate(the_date = as.Date(when, tz = "EST")) %>%
   group_by(the_date) %>%
-  summarize(N = n(), avg_temp = mean(Temp_C_Avg), 
-            max_temp = max(Temp_C_Avg), min_temp =
-              min(Temp_C_Avg))
+  summarize(N = n(), avg_temp = mean(temperature), 
+            max_temp = max(temperature), min_temp =
+              min(temperature))
 ```
 
 
 ```{r temp-plot, message=FALSE}
-ggplot(data = whately_2015, aes(x = when, y = Temp_C_Avg)) +
+ggplot(data = whately_2015, aes(x = when, y = temperature)) +
   geom_line(color = "lightgray") + 
   geom_smooth() + 
   geom_line(data = daily, aes(x = as.POSIXct(the_date), 
@@ -106,11 +106,11 @@ As shown in the table below, the monthly average temperature in 2015 ranged from
 monthly_w <- whately_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(avg_temp = mean(Temp_C_Avg))
+  summarize(avg_temp = mean(temperature))
 monthly_o <- orchard_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(avg_temp = mean(Temp_C_Avg))
+  summarize(avg_temp = mean(temperature))
 monthly_w %>%
   inner_join(monthly_o, by = "the_month")
 ```
@@ -119,10 +119,10 @@ The highest recorded temperature at WhatelyMet was 33.08 °C on Septemper 8th. T
 
 ```{r temp-extremes}
 whately_2015 %>%
-  arrange(desc(Temp_C_Avg)) %>%
+  arrange(desc(temperature)) %>%
   head(1)
 whately_2015 %>%
-  arrange(Temp_C_Avg) %>%
+  arrange(temperature) %>%
   head(1)
 ```
 
@@ -154,7 +154,7 @@ In late November, a loose wire in the OrchardMet station resulted in some errone
 ```{r orchard-anolomies}
 orchard_2015 %>%
   filter(month(when) == 11) %>%
-  ggplot(aes(x = when, y = Temp_C_Avg)) +
+  ggplot(aes(x = when, y = temperature)) +
     geom_line() + geom_smooth()
 ```
 

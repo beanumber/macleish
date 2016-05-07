@@ -21,9 +21,9 @@
 #'   tbl("orchard") 
 #'   
 #' whately %>%
-#'   summarize(N = n(), avg_temp = mean(Temp_C_Avg))
+#'   summarize(N = n(), avg_temp = mean(temperature))
 #' orchard %>%
-#'   summarize(N = n(), avg_temp = mean(Temp_C_Avg))
+#'   summarize(N = n(), avg_temp = mean(temperature))
 #'   
 #' # check data types
 #' whately %>%
@@ -67,6 +67,7 @@ etl_transform.etl_macleish <- function(obj, ...) {
     rename_(when = ~TIMESTAMP) %>%
     mutate_(when = ~ymd_hms(when)) %>%
     mutate_(Temp_C_Avg = ~as.numeric(Temp_C_Avg)) %>%
+    rename_(temperature = ~Temp_C_Avg) %>%
     mutate_(WSpd_mps = ~as.numeric(WSpd_mps)) %>%
     mutate_(Wdir_deg = ~as.numeric(Wdir_deg)) %>%
     mutate_(RH_per_Avg = ~as.numeric(RH_per_Avg)) %>%
@@ -84,6 +85,7 @@ etl_transform.etl_macleish <- function(obj, ...) {
     rename_(when = ~TIMESTAMP) %>%
     mutate_(when = ~ymd_hms(when)) %>%
     mutate_(Temp_C_Avg = ~as.numeric(Temp_C_Avg)) %>%
+    rename_(temperature = ~Temp_C_Avg) %>%
     mutate_(WSpd_mps = ~as.numeric(WSpd_mps)) %>%
     mutate_(Wdir_deg = ~as.numeric(Wdir_deg)) %>%
     mutate_(RH_per_Avg = ~as.numeric(RH_per_Avg)) %>%

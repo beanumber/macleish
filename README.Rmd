@@ -47,13 +47,13 @@ whately <- macleish %>%
 whately %>%
   mutate(the_year = strftime('%Y', when, 'unixepoch')) %>%
   group_by(the_year) %>%
-  summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(Temp_C_Avg))
+  summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(temperature))
 orchard <- macleish %>%
   tbl("orchard")
 orchard %>%
   mutate(the_year = strftime('%Y', when, 'unixepoch')) %>%
   group_by(the_year) %>%
-  summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(Temp_C_Avg))
+  summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(temperature))
 ```
 
 
@@ -61,7 +61,7 @@ orchard %>%
 daily <- whately %>%
   mutate(the_date = date(when, 'unixepoch')) %>%
   group_by(the_date) %>%
-  summarize(N = n(), avgTemp = mean(Temp_C_Avg)) %>%
+  summarize(N = n(), avgTemp = mean(temperature)) %>%
   collect()
 library(ggplot2)
 ggplot(data = daily, aes(x = as.Date(the_date), y = avgTemp)) +
