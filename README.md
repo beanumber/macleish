@@ -5,6 +5,8 @@ MacLeish
 
 The Ada and Archibald MacLeish Field Station is a 260-acre patchwork of forest and farmland located in West Whately, MA that provides opportunities for faculty and students to pursue environmental research, outdoor education, and low-impact recreation. Reid Bertone-Johnson serves as the Field Station Manager and five faculty and staff sit on the field station's Advisory Board. More information can be found at (<http://www.smith.edu/ceeds/macleish.php>)
 
+![MacLeish Field Station](inst/extdata/macleish_600px.jpg)
+
 This R package allows you to download and process weather data (as a time series) using the [ETL](http://www.github.com/beanumber/etl) framework from the MacLeish Field Station. It also contains shapefiles for contextualizing spatial information.
 
 To install
@@ -117,10 +119,12 @@ leaflet() %>%
   addPolygons(data = macleish_layers[["boundary"]], 
               weight = 1, fillOpacity = 0.1) %>%
   addPolygons(data = macleish_layers[["buildings"]], 
-              weight = 1, popup = ~ Feature) %>%
+              weight = 1, popup = ~ name) %>%
   addPolylines(data = macleish_layers[["trails"]], 
                weight = 1, color = "brown",
-               popup = ~ trl_name) %>%
+               popup = ~ name) %>%
   addPolylines(data = macleish_layers[["streams"]], 
-               weight = 2)
+               weight = 2) %>%
+  addMarkers(data = subset(macleish_layers[["landmarks"]], grepl("Met", Label)), 
+             popup = ~Label)
 ```
