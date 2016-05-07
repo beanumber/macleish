@@ -59,7 +59,7 @@
 #' @examples 
 #' 
 #' # loose wire anomalies
-#' if (require(ggplot2)) {
+#' if (require(ggplot2) & require(lubridate)) {
 #'  orchard_2015 %>%
 #'  filter(month(when) == 11) %>%
 #'    ggplot(aes(x = when, y = Temp_C_Avg)) +
