@@ -255,7 +255,7 @@ names(macleish_layers)
 
 These layers can be combined to provide a fuller picture of the activity at the Field Station. 
 
-```{r, message=FALSE}
+```{r, eval=FALSE, message=FALSE}
 library(leaflet)
 leaflet() %>%
   addTiles() %>%

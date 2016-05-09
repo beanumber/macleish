@@ -13,7 +13,7 @@ or \code{orchard_2015} data tables.
 All variables are averaged over the 10 minute inverval unless otherwise noted.
 \describe{
   \item{when}{Timestamp for each measurment set.}
-  \item{Temp_C_Avg}{average temperature, in Celsius}
+  \item{temperature}{average temperature, in Celsius}
   \item{WSpd_mps}{Wind speed, in meters per second}
   \item{Wdir_deg}{Wind direction, in degrees}
   \item{RH_per_Avg}{How much water there is in the air, in millimeters}
@@ -72,7 +72,7 @@ in late November, 2015.
 if (require(ggplot2) & require(lubridate)) {
  orchard_2015 \%>\%
  filter(month(when) == 11) \%>\%
-   ggplot(aes(x = when, y = Temp_C_Avg)) +
+   ggplot(aes(x = when, y = temperature)) +
    geom_line() + geom_smooth()
 }
 }

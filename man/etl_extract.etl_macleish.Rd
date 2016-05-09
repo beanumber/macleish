@@ -36,9 +36,9 @@ orchard <- macleish \%>\%
   tbl("orchard") 
   
 whately \%>\%
-  summarize(N = n(), avg_temp = mean(Temp_C_Avg))
+  summarize(N = n(), avg_temp = mean(temperature))
 orchard \%>\%
-  summarize(N = n(), avg_temp = mean(Temp_C_Avg))
+  summarize(N = n(), avg_temp = mean(temperature))
   
 # check data types
 whately \%>\%
