@@ -53,14 +53,15 @@ etl_extract.etl_macleish <- function(obj, ...) {
 #' @rdname etl_extract.etl_macleish
 #' @import dplyr
 #' @importFrom lubridate ymd_hms
-#' @importFrom utils head read.csv write.csv
+#' @importFrom readr read_csv write_csv
+#' @importFrom utils head
 #' @export
 
 
 etl_transform.etl_macleish <- function(obj, ...) {
   # Whately
   lcl <- paste0(attr(obj, "raw_dir"), "/WhatelyMet_Met_10min.dat")
-  x <- read.csv(lcl, skip = 1, stringsAsFactors = FALSE)
+  x <- readr::read_csv(lcl, skip = 1)
   metadata <- head(x, 2)
   out <- x[-(1:2), -2]
   out <- out %>%
@@ -81,10 +82,10 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
     rename_(rainfall = ~Rain_mm_Tot) %>%
     unique()
-  write.csv(out, file = paste0(attr(obj, "load_dir"), "/whately.csv"), row.names = FALSE)
+  readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/whately.csv"))
   # Orchard
   lcl <- paste0(attr(obj, "raw_dir"), "/OrchardMet_Met_10min.dat")
-  x <- read.csv(lcl, skip = 1, stringsAsFactors = FALSE)
+  x <- readr::read_csv(lcl, skip = 1)
   metadata <- head(x, 2)
   out <- x[-(1:2), -2]
   out <- out %>%
@@ -107,7 +108,7 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
     rename_(rainfall = ~Rain_mm_Tot) %>%
     unique()
-  write.csv(out, file = paste0(attr(obj, "load_dir"), "/orchard.csv"), row.names = FALSE)
+  readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/orchard.csv"))
   invisible(obj)
 }
 
@@ -118,21 +119,17 @@ etl_transform.etl_macleish <- function(obj, ...) {
 
 etl_load.etl_macleish <- function(obj, ...) {
   # Whately
-  data <- readr::read_csv(paste0(attr(obj, "load_dir"), "/whately.csv"), 
-                          col_types = readr::cols(rainfall = readr::col_double()))
-  # write the table to the DB
+  # write the table directly to the DB
   message("Writing whately data to the database...")
-  if (DBI::dbWriteTable(obj$con, "whately", as.data.frame(data), 
+  if (DBI::dbWriteTable(obj$con, "whately", paste0(attr(obj, "load_dir"), "/whately.csv"), 
                         overwrite = TRUE, row.names = FALSE, ...)) {
     message("Data was successfully written to database.")
     message(DBI::dbListTables(obj$con))
   }
   # Orchard
-  data <- readr::read_csv(paste0(attr(obj, "load_dir"), "/orchard.csv"), 
-                   col_types = readr::cols(rainfall = readr::col_double()))
-  # write the table to the DB
+  # write the table directly to the DB
   message("Writing orchard data to the database...")
-  if (DBI::dbWriteTable(obj$con, "orchard", as.data.frame(data), 
+  if (DBI::dbWriteTable(obj$con, "orchard", paste0(attr(obj, "load_dir"), "/orchard.csv"), 
                         overwrite = TRUE, row.names = FALSE, ...)) {
     message("Data was successfully written to database.")
     message(DBI::dbListTables(obj$con))
