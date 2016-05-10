@@ -1,6 +1,6 @@
 # Creates 2015 data for Whately and Orchard
 
-macleish <- etl("macleish") %>%
+macleish <- etl("macleish", dir = "~/Desktop/macleish/") %>%
   etl_extract() %>%
   etl_transform() %>%
   etl_load()

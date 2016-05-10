@@ -14,14 +14,14 @@ All variables are averaged over the 10 minute inverval unless otherwise noted.
 \describe{
   \item{when}{Timestamp for each measurment set.}
   \item{temperature}{average temperature, in Celsius}
-  \item{WSpd_mps}{Wind speed, in meters per second}
-  \item{Wdir_deg}{Wind direction, in degrees}
-  \item{RH_per_Avg}{How much water there is in the air, in millimeters}
-  \item{Press_mb_Avg}{Atmospheric pressure, in millibars}
-  \item{Rain_mm_Tot}{Total rainfall, in millimeters}
-  \item{SlrW_Avg}{Amount of radiation coming from the sun, in Watts/meters^2. Solar measurement for Whatley}
-  \item{PAR_Den_Avg}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average density of Watts/meters^2. One of two solar measurements for Orchard}
-  \item{PAR_Tot_Avg}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average total over measurement period of Watts/meters^2. One of two solar measurements for Orchard}
+  \item{wind_speed}{Wind speed, in meters per second}
+  \item{wind_dir}{Wind direction, in degrees}
+  \item{rel_humidity}{How much water there is in the air, in millimeters}
+  \item{pressure}{Atmospheric pressure, in millibars}
+  \item{rainfall}{Total rainfall, in millimeters}
+  \item{solar_radiation}{Amount of radiation coming from the sun, in Watts/meters^2. Solar measurement for Whatley}
+  \item{par_density}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average density of Watts/meters^2. One of two solar measurements for Orchard}
+  \item{par_total}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average total over measurement period of Watts/meters^2. One of two solar measurements for Orchard}
 }}
 \source{
 These data are recorded at \url{http://www.smith.edu/ceeds/macleish_monitoring.php}

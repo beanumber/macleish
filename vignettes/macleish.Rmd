@@ -64,14 +64,14 @@ This documentation describes the weather data collected at WhatelyMet and Orchar
 
 * `when`: Timestamp for each measurment set
 * `temperature`: Average temperature (°C)
-* `WSpd_mps`: Average windspeed (m/s)
-* `Wdir_deg`: Wind direction (degree)
-* `RH_per_Avg`: Relative Humidity (mm)
-* `Press_mb_Avg`: Average atomspheric pressure (mb)
-* `Rain_mm_Tot`: Main Rainfall amount per day (mm)
-* `SlrW_Avg`: WhatelyMet Average Solar Radiance (W/m^2)
-* `PAR_Den_Avg`: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average density (W/m^2)
-* `PAR_Tot_Avg`: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average total over measurement period (W/m^2)
+* `wind_speed`: Average windspeed (m/s)
+* `wind_dir`: Wind direction (degree)
+* `rel_humidty`: Relative Humidity (mm)
+* `pressure`: Average atomspheric pressure (mb)
+* `rainfall`: Main Rainfall amount per day (mm)
+* `solar_radiation`: WhatelyMet Average Solar Radiance (W/m^2)
+* `par_density`: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average density (W/m^2)
+* `par_total`: OrchardMet Photosynthetically Active Radiation (sunlight between 400 and 700 nm) in average total over measurement period (W/m^2)
 
 ### Air Temperature
 
@@ -167,11 +167,11 @@ Percent average monthly relative humidity ranged from 56.4% (March) to 94% (Dece
 monthly_w <- whately_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(avg_humidity_w = mean(RH_per_Avg))
+  summarize(avg_humidity_w = mean(rel_humidity))
 monthly_o <- orchard_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(avg_humidity_o = mean(RH_per_Avg))
+  summarize(avg_humidity_o = mean(rel_humidity))
 monthly_w %>%
   inner_join(monthly_o, by = "the_month")
 ```
@@ -186,14 +186,14 @@ OrchardMet is located in a woodland clearing where winds are buffeted by trees o
 ```{r, message=FALSE, warning=FALSE}
 require(clifro)
 orchard_2015 %>%
-  with(windrose(WSpd_mps, Wdir_deg))
+  with(windrose(wind_speed, wind_dir))
 ```
 
 WhatleyMet is above the forest canopy and recorded winds frequently from the northwest, north, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
 
 ```{r, message=FALSE}
 whately_2015 %>%
-  with(windrose(WSpd_mps, Wdir_deg))
+  with(windrose(wind_speed, wind_dir))
 ```
 
 
@@ -202,7 +202,7 @@ whately_2015 %>%
 A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. 
 
 ```{r}
-sum(whately_2015$Rain_mm_Tot)
+sum(whately_2015$rainfall)
 ```
 
 Although precipitation is relatively evenly distributed across the year, precipitation totals were highest in June and lowest in May.
@@ -211,11 +211,11 @@ Although precipitation is relatively evenly distributed across the year, precipi
 monthly_w <- whately_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(total_precip_w = sum(Rain_mm_Tot))
+  summarize(total_precip_w = sum(rainfall))
 monthly_o <- orchard_2015 %>%
   mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
   group_by(the_month) %>%
-  summarize(total_precip_o = sum(Rain_mm_Tot))
+  summarize(total_precip_o = sum(rainfall))
 monthly_w %>%
   inner_join(monthly_o, by = "the_month")
 ```
@@ -226,7 +226,7 @@ Since the data was recorded every ten minutes, we need to group the data daily i
 daily_precip <- whately_2015 %>%
   mutate(the_date = as.Date(when, tz = "EST")) %>%
   group_by(the_date) %>%
-  summarize(N = n(), total_precip = sum(Rain_mm_Tot)) %>%
+  summarize(N = n(), total_precip = sum(rainfall)) %>%
   mutate(cum_precip = cumsum(total_precip),
          cum_rescale = (cum_precip / max(cum_precip)) * max(total_precip))
 ```

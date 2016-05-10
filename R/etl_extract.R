@@ -69,11 +69,17 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(Temp_C_Avg = ~as.numeric(Temp_C_Avg)) %>%
     rename_(temperature = ~Temp_C_Avg) %>%
     mutate_(WSpd_mps = ~as.numeric(WSpd_mps)) %>%
+    rename_(wind_speed = ~WSpd_mps) %>%
     mutate_(Wdir_deg = ~as.numeric(Wdir_deg)) %>%
+    rename_(wind_dir = ~Wdir_deg) %>%
     mutate_(RH_per_Avg = ~as.numeric(RH_per_Avg)) %>%
+    rename_(rel_humidity = ~RH_per_Avg) %>%
     mutate_(Press_mb_Avg = ~as.numeric(Press_mb_Avg)) %>%
+    rename_(pressure = ~Press_mb_Avg) %>%
     mutate_(SlrW_Avg = ~as.numeric(SlrW_Avg)) %>%
+    rename_(solar_radiation = ~SlrW_Avg) %>%
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
+    rename_(rainfall = ~Rain_mm_Tot) %>%
     unique()
   write.csv(out, file = paste0(attr(obj, "load_dir"), "/whately.csv"), row.names = FALSE)
   # Orchard
@@ -87,12 +93,19 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(Temp_C_Avg = ~as.numeric(Temp_C_Avg)) %>%
     rename_(temperature = ~Temp_C_Avg) %>%
     mutate_(WSpd_mps = ~as.numeric(WSpd_mps)) %>%
+    rename_(wind_speed = ~WSpd_mps) %>%
     mutate_(Wdir_deg = ~as.numeric(Wdir_deg)) %>%
+    rename_(wind_dir = ~Wdir_deg) %>%
     mutate_(RH_per_Avg = ~as.numeric(RH_per_Avg)) %>%
+    rename_(rel_humidity = ~RH_per_Avg) %>%
     mutate_(Press_mb_Avg = ~as.numeric(Press_mb_Avg)) %>%
+    rename_(pressure = ~Press_mb_Avg) %>%
     mutate_(PAR_Den_Avg = ~as.numeric(PAR_Den_Avg)) %>%
+    rename_(par_density = ~PAR_Den_Avg) %>%
     mutate_(PAR_Tot_Avg = ~as.numeric(PAR_Tot_Avg)) %>%
+    rename_(par_total = ~PAR_Tot_Avg) %>%
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
+    rename_(rainfall = ~Rain_mm_Tot) %>%
     unique()
   write.csv(out, file = paste0(attr(obj, "load_dir"), "/orchard.csv"), row.names = FALSE)
   invisible(obj)
@@ -106,7 +119,7 @@ etl_transform.etl_macleish <- function(obj, ...) {
 etl_load.etl_macleish <- function(obj, ...) {
   # Whately
   data <- readr::read_csv(paste0(attr(obj, "load_dir"), "/whately.csv"), 
-                          col_types = readr::cols(Rain_mm_Tot = readr::col_double()))
+                          col_types = readr::cols(rainfall = readr::col_double()))
   # write the table to the DB
   message("Writing whately data to the database...")
   if (DBI::dbWriteTable(obj$con, "whately", as.data.frame(data), 
@@ -116,7 +129,7 @@ etl_load.etl_macleish <- function(obj, ...) {
   }
   # Orchard
   data <- readr::read_csv(paste0(attr(obj, "load_dir"), "/orchard.csv"), 
-                   col_types = readr::cols(Rain_mm_Tot = readr::col_double()))
+                   col_types = readr::cols(rainfall = readr::col_double()))
   # write the table to the DB
   message("Writing orchard data to the database...")
   if (DBI::dbWriteTable(obj$con, "orchard", as.data.frame(data), 
