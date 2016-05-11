@@ -82,6 +82,8 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
     rename_(rainfall = ~Rain_mm_Tot) %>%
     unique()
+  out <- out %>%
+    mutate_(when = ~ifelse(when < '2012-12-20 05:20:00', when - lubridate::dhours(5), when))
   readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/whately.csv"))
   # Orchard
   lcl <- paste0(attr(obj, "raw_dir"), "/OrchardMet_Met_10min.dat")
