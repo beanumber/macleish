@@ -95,7 +95,7 @@ etl_transform.etl_macleish <- function(obj, ...) {
   out <- x[-(1:2), -2]
   out <- out %>%
     rename_(when = ~TIMESTAMP) %>%
-    mutate_(when = ~ymd_hms(when)) %>%
+    mutate_(when = ~as.integer(ymd_hms(when))) %>%
     mutate_(Temp_C_Avg = ~as.numeric(Temp_C_Avg)) %>%
     rename_(temperature = ~Temp_C_Avg) %>%
     mutate_(WSpd_mps = ~as.numeric(WSpd_mps)) %>%
@@ -113,6 +113,12 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
     rename_(rainfall = ~Rain_mm_Tot) %>%
     unique()
+  out<- out %>%
+    mutate(num = seq(1, length.out=nrow(orcharddata), by=1)) %>%
+    mutate(when = ifelse( num >= 18482, when + dhours(1), when)) %>%
+    mutate(when = ifelse( num >= 70892, when + dminutes(50), when)) %>%
+    mutate(when = as.POSIXct(when, origin = "1970-01-01 00:00:00"))
+  
   readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/orchard.csv"))
   invisible(obj)
 }
