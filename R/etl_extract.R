@@ -39,6 +39,16 @@
 #' whately %>%
 #'   collect() %>%
 #'   tail()
+#' 
+#' # show that no time-shifting is happening
+#' if (require(ggplot2)) {
+#' macleish %>%
+#'   tbl("whately") %>%
+#'   collect() %>%
+#'   mutate(when = lubridate::ymd_hms(when)) %>%
+#'   filter(lubridate::year(when) == 2012 & month(when) == 12 & day(when) == 20) %>%
+#'   ggplot(aes(x = when, y = temperature)) + geom_line()
+#' }
 #' }
 
 etl_extract.etl_macleish <- function(obj, ...) {
@@ -82,10 +92,12 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
     rename_(rainfall = ~Rain_mm_Tot) %>%
     unique()
+  # time-shifting correction, see:
+  # https://github.com/beanumber/macleish/issues/8
   out <- out %>%
-    mutate(num = seq(1, length.out=nrow(out), by=1)) %>%
-    mutate(when = ifelse(num <= 50682, when - dhours(5), when)) %>%
-    mutate(when = as.POSIXct(when, origin = "1970-01-01 00:00:00")) 
+    mutate_(num = ~seq(1:nrow(out))) %>%
+    mutate_(when = ~ifelse(num <= 50682, when - lubridate::dhours(5), when)) %>%
+    mutate_(when = ~as.POSIXct(when, tz = "EST", origin = "1970-01-01 00:00:00")) 
   readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/whately.csv"))
   
   # Orchard
@@ -113,11 +125,13 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(Rain_mm_Tot = ~as.numeric(Rain_mm_Tot)) %>%
     rename_(rainfall = ~Rain_mm_Tot) %>%
     unique()
-  out<- out %>%
-    mutate(num = seq(1, length.out=nrow(orcharddata), by=1)) %>%
-    mutate(when = ifelse( num >= 18482, when + dhours(1), when)) %>%
-    mutate(when = ifelse( num >= 70892, when + dminutes(50), when)) %>%
-    mutate(when = as.POSIXct(when, origin = "1970-01-01 00:00:00"))
+  # time-shifting correction, see:
+  # https://github.com/beanumber/macleish/issues/8
+  out <- out %>%
+    mutate_(num = ~seq(1:nrow(out))) %>%
+    mutate_(when = ~ifelse( num >= 18482, when + lubridate::dhours(1), when)) %>%
+    mutate_(when = ~ifelse( num >= 70892, when + lubridate::dminutes(50), when)) %>%
+    mutate_(when = ~as.POSIXct(when, origin = "1970-01-01 00:00:00"))
   
   readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/orchard.csv"))
   invisible(obj)

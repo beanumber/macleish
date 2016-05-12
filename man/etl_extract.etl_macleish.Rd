@@ -54,6 +54,16 @@ whately \%>\%
 whately \%>\%
   collect() \%>\%
   tail()
+
+# show that no time-shifting is happening
+if (require(ggplot2)) {
+macleish \%>\%
+  tbl("whately") \%>\%
+  collect() \%>\%
+  mutate(when = lubridate::ymd_hms(when)) \%>\%
+  filter(lubridate::year(when) == 2012 & month(when) == 12 & day(when) == 20) \%>\%
+  ggplot(aes(x = when, y = temperature)) + geom_line()
+}
 }
 }
 

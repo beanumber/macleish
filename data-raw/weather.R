@@ -1,6 +1,6 @@
 # Creates 2015 data for Whately and Orchard
 
-macleish <- etl("macleish", dir = "~/Desktop/macleish/") %>%
+macleish <- etl("macleish", dir = "~/dumps/macleish/") %>%
   etl_extract() %>%
   etl_transform() %>%
   etl_load()
@@ -24,3 +24,11 @@ orchard_2015 <- macleish %>%
 
 save(whately_2015, file = "data/whately_2015.rda", compress = "xz")
 save(orchard_2015, file = "data/orchard_2015.rda", compress = "xz")
+
+# check duplicate times in whately
+whately_test <- macleish %>%
+  tbl("whately") %>%
+  collect() %>%
+  mutate(when = lubridate::ymd_hms(when)) %>%
+  filter(lubridate::year(when) == 2012 & month(when) == 12 & day(when) == 20)
+ggplot(data = whately_test, aes(x = when, y = temperature)) + geom_line()
