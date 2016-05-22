@@ -97,7 +97,8 @@ etl_transform.etl_macleish <- function(obj, ...) {
   out <- out %>%
     mutate_(num = ~seq(1:nrow(out))) %>%
     mutate_(when = ~ifelse(num <= 50682, when - lubridate::dhours(5), when)) %>%
-    mutate_(when = ~as.POSIXct(when, tz = "EST", origin = "1970-01-01 00:00:00")) 
+    mutate_(when = ~as.POSIXct(when, tz = "EST", origin = "1970-01-01 00:00:00")) %>%
+    select_(-num)
   readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/whately.csv"))
   
   # Orchard
