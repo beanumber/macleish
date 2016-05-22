@@ -97,8 +97,7 @@ etl_transform.etl_macleish <- function(obj, ...) {
   out <- out %>%
     mutate_(num = ~seq(1:nrow(out))) %>%
     mutate_(when = ~ifelse(num <= 50682, when - lubridate::dhours(5), when)) %>%
-    mutate_(when = ~as.POSIXct(when, tz = "EST", origin = "1970-01-01 00:00:00")) %>%
-    select_(-num)
+    mutate_(when = ~as.POSIXct(when, tz = "EST", origin = "1970-01-01 00:00:00"))
   readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/whately.csv"))
   
   # Orchard
@@ -132,9 +131,7 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(num = ~seq(1:nrow(out))) %>%
     mutate_(when = ~ifelse( num >= 18482, when + lubridate::dhours(1), when)) %>%
     mutate_(when = ~ifelse( num >= 70892, when + lubridate::dminutes(50), when)) %>%
-    mutate_(when = ~as.POSIXct(when, origin = "1970-01-01 00:00:00")) %>%
-    select_(-num)
-  
+    mutate_(when = ~as.POSIXct(when, origin = "1970-01-01 00:00:00"))
   readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/orchard.csv"))
   invisible(obj)
 }
