@@ -26,9 +26,10 @@ save(whately_2015, file = "data/whately_2015.rda", compress = "xz")
 save(orchard_2015, file = "data/orchard_2015.rda", compress = "xz")
 
 # check duplicate times in whately
+library(ggplot2)
 whately_test <- macleish %>%
   tbl("whately") %>%
   collect() %>%
   mutate(when = lubridate::ymd_hms(when)) %>%
-  filter(lubridate::year(when) == 2012 & month(when) == 12 & day(when) == 20)
+  filter(lubridate::year(when) == 2012 & lubridate::month(when) == 12 & lubridate::day(when) == 20)
 ggplot(data = whately_test, aes(x = when, y = temperature)) + geom_line()
