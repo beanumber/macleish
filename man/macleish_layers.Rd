@@ -16,7 +16,6 @@
  \item{buildings}{Buildings at MacLeish}
  \item{wetlands}{Wetland areas}
  \item{trails}{Hiking trails}
- \item{slopes}{steep slopes}
  \item{schools}{Schools in Massachusetts}
  \item{boundary}{the property boundary}
  \item{research}{research plots}

@@ -15,7 +15,8 @@ ogrInfo(dsn, layer = "trails")
 layers <- c("landmarks", "forests", "streams",
   "challenge_courses", 
   "buildings", "wetlands",
-  "slopes", "boundary", 
+#  "slopes", 
+  "boundary", 
   "research", "soil", "trails")
 
 macleish_layers <- lapply(layers, readOGR, dsn = dsn)
