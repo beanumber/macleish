@@ -1,7 +1,7 @@
 ---
 title: "Ada & Archibald MacLeish Field Station Data"
 author: "Ben Baumer, Rose Goueth, Wencong Li (Priscilla) and Weijia Zhang (Vega), Paul Wetzel"
-date: "04-10-2016"
+date: "2016-04-10"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Using MacLeish Weather Data}

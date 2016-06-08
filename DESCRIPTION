@@ -21,15 +21,15 @@ Description: Download data from the Ada and Archibald MacLeish Field
     structures.
 License: CC0
 LazyData: TRUE
-Imports: 
+Imports:
     dplyr,
     DBI,
     lubridate,
     readr
-Depends: 
+Depends:
     R (>= 2.10),
     etl
-Suggests: 
+Suggests:
     ggplot2,
     RSQLite,
     broom,
@@ -37,7 +37,8 @@ Suggests:
     ggmap,
     leaflet,
     rmarkdown,
-    clifro
+    clifro,
+    testthat
 Enhances:
     sp,
     rgdal,

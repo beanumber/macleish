@@ -1,14 +1,27 @@
 # Sample .travis.yml for R projects
 
 language: r
+r:
+  - oldrel
+  - release
+  - devel
 warnings_are_errors: true
 sudo: required
 
+env:
+ global:
+   - CRAN: http://cran.rstudio.com
+   
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+    
 r_binary_packages:
  - dplyr
  - DBI
- - RSQlite
- - ggplot2
-
-r_github_packages:
- - beanumber/etl
+ - RSQLite
+ - RMySQL
+ - RPostgreSQL
+ - rgdal
+ - rgeos
