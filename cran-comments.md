@@ -8,6 +8,9 @@
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+* Possibly mis-spelled words in DESCRIPTION:
+  Whately (15:16, 17:41)
+    * It is the name of a town and is spelled correctly
 
 ## Reverse dependencies
 

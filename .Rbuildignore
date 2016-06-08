@@ -5,5 +5,4 @@
 ^.*README\.Rmd$
 ^.*README\.html$
 ^.*README_files$
-^NEWS.md$
 ^cran-comments\.md$
