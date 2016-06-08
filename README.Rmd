@@ -17,7 +17,6 @@ This R package allows you to download and process weather data using the [ETL](h
 
 ```{r, eval=FALSE}
 # install.packages("devtools")
-devtools::install_github("beanumber/etl")
 devtools::install_github("beanumber/macleish")
 ```
 

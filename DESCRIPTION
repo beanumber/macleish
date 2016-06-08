@@ -2,15 +2,16 @@ Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
 Version: 0.3.0
-Date: 2016-06-06
-Authors@R: as.person(c(
-    "Ben Baumer <ben.baumer@gmail.com> [aut, cre]",
-    "Rose Goueth <rgoueth@smith.edu> [aut]",
-    "Wencong Li Priscilla <liwencong1995@gmail.com> [aut]",
-    "Weijia Zhang Vega <wzhang23@smith.edu> [aut]",
-    "Nicholas J. Horton <nhorton@amherst.edu> [ctb]"
-  ))
-Description: Download weather data from the Ada and Archibald MacLeish Field 
+Date: 2016-06-08
+Authors@R: c(
+    person("Ben", "Baumer", email = "ben.baumer@gmail.com",
+      role = c("aut", "cre")),
+    person("Rose", "Goueth", role = "aut"),
+    person("Wencong", "Li", email = "liwencong1995@gmail.com", role = "aut"),
+    person("Weijia", "Zhang", email = "wzhang23@smith.edu", role = "aut"),
+    person("Nicholas", "Li", email = "nhorton@amherst.edu", role = "aut")
+    )
+Description: Download data from the Ada and Archibald MacLeish Field 
     Station in Whately, MA. The Ada 
     and Archibald MacLeish Field Station is a 260-acre patchwork of 
     forest and farmland located in West Whately, MA that provides opportunities 
