@@ -12,6 +12,7 @@
 * Possibly mis-spelled words in DESCRIPTION:
   Whately (15:16, 17:41)
     * It is the name of a town and is spelled correctly
+* Added URL to DESCRIPTION
 
 ## Reverse dependencies
 
