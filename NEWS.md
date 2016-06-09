@@ -1,6 +1,6 @@
 # macleish 0.3.1
 
-* TBD
+* Fixed Nick's name in DESCRIPTION and added URL and Bug Reports
 
 # macleish 0.3.0
 
