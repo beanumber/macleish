@@ -6,6 +6,7 @@ output:
 ---
 
 [![Travis-CI Build Status](https://travis-ci.org/beanumber/macleish.svg?branch=master)](https://travis-ci.org/beanumber/macleish)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
 
 The Ada and Archibald MacLeish Field Station is a 260-acre patchwork of forest and farmland located in West Whately, MA that provides opportunities for faculty and students to pursue environmental research, outdoor education, and low-impact recreation. More information can be found at (http://www.smith.edu/ceeds/macleish.php)
 
@@ -16,8 +17,7 @@ This R package allows you to download and process weather data using the [ETL](h
 ## To install
 
 ```{r, eval=FALSE}
-# install.packages("devtools")
-devtools::install_github("beanumber/macleish")
+install.packages("macleish")
 ```
 
 ## Use 2015 weather data

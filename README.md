@@ -1,7 +1,7 @@
 MacLeish
 ================
 
-[![Travis-CI Build Status](https://travis-ci.org/beanumber/macleish.svg?branch=master)](https://travis-ci.org/beanumber/macleish)
+[![Travis-CI Build Status](https://travis-ci.org/beanumber/macleish.svg?branch=master)](https://travis-ci.org/beanumber/macleish) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
 
 The Ada and Archibald MacLeish Field Station is a 260-acre patchwork of forest and farmland located in West Whately, MA that provides opportunities for faculty and students to pursue environmental research, outdoor education, and low-impact recreation. More information can be found at (<http://www.smith.edu/ceeds/macleish.php>)
 
@@ -13,8 +13,7 @@ To install
 ----------
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("beanumber/macleish")
+install.packages("macleish")
 ```
 
 Use 2015 weather data
