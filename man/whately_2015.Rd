@@ -2,8 +2,8 @@
 % Please edit documentation in R/data.R
 \docType{data}
 \name{whately_2015}
-\alias{orchard_2015}
 \alias{whately_2015}
+\alias{orchard_2015}
 \title{Weather data from Macleish Field Stations}
 \format{For both, a data frame (\code{\link[dplyr]{tbl_df}}) with roughly 52,560 rows and 8 or 9 variables.
 
@@ -79,4 +79,3 @@ if (require(dplyr) & require(ggplot2) & require(lubridate)) {
 }
 }
 \keyword{datasets}
-

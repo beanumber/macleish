@@ -1,7 +1,7 @@
 Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
-Version: 0.3.0.9000
+Version: 0.3.0.9001
 Date: 2016-06-08
 Authors@R: c(
     person("Ben", "Baumer", email = "ben.baumer@gmail.com",
@@ -47,5 +47,5 @@ Enhances:
     rgeos
 URL: http://github.com/beanumber/macleish
 BugReports: https://github.com/beanumber/etl/macleish
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 VignetteBuilder: knitr

@@ -108,3 +108,7 @@
 #' }
 #' 
 "macleish_layers"
+
+#' Maple sap collection
+#' @docType data
+"maple_sap"

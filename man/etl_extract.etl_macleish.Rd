@@ -2,8 +2,8 @@
 % Please edit documentation in R/etl_extract.R
 \name{etl_extract.etl_macleish}
 \alias{etl_extract.etl_macleish}
-\alias{etl_load.etl_macleish}
 \alias{etl_transform.etl_macleish}
+\alias{etl_load.etl_macleish}
 \title{Extract weather data}
 \usage{
 \method{etl_extract}{etl_macleish}(obj, ...)
@@ -66,4 +66,3 @@ macleish \%>\%
 }
 }
 }
-
