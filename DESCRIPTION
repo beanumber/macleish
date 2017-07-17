@@ -1,8 +1,8 @@
 Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
-Version: 0.3.0.9001
-Date: 2016-06-08
+Version: 0.3.1
+Date: 2017-07-10
 Authors@R: c(
     person("Ben", "Baumer", email = "ben.baumer@gmail.com",
       role = c("aut", "cre")),
@@ -27,7 +27,10 @@ Imports:
     dplyr,
     DBI,
     lubridate,
-    readr
+    readr,
+    sp,
+    rgdal,
+    rgeos
 Depends:
     R (>= 2.10),
     etl
@@ -41,10 +44,6 @@ Suggests:
     rmarkdown,
     clifro,
     testthat
-Enhances:
-    sp,
-    rgdal,
-    rgeos
 URL: http://github.com/beanumber/macleish
 BugReports: https://github.com/beanumber/etl/macleish
 RoxygenNote: 6.0.1

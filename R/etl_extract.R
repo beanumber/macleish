@@ -148,7 +148,7 @@ etl_load.etl_macleish <- function(obj, ...) {
   # write the table directly to the DB
   message("Writing whately data to the database...")
   if (DBI::dbWriteTable(obj$con, "whately", paste0(attr(obj, "load_dir"), "/whately.csv"), 
-                        overwrite = TRUE, row.names = FALSE, ...)) {
+                        append = TRUE, row.names = FALSE, ...)) {
     message("Data was successfully written to database.")
     message(DBI::dbListTables(obj$con))
   }
