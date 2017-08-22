@@ -4,6 +4,7 @@
 #' @importFrom rgdal readOGR
 #' @importFrom sp spTransform CRS
 #' @importFrom rgeos gIntersection
+#' @importFrom utils unzip
 #' @details This function will download shapefiles from MassGIS, unzip them, 
 #' transform the projection to EPSG:4326, compute their intersection with the
 #' boundary of the MacLeish property, and return the resulting 
@@ -25,7 +26,7 @@ macleish_elevation <- function() {
   lcl_zip <- file.path(dir, basename(url))
   download.file(url, destfile = lcl_zip)
   lcl_shp <- file.path(dir, "contours250k")
-  unzip(lcl_zip, exdir = lcl_shp)
+  utils::unzip(lcl_zip, exdir = lcl_shp)
   # list.files(dir)
   elevation <- rgdal::readOGR(lcl_shp) %>%
     sp::spTransform(sp::CRS("+init=epsg:4326"))

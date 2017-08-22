@@ -17,6 +17,10 @@ notifications:
     on_success: change
     on_failure: change
     
+
+before_install:
+  - sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev
+
 r_binary_packages:
  - dplyr
  - DBI
