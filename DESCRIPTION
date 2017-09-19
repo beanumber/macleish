@@ -46,6 +46,6 @@ Suggests:
     clifro,
     testthat
 URL: http://github.com/beanumber/macleish
-BugReports: https://github.com/beanumber/etl/macleish
+BugReports: https://github.com/beanumber/macleish/issues
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
