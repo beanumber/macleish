@@ -36,6 +36,7 @@ Depends:
     etl
 Suggests:
     ggplot2,
+    dbplyr,
     RSQLite,
     broom,
     knitr,

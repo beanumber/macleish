@@ -3,7 +3,6 @@
 #' @description Retrieve data from the Macleish Field Station weather monitors
 #' @inheritParams etl::etl_extract
 #' @import etl
-#' @importFrom utils download.file
 #' @export
 #' @examples 
 #' 
@@ -55,8 +54,7 @@ etl_extract.etl_macleish <- function(obj, ...) {
   url <- "https://scidb.smith.edu/~macleish/"
   files <- c("WhatelyMet_Met_10min.dat", "OrchardMet_Met_10min.dat")
   src <- paste0(url, files)
-  lcl <- paste0(attr(obj, "raw_dir"), "/", files)
-  mapply(utils::download.file, src, lcl)
+  etl::smart_download(obj, src)
   invisible(obj)
 }
 
@@ -135,30 +133,5 @@ etl_transform.etl_macleish <- function(obj, ...) {
     mutate_(when = ~as.POSIXct(when, tz = "EST", origin = "1970-01-01 00:00:00")) %>%
     select_(~-num)
   readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/orchard.csv"))
-  invisible(obj)
-}
-
-#' @rdname etl_extract.etl_macleish
-#' @importFrom DBI dbWriteTable
-#' @importFrom readr read_csv cols col_double
-#' @export
-
-etl_load.etl_macleish <- function(obj, ...) {
-  # Whately
-  # write the table directly to the DB
-  message("Writing whately data to the database...")
-  if (DBI::dbWriteTable(obj$con, "whately", paste0(attr(obj, "load_dir"), "/whately.csv"), 
-                        append = TRUE, row.names = FALSE, ...)) {
-    message("Data was successfully written to database.")
-    message(DBI::dbListTables(obj$con))
-  }
-  # Orchard
-  # write the table directly to the DB
-  message("Writing orchard data to the database...")
-  if (DBI::dbWriteTable(obj$con, "orchard", paste0(attr(obj, "load_dir"), "/orchard.csv"), 
-                        overwrite = TRUE, row.names = FALSE, ...)) {
-    message("Data was successfully written to database.")
-    message(DBI::dbListTables(obj$con))
-  }
   invisible(obj)
 }
