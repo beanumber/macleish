@@ -3,12 +3,17 @@
 \docType{data}
 \name{maple_sap}
 \alias{maple_sap}
-\title{Maple sap collection}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 118 rows and 4 columns.}
+\title{Maple sap collection at MacLeish}
+\format{\describe{
+ \item{when}{the date of collection}
+ \item{sap}{how much sap was collected, in gallons}
+ \item{Comments}{comments}
+ \item{People}{who was there?}
+}}
 \usage{
 maple_sap
 }
 \description{
-Maple sap collection
+Maple sap collection at MacLeish
 }
 \keyword{datasets}

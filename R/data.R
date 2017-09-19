@@ -109,6 +109,13 @@
 #' 
 "macleish_layers"
 
-#' Maple sap collection
+#' Maple sap collection at MacLeish
 #' @docType data
+#' @format 
+#' \describe{
+#'  \item{when}{the date of collection}
+#'  \item{sap}{how much sap was collected, in gallons}
+#'  \item{Comments}{comments}
+#'  \item{People}{who was there?}
+#' }
 "maple_sap"
