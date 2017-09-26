@@ -22,10 +22,10 @@ before_install:
   - sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev
 
 r_binary_packages:
- - dplyr
- - DBI
- - RSQLite
- - RMySQL
- - RPostgreSQL
+# - dplyr
+# - DBI
+# - RSQLite
+# - RMySQL
+# - RPostgreSQL
  - rgdal
  - rgeos

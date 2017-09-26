@@ -1,5 +1,6 @@
 # macleish 0.3.1
 
+* Updated to include `dbplyr`
 * Correct bogus URL for BugReports
 * Removed `etl_update()` method since default works fine
 * Adopted `etl::smart_download()`
