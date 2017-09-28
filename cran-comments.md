@@ -16,8 +16,13 @@ New maintainer:
 Old maintainer(s):
   Ben Baumer <ben.baumer@gmail.com>
 
-I hope this is not a problem. I'm trying to be more consistent.
+Possibly mis-spelled words in DESCRIPTION:
+  Whately (15:16, 17:41)
 
+I hope the name change is not a problem. I'm trying to be more consistent.
+
+Whately is not mis-spelled.
+  
 ## Reverse dependencies
 
 There are no reverse dependencies.
