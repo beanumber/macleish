@@ -179,7 +179,7 @@ monthly_w %>%
 
 ### Wind
 
-Wind speed and direction is measured every second and then averaged and logged every 10 minutes at both weather stations. OrchardMet measures wind midway up the forest canopy (10 m high) in a small woodland clearing while WhatleyMet measures wind 25.3 m above the ground which is above the tree canopy.
+Wind speed and direction is measured every second and then averaged and logged every 10 minutes at both weather stations. OrchardMet measures wind midway up the forest canopy (10 m high) in a small woodland clearing while WhatelyMet measures wind 25.3 m above the ground which is above the tree canopy.
 
 OrchardMet is located in a woodland clearing where winds are buffeted by trees of the forest canopy. Most wind comes from the west and southwest, with 67% of the time less than 1 m/s. Wind speeds did not average over 3 m/s at any time of the year. 
 
@@ -189,7 +189,7 @@ orchard_2015 %>%
   with(windrose(wind_speed, wind_dir))
 ```
 
-WhatleyMet is above the forest canopy and recorded winds frequently from the northwest, north, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
+WhatelyMet is above the forest canopy and recorded winds frequently from the northwest, north, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
 
 ```{r, message=FALSE}
 whately_2015 %>%

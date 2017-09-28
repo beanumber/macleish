@@ -10,7 +10,7 @@
 The following variables are values that are found in either the \code{whately_2015}
 or \code{orchard_2015} data tables.
 
-All variables are averaged over the 10 minute inverval unless otherwise noted.
+All variables are averaged over the 10 minute interval unless otherwise noted.
 \describe{
   \item{when}{Timestamp for each measurment set in Eastern Standard Time.}
   \item{temperature}{average temperature, in Celsius}
@@ -19,7 +19,7 @@ All variables are averaged over the 10 minute inverval unless otherwise noted.
   \item{rel_humidity}{How much water there is in the air, in millimeters}
   \item{pressure}{Atmospheric pressure, in millibars}
   \item{rainfall}{Total rainfall, in millimeters}
-  \item{solar_radiation}{Amount of radiation coming from the sun, in Watts/meters^2. Solar measurement for Whatley}
+  \item{solar_radiation}{Amount of radiation coming from the sun, in Watts/meters^2. Solar measurement for Whately}
   \item{par_density}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average density of Watts/meters^2. One of two solar measurements for Orchard}
   \item{par_total}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average total over measurement period of Watts/meters^2. One of two solar measurements for Orchard}
 }}
