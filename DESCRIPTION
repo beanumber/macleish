@@ -47,4 +47,4 @@ Suggests:
 URL: http://github.com/beanumber/macleish
 BugReports: https://github.com/beanumber/macleish/issues
 RoxygenNote: 6.0.1
-VignetteBuilder: knitr, rmarkdown, macleish, etl, dplyr, ggplot2, lubridate, mgcv, leaflet, clifro 
+VignetteBuilder: knitr, rmarkdown, etl, dplyr, ggplot2, lubridate, mgcv, leaflet, clifro 
