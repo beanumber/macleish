@@ -29,3 +29,6 @@ r_binary_packages:
 # - RPostgreSQL
  - rgdal
  - rgeos
+
+r_packages:
+  - devtools
