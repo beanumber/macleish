@@ -42,6 +42,7 @@ Suggests:
     ggmap,
     leaflet,
     rmarkdown,
+    mgcv,
     clifro,
     testthat
 URL: http://github.com/beanumber/macleish
