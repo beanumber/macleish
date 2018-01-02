@@ -91,12 +91,16 @@ daily <- whately_2015 %>%
 
 
 ```{r temp-plot, message=FALSE}
-ggplot(data = whately_2015, aes(x = when, y = temperature)) +
+temp_plot <- ggplot(data = whately_2015, aes(x = when, y = temperature)) +
   geom_line(color = "lightgray") + 
-  geom_smooth() + 
   geom_line(data = daily, aes(x = as.POSIXct(the_date), 
                               y = avg_temp)) + 
   xlab(NULL) + ylab("Temperature (Celsius)")
+if (require(mgcv)) {
+  temp_plot + geom_smooth()
+} else {
+  temp_plot
+}
 ```
 
 
@@ -155,7 +159,7 @@ In late November, a loose wire in the OrchardMet station resulted in some errone
 orchard_2015 %>%
   filter(month(when) == 11) %>%
   ggplot(aes(x = when, y = temperature)) +
-    geom_line() + geom_smooth()
+    geom_line()
 ```
 
 
