@@ -27,8 +27,8 @@ r_binary_packages:
 # - RSQLite
 # - RMySQL
 # - RPostgreSQL
- - rgdal
- - rgeos
+# - rgdal
+# - rgeos
 
 r_packages:
   - devtools
