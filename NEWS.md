@@ -1,3 +1,7 @@
+# macleish 0.3.2
+
+* Updated VignetteBuilder field for R-devel
+
 # macleish 0.3.1
 
 * Updated to include `dbplyr`
