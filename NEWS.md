@@ -1,3 +1,7 @@
+# macleish 0.3.3
+
+* Migrated spatial objects to `sf`
+
 # macleish 0.3.2
 
 * Updated VignetteBuilder field for R-devel

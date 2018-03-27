@@ -123,6 +123,6 @@ leaflet() %>%
                popup = ~ name) %>%
   addPolylines(data = macleish_layers[["streams"]], 
                weight = 2) %>%
-  addMarkers(data = subset(macleish_layers[["landmarks"]], grepl("Met", Label)), 
+  addMarkers(data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)), 
              popup = ~Label)
 ```
