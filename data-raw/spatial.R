@@ -19,7 +19,9 @@ layers <- c("landmarks", "forests", "streams",
   "boundary", 
   "research", "soil", "trails")
 
-macleish_layers <- lapply(layers, readOGR, dsn = dsn)
+
+library(sf)
+macleish_layers <- lapply(layers, st_read, dsn = dsn)
 names(macleish_layers) <- layers
 
 # names(macleish_layers) <- c("landmarks", "forests", "streams",
@@ -29,7 +31,7 @@ names(macleish_layers) <- layers
 #                             "research", "soil", "trails")
 
 # check to make sure they are all projected the same
-lapply(macleish_layers, proj4string)
+sapply(macleish_layers, st_crs)
 
 # fix the projection string
 # proj4string(macleish_layers[[10]]) <- proj4string(macleish_layers[[1]])

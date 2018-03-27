@@ -206,7 +206,8 @@ whately_2015 %>%
 A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. 
 
 ```{r}
-sum(whately_2015$rainfall)
+whately_2015 %>%
+  summarize(total_rainfall = sum(rainfall))
 ```
 
 Although precipitation is relatively evenly distributed across the year, precipitation totals were highest in June and lowest in May.
@@ -267,7 +268,7 @@ leaflet() %>%
               weight = 1) %>%
   addPolygons(data = macleish_layers[["buildings"]],
               weight = 1) %>%
-  addMarkers(data = subset(macleish_layers[["landmarks"]], grepl("Met", Label)), 
+  addMarkers(data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)), 
              popup = ~Label)
 ```
 

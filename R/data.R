@@ -73,15 +73,15 @@
 #' 
 #' @description Shapefiles from the MacLeish Field Station. The field station
 #' itself is located at \code{lat = 42.449167}, \code{lon = -72.679389}. These
-#' data contains information about various man-made and natural structures
+#' data contain information about various man-made and natural structures
 #' surrounding the field station. 
 #' 
-#' @details Each of the \code{\link[sp]{Spatial}} objects are projected in 
+#' @details Each of the \code{\link[sf]{sf}} objects are projected in 
 #' \code{epsg:4326} for easy integration with \code{\link[ggmap]{ggmap}} or
 #' \code{\link[leaflet]{leaflet}} objects. 
 #' 
 #' @docType data
-#' @format A \code{list} of \code{\link[sp]{Spatial}} objects, each providing a different layer.
+#' @format A \code{list} of \code{\link[sf]{sf}} objects, each providing a different layer.
 #' 
 #' \describe{
 #'  \item{landmarks}{Landmarks}
@@ -101,9 +101,9 @@
 #' 
 #' @examples 
 #' names(macleish_layers)
-#' summary(macleish_layers[["buildings"]])
+#' macleish_layers[["buildings"]]
 #' 
-#' if (require(sp)) {
+#' if (require(sf)) {
 #'  plot(macleish_layers[["buildings"]])
 #' }
 #' 
