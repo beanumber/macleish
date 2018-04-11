@@ -20,6 +20,8 @@
  \item{boundary}{the property boundary}
  \item{research}{research plots}
  \item{soil}{soil deposits used by Amy Rhodes}
+ \item{contours_30ft}{30 foot contours}
+ \item{contours_3m}{3 meter contours}
 }}
 \usage{
 macleish_layers
