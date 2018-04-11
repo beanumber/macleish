@@ -10,12 +10,12 @@ http://www.mass.gov/anf/research-and-tech/it-serv-and-support/application-serv/o
 \usage{
 mass_gis(layer = "contours250k")
 
-macleish_intersect(sp)
+macleish_intersect(x)
 }
 \arguments{
 \item{layer}{MassGIS layer name to import}
 
-\item{sp}{Spatial* object}
+\item{x}{an \code{\link[sf]{sf}} object}
 }
 \description{
 Retrieve elevation layers from MassGIS
@@ -24,17 +24,17 @@ Retrieve elevation layers from MassGIS
 This function will download shapefiles from MassGIS, unzip them, 
 transform the projection to EPSG:4326, compute their intersection with the
 boundary of the MacLeish property, and return the resulting 
-\code{\link[sp]{SpatialLines-class}} object.
+\code{\link[sf]{sf}} object.
 
 Intersect a spatial layer with the MacLeish boundary layer
 }
 \examples{
 
 \dontrun{
-# have to download the shapefiles...cound take a while...
+# have to download the shapefiles...could take a while...
 elevation <- mass_gis()
 macleish_elevation <- macleish_intersect(elevation)
-if (require(sp)) {
+if (require(sf)) {
   plot(macleish_elevation)
 }
 
