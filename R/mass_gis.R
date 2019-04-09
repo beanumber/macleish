@@ -26,7 +26,7 @@
 
 mass_gis <- function(layer = "contours250k") {
   dir <- tempdir()
-  url <- paste0("http://wsgw.mass.gov/data/gispub/shape/state/", layer, ".zip")
+  url <- paste0("http://download.massgis.digital.mass.gov/shapefiles/state/", layer, ".zip")
   lcl_zip <- file.path(dir, basename(url))
   utils::download.file(url, destfile = lcl_zip)
   lcl_shp <- file.path(dir, layer)
