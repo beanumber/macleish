@@ -77,6 +77,8 @@ etl_transform.etl_macleish <- function(obj, ...) {
   invisible(obj)
 }
 
+#' @rdname etl_extract.etl_macleish
+#' @export
 
 etl_transform_help <- function(obj, ...) {
   # Whately

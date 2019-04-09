@@ -2,6 +2,7 @@
 
 S3method(etl_extract,etl_macleish)
 S3method(etl_transform,etl_macleish)
+export(etl_transform_help)
 export(macleish_intersect)
 export(mass_gis)
 import(dplyr)
