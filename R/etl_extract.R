@@ -67,6 +67,18 @@ etl_extract.etl_macleish <- function(obj, ...) {
 
 
 etl_transform.etl_macleish <- function(obj, ...) {
+  
+  weather <- etl_transform_help(obj, ...)
+  
+  readr::write_csv(weather[["whately"]], path = paste0(attr(obj, "load_dir"), "/whately.csv"))
+  
+  readr::write_csv(weather[["orchard"]], path = paste0(attr(obj, "load_dir"), "/orchard.csv"))
+  
+  invisible(obj)
+}
+
+
+etl_transform_help <- function(obj, ...) {
   # Whately
   lcl <- paste0(attr(obj, "raw_dir"), "/WhatelyMet_Met_10min.dat")
   x <- readr::read_csv(lcl, skip = 1)
@@ -92,12 +104,11 @@ etl_transform.etl_macleish <- function(obj, ...) {
     unique()
   # time-shifting correction, see:
   # https://github.com/beanumber/macleish/issues/8
-  out <- out %>%
+  whately <- out %>%
     mutate_(num = ~seq(1:nrow(out)), 
             when = ~ifelse(num <= 50682, when - lubridate::dhours(5), when), 
             when = ~as.POSIXct(when, tz = "EST", origin = "1970-01-01 00:00:00")) %>%
     select_(~-num)
-  readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/whately.csv"))
   
   # Orchard
   lcl <- paste0(attr(obj, "raw_dir"), "/OrchardMet_Met_10min.dat")
@@ -126,12 +137,12 @@ etl_transform.etl_macleish <- function(obj, ...) {
     unique()
   # time-shifting correction, see:
   # https://github.com/beanumber/macleish/issues/8
-  out <- out %>%
+  orchard <- out %>%
     mutate_(num = ~seq(1:nrow(out)), 
             when = ~ifelse( num >= 18482, when + lubridate::dhours(1), when), 
             when = ~ifelse( num >= 70892, when + lubridate::dminutes(50), when), 
             when = ~as.POSIXct(when, tz = "EST", origin = "1970-01-01 00:00:00")) %>%
     select_(~-num)
-  readr::write_csv(out, path = paste0(attr(obj, "load_dir"), "/orchard.csv"))
-  invisible(obj)
+
+  return(list("whately" = whately, "orchard" = orchard))
 }
