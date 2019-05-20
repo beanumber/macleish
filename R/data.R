@@ -41,7 +41,7 @@
 #' 
 #' All variables are averaged over the 10 minute interval unless otherwise noted.
 #' \describe{
-#'   \item{when}{Timestamp for each measurment set in Eastern Standard Time.}
+#'   \item{when}{Timestamp for each measurement set in Eastern Standard Time.}
 #'   \item{temperature}{average temperature, in Celsius}
 #'   \item{wind_speed}{Wind speed, in meters per second}
 #'   \item{wind_dir}{Wind direction, in degrees}

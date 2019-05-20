@@ -2,7 +2,7 @@ Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
 Version: 0.3.3.9004
-Date: 2018-03-26
+Date: 2018-05-20
 Authors@R: c(
     person("Benjamin S.", "Baumer", email = "ben.baumer@gmail.com",
       role = c("aut", "cre")),
