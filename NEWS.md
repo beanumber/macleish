@@ -1,4 +1,4 @@
-# macleish 0.3.3
+# macleish 0.3.4
 
 * Migrated spatial objects to `sf`
 * Fixed broken URL in `mass_gis()`
