@@ -13,7 +13,7 @@
 etl_transform_help(obj, ...)
 }
 \arguments{
-\item{obj}{an \code{\link{etl}} object}
+\item{obj}{an \code{\link[etl]{etl}} object}
 
 \item{...}{arguments passed to methods}
 }

@@ -4,7 +4,8 @@
 \name{macleish_layers}
 \alias{macleish_layers}
 \title{MacLeish spatial data}
-\format{A \code{list} of \code{\link[sf]{sf}} objects, each providing a different layer.
+\format{
+A \code{list} of \code{\link[sf]{sf}} objects, each providing a different layer.
 
 \describe{
  \item{landmarks}{Landmarks}
@@ -22,7 +23,8 @@
  \item{soil}{soil deposits used by Amy Rhodes}
  \item{contours_30ft}{30 foot contours}
  \item{contours_3m}{3 meter contours}
-}}
+}
+}
 \usage{
 macleish_layers
 }

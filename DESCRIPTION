@@ -1,7 +1,7 @@
 Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
-Version: 0.3.4
+Version: 0.3.4.9000
 Date: 2019-05-20
 Authors@R: c(
     person("Benjamin S.", "Baumer", email = "ben.baumer@gmail.com",
@@ -39,11 +39,13 @@ Suggests:
     knitr,
     ggmap,
     leaflet,
+    purrr,
     rmarkdown,
     mgcv,
     clifro,
     testthat
 URL: http://github.com/beanumber/macleish
 BugReports: https://github.com/beanumber/macleish/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
+Encoding: UTF-8
 VignetteBuilder: knitr, rmarkdown, etl, dplyr, ggplot2, lubridate, mgcv, leaflet, clifro 

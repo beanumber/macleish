@@ -9,12 +9,9 @@ test_that("data integrity", {
   expect_equal(nrow(whately_2015), 6*24*365)
   expect_length(macleish_layers, 12)
   macleish_layers %>%
-    sapply(FUN = sf::st_crs) %>%
-    t() %>%
-    as_data_frame() %>%
-    bind_rows() %>%
-    pull("proj4string") %>%
-    unlist() %>%
-    unique() %>%
-    expect_equal("+proj=longlat +datum=WGS84 +no_defs")
+    purrr::map(sf::st_crs) %>%
+    purrr::map_chr(2) %>%
+    `==`("+proj=longlat +datum=WGS84 +no_defs") %>%
+    all() %>%
+    expect_true()
 })

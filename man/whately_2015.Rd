@@ -5,7 +5,8 @@
 \alias{whately_2015}
 \alias{orchard_2015}
 \title{Weather data from Macleish Field Stations}
-\format{For both, a data frame (\code{\link[dplyr]{tbl_df}}) with roughly 52,560 rows and 8 or 9 variables.
+\format{
+For both, a data frame (\code{\link[dplyr]{tbl_df}}) with roughly 52,560 rows and 8 or 9 variables.
 
 The following variables are values that are found in either the \code{whately_2015}
 or \code{orchard_2015} data tables.
@@ -22,7 +23,10 @@ All variables are averaged over the 10 minute interval unless otherwise noted.
   \item{solar_radiation}{Amount of radiation coming from the sun, in Watts/meters^2. Solar measurement for Whately}
   \item{par_density}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average density of Watts/meters^2. One of two solar measurements for Orchard}
   \item{par_total}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average total over measurement period of Watts/meters^2. One of two solar measurements for Orchard}
-}}
+}
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 52547 rows and 9 columns.
+}
 \source{
 These data are recorded at \url{http://www.smith.edu/ceeds/macleish_monitoring.php}
 }
