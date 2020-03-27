@@ -10,8 +10,8 @@ test_that("data integrity", {
   expect_length(macleish_layers, 12)
   macleish_layers %>%
     purrr::map(sf::st_crs) %>%
-    purrr::map_chr(2) %>%
-    `==`("+proj=longlat +datum=WGS84 +no_defs") %>%
+    purrr::map_int(`$`, epsg) %>%
+    `==`(4326) %>%
     all() %>%
     expect_true()
 })

@@ -1,3 +1,7 @@
+# macleish 0.3.5
+
+* Fixed broken test due to `sf` 0.9
+
 # macleish 0.3.4
 
 * Migrated spatial objects to `sf`

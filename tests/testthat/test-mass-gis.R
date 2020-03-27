@@ -1,6 +1,7 @@
 context("test-mass-gis")
 
 test_that("Mass GIS works", {
+  skip_on_cran()
   elevation <- mass_gis()
   expect_is(elevation, "sf")
   expect_equal(nrow(elevation), 50395)
