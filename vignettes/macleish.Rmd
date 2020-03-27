@@ -85,18 +85,24 @@ library(lubridate)
 daily <- whately_2015 %>%
   mutate(the_date = as.Date(when, tz = "EST")) %>%
   group_by(the_date) %>%
-  summarize(N = n(), avg_temp = mean(temperature), 
-            max_temp = max(temperature), min_temp =
-              min(temperature))
+  summarize(
+    N = n(), avg_temp = mean(temperature),
+    max_temp = max(temperature),
+    min_temp = min(temperature)
+  )
 ```
 
 
 ```{r temp-plot, message=FALSE}
 temp_plot <- ggplot(data = whately_2015, aes(x = when, y = temperature)) +
-  geom_line(color = "lightgray") + 
-  geom_line(data = daily, aes(x = as.POSIXct(the_date), 
-                              y = avg_temp)) + 
-  xlab(NULL) + ylab("Temperature (Celsius)")
+  geom_line(color = "lightgray") +
+  geom_line(data = daily, aes(
+    x = as.POSIXct(the_date),
+    y = avg_temp
+  )) +
+  xlab(NULL) +
+  ylab("Temperature (Celsius)")
+
 if (require(mgcv)) {
   temp_plot + geom_smooth()
 } else {
@@ -160,7 +166,7 @@ In late November, a loose wire in the OrchardMet station resulted in some errone
 orchard_2015 %>%
   filter(month(when) == 11) %>%
   ggplot(aes(x = when, y = temperature)) +
-    geom_line()
+  geom_line()
 ```
 
 
@@ -233,18 +239,23 @@ daily_precip <- whately_2015 %>%
   mutate(the_date = as.Date(when, tz = "EST")) %>%
   group_by(the_date) %>%
   summarize(N = n(), total_precip = sum(rainfall)) %>%
-  mutate(cum_precip = cumsum(total_precip),
-         cum_rescale = (cum_precip / max(cum_precip)) * max(total_precip))
+  mutate(
+    cum_precip = cumsum(total_precip),
+    cum_rescale = (cum_precip / max(cum_precip)) * max(total_precip)
+  )
 ```
 
 The following plot will show you how much rainfall you would have per day at macleish field station over 2015, as well as the cumulative amount of rainfall over the course of the year.
 
 ```{r daily-precip, message=FALSE}
-ggplot(data = daily_precip, 
-       aes(x = the_date, y = total_precip)) +
-  geom_bar(stat = "identity") + 
-  geom_line(aes(y = cum_rescale), color = "blue") + 
-  ylab("Daily Precipitation (mm)") + xlab(NULL)
+ggplot(
+  data = daily_precip,
+  aes(x = the_date, y = total_precip)
+) +
+  geom_bar(stat = "identity") +
+  geom_line(aes(y = cum_rescale), color = "blue") +
+  ylab("Daily Precipitation (mm)") +
+  xlab(NULL)
 ```
 
 February and March had the greatest number of precipitation events. Annual precipitation accumulated at a low, but fairly steady rate through June. After June rainfall levels increased and total accumulation increased sharply to the end of the calendar year. Starting in June a series of large rainfall events (40-50 mm) occurred regularly over the summer. The largest precipitation event in 2015 occurred on September 30th when 113.8 mm (8.7% of the annual total) of precipitation fell. During 2015, there were 15, 25.4 mm (1”) precipitation events; 2, 50.8 mm (2”) precipitation events; and 1, 76.2 mm (3”) precipitation event. 
@@ -265,11 +276,16 @@ These layers can be combined to provide a fuller picture of the activity at the 
 library(leaflet)
 leaflet() %>%
   addTiles() %>%
-  addPolygons(data = macleish_layers[["boundary"]],
-              weight = 1) %>%
-  addPolygons(data = macleish_layers[["buildings"]],
-              weight = 1) %>%
-  addMarkers(data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)), 
-             popup = ~Label)
+  addPolygons(
+    data = macleish_layers[["boundary"]],
+    weight = 1
+  ) %>%
+  addPolygons(
+    data = macleish_layers[["buildings"]],
+    weight = 1
+  ) %>%
+  addMarkers(
+    data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)),
+    popup = ~Label
+  )
 ```
-

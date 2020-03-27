@@ -2,7 +2,7 @@ Package: macleish
 Type: Package
 Title: Retrieve Data from MacLeish Field Station
 Version: 0.3.5
-Date: 2019-05-20
+Date: 2020-03-27
 Authors@R: c(
     person("Benjamin S.", "Baumer", email = "ben.baumer@gmail.com",
       role = c("aut", "cre")),
@@ -37,7 +37,6 @@ Suggests:
     RSQLite,
     broom,
     knitr,
-    ggmap,
     leaflet,
     purrr,
     rmarkdown,

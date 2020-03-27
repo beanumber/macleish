@@ -36,7 +36,7 @@ surrounding the field station.
 }
 \details{
 Each of the \code{\link[sf]{sf}} objects are projected in 
-\code{epsg:4326} for easy integration with \code{\link[ggmap]{ggmap}} or
+\code{epsg:4326} for easy integration with Google Maps or
 \code{\link[leaflet]{leaflet}} objects.
 }
 \examples{
