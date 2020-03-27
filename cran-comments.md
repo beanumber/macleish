@@ -15,6 +15,9 @@ Possibly mis-spelled words in DESCRIPTION:
   Whately (15:16, 17:41)
 
 Whately is not mis-spelled.
+
+* rhub checks fails due to old versions of external GDAL
+  libraries, but the package passes on Travis. 
   
 ## Reverse dependencies
 
