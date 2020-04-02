@@ -1,9 +1,8 @@
 ## Test environments
 
-* local OS X install, R 3.6.0
 * local Ubuntu 18.04, R 3.6.3
 * Ubuntu 16.04.5 (on travis-ci), oldrel, release, devel
-* win-builder (devel and release)
+* R-hub (12 platforms, including Windows and Mac OS X)
 
 ## R CMD check results
 
@@ -16,8 +15,8 @@ Possibly mis-spelled words in DESCRIPTION:
 
 Whately is not mis-spelled.
 
-* rhub checks fails due to old versions of external GDAL
-  libraries, but the package passes on Travis. 
+* Many R-hub builds failed for reasons (timeout, lack of disk space) 
+  that have nothing to do with this package. 
   
 ## Reverse dependencies
 
