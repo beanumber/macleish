@@ -15,6 +15,8 @@ Possibly mis-spelled words in DESCRIPTION:
 
 Whately is not mis-spelled.
 
+* Local and Travis-CI checks all pass.
+
 * Many R-hub builds failed for reasons (timeout, lack of disk space) 
   that have nothing to do with this package. 
 
