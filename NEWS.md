@@ -1,3 +1,8 @@
+# macleish 0.3.6
+
+* Added campsite layer
+* Improved variable names
+
 # macleish 0.3.5
 
 * Fixed broken test due to `sf` 0.9
