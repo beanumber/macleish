@@ -29,7 +29,7 @@ macleish_layers[["camp_sites"]] <- camp_sites
 # rename forests field
 macleish_layers[["forests"]] <- macleish_layers %>%
   purrr::pluck("forests") %>%
-  dplyr::mutate(type = Sheet1__Na)
+  dplyr::rename(type = Sheet1__Na)
 
 # fix the projection string
 # proj4string(macleish_layers[[10]]) <- proj4string(macleish_layers[[1]])
