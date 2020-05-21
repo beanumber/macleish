@@ -2,6 +2,7 @@
 
 * Added campsite layer
 * Improved variable names
+* Added elevation layer
 
 # macleish 0.3.5
 

@@ -33,6 +33,11 @@ macleish_layers[["forests"]] <- macleish_layers %>%
   purrr::pluck("forests") %>%
   dplyr::rename(type = Sheet1__Na)
 
+# add 30 foot contours
+macleish_layers[["elevation"]] <- mass_gis() %>%
+  macleish_intersect() %>%
+  st_transform(4326)
+
 # fix the projection string
 # proj4string(macleish_layers[[10]]) <- proj4string(macleish_layers[[1]])
 
