@@ -1,10 +1,12 @@
 # Creates the macleish_layers list
 dsn <- path.expand("data-raw/macleish/")
 
+sf::st_layers(dsn)
+
 layers <- c("landmarks", "forests", "streams",
   "challenge_courses", 
   "buildings", "wetlands",
-#  "slopes", 
+#   "slopes", 
   "boundary", 
   "research", "soil", "trails")
 
