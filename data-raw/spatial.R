@@ -21,7 +21,7 @@ lapply(macleish_layers, st_crs)
 camp_sites <- tibble::tribble(
   ~name, ~lat, ~lon, 
   "Group Campsite", 42.450976, -72.678154, 
-  "Remote campsite", 42.458549, -72.679581
+  "Remote Campsite", 42.458549, -72.679581
 ) %>%
   st_as_sf(coords = c("lon", "lat")) %>%
   st_set_crs(4326)
