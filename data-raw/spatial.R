@@ -34,8 +34,8 @@ macleish_layers[["forests"]] <- macleish_layers %>%
   dplyr::rename(type = Sheet1__Na)
 
 # add 30 foot contours
-macleish_layers[["elevation"]] <- mass_gis() %>%
-  macleish_intersect() %>%
+macleish_layers[["elevation"]] <- macleish::mass_gis() %>%
+  macleish::macleish_intersect() %>%
   st_transform(4326)
 
 # fix the projection string
@@ -44,3 +44,4 @@ macleish_layers[["elevation"]] <- mass_gis() %>%
 # macleish_layers <- lapply(macleish_layers, spTransform, CRSobj = CRS("+init=epsg:4326"))
 
 save(macleish_layers, file = "data/macleish_layers.rda", compress = "xz")
+
