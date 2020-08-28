@@ -9,7 +9,7 @@ output:
 [![Travis-CI Build Status](https://travis-ci.org/beanumber/macleish.svg?branch=master)](https://travis-ci.org/beanumber/macleish)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
 
-The Ada and Archibald MacLeish Field Station is a 260-acre patchwork of forest and farmland located in West Whately, MA that provides opportunities for faculty and students to pursue environmental research, outdoor education, and low-impact recreation. More information can be found at (http://www.smith.edu/ceeds/macleish.php)
+The [Ada and Archibald MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php) is a 260-acre patchwork of forest and farmland located in West Whately, MA that provides opportunities for faculty and students to pursue environmental research, outdoor education, and low-impact recreation. 
 
 ![MacLeish Field Station](inst/extdata/macleish_600px.jpg)
 
@@ -48,6 +48,7 @@ whately %>%
   mutate(the_year = strftime('%Y', when)) %>%
   group_by(the_year) %>%
   summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(temperature))
+
 orchard <- macleish %>%
   tbl("orchard")
 orchard %>%
@@ -63,6 +64,7 @@ daily <- whately %>%
   group_by(the_date) %>%
   summarize(N = n(), avgTemp = mean(temperature)) %>%
   collect()
+
 library(ggplot2)
 ggplot(data = daily, aes(x = as.Date(the_date), y = avgTemp)) +
   geom_point() + geom_smooth()
@@ -82,15 +84,32 @@ names(macleish_layers)
 library(leaflet)
 leaflet() %>%
   addTiles() %>%
-  addPolygons(data = macleish_layers[["boundary"]], 
-              weight = 1, fillOpacity = 0.1) %>%
-  addPolygons(data = macleish_layers[["buildings"]], 
-              weight = 1, popup = ~ name) %>%
-  addPolylines(data = macleish_layers[["trails"]], 
-               weight = 1, color = "brown",
-               popup = ~ name) %>%
-  addPolylines(data = macleish_layers[["streams"]], 
-               weight = 2) %>%
-  addMarkers(data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)), 
-             popup = ~Label)
+  addPolygons(
+    data = macleish_layers[["boundary"]], 
+    weight = 1, fillOpacity = 0.1
+  ) %>%
+  addPolygons(
+    data = macleish_layers[["buildings"]], 
+    weight = 1, popup = ~ name
+  ) %>%
+  addPolylines(
+    data = macleish_layers[["trails"]], 
+    weight = 1, color = "brown",
+    popup = ~ name
+  ) %>%
+  addPolylines(
+    data = macleish_layers[["streams"]], 
+    weight = 2
+  ) %>%
+  addMarkers(
+    data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)), 
+    popup = ~Label
+  )
 ```
+
+## See also
+
+- [Ada and Archibald MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php)
+- **[etl](https://www.github.com/beanumber/etl)**
+
+
