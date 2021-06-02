@@ -10,7 +10,7 @@ Authors@R: c(
     person("Wencong", "Li", email = "liwencong1995@gmail.com", role = "aut"),
     person("Weijia", "Zhang", email = "wzhang23@smith.edu", role = "aut"),
     person("Nicholas", "Horton", email = "nhorton@amherst.edu", role = "aut"),
-    person("Dominique", "Kelly", email = "djkelly@smith.edu1", role = "aut")
+    person("Dominique", "Kelly", email = "djkelly@smith.edu", role = "aut")
     )
 Description: Download data from the Ada and Archibald MacLeish Field 
     Station in Whately, MA. The Ada 
