@@ -6,7 +6,7 @@ output:
 
 # macleish <img src='man/figures/logo.png' align="right" height="139" />
 
-[![Travis-CI Build Status](https://travis-ci.org/beanumber/macleish.svg?branch=master)](https://travis-ci.org/beanumber/macleish)
+[![R-CMD-check](https://github.com/beanumber/macleish/workflows/R-CMD-check/badge.svg)](https://github.com/beanumber/macleish/actions)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
 
 The [Ada and Archibald MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php) is a 260-acre patchwork of forest and farmland located in West Whately, MA that provides opportunities for faculty and students to pursue environmental research, outdoor education, and low-impact recreation. 
