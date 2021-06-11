@@ -9,6 +9,14 @@ output: html_document
 #update.packages(ask = FALSE, checkBuilt = TRUE)
 ```
 
+Check out this as an example: https://github.com/rudeboybert/fivethirtyeight/blob/master/data-raw/process_data_sets.R
+
+Note:
+* You'll be reading in an excel file, not a .csv
+* Then make sure usethis::use_data() works
+* Then do data cleaning
+
+
 ```{r}
 usethis::use_data(MacLeish_Data_Plot_MC_01, overwrite = TRUE)
 usethis::use_data(MacLeish_Data_Plot_MC_02, overwrite = TRUE)
