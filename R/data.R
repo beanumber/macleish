@@ -121,3 +121,14 @@
 #'  \item{People}{who was there?}
 #' }
 "maple_sap"
+
+#' Plot data collection at MacLeish
+#' @docType data
+#' @format 
+#' \describe {
+#'  \item{when}{the date of collection}
+#'  \item{sap}{how much sap was collected, in gallons}
+#'  \item{Comments}{comments}
+#'  \item{People}{who was there?}
+#'  }
+"MacLeish_Data_Plot_MC_01"

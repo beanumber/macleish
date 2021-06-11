@@ -1,0 +1,32 @@
+---
+title: "Untitled"
+author: "Dominique Kelly"
+date: "6/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#update.packages(ask = FALSE, checkBuilt = TRUE)
+```
+
+```{r}
+usethis::use_data(MacLeish_Data_Plot_MC_01, overwrite = TRUE)
+usethis::use_data(MacLeish_Data_Plot_MC_02, overwrite = TRUE)
+```
+
+```{r}
+load_all()
+```
+
+```{r}
+library(devtools)
+library(tidyverse)
+library(fs)
+```
+
+```{r}
+plot_data <- as_tibble(MacLeish_Data_Plot_MC_01)
+plot_data
+```
+
+
