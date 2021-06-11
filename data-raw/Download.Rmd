@@ -9,7 +9,11 @@ output: html_document
 #update.packages(ask = FALSE, checkBuilt = TRUE)
 ```
 
-Check out this as an example: https://github.com/rudeboybert/fivethirtyeight/blob/master/data-raw/process_data_sets.R
+Check out thes as an example:
+
+* https://github.com/rudeboybert/fivethirtyeight/blob/master/data-raw/process_data_sets.R to load data into package
+* https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data.R#L22 to write help file using `roxygen2`
+
 
 Note:
 * You'll be reading in an excel file, not a .csv
