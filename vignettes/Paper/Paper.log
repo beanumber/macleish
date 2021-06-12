@@ -1,12 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.6.3)  3 JUN 2021 17:12
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.6.3)  11 JUN 2021 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/ebony/AppData/Local/Temp/RtmpAvzvyj/preview-a20c6e7474d5.dir/Paper.t
-ex
-
-(c:/Users/ebony/AppData/Local/Temp/RtmpAvzvyj/preview-a20c6e7474d5.dir/Paper.te
+**C:/Users/ebony/AppData/Local/Temp/RtmpuM7WQ4/preview-4e946861533.dir/Paper.te
 x
+
+(c:/Users/ebony/AppData/Local/Temp/RtmpuM7WQ4/preview-4e946861533.dir/Paper.tex
 LaTeX2e <2021-06-01>
 L3 programming layer <2021-06-01> (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf
 -dist/tex/latex/base/article.cls
@@ -1263,10 +1262,10 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
 ]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 332.
-File: C:/Users/ebony/AppData/Local/Temp/RtmpAvzvyj/preview-a20c6e7474d5.dir/Pap
-er_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpAvzvyj/preview-a20c6e7474d5.dir/Pape
-r_files/figure-latex/unnamed-chunk-1-1.pdf>
+File: C:/Users/ebony/AppData/Local/Temp/RtmpuM7WQ4/preview-4e946861533.dir/Pape
+r_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
+<use C:/Users/ebony/AppData/Local/Temp/RtmpuM7WQ4/preview-4e946861533.dir/Paper
+_files/figure-latex/unnamed-chunk-1-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/3.6/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/3.6/rticles/rmarkdown/template
@@ -1301,11 +1300,11 @@ Package logreq Info: Writing requests to 'Paper.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  33642 strings out of 478489
- 682173 string characters out of 5857834
+ 682160 string characters out of 5857834
  1460755 words of memory out of 5000000
  53418 multiletter control sequences out of 15000+600000
  410310 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,12n,95p,808b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,12n,95p,807b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Paper.pdf (3 pages).
