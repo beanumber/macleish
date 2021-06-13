@@ -77,3 +77,7 @@ View(newplot_data02)
 plot_data02 <- newplot_data02
 
 usethis::use_data(plot_data02, overwrite = TRUE)
+
+#Documentation complete:
+#Use plot_data01 and ?plot_data01 to see plot data01 documentation
+#Use plot_data02 and ?plot_data02 to see plot data02 documentation

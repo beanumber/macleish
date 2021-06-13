@@ -122,3 +122,24 @@
 #' }
 "maple_sap"
 
+#' Plot data collection at MacLeish
+#' @docType data
+#' @format 
+#' \describe{
+#'  \item{when}{the date of collection}
+#'  \item{sap}{how much sap was collected, in gallons}
+#'  \item{Comments}{comments}
+#'  \item{People}{who was there?}
+#' }
+"plot_data01"
+
+#' Plot data collection at MacLeish
+#' @docType data
+#' @format 
+#' \describe{
+#'  \item{when}{the date of collection}
+#'  \item{sap}{how much sap was collected, in gallons}
+#'  \item{Comments}{comments}
+#'  \item{People}{who was there?}
+#' }
+"plot_data02"
