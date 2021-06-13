@@ -1,23 +1,26 @@
 ---
 # Example from https://joss.readthedocs.io/en/latest/submitting.html
-title: 'Gala: A Python package for galactic dynamics'
+title: 'The MacLeish Package: R Package for analyzing weather and spatial data'
 tags:
-  - Python
-  - astronomy
-  - dynamics
-  - galactic dynamics
-  - milky way
+  - R
+  - forest
+  - farmland
+  - weather
+  - spatial analysis 
 authors:
-  - name: Adrian M. Price-Whelan
+  - name: Benjamin S. Baumer #Rose Goueth, Wencong Li, Weijia Zhang, Nicholas Horton, Albert Y. Kim, Dominique Kelly 
     orcid: 0000-0003-0872-7098
-    affiliation: "1, 2" # (Multiple affiliations must be quoted)
-  - name: Author 2
+    affiliation: 1 # (Multiple affiliations must be quoted)
+  - name: Dominique Kelly
     orcid: 0000-0000-0000-0000
-    affiliation: 2
+    affiliation: 1
+  - name: Albert Y. Kim
+    orcid: 0000-0000-0000-0000
+    affiliation: 1
 affiliations:
- - name: Lyman Spitzer, Jr. Fellow, Princeton University
+ - name: Smith College 
    index: 1
- - name: Institution 2
+ - name: Amherst College
    index: 2
 citation_author: Price-Whelan et. al.
 date: 13 August 2017

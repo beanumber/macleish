@@ -126,10 +126,10 @@
 #' @docType data
 #' @format 
 #' \describe{
-#'  \item{when}{the date of collection}
-#'  \item{sap}{how much sap was collected, in gallons}
+#'  \item{when}{Data collected from 2010-2015}
+#'  \item{size}{20 x 50 m and divided into 10 subplot modules of 110 m} 
 #'  \item{Comments}{comments}
-#'  \item{People}{who was there?}
+#'  \item{People}{Jesse Bellemare}
 #' }
 "plot_data01"
 
@@ -137,9 +137,9 @@
 #' @docType data
 #' @format 
 #' \describe{
-#'  \item{when}{the date of collection}
-#'  \item{sap}{how much sap was collected, in gallons}
+#'  \item{when}{Data collected from 2009-2012}
+#'  \item{size}{20 x 50 m and divided into 10 subplot modules of 110 m}
 #'  \item{Comments}{comments}
-#'  \item{People}{who was there?}
+#'  \item{People}{Jesse Bellemare}
 #' }
 "plot_data02"
