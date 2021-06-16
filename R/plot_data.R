@@ -79,8 +79,9 @@ plot_data02 <- newplot_data02
 
 usethis::use_data(plot_data02, overwrite = TRUE)
 
-#Run this for documentation functionality 
-devtools::document()
+#Run this in console for documentation functionality 
+#When ran together with rest of data, causes R to run without stop? Troubleshoot?
+#devtools::document()
 
 #Documentation complete:
 #Use plot_data01 and ?plot_data01 to see plot data01 documentation

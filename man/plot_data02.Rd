@@ -3,19 +3,21 @@
 \docType{data}
 \name{plot_data02}
 \alias{plot_data02}
-\title{Plot data collection at MacLeish}
+\title{MacLeish Data Plot 2}
 \format{
 \describe{
- \item{when}{Data collected from 2009-2012}
- \item{size}{20 x 50 m and divided into 10 subplot modules of 110 m}
+ \item{When}{Data collected from 2009-2012 in the fall semesters.}
+ \item{Size}{20 x 50 m and divided into 10 subplot modules of 110 m. Five 10 x 10 modules along central 50 m axis.}
  \item{Comments}{comments}
- \item{People}{Jesse Bellemare}
+ \item{People}{Data obtained from Jesse Bellemare and Smith College students from BIO364-365 course.}
 }
 }
 \usage{
 plot_data02
 }
 \description{
-Plot data collection at MacLeish
+Collected data on the trend of tree diameter in centimeters 
+for Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
+Tree diameter was measured at 1.4 meters high above the ground.
 }
 \keyword{datasets}
