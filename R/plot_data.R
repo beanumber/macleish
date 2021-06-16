@@ -18,7 +18,7 @@ library(dplyr)
 #Plot Data 1
 #Creating year and height column 
 newplot_data01 <- plot_data01 %>%
-  pivot_longer(c(`Fall'15`, `Fall'14`,`Fall'13`,`Fall'12`,`Fall'11`,`Fall'10`), names_to = "Year", values_to = "Height")
+  pivot_longer(c(`Fall'15`, `Fall'14`,`Fall'13`,`Fall'12`,`Fall'11`,`Fall'10`), names_to = "Year", values_to = "Diameter(cm)")
 
 #Separating fall and year into new columns 
 newplot_data01 <- newplot_data01 %>%
@@ -32,12 +32,13 @@ newplot_data01$Year[newplot_data01$Year == "'12"] <- "2012"
 newplot_data01$Year[newplot_data01$Year == "'11"] <- "2011"
 newplot_data01$Year[newplot_data01$Year == "'10"] <- "2010"
 
-#Changing value "DEAD" to "0" for height 
-newplot_data01$Height[newplot_data01$Height == "DEAD"] <- "0"
+#Changing value "DEAD" to NA for diameter
+#Tree diameter didn't increase or decrease over time 
+newplot_data01$`Diameter(cm)`[newplot_data01$`Diameter(cm)` == "DEAD"] <- "NA"
 
 #Shifting the "Notes:" column to the end of the dataset 
 newplot_data01 <- newplot_data01 %>%
-  relocate("Notes:", .after = "Height")
+  relocate("Notes:", .after = "Diameter(cm)")
 
 View(newplot_data01)
 
@@ -52,7 +53,7 @@ plot_data02 <- read_excel("data-raw/MacLeish Data_Plot MC-02.xlsx")
 
 #Creating year and height column 
 newplot_data02 <- plot_data02 %>%
-  pivot_longer(c(`FALL 2016`, `Fall'12`,`Fall'11`,`Fall'10`,`Fall'09`), names_to = "Year", values_to = "Height")
+  pivot_longer(c(`FALL 2016`, `Fall'12`,`Fall'11`,`Fall'10`,`Fall'09`), names_to = "Year", values_to = "Diameter(cm)")
 
 #Separating fall and year into new columns 
 newplot_data02 <- newplot_data02 %>%
@@ -66,11 +67,11 @@ newplot_data02$Year[newplot_data02$Year == "'10"] <- "2010"
 newplot_data02$Semester[newplot_data02$Semester == "FALL"] <- "Fall"
 
 #Changing value "DEAD" to "0" for height 
-newplot_data02$Height[newplot_data02$Height == "DEAD"] <- "0"
+newplot_data02$`Diameter(cm)`[newplot_data02$`Diameter(cm)` == "DEAD"] <- "NA"
 
 #Shifting the "Notes:" column to the end of the dataset 
 newplot_data02 <- newplot_data02 %>%
-  relocate("Notes:", .after = "Height")
+  relocate("Notes:", .after = "Diameter(cm)")
 
 View(newplot_data02)
 
@@ -78,7 +79,7 @@ plot_data02 <- newplot_data02
 
 usethis::use_data(plot_data02, overwrite = TRUE)
 
-#Run this for documentation
+#Run this for documentation functionality 
 devtools::document()
 
 #Documentation complete:
