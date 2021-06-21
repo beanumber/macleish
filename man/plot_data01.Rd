@@ -9,14 +9,14 @@
  \item{When}{Data collected from 2010-2015 in the fall semesters.}
  \item{Size}{20 x 50 m and divided into 10 subplot modules of 110 m. Five 10 x 10 modules along central 50 m axis.} 
  \item{Comments}{comments}
- \item{People}{Data obtained from Jesse Bellemare and Smith College students from BIO364-365 course.}
+ \item{People}{Data obtained from Jesse Bellemare and Smith College students from BIO364-365 courses.}
 }
 }
 \usage{
 plot_data01
 }
 \description{
-Collected data on the trend of tree diameter in centimeters 
+Collected data on tree diameter (in centimeters)
 for Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
 Tree diameter was measured at 1.4 meters high above the ground.
 }
