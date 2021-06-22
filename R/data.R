@@ -123,29 +123,38 @@
 "maple_sap"
 
 #' MacLeish Data Plot 1
-#' @description Collected data on change in tree diameter (in centimeters)
-#' for Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
+#' @description Data on change in tree diameter (in centimeters)
+#' for parasitic Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
 #' Tree diameter was measured at 1.4 meters high above the ground.
 #' @docType data
 #' @format 
 #' \describe{
-#'  \item{When}{Data collected from 2010-2015 in the fall semesters.}
-#'  \item{Size}{20 x 50 m and divided into 10 subplot modules of 110 m. Five 10 x 10 modules along central 50 m axis.} 
-#'  \item{Comments}{comments}
+#'  \item{Module}{20 x 50 m and divided into 10 subplot modules of 110 m. There are five 10 x 10 modules along central 50 m axis.}
+#'  \item{Tag}{Tag numbers used to identify each tree.} 
+#'  \item{Species}{Tree species include Acer rubrum, Betula lenta, Betula papyrifera, Fagus grandifolia, Hamamelis virginiana, 
+#'  Pinus strobus, Quercus rubra, and Tsuga canadensis.}
+#'  \item{Position}{Stage of growth for each individual tree.}
+#'  \item{Year}{Data collected from 2010-2015 in the fall semesters.}
+#'  \item{Notes}{Notes collected on the wellbeing of tree species, including notes on death or poor health.}
+#'  \item{Diameter(cm)}{Tree diameter measured in centimeters and at 1.4 meters high above the ground.}
 #'  \item{People}{Data obtained from Jesse Bellemare and Smith College students from BIO364-365 courses.}
 #' }
-"plot_data01"
+"tree_diameter1"
 
 #' MacLeish Data Plot 2
-#' @description Collected data on change in tree diameter (in centimeters) 
-#' for Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
+#' @description Data on change in tree diameter (in centimeters) 
+#' for parasitic Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
 #' Tree diameter was measured at 1.4 meters high above the ground.
 #' @docType data
 #' @format 
 #' \describe{
-#'  \item{When}{Data collected from 2009-2012 in the fall semesters.}
-#'  \item{Size}{20 x 50 m and divided into 10 subplot modules of 110 m. Five 10 x 10 modules along central 50 m axis.}
-#'  \item{Comments}{comments}
+#'  \item{Module}{20 x 50 m and divided into 10 subplot modules of 110 m. There are five 10 x 10 modules along central 50 m axis.}
+#'  \item{Tag}{Tag numbers used to identify each tree.}
+#'  \item{Species}{Tree species include Acer rubrum, Betula lenta, Fagus grandifolia, Pinus strobus, 
+#'  Quercus rubra, and Tsuga canadensis.}
+#'  \item{Year}{Data collected from 2009-2012 in the fall semesters.}
+#'  \item{Notes}{Notes collected on the wellbeing of tree species, including notes on death or poor health.}
+#'  \item{Diameter(cm)}{Tree diameter measured in centimeters and at 1.4 meters high above the ground.}
 #'  \item{People}{Data obtained from Jesse Bellemare and Smith College students from BIO364-365 courses.}
 #' }
-"plot_data02"
+"tree_diameter2"

@@ -1,12 +1,4 @@
 library(readxl)
-
-#Uploading data into R
-plot_data01 <- read_excel("data-raw/MacLeish Data_Plot MC-01.xlsx")
-plot_data02 <- read_excel("data-raw/MacLeish Data_Plot MC-02.xlsx")
-
-usethis::use_data(plot_data01, overwrite = TRUE)
-usethis::use_data(plot_data02, overwrite = TRUE)
-
 library(tidyverse)
 library(janitor)
 library(lubridate)
@@ -15,69 +7,62 @@ library(usethis)
 library(devtools)
 library(dplyr)
 
+#Uploading data into R
+tree_diameter1 <- read_excel("data-raw/MacLeish Data_Plot MC-01.xlsx")
+tree_diameter2 <- read_excel("data-raw/MacLeish Data_Plot MC-02.xlsx")
+
 #Plot Data 1
 #Creating year and height column 
-newplot_data01 <- plot_data01 %>%
+tree_diameter1 <- tree_diameter1 %>%
   pivot_longer(c(`Fall'15`, `Fall'14`,`Fall'13`,`Fall'12`,`Fall'11`,`Fall'10`), names_to = "Year", values_to = "Diameter(cm)")
 
 #Separating fall and year into new columns 
-newplot_data01 <- newplot_data01 %>%
+tree_diameter1 <- tree_diameter1 %>%
   separate(Year, c("Semester", "Year"), sep = 4)
 
 #Changing abbreviated year into full year 
-newplot_data01$Year[newplot_data01$Year == "'15"] <- "2015"
-newplot_data01$Year[newplot_data01$Year == "'14"] <- "2014"
-newplot_data01$Year[newplot_data01$Year == "'13"] <- "2013"
-newplot_data01$Year[newplot_data01$Year == "'12"] <- "2012"
-newplot_data01$Year[newplot_data01$Year == "'11"] <- "2011"
-newplot_data01$Year[newplot_data01$Year == "'10"] <- "2010"
+tree_diameter1$Year[tree_diameter1$Year == "'15"] <- "2015"
+tree_diameter1$Year[tree_diameter1$Year == "'14"] <- "2014"
+tree_diameter1$Year[tree_diameter1$Year == "'13"] <- "2013"
+tree_diameter1$Year[tree_diameter1$Year == "'12"] <- "2012"
+tree_diameter1$Year[tree_diameter1$Year == "'11"] <- "2011"
+tree_diameter1$Year[tree_diameter1$Year == "'10"] <- "2010"
 
 #Changing value "DEAD" to NA for diameter
 #Tree diameter didn't increase or decrease over time 
-newplot_data01$`Diameter(cm)`[newplot_data01$`Diameter(cm)` == "DEAD"] <- "NA"
+tree_diameter1$`Diameter(cm)`[tree_diameter1$`Diameter(cm)` == "DEAD"] <- "NA"
 
-#Shifting the "Notes:" column to the end of the dataset 
-newplot_data01 <- newplot_data01 %>%
-  relocate("Notes:", .after = "Diameter(cm)")
-
-View(newplot_data01)
-
-plot_data01 <- newplot_data01
+View(tree_diameter1)
 
 usethis::use_data(plot_data01, overwrite = TRUE)
 
 
 #Plot Data 2
-library(readxl)
-plot_data02 <- read_excel("data-raw/MacLeish Data_Plot MC-02.xlsx")
 
 #Creating year and height column 
-newplot_data02 <- plot_data02 %>%
+tree_diameter2 <- tree_diameter2 %>%
   pivot_longer(c(`FALL 2016`, `Fall'12`,`Fall'11`,`Fall'10`,`Fall'09`), names_to = "Year", values_to = "Diameter(cm)")
 
 #Separating fall and year into new columns 
-newplot_data02 <- newplot_data02 %>%
+tree_diameter2 <- tree_diameter2 %>%
   separate(Year, c("Semester", "Year"), sep = 4)
 
 #Changing abbreviated year into full year 
-newplot_data02$Year[newplot_data02$Year == "'09"] <- "2009"
-newplot_data02$Year[newplot_data02$Year == "'12"] <- "2012"
-newplot_data02$Year[newplot_data02$Year == "'11"] <- "2011"
-newplot_data02$Year[newplot_data02$Year == "'10"] <- "2010"
-newplot_data02$Semester[newplot_data02$Semester == "FALL"] <- "Fall"
+tree_diameter2$Year[tree_diameter2$Year == "'09"] <- "2009"
+tree_diameter2$Year[tree_diameter2$Year == "'10"] <- "2010"
+tree_diameter2$Year[tree_diameter2$Year == "'11"] <- "2011"
+tree_diameter2$Year[tree_diameter2$Year == "'12"] <- "2012"
 
-#Changing value "DEAD" to "0" for height 
-newplot_data02$`Diameter(cm)`[newplot_data02$`Diameter(cm)` == "DEAD"] <- "NA"
+#Changing fall to lowercase
+tree_diameter2$Semester[tree_diameter2$Semester == "FALL"] <- "Fall"
 
-#Shifting the "Notes:" column to the end of the dataset 
-newplot_data02 <- newplot_data02 %>%
-  relocate("Notes:", .after = "Diameter(cm)")
+#Changing value "DEAD" to NA for height 
+tree_diameter2$`Diameter(cm)`[tree_diameter2$`Diameter(cm)` == "DEAD"] <- "NA"
 
-View(newplot_data02)
+View(tree_diameter2)
 
-plot_data02 <- newplot_data02
-
-usethis::use_data(plot_data02, overwrite = TRUE)
+usethis::use_data(tree_diameter1, overwrite = TRUE)
+usethis::use_data(tree_diameter2, overwrite = TRUE)
 
 #Run this in console for documentation functionality 
 #When ran together with rest of data, causes R to run without stop? Troubleshoot?
