@@ -32,7 +32,19 @@ journal: JOSS
 
 # Abstract
 
+Dominique version:
+
 The ``MacLeish R package`` was created to analyze weather and spatial data on a patchwork of forest based on the Ada and Archibald MacLeish Field Station. The MacLeish Field Station is 260-acre of forest and farmland located in West Whately, MA. Data on weather conditions, including historical and current meteorological readings such as temperature, humidity, and rainfall, is available through the ETL framework. Similarly, spatial data as maps exists through Shapefiles for contextualizing spatial information. This package presents the opportunity for faculty, students, and other researchers to manipulate data and execute research pertaining to the forest. 
+
+
+Albert version:
+
+The Ada & Archibald MacLeish Field Station is a 250-acre patchwork of forest and pasture land in nearby Whately that provides opportunities for all members of the Smith College community (students, faculty, staff, and alum) to pursue artistic inquiry, environmental research, outdoor education and low-impact recreation. The MacLeish R package consolidates several data sets related to scientific research conducted at the MacLeish site.
+
+At the moment, the package includes the following functionality: several layers of map data coded as sf package objects, functions to access a daily updated weather stream, data from ongoing forest ecology research, and functions to access photos from a PhenoCam (Phenology Camera) Network video camera mounted on the 25 meter tower records a daily photograph of the forest canopy.
+
+By making this data accessible in an R Package with a simple interface, we hope this will serve as an educational tool that fosters interdisciplinary collaboration within the Smith liberal arts college community. At the moment it has been used in the Statistical & Data Science department. As departments such as Biology and Environmental Sciences & Policy continue to increase the computational component of their curricula, we hope they will not only use the package but be encouraged to contribute to it. Furthermore, we view this package as a blueprint for other institutions that possess similar research sites to bring the related research communities together.
+
 
 # Statement of Need 
 
