@@ -34,9 +34,6 @@ tree_diameter1$`Diameter(cm)`[tree_diameter1$`Diameter(cm)` == "DEAD"] <- "NA"
 
 View(tree_diameter1)
 
-usethis::use_data(plot_data01, overwrite = TRUE)
-
-
 #Plot Data 2
 
 #Creating year and height column 
@@ -65,9 +62,8 @@ usethis::use_data(tree_diameter1, overwrite = TRUE)
 usethis::use_data(tree_diameter2, overwrite = TRUE)
 
 #Run this in console for documentation functionality 
-#When ran together with rest of data, causes R to run without stop? Troubleshoot?
 devtools::document()
 
 #Documentation complete:
-#Use plot_data01 and ?plot_data01 to see plot data01 documentation
-#Use plot_data02 and ?plot_data02 to see plot data02 documentation
+#Use tree_diameter1 and ?tree_diameter1 to see plot data01 documentation
+#Use tree_diameter2 and ?tree_diameter2 to see plot data02 documentation

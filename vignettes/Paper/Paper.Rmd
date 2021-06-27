@@ -45,12 +45,20 @@ At the moment, the package includes the following functionality: several layers 
 
 By making this data accessible in an R Package with a simple interface, we hope this will serve as an educational tool that fosters interdisciplinary collaboration within the Smith liberal arts college community. At the moment it has been used in the Statistical & Data Science department. As departments such as Biology and Environmental Sciences & Policy continue to increase the computational component of their curricula, we hope they will not only use the package but be encouraged to contribute to it. Furthermore, we view this package as a blueprint for other institutions that possess similar research sites to bring the related research communities together.
 
+Merged:
+
+The Ada & Archibald MacLeish Field Station is a 250-acre patchwork of forest and pasture land in nearby Whately, MA that presents the opportunity for all members of the Smith College community (students, faculty, staff, and alum) to pursue artistic inquiry, environmental research, outdoor education, and low-impact recreation. The ``MacLeish R package`` was created to analyze weather and spatial data based on the MacLeish Field Station.
+
+The package includes the following functionalities: multiple layers of map data coded as sf package objects, functions to access historical and live weather readings, data from ongoing forest ecology research, and functions to access photos from a PhenoCam (Phenology Camera) Network video camera mounted on the 25-meter tower records a daily photograph of the forest canopy.
+
+By making this data accessible in an R Package with a simple interface, we hope the ``MacLeish R Package`` will serve as an educational tool that fosters interdisciplinary collaboration within the Smith College community. At the moment, the package is mostly used in the Statistical & Data Science department, but computational confidence is expected to increase in the Biology department and Environmental Science & Policy program. Therefore, the students in these programs are expected to not only use the package but also contribute to it. Furthermore, we view this package as a blueprint for other institutions that possess similar research sites to bring the related research communities together. 
 
 # Statement of Need 
 
 - Enhancing accessibility for data to nonstatisticans 
 - Presenting current and historical meteorological data on forestry 
 - Creating the opportunity for expansion on ecological, conservation, and biodiversity research
+- Bringing together interdisciplinary research 
 
 # MacLeish R Package Main Functionalities
 
@@ -58,6 +66,7 @@ By making this data accessible in an R Package with a simple interface, we hope 
 - Live weather readings from Whately and Orchard weather stations 
 - Maps of MacLeish 
 - Two plot datasets on change in tree diameter in Hemlock Woolly Adelgid dominated areas 
+- PhenoCam functions
 
 # Application and Perspectives 
 
