@@ -30,10 +30,6 @@ csl: apa.csl
 journal: JOSS
 ---
 
-desc::desc_add_orcid("0000-0001-7186-9385",
-                     given = "Dominique",
-                     family = "Kelly")
-
 # Abstract
 
 Dominique version:

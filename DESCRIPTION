@@ -11,6 +11,7 @@ Authors@R: c(
     person("Weijia", "Zhang", email = "wzhang23@smith.edu", role = "aut"),
     person("Nicholas", "Horton", email = "nhorton@amherst.edu", role = "aut"),
     person("Dominique", "Kelly", email = "djkelly@smith.edu", role = "aut"),
+      comment = c(ORCID = "0000-0001-7186-9385")),
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com",
       role = c("aut"), 
            comment = c(ORCID = "0000-0001-7824-306X"))
