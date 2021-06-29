@@ -68,9 +68,9 @@ By making this data accessible in an R Package with a simple interface, we hope 
 - Two plot datasets on change in tree diameter in Hemlock Woolly Adelgid dominated areas 
 - PhenoCam functions
 
-# Application and Perspectives 
+@Pearson:2017
 
-Figures can be plotted like so:
+# Application and Perspectives 
 
 - Initial uses 
 - Future applications 

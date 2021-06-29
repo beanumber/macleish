@@ -6,14 +6,15 @@
 \title{MacLeish Data Plot 1}
 \format{
 \describe{
- \item{Module}{20 x 50 m and divided into 10 subplot modules of 110 m. There are five 10 x 10 modules along central 50 m axis.}
+ \item{Module}{Module number that represents one of the 10 subplot modules that are 110 m
+ and 20 x 50 m. There are five 10 x 10 modules along central 50 m axis.}
  \item{Tag}{Tag numbers used to identify each tree.} 
  \item{Species}{Tree species include Acer rubrum, Betula lenta, Betula papyrifera, Fagus grandifolia, Hamamelis virginiana, 
  Pinus strobus, Quercus rubra, and Tsuga canadensis.}
  \item{Position}{Stage of growth for each individual tree.}
  \item{Year}{Data collected from 2010-2015 in the fall semesters.}
  \item{Notes}{Notes collected on the wellbeing of tree species, including notes on death or poor health.}
- \item{Diameter(cm)}{Tree diameter measured in centimeters and at 1.4 meters high above the ground.}
+ \item{Diameter}{Tree diameter measured in centimeters and at 1.4 meters high above the ground.}
  \item{People}{Data obtained from Jesse Bellemare and Smith College students from BIO364-365 courses.}
 }
 }
