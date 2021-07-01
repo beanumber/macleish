@@ -76,7 +76,7 @@ tree_diameter2$species[tree_diameter2$species == "???"] <- "NA"
 
 # Moved notes to final column
 tree_diameter2 <- tree_diameter2 %>% 
-  select(module, tag, species, position, semester, year, diameter, notes)
+  select(module, tag, species, semester, year, diameter, notes)
 
 
 # Write both to package
