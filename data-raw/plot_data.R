@@ -37,8 +37,6 @@ tree_diameter1 <- tree_diameter1 %>%
   rename(notes = `Notes:`, module = `Module#`, tag = `Tag#`) %>% 
   rename_with(tolower)
 
-View(tree_diameter1)
-
 #Plot Data 2
 
 #Creating year and height column 
@@ -69,14 +67,5 @@ tree_diameter2 <- tree_diameter2 %>%
 #Replace species listed as "???" with NA
 tree_diameter2$species[tree_diameter2$species == "???"] <- "NA"
 
-View(tree_diameter2)
-
 usethis::use_data(tree_diameter1, overwrite = TRUE)
 usethis::use_data(tree_diameter2, overwrite = TRUE)
-
-#Run this in console for documentation functionality 
-devtools::document()
-
-#Documentation complete:
-#Use tree_diameter1 and ?tree_diameter1 to see plot data01 documentation
-#Use tree_diameter2 and ?tree_diameter2 to see plot data02 documentation
