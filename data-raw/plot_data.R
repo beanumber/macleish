@@ -43,6 +43,9 @@ tree_diameter1 <- tree_diameter1 %>%
 tree_diameter1 <- tree_diameter1 %>% 
   select(module, tag, species, position, semester, year, diameter, notes)
 
+# Changing year and diameter from character to numeric variables 
+tree_diameter1$year <- as.numeric(tree_diameter1$year)
+tree_diameter1$diameter <- as.numeric(tree_diameter1$diameter)
 
 
 # Plot Data 2
@@ -77,6 +80,10 @@ tree_diameter2$species[tree_diameter2$species == "???"] <- "NA"
 # Moved notes to final column
 tree_diameter2 <- tree_diameter2 %>% 
   select(module, tag, species, semester, year, diameter, notes)
+
+# Changing year and diameter from character to numeric variables 
+tree_diameter2$year <- as.numeric(tree_diameter2$year)
+tree_diameter2$diameter <- as.numeric(tree_diameter2$diameter)
 
 
 # Write both to package
