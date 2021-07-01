@@ -7,9 +7,11 @@ library(usethis)
 library(devtools)
 library(dplyr)
 
+
 # Uploading data into R
 tree_diameter1 <- read_excel("data-raw/MacLeish Data_Plot MC-01.xlsx")
 tree_diameter2 <- read_excel("data-raw/MacLeish Data_Plot MC-02.xlsx")
+
 
 # Plot Data 1
 # Creating year and height column 
@@ -35,10 +37,15 @@ tree_diameter1$`diameter`[tree_diameter1$`diameter` == "DEAD"] <- "NA"
 # Changing variable names to lowercase and removing numerical units 
 tree_diameter1 <- tree_diameter1 %>%
   rename(notes = `Notes:`, module = `Module#`, tag = `Tag#`) %>% 
-  rename_with(tolower)
+  rename_with(tolower) 
+
+# Moved notes to final column
+tree_diameter1 <- tree_diameter1 %>% 
+  select(module, tag, species, position, semester, year, diameter, notes)
+
+
 
 # Plot Data 2
-
 # Creating year and height column 
 tree_diameter2 <- tree_diameter2 %>%
   pivot_longer(c(`FALL 2016`, `Fall'12`,`Fall'11`,`Fall'10`,`Fall'09`), names_to = "year", values_to = "diameter")
@@ -67,5 +74,11 @@ tree_diameter2 <- tree_diameter2 %>%
 # Replace species listed as "???" with NA
 tree_diameter2$species[tree_diameter2$species == "???"] <- "NA"
 
+# Moved notes to final column
+tree_diameter2 <- tree_diameter2 %>% 
+  select(module, tag, species, position, semester, year, diameter, notes)
+
+
+# Write both to package
 usethis::use_data(tree_diameter1, overwrite = TRUE)
 usethis::use_data(tree_diameter2, overwrite = TRUE)
