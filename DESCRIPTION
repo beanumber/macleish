@@ -3,17 +3,13 @@ Type: Package
 Title: Retrieve Data from MacLeish Field Station
 Version: 0.3.6
 Authors@R: c(
-    person("Benjamin S.", "Baumer", email = "ben.baumer@gmail.com",
-      role = c("aut", "cre"), 
-           comment = c(ORCID = "0000-0002-3279-0516")),
+    person("Benjamin S.", "Baumer", email = "ben.baumer@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-3279-0516")),
     person("Rose", "Goueth", role = "aut"),
     person("Wencong", "Li", email = "liwencong1995@gmail.com", role = "aut"),
     person("Weijia", "Zhang", email = "wzhang23@smith.edu", role = "aut"),
     person("Nicholas", "Horton", email = "nhorton@amherst.edu", role = "aut"),
-    person("Dominique", "Kelly", email = "djkelly@smith.edu", role = "aut"),
-    person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com",
-      role = c("aut"), 
-           comment = c(ORCID = "0000-0001-7824-306X")),    
+    person("Dominique", "Kelly", email = "djkelly@smith.edu", role = "aut", comment = c(ORCID = "0000-0001-7186-9385")),
+    person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0001-7824-306X"))
     )
 Description: Download data from the Ada and Archibald MacLeish Field 
     Station in Whately, MA. The Ada 
@@ -52,3 +48,4 @@ BugReports: https://github.com/beanumber/macleish/issues
 RoxygenNote: 7.1.1
 Encoding: UTF-8
 VignetteBuilder: knitr, rmarkdown, etl, dplyr, ggplot2, lubridate, mgcv, leaflet, clifro 
+Roxygen: list(markdown = TRUE)
