@@ -127,6 +127,7 @@
 #' for parasitic Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
 #' Tree diameter was measured at 1.4 meters high above the ground.
 #' @docType data
+#' @seealso [tree_diameter2]
 #' @format 
 #' \describe{
 #'  \item{Module}{Module number that represents one of the 10 subplot modules that are 110 m
@@ -147,6 +148,7 @@
 #' for parasitic Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
 #' Tree diameter was measured at 1.4 meters high above the ground.
 #' @docType data
+#' @seealso [tree_diameter1]
 #' @format 
 #' \describe{
 #'  \item{Module}{Module number that represents one of the 10 subplot modules that are 110 m
