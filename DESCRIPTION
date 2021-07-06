@@ -48,3 +48,4 @@ BugReports: https://github.com/beanumber/macleish/issues
 RoxygenNote: 7.1.1
 Encoding: UTF-8
 VignetteBuilder: knitr, rmarkdown, etl, dplyr, ggplot2, lubridate, mgcv, leaflet, clifro 
+Roxygen: list(markdown = TRUE)
