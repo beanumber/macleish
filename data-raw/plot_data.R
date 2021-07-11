@@ -31,7 +31,7 @@ tree_diameter1$year[tree_diameter1$year == "'11"] <- "2011"
 tree_diameter1$year[tree_diameter1$year == "'10"] <- "2010"
 
 # Changing value "DEAD" to NA for diameter
-# Tree diameter didn't increase or decrease over time 
+# Tree diameter didn't increase or decrease over time when dead
 tree_diameter1$`diameter`[tree_diameter1$`diameter` == "DEAD"] <- "NA"
 
 # Changing variable names to lowercase and removing numerical units 
@@ -42,6 +42,9 @@ tree_diameter1 <- tree_diameter1 %>%
 # Moved notes to final column
 tree_diameter1 <- tree_diameter1 %>% 
   select(module, tag, species, position, semester, year, diameter, notes)
+
+# Change value "sub-canopy" to "subcanopy"
+tree_diameter1$position[tree_diameter1$position == "sub-canopy"] <- "subcanopy"
 
 # Changing year and diameter from character to numeric variables 
 tree_diameter1$year <- as.numeric(tree_diameter1$year)
