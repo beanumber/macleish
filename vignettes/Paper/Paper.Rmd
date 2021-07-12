@@ -63,11 +63,26 @@ Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:20
 
 # MacLeish R Package Main Functionalities
 
-- Use of 2015 weather data from both Whately and Orchard weather stations 
-- Live weather readings from Whately and Orchard weather stations 
 - Maps of MacLeish 
 - Two plot datasets on change in tree diameter in Hemlock Woolly Adelgid dominated areas 
+- Weather data
+    - Use of 2015 weather data from both Whately and Orchard weather stations 
+    - Live weather readings from Whately and Orchard weather stations 
 - PhenoCam functions
+
+## Maps of MacLeish
+
+Start copying over R code examples of map data in macleish here, and write text explaining
+
+## Field data
+
+Add plot using Jesse Bellemare's data here
+
+## Weather data
+
+## Phenocam functions
+
+
 
 # Application and Perspectives 
 
