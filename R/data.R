@@ -133,9 +133,10 @@
 #'  \item{Module}{Module number that represents one of the 10 subplot modules that are 110 m
 #'  and 20 x 50 m. There are five 10 x 10 modules along central 50 m axis.}
 #'  \item{Tag}{Tag numbers used to identify each tree.} 
-#'  \item{Species}{Tree species include Acer rubrum, Betula lenta, Betula papyrifera, Fagus grandifolia, Hamamelis virginiana, 
-#'  Pinus strobus, Quercus rubra, and Tsuga canadensis.}
-#'  \item{Position}{Stage of growth for each individual tree.}
+#'  \item{Species}{Tree species include Red Maple (Acer rubrum), Sweet Birch (Betula lenta), Paper Birch (Betula papyrifera), American Beech (Fagus grandifolia), 
+#'  American witch-hazel (Hamamelis virginiana), Eastern White Pine (Pinus strobus), Northern Red Oak (Quercus rubra), and Eastern Hemlock (Tsuga canadensis).}
+#'  \item{Position}{Stage of growth for each individual tree. The emergent position are the tallest trees, followed by canopy, subcanopy, 
+#'  and finally, sapling trees, which are the smallest trees.}
 #'  \item{Year}{Data collected from 2010-2015 in the fall semesters.}
 #'  \item{Notes}{Notes collected on the wellbeing of tree species, including notes on death or poor health.}
 #'  \item{Diameter}{Tree diameter measured in centimeters and at 1.4 meters high above the ground.}
@@ -154,8 +155,8 @@
 #'  \item{Module}{Module number that represents one of the 10 subplot modules that are 110 m
 #'  and 20 x 50 m. There are five 10 x 10 modules along central 50 m axis.}
 #'  \item{Tag}{Tag numbers used to identify each tree.}
-#'  \item{Species}{Tree species include Acer rubrum, Betula lenta, Fagus grandifolia, Pinus strobus, 
-#'  Quercus rubra, and Tsuga canadensis.}
+#'  \item{Species}{Tree species include Red Maple (Acer rubrum), Sweet Birch (Betula lenta), American Beech (Fagus grandifolia), Eastern White Pine (Pinus strobus), 
+#'  Northern Red Oak (Quercus rubra), and Eastern Hemlock (Tsuga canadensis).}
 #'  \item{Year}{Data collected from 2009-2012 in the fall semesters.}
 #'  \item{Notes}{Notes collected on the wellbeing of tree species, including notes on death or poor health.}
 #'  \item{Diameter}{Tree diameter measured in centimeters and at 1.4 meters high above the ground.}
