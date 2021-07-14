@@ -76,7 +76,7 @@ w2 <- tree_diameter1 %>%
   ggplot(aes(x=diameter, y=species, fill=position)) +
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
-  scale_y_discrete(limits=c("Tsuga canadensis", "Quercus rubra"))
+  scale_y_discrete(limits=c("Eastern Hemlock"))
 w2
 ```
 
