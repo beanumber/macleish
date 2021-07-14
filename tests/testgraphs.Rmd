@@ -55,6 +55,8 @@ x
 
 ```{r}
 z <- tree_diameter1 %>%
+  mutate(position = fct_relevel(position,
+                            "emergent", "canopy", "subcanopy", "sapling")) %>%
   ggplot(aes(x=position, y=diameter, fill=species)) +
   geom_bar(stat="identity", position="dodge") +
   scale_y_continuous(limits = c(0, 60))
@@ -75,6 +77,7 @@ w
 w2 <- tree_diameter1 %>%
   ggplot(aes(x=diameter, y=species, fill=position)) +
   geom_boxplot() +
+  coord_flip() +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
   scale_y_discrete(limits=c("Eastern Hemlock"))
 w2
