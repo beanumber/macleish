@@ -30,7 +30,7 @@ p
 ```{r}
 q <- tree_diameter1 %>%
   ggplot( aes(x=diameter, color=species, fill=species)) +
-  geom_histogram(binwidth=1, color="#e9ecef", alpha=0.6, position = 'identity') +
+  geom_histogram(binwidth=50, color="#e9ecef", alpha=0.6, position = 'identity') +
   scale_fill_viridis(discrete=TRUE) +
   scale_color_viridis(discrete=TRUE) +
     theme(
@@ -38,8 +38,8 @@ q <- tree_diameter1 %>%
       panel.spacing = unit(0.1, "lines"),
       strip.text.x = element_text(size = 8)
     ) +
-  scale_x_continuous(limits = c(0,60)) +
-  facet_wrap(~species)
+  #scale_x_continuous(limits = c(0,60)) +
+  facet_grid(species~year, scales="free_y")
 q
 ```
 
@@ -56,9 +56,8 @@ x
 y <- tree_diameter1 %>%
   ggplot(aes(x=year, y=diameter, fill=species)) +
   geom_bar(stat='identity', position='dodge', colour="black") +
-  coord_flip() + 
-  scale_x_continuous(limits = c(2010,2015)) +
-  scale_y_continuous(limits = c(0, 60))
+  coord_flip() +
+  scale_x_continuous(limits = c(2010,2015))
 y
 ```
 
@@ -68,6 +67,9 @@ z <- tree_diameter1 %>%
   geom_bar(stat="identity", position="dodge") +
   scale_y_continuous(limits = c(0, 60))
 z
+#order of position - canopy, subcanopy, emergent, sapling 
+#consider common names for species 
+#add line graph for review
 ```
 
 ```{r}
@@ -79,6 +81,15 @@ w <- tree_diameter1 %>%
 w
 ```
 
+```{r}
+w2 <- tree_diameter1 %>%
+  ggplot(aes(x=diameter, y=species, fill=position)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_y_discrete(limits=c("Tsuga canadensis", "Quercus rubra"))
+w2
+```
+
 
 ```{r}
 r <- tree_diameter2 %>%
@@ -86,7 +97,8 @@ r <- tree_diameter2 %>%
   geom_boxplot() +
   geom_jitter(color="black", size=0.4, alpha=0.9) +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
-  scale_x_continuous(limits=c(0,60))
+  scale_x_continuous(limits=c(0,60)) +
+  facet_wrap(~year)
 r
 ```
 
