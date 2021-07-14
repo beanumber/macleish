@@ -50,6 +50,15 @@ tree_diameter1$position[tree_diameter1$position == "sub-canopy"] <- "subcanopy"
 tree_diameter1$year <- as.numeric(tree_diameter1$year)
 tree_diameter1$diameter <- as.numeric(tree_diameter1$diameter)
 
+# Changing species name from scientific to common name
+tree_diameter1$species[tree_diameter1$species == "Acer rubrum"] <- "Red Maple"
+tree_diameter1$species[tree_diameter1$species == "Betula lenta"] <- "Sweet Birch"
+tree_diameter1$species[tree_diameter1$species == "Betula papyrifera"] <- "Paper Birch"
+tree_diameter1$species[tree_diameter1$species == "Fagus grandifolia"] <- "American Beech"
+tree_diameter1$species[tree_diameter1$species == "Hamamelis virginiana"] <- "American witch-hazel"
+tree_diameter1$species[tree_diameter1$species == "Pinus strobus"] <- "Eastern White Pine"
+tree_diameter1$species[tree_diameter1$species == "Quercus rubra"] <- "Northern Red Oak"
+tree_diameter1$species[tree_diameter1$species == "Tsuga canadensis"] <- "Eastern Hemlock"
 
 # Plot Data 2
 # Creating year and height column 
@@ -88,6 +97,13 @@ tree_diameter2 <- tree_diameter2 %>%
 tree_diameter2$year <- as.numeric(tree_diameter2$year)
 tree_diameter2$diameter <- as.numeric(tree_diameter2$diameter)
 
+# Changing species name from scientific to common name
+tree_diameter2$species[tree_diameter2$species == "Acer rubrum"] <- "Red Maple"
+tree_diameter2$species[tree_diameter2$species == "Betula lenta"] <- "Sweet Birch"
+tree_diameter2$species[tree_diameter2$species == "Fagus grandifolia"] <- "American Beech"
+tree_diameter2$species[tree_diameter2$species == "Pinus strobus"] <- "Eastern White Pine"
+tree_diameter2$species[tree_diameter2$species == "Quercus rubra"] <- "Northern Red Oak"
+tree_diameter2$species[tree_diameter2$species == "Tsuga canadensis"] <- "Eastern Hemlock"
 
 # Write both to package
 usethis::use_data(tree_diameter1, overwrite = TRUE)
