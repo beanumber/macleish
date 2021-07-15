@@ -76,7 +76,9 @@ Start copying over R code examples of map data in macleish  here, and write text
 
 ## Field data
 
-Ma
+Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The datasets present change in tree diameter over a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid. Tree_diameter1, for instance, contains data on species for the Eastern Hemlock (Tsuga canadensis) and the Red Maple (Acer rubrum). Data on position or stage of growth for each individual tree is available from sapling to emergent stage. The time frame varies between tree_diameter1 and tree_diameter2, and tree_diameter2 lacks data on position of individual trees. 
+
+
 Add plot using Jesse Bellemare's data here
 
 ## Weather data
