@@ -72,14 +72,53 @@ Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:20
 
 ## Maps of MacLeish
 
-Start copying over R code examples of map data in macleish  here, and write text explaining
+```{r}
+install.packages(macleish)
+```
+
+
+```{r}
+library(macleish)
+library(ggplot2)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+library(forcats)
+```
+
+
+## Maps of MacLeish
+
+Start copying over R code examples of map data in macleish here, and write text explaining
 
 ## Field data
 
-Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The datasets present change in tree diameter over a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid. Tree_diameter1, for instance, contains data on species for the Eastern Hemlock (Tsuga canadensis) and the Red Maple (Acer rubrum). Data on position or stage of growth for each individual tree is available from sapling to emergent stage. The time frame varies between tree_diameter1 and tree_diameter2, and tree_diameter2 lacks data on position of individual trees. 
+Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The datasets present change in tree diameter over
+a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid. 
 
 
-Add plot using Jesse Bellemare's data here
+```{r}
+glimpse(tree_diameter1)
+```
+
+```{r}
+glimpse(tree_diameter2)
+```
+
+The time frame varies between `tree_diameter1` (2010-2015) and `tree_diameter2` (2009-2016), and `tree_diameter2` lacks data on position of individual trees.
+
+For example, using the `tree_diameter1` dataset, the boxplot below demonstrates the distribution of diameter for different species of trees at different positions between 2010-2015. 
+
+```{r}
+w <- tree_diameter1 %>%
+  ggplot( aes(x=diameter, y=species, fill=position)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_x_continuous(limits=c(0,60)) +
+  facet_wrap(~year) +
+  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter based on Different Species at Different Positions Between 2010-2015")
+w
+```
 
 ## Weather data
 
