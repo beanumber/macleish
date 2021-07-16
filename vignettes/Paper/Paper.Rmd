@@ -73,11 +73,6 @@ Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:20
 ## Maps of MacLeish
 
 ```{r}
-#install.packages("macleish")
-```
-
-
-```{r}
 library(macleish)
 library(ggplot2)
 library(tidyverse)
@@ -119,6 +114,20 @@ w <- tree_diameter1 %>%
   labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter based on Different Species at Different Positions Between 2010-2015")
 w
 ```
+
+
+
+```{r}
+w2 <- tree_diameter1 %>%
+  ggplot(aes(x=diameter, y=species, fill=position)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_y_discrete(limits=c("Eastern Hemlock")) +
+  coord_flip() +
+  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter for Eastern Hemlock at Different Positions Between 2010-2015")
+w2
+```
+
 
 ## Weather data
 
