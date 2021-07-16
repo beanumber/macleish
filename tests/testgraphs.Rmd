@@ -60,9 +60,6 @@ z <- tree_diameter1 %>%
   geom_bar(stat="identity", position="dodge") +
   scale_y_continuous(limits = c(0, 60))
 z
-#order of position - canopy, subcanopy, emergent, sapling 
-#consider common names for species 
-#add line graph for review
 ```
 
 ```{r}

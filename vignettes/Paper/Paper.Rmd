@@ -73,7 +73,7 @@ Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:20
 ## Maps of MacLeish
 
 ```{r}
-install.packages(macleish)
+#install.packages("macleish")
 ```
 
 
