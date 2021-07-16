@@ -73,7 +73,10 @@ Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:20
 ## Maps of MacLeish
 
 ```{r}
-install.packages(macleish)
+# Dominique: this installs packages from CRAN (which does not have the new
+# data in it yet). We need to use the locally built version which does have it.
+# i.e. rebuild the package and comment this line out
+# install.packages(macleish)
 ```
 
 
