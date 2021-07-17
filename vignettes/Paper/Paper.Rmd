@@ -70,7 +70,10 @@ Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:20
     - Live weather readings from Whately and Orchard weather stations 
 - PhenoCam functions
 
-## Maps of MacLeish
+```{r}
+#install.packages(macleish)
+```
+
 
 ```{r}
 library(macleish)
@@ -88,7 +91,8 @@ Start copying over R code examples of map data in macleish here, and write text 
 
 ## Field data
 
-Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The datasets present a change in tree diameter over years for two different plots dominated by the parasites Hemlock Woolly Adelgid. 
+Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The datasets present change in tree diameter over
+a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid. 
 
 
 ```{r}
@@ -105,28 +109,33 @@ For example, using the `tree_diameter1` dataset, the boxplot below demonstrates 
 
 ```{r}
 w <- tree_diameter1 %>%
+  mutate(position = fct_relevel(position,
+                                "emergent", "canopy", "subcanopy", "sapling")) %>%
   ggplot( aes(x=diameter, y=species, fill=position)) +
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
   scale_x_continuous(limits=c(0,60)) +
   facet_wrap(~year) +
-  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter based on Different Species at Different Positions Between 2010-2015")
+  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter Between 2010-2015")
 w
 ```
 
-By viewing an individual species, the distribution of diameter varies based on the position of the species. For instance, the median diameter of emergent Eastern Hemlock trees is the greatest, despite having the smallest overall range. However, the overall range of the diameter of the canopy is the greatest. Using individual data points on top of the box plots reveals the underlying distribution of each group. 
+By viewing an individual species, the distribution of diameter varies based on the position of the species. For instance, the median diameter of emergent Eastern Hemlock trees is the greatest, despite having the smallest overall range. However, the overall range of the diameter of the canopy is the greatest. 
 
 ```{r}
 w2 <- tree_diameter1 %>%
+  mutate(position = fct_relevel(position,
+                                "emergent", "canopy", "subcanopy", "sapling")) %>%
   ggplot(aes(x=diameter, y=species, fill=position)) +
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
   scale_y_discrete(limits=c("Eastern Hemlock")) +
-  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter for Eastern Hemlock at Different Positions Between 2010-2015")
+  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter for Eastern Hemlock")
 w2
 ```
 
-Below is a box plot of the distribution of diameter based on different tree species from 2009-2012 using the `tree_diameter2` dataset. Using individual data points on top of the box plots reveals the underlying distribution of each group.
+
+Below is a box plot of the distribution of diameter based on different tree species from 2009-2012 using the `tree_diameter2` dataset. Using individual data points on top of the box plots reveals the underlying distribution of each group. 
 
 ```{r}
 r <- tree_diameter2 %>%
@@ -136,7 +145,7 @@ r <- tree_diameter2 %>%
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
   scale_x_continuous(limits=c(0,60)) +
   facet_wrap(~year) +
-  labs(x = "Diameter (cm)", y = "Species", title = "Distribution of Diameter based on Different Species Between 2009-2016")
+  labs(x = "Diameter (cm)", y = "Species", title = "Distribution of Diameter Between 2009-2016")
 r
 ```
 
