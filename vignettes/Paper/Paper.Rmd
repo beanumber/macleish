@@ -77,6 +77,7 @@ Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:20
 
 
 ```{r}
+# Installing necessary packages
 library(macleish)
 library(ggplot2)
 library(tidyverse)
@@ -204,11 +205,22 @@ Furthermore, the ETL framework retrieves live and historical (2012-01-03 for Wha
 ```{r}
 #whately <- macleish %>%
 #  tbl("whately")
+
+# Object `whately` is not found.
 ```
 
 
 ## Phenocam functions
 
+The PhenoCam Network is an ecosystem phenology camera network that provides automated, near-surface remote sensing of canopy phenology across the northeastern United States and adjacent Canada, including the MacLeish Field Station. High-resolution digital cameras at the MacLeish Field Station take pictures of the canopy and upload them to the PhenoCam server every half hour. The PhenoCam Network permits analysis of archived images, providing an objective means by which canopy phenology can be monitored and quantiied at relatively low cost and with minimal expenses. 
+Here is an example of an image retreived from the PhenoCam Network. 
+
+```{r}
+library(imager)
+load.image("https://phenocam.sr.unh.edu/data/latest/macleish.jpg") %>% plot
+```
+
+The function `get_macleish_image()` retreives an image from the PhenoCam Network when the date and time are specified. 
 
 
 # Application and Perspectives 
