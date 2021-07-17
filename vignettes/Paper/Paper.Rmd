@@ -88,8 +88,7 @@ Start copying over R code examples of map data in macleish here, and write text 
 
 ## Field data
 
-Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The datasets present change in tree diameter over
-a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid. 
+Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The datasets present a change in tree diameter over years for two different plots dominated by the parasites Hemlock Woolly Adelgid. 
 
 
 ```{r}
@@ -102,7 +101,7 @@ glimpse(tree_diameter2)
 
 The time frame varies between `tree_diameter1` (2010-2015) and `tree_diameter2` (2009-2016), and `tree_diameter2` lacks data on position of individual trees.
 
-For example, using the `tree_diameter1` dataset, the boxplot below demonstrates the distribution of diameter for different species of trees at different positions between 2010-2015. 
+For example, using the `tree_diameter1` dataset, the boxplot below demonstrates the distribution of diameter for different species of trees at different positions from 2010-2015. 
 
 ```{r}
 w <- tree_diameter1 %>%
@@ -115,7 +114,7 @@ w <- tree_diameter1 %>%
 w
 ```
 
-
+By viewing an individual species, the distribution of diameter varies based on the position of the species. For instance, the median diameter of emergent Eastern Hemlock trees is the greatest, despite having the smallest overall range. However, the overall range of the diameter of the canopy is the greatest. Using individual data points on top of the box plots reveals the underlying distribution of each group. 
 
 ```{r}
 w2 <- tree_diameter1 %>%
@@ -123,9 +122,22 @@ w2 <- tree_diameter1 %>%
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
   scale_y_discrete(limits=c("Eastern Hemlock")) +
-  coord_flip() +
   labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter for Eastern Hemlock at Different Positions Between 2010-2015")
 w2
+```
+
+Below is a box plot of the distribution of diameter based on different tree species from 2009-2012 using the `tree_diameter2` dataset. Using individual data points on top of the box plots reveals the underlying distribution of each group.
+
+```{r}
+r <- tree_diameter2 %>%
+  ggplot( aes(x=diameter, y=species)) +
+  geom_boxplot() +
+  geom_jitter(color="black", size=0.4, alpha=0.9) +
+  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_x_continuous(limits=c(0,60)) +
+  facet_wrap(~year) +
+  labs(x = "Diameter (cm)", y = "Species", title = "Distribution of Diameter based on Different Species Between 2009-2016")
+r
 ```
 
 
