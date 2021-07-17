@@ -1,12 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.6.3)  17 JUL 2021 08:37
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.6.3)  17 JUL 2021 10:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/ebony/AppData/Local/Temp/RtmpuUeKs5/preview-5ae8724a32fa.dir/Paper.t
-ex
-
-(c:/Users/ebony/AppData/Local/Temp/RtmpuUeKs5/preview-5ae8724a32fa.dir/Paper.te
+**C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641551bab.dir/Paper.te
 x
+
+(c:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641551bab.dir/Paper.tex
 LaTeX2e <2021-06-01>
 L3 programming layer <2021-06-01> (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf
 -dist/tex/latex/base/article.cls
@@ -1318,92 +1317,104 @@ Overfull \hbox (58.91139pt too wide) in paragraph at lines 497--497
 tps://bit.ly/arialnarrow 
  []
 
+File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
+plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
+<C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
+s/joss/resources/JOSS-logo.png>
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 539--539
+Package fancyhdr Warning: \headheight is too small (62.59596pt): 
+(fancyhdr)                Make it at least 63.55022pt, for example:
+(fancyhdr)                \setlength{\headheight}{63.55022pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
+
+[4]
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 599--599
 []\TU/lmtt/m/n/10 ## $ module   <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
  1, 1, 1, 1, 1, 1, 1~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 540--540
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 600--600
 []\TU/lmtt/m/n/10 ## $ tag      <dbl> 2001, 2001, 2001, 2001, 2001, 2001, 2002,
  2002, 2002, 2002, 2~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 541--541
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 601--601
 []\TU/lmtt/m/n/10 ## $ species  <chr> "Sweet Birch", "Sweet Birch", "Sweet Birc
 h", "Sweet Birch", "~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 542--542
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 602--602
 []\TU/lmtt/m/n/10 ## $ position <chr> "subcanopy", "subcanopy", "subcanopy", "s
 ubcanopy", "subcanop~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 543--543
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 603--603
 []\TU/lmtt/m/n/10 ## $ semester <chr> "Fall", "Fall", "Fall", "Fall", "Fall", "
 Fall", "Fall", "Fall~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 544--544
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 604--604
 []\TU/lmtt/m/n/10 ## $ year     <dbl> 2015, 2014, 2013, 2012, 2011, 2010, 2015,
  2014, 2013, 2012, 2~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 545--545
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 605--605
 []\TU/lmtt/m/n/10 ## $ diameter <dbl> NA, NA, NA, NA, NA, NA, 10.5, 10.4, 10.5,
  10.4, 10.2, 10.1, 6~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 546--546
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 606--606
 []\TU/lmtt/m/n/10 ## $ notes    <chr> "Alive in 2009, dead in 2010", "Alive in 
 2009, dead in 2010",~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 558--558
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 618--618
 []\TU/lmtt/m/n/10 ## $ module   <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
  1, 1, 1, 1, 1, 1, 1~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 559--559
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 619--619
 []\TU/lmtt/m/n/10 ## $ tag      <dbl> 2171, 2171, 2171, 2171, 2171, 2172, 2172,
  2172, 2172, 2172, 2~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 560--560
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 620--620
 []\TU/lmtt/m/n/10 ## $ species  <chr> "Eastern Hemlock", "Eastern Hemlock", "Ea
 stern Hemlock", "Eas~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 561--561
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 621--621
 []\TU/lmtt/m/n/10 ## $ semester <chr> "Fall", "Fall", "Fall", "Fall", "Fall", "
 Fall", "Fall", "Fall~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 562--562
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 622--622
 []\TU/lmtt/m/n/10 ## $ year     <dbl> 2016, 2012, 2011, 2010, 2009, 2016, 2012,
  2011, 2010, 2009, 2~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 563--563
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 623--623
 []\TU/lmtt/m/n/10 ## $ diameter <dbl> 28.2, 27.4, 27.2, 27.1, 27.0, 24.5, 23.2,
  22.9, 22.5, 22.2, 2~[] 
  []
 
 
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 564--564
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 624--624
 []\TU/lmtt/m/n/10 ## $ notes    <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 A, NA, NA, NA, NA, N~[] 
  []
@@ -1420,32 +1431,15 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
-[4]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpuUeKs5/preview-5ae8724a32fa.dir/Pap
-er_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpuUeKs5/preview-5ae8724a32fa.dir/Pape
-r_files/figure-latex/unnamed-chunk-5-1.pdf>
-File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
-plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
-<C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
-s/joss/resources/JOSS-logo.png>
-
-Package fancyhdr Warning: \headheight is too small (62.59596pt): 
-(fancyhdr)                Make it at least 63.55022pt, for example:
-(fancyhdr)                \setlength{\headheight}{63.55022pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
-
 [5]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpuUeKs5/preview-5ae8724a32fa.dir/Pap
-er_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpuUeKs5/preview-5ae8724a32fa.dir/Pape
-r_files/figure-latex/unnamed-chunk-6-1.pdf>
-File: C:/Users/ebony/AppData/Local/Temp/RtmpuUeKs5/preview-5ae8724a32fa.dir/Pap
-er_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpuUeKs5/preview-5ae8724a32fa.dir/Pape
-r_files/figure-latex/unnamed-chunk-7-1.pdf>
+File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641551bab.dir/Pape
+r_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641551bab.dir/Paper
+_files/figure-latex/unnamed-chunk-7-1.pdf>
+File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641551bab.dir/Pape
+r_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641551bab.dir/Paper
+_files/figure-latex/unnamed-chunk-8-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
@@ -1459,33 +1453,164 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [6]
-Underfull \hbox (badness 1810) in paragraph at lines 683--688
+File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641551bab.dir/Pape
+r_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
+<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641551bab.dir/Paper
+_files/figure-latex/unnamed-chunk-9-1.pdf>
+File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
+plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
+<C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
+s/joss/resources/JOSS-logo.png>
+
+Package fancyhdr Warning: \headheight is too small (62.59596pt): 
+(fancyhdr)                Make it at least 63.55022pt, for example:
+(fancyhdr)                \setlength{\headheight}{63.55022pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
+
+[7]
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 731--731
+[]\TU/lmtt/m/n/10 ## $ when            <dttm> 2015-01-01 00:00:00, 2015-01-01 0
+0:10:00, 2015-01-01 ~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 732--732
+[]\TU/lmtt/m/n/10 ## $ temperature     <dbl> -9.32, -9.46, -9.44, -9.30, -9.32,
+ -9.34, -9.30, -9.10~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 733--733
+[]\TU/lmtt/m/n/10 ## $ wind_speed      <dbl> 1.399, 1.506, 1.620, 1.141, 1.223,
+ 1.090, 1.168, 1.307~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 734--734
+[]\TU/lmtt/m/n/10 ## $ wind_dir        <dbl> 225.4, 248.2, 258.3, 243.8, 238.4,
+ 241.7, 242.3, 244.2~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 735--735
+[]\TU/lmtt/m/n/10 ## $ rel_humidity    <dbl> 54.55, 55.38, 56.18, 56.41, 56.87,
+ 57.25, 57.71, 58.16~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 736--736
+[]\TU/lmtt/m/n/10 ## $ pressure        <int> 985, 985, 985, 985, 984, 984, 984,
+ 984, 984, 984, 984,~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 737--737
+[]\TU/lmtt/m/n/10 ## $ solar_radiation <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+, 0, 0, 0, 0, 0, 0, ~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 738--738
+[]\TU/lmtt/m/n/10 ## $ rainfall        <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+, 0, 0, 0, 0, 0, 0, ~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 750--750
+[]\TU/lmtt/m/n/10 ## $ when         <dttm> 2015-01-01 00:00:00, 2015-01-01 00:1
+0:00, 2015-01-01 00:~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 751--751
+[]\TU/lmtt/m/n/10 ## $ temperature  <dbl> -9.62, -9.45, -9.52, -9.68, -9.56, -9
+.59, -9.51, -9.70, -~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 752--752
+[]\TU/lmtt/m/n/10 ## $ wind_speed   <dbl> 0.490, 0.517, 0.576, 0.522, 0.296, 0.
+382, 0.497, 0.781, 0~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 753--753
+[]\TU/lmtt/m/n/10 ## $ wind_dir     <dbl> 216.3, 209.6, 215.5, 199.3, 186.4, 18
+3.9, 195.6, 210.4, 2~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 754--754
+[]\TU/lmtt/m/n/10 ## $ rel_humidity <dbl> 61.97, 59.08, 58.69, 58.59, 57.32, 57
+.58, 56.97, 60.52, 6~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 755--755
+[]\TU/lmtt/m/n/10 ## $ pressure     <dbl> 1020, 1019, 1019, 1019, 1019, 1019, 1
+019, 1018, 1018, 101~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 756--756
+[]\TU/lmtt/m/n/10 ## $ par_density  <dbl> 0.548, 0.548, 0.548, 0.548, 0.548, 0.
+548, 0.548, 0.548, 0~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 757--757
+[]\TU/lmtt/m/n/10 ## $ par_total    <dbl> 0.088, 0.088, 0.088, 0.088, 0.088, 0.
+088, 0.088, 0.088, 0~[] 
+ []
+
+
+Overfull \hbox (43.16139pt too wide) in paragraph at lines 758--758
+[]\TU/lmtt/m/n/10 ## $ rainfall     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+, 0, 0, 0, 0, 0, 0, ~[] 
+ []
+
+File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
+plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
+<C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
+s/joss/resources/JOSS-logo.png>
+
+Package fancyhdr Warning: \headheight is too small (62.59596pt): 
+(fancyhdr)                Make it at least 63.55022pt, for example:
+(fancyhdr)                \setlength{\headheight}{63.55022pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
+
+[8]
+Underfull \hbox (badness 1810) in paragraph at lines 797--802
 \TU/lmr/m/it/10 Change Biology\TU/lmr/m/n/10 . Retrieved from [][]$[][][][][] [
 ] [] [] [][][][][][][][][][][][][] [] [][][][][] [] [][][] [] [][][] [] [][][] 
 [] [][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--688
+Underfull \hbox (badness 10000) in paragraph at lines 797--802
 [][][] [] [][][][][] [] [][][][] [] [][][][][] [] [][][] [] [][][][][][][][][][
 ][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 701--708
+Underfull \hbox (badness 1033) in paragraph at lines 815--822
 \TU/lmr/m/n/10 by the decline of a foundation tree species, Tsuga canadensis(Pi
 naceae). \TU/lmr/m/it/10 Jour-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 701--708
+Underfull \hbox (badness 10000) in paragraph at lines 815--822
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][] [] [][][][][][][][][][][] [] [][][][][][][][] [] [][][][][]
 [][][][][][][][][][][][][][][] []
  []
 
 
-Overfull \hbox (54.46141pt too wide) in paragraph at lines 701--708
+Overfull \hbox (54.46141pt too wide) in paragraph at lines 815--822
 [] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [] [] [][] [] [][][][] [] [][][][][][][][][][][][][][][][][][][][] []
@@ -1503,7 +1628,7 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
-[7]
+[9]
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
@@ -1516,7 +1641,7 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
-[8] (./Paper.aux)
+[10] (./Paper.aux)
 Package rerunfilecheck Info: File `Paper.out' has not changed.
 (rerunfilecheck)             Checksum: E45F5D10F16704E1859279F72AEEE289;1509.
 Package logreq Info: Writing requests to 'Paper.run.xml'.
@@ -1525,11 +1650,11 @@ Package logreq Info: Writing requests to 'Paper.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  33664 strings out of 478489
- 684002 string characters out of 5857834
- 1464190 words of memory out of 5000000
+ 683975 string characters out of 5857834
+ 1465192 words of memory out of 5000000
  53440 multiletter control sequences out of 15000+600000
  410302 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,12n,95p,808b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,13n,95p,807b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Paper.pdf (8 pages).
+Output written on Paper.pdf (10 pages).
