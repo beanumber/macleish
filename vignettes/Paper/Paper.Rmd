@@ -213,7 +213,7 @@ Furthermore, the ETL framework retrieves live and historical (2012-01-03 for Wha
 ## Phenocam functions
 
 The PhenoCam Network is an ecosystem phenology camera network that provides automated, near-surface remote sensing of canopy phenology across the northeastern United States and adjacent Canada, including the MacLeish Field Station. High-resolution digital cameras at the MacLeish Field Station take pictures of the canopy and upload them to the PhenoCam server every half hour. The PhenoCam Network permits analysis of archived images, providing an objective means by which canopy phenology can be monitored and quantiied at relatively low cost and with minimal expenses. 
-Here is an example of an image retreived from the PhenoCam Network. 
+Here is an example of an image retreived from the PhenoCam Network.
 
 ```{r}
 library(imager)

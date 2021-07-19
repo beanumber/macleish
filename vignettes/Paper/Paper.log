@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.6.3)  17 JUL 2021 10:42
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.6.3)  19 JUL 2021 09:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Paper.t
+**C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Paper.t
 ex
 
-(c:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Paper.te
+(c:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Paper.te
 x
 LaTeX2e <2021-06-01>
 L3 programming layer <2021-06-01> (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf
@@ -1433,13 +1433,13 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [5]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pap
 er_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pape
 r_files/figure-latex/unnamed-chunk-7-1.pdf>
-File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pap
 er_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pape
 r_files/figure-latex/unnamed-chunk-8-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
@@ -1454,9 +1454,9 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [6]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pap
 er_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pape
 r_files/figure-latex/unnamed-chunk-9-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
@@ -1598,19 +1598,19 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [9]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pap
 er_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-23641bdb4430.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pape
 r_files/figure-latex/unnamed-chunk-13-1.pdf>
 
-Underfull \hbox (badness 1810) in paragraph at lines 889--894
+Underfull \hbox (badness 1810) in paragraph at lines 890--895
 \TU/lmr/m/it/10 Change Biology\TU/lmr/m/n/10 . Retrieved from [][]$[][][][][] [
 ] [] [] [][][][][][][][][][][][][] [] [][][][][] [] [][][] [] [][][] [] [][][] 
 [] [][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 889--894
+Underfull \hbox (badness 10000) in paragraph at lines 890--895
 [][][] [] [][][][][] [] [][][][] [] [][][][][] [] [][][] [] [][][][][][][][][][
 ][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][] []
  []
@@ -1628,23 +1628,30 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [10]
-Underfull \hbox (badness 1033) in paragraph at lines 907--914
+Underfull \hbox (badness 1033) in paragraph at lines 908--915
 \TU/lmr/m/n/10 by the decline of a foundation tree species, Tsuga canadensis(Pi
 naceae). \TU/lmr/m/it/10 Jour-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--914
+Underfull \hbox (badness 10000) in paragraph at lines 908--915
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][] [] [][][][][][][][][][][] [] [][][][][][][][] [] [][][][][]
 [][][][][][][][][][][][][][][] []
  []
 
 
-Overfull \hbox (54.46141pt too wide) in paragraph at lines 907--914
+Overfull \hbox (54.46141pt too wide) in paragraph at lines 908--915
 [] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [] [] [][] [] [][][][] [] [][][][][][][][][][][][][][][][][][][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 933--938
+[][][][][][] [] [][][] [] [][][][][][][][] [] [] [] [][][][][][][][][][][][][][
+][][][][][] [] [][][][][][][][][][][][][] [] [][][][][][][][][][] [] [][][][] [
+]
  []
 
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
@@ -1669,7 +1676,7 @@ Package logreq Info: Writing requests to 'Paper.run.xml'.
 Here is how much of TeX's memory you used:
  33672 strings out of 478489
  684894 string characters out of 5857834
- 1464195 words of memory out of 5000000
+ 1465195 words of memory out of 5000000
  53447 multiletter control sequences out of 15000+600000
  410302 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
