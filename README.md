@@ -1,8 +1,7 @@
 
 # macleish <img src='man/figures/logo.png' align="right" height="139"/>
 
-[![Travis-CI Build
-Status](https://travis-ci.org/beanumber/macleish.svg?branch=master)](https://travis-ci.org/beanumber/macleish)
+[![R-CMD-check](https://github.com/beanumber/macleish/workflows/R-CMD-check/badge.svg)](https://github.com/beanumber/macleish/actions)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
 
 The [Ada and Archibald MacLeish Field
@@ -121,7 +120,8 @@ names(macleish_layers)
     ##  [1] "landmarks"         "forests"           "streams"          
     ##  [4] "challenge_courses" "buildings"         "wetlands"         
     ##  [7] "boundary"          "research"          "soil"             
-    ## [10] "trails"            "camp_sites"        "elevation"
+    ## [10] "trails"            NA                  NA                 
+    ## [13] "camp_sites"        "elevation"
 
 ``` r
 library(leaflet)

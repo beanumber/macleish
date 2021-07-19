@@ -8,3 +8,5 @@
 ^cran-comments\.md$
 ^CRAN-RELEASE$
 ^rhub\.R$
+^\.github$
+^vignettes/testgraphs\.Rmd$

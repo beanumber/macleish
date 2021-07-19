@@ -28,6 +28,7 @@ bibliography: paper.bib
 output: rticles::joss_article
 csl: apa.csl
 journal: JOSS
+always_allow_html: true
 ---
 
 # Abstract
@@ -70,18 +71,156 @@ Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:20
     - Live weather readings from Whately and Orchard weather stations 
 - PhenoCam functions
 
+```{r}
+#install.packages(macleish)
+```
+
+
+```{r}
+# Installing necessary packages
+library(macleish)
+library(ggplot2)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+library(forcats)
+library(leaflet)
+library(dplyr)
+```
+
+
 ## Maps of MacLeish
 
-Start copying over R code examples of map data in macleish here, and write text explaining
+Maps of MacLeish Field Station is available as `macleish_layers` data object. The following layers will be displayed on the map. 
+
+```{r}
+class(macleish_layers)
+names(macleish_layers)
+```
+
+Launching the following code creates an interactive map for users to zoom in and out, identify the Orchard and Whately Weather Stations, locate the area of MacLeish Field Station, and pinpoint other geographical features such as bodies of water, roads, mountains, trails, and wildlife management areas.
+
+```{r}
+map <- leaflet() %>%
+  addTiles() %>%
+  addPolygons(
+    data = macleish_layers[["boundary"]], 
+    weight = 1, fillOpacity = 0.1
+  ) %>%
+  addPolygons(
+    data = macleish_layers[["buildings"]], 
+    weight = 1, popup = ~ name
+  ) %>%
+  addPolylines(
+    data = macleish_layers[["trails"]], 
+    weight = 1, color = "brown",
+    popup = ~ name
+  ) %>%
+  addPolylines(
+    data = macleish_layers[["streams"]], 
+    weight = 2
+  ) %>%
+  addMarkers(
+    data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)), 
+    popup = ~Label
+  )
+map
+```
+
 
 ## Field data
 
-Add plot using Jesse Bellemare's data here
+Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The datasets present change in tree diameter over a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid. 
+
+
+```{r}
+glimpse(tree_diameter1)
+```
+
+```{r}
+glimpse(tree_diameter2)
+```
+
+The time frame varies between `tree_diameter1` (2010-2015) and `tree_diameter2` (2009-2016), and `tree_diameter2` lacks data on position of individual trees.
+
+For example, using the `tree_diameter1` dataset, the boxplot below demonstrates the distribution of diameter for different species of trees at different positions from 2010-2015. 
+
+```{r}
+w <- tree_diameter1 %>%
+  mutate(position = fct_relevel(position,
+                                "emergent", "canopy", "subcanopy", "sapling")) %>%
+  ggplot( aes(x=diameter, y=species, fill=position)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_x_continuous(limits=c(0,60)) +
+  facet_wrap(~year) +
+  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter Between 2010-2015")
+w
+```
+
+By viewing an individual species, the distribution of diameter varies based on the position of the species. For instance, the median diameter of emergent Eastern Hemlock trees is the greatest, despite having the smallest overall range. However, the overall range of the diameter of the canopy is the greatest. 
+
+```{r}
+w2 <- tree_diameter1 %>%
+  mutate(position = fct_relevel(position,
+                                "emergent", "canopy", "subcanopy", "sapling")) %>%
+  ggplot(aes(x=diameter, y=species, fill=position)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_y_discrete(limits=c("Eastern Hemlock")) +
+  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter for Eastern Hemlock")
+w2
+```
+
+
+Below is a box plot of the distribution of diameter based on different tree species from 2009-2012 using the `tree_diameter2` dataset. Using individual data points on top of the box plots reveals the underlying distribution of each group. 
+
+```{r}
+r <- tree_diameter2 %>%
+  ggplot( aes(x=diameter, y=species)) +
+  geom_boxplot() +
+  geom_jitter(color="black", size=0.4, alpha=0.9) +
+  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_x_continuous(limits=c(0,60)) +
+  facet_wrap(~year) +
+  labs(x = "Diameter (cm)", y = "Species", title = "Distribution of Diameter Between 2009-2016")
+r
+```
+
 
 ## Weather data
 
+Weather data from 2015 is available through 'whately_2015` and `orchard_2015` data objects. Data was recorded every 10 minutes every day from 2015-01-01 to 2015-31-12. 
+
+```{r}
+glimpse(whately_2015)
+```
+
+```{r}
+glimpse(orchard_2015)
+```
+
+Furthermore, the ETL framework retrieves live and historical (2012-01-03 for Whately and 2014-06-27 for Orchard) weather data from both MacLeish Field Station weather monitors. 
+
+```{r}
+#whately <- macleish %>%
+#  tbl("whately")
+
+# Object `whately` is not found.
+```
+
+
 ## Phenocam functions
 
+The PhenoCam Network is an ecosystem phenology camera network that provides automated, near-surface remote sensing of canopy phenology across the northeastern United States and adjacent Canada, including the MacLeish Field Station. High-resolution digital cameras at the MacLeish Field Station take pictures of the canopy and upload them to the PhenoCam server every half hour. The PhenoCam Network permits analysis of archived images, providing an objective means by which canopy phenology can be monitored and quantiied at relatively low cost and with minimal expenses. 
+Here is an example of an image retreived from the PhenoCam Network.
+
+```{r}
+library(imager)
+load.image("https://phenocam.sr.unh.edu/data/latest/macleish.jpg") %>% plot
+```
+
+The function `get_macleish_image()` retreives an image from the PhenoCam Network when the date and time are specified. 
 
 
 # Application and Perspectives 
