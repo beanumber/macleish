@@ -105,6 +105,7 @@ leaflet() %>%
     data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)), 
     popup = ~Label
   )
+
 ```
 
 ## See also
