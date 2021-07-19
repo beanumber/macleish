@@ -7,7 +7,7 @@
 #' @details This function will download shapefiles from MassGIS, unzip them, 
 #' transform the projection to EPSG:4326, compute their intersection with the
 #' boundary of the MacLeish property, and return the resulting 
-#' \code{\link[sf]{sf}} object. 
+#' [sf::sf()] object. 
 #' @source http://www.mass.gov/anf/research-and-tech/it-serv-and-support/application-serv/office-of-geographic-information-massgis/datalayers/layerlist.html
 #' @export
 #' @examples 
@@ -36,7 +36,7 @@ mass_gis <- function(layer = "contours250k") {
     sf::st_transform(4326)
 }
 
-#' @param x an \code{\link[sf]{sf}} object
+#' @param x an [sf::sf()] object
 #' @export
 #' @importFrom sf st_intersection
 #' @rdname mass_gis

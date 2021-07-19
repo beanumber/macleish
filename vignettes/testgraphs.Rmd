@@ -53,13 +53,23 @@ x
 
 
 ```{r}
+y <- tree_diameter1 %>%
+  ggplot(aes(x=year, y=diameter, fill=species)) +
+  geom_bar(stat='identity', position='dodge', colour="black") +
+  coord_flip() +
+  scale_x_continuous(limits = c(2010,2015))
+y
+```
+
+```{r}
 z <- tree_diameter1 %>%
-  mutate(position = fct_relevel(position,
-                                "emergent", "canopy", "subcanopy", "sapling")) %>%
   ggplot(aes(x=position, y=diameter, fill=species)) +
   geom_bar(stat="identity", position="dodge") +
   scale_y_continuous(limits = c(0, 60))
 z
+#order of position - canopy, subcanopy, emergent, sapling 
+#consider common names for species 
+#add line graph for review
 ```
 
 ```{r}
@@ -67,9 +77,7 @@ w <- tree_diameter1 %>%
   ggplot( aes(x=diameter, y=species, fill=position)) +
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
-  scale_x_continuous(limits=c(0,60)) +
-  facet_wrap(~year) +
-  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter based on Different Species at Different Positions Between 2010-2015")
+  scale_x_continuous(limits=c(0,60))
 w
 ```
 
@@ -78,9 +86,7 @@ w2 <- tree_diameter1 %>%
   ggplot(aes(x=diameter, y=species, fill=position)) +
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
-  scale_y_discrete(limits=c("Eastern Hemlock")) +
-  coord_flip() +
-  labs(x = "Diameter (cm)", y = "Species", fill = "Position", title = "Distribution of Diameter for Eastern Hemlock at Different Positions Between 2010-2015")
+  scale_y_discrete(limits=c("Tsuga canadensis", "Quercus rubra"))
 w2
 ```
 
@@ -92,17 +98,8 @@ r <- tree_diameter2 %>%
   geom_jitter(color="black", size=0.4, alpha=0.9) +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
   scale_x_continuous(limits=c(0,60)) +
-  facet_wrap(~year) +
-  labs(x = "Diameter (cm)", y = "Species", title = "Distribution of Diameter based on Different Species Between 2009-2016")
+  facet_wrap(~year)
 r
-```
-
-```{r}
-t <- tree_diameter1 %>%
-  ggplot(aes(x=year, y=diameter, color=species)) +
-  geom_line() + 
-  geom_point()
-t
 ```
 
 

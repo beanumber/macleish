@@ -15,16 +15,16 @@ macleish_intersect(x)
 \arguments{
 \item{layer}{MassGIS layer name to import}
 
-\item{x}{an \code{\link[sf]{sf}} object}
+\item{x}{an \code{\link[sf:sf]{sf::sf()}} object}
 }
 \description{
 Retrieve elevation layers from MassGIS
 }
 \details{
-This function will download shapefiles from MassGIS, unzip them, 
+This function will download shapefiles from MassGIS, unzip them,
 transform the projection to EPSG:4326, compute their intersection with the
-boundary of the MacLeish property, and return the resulting 
-\code{\link[sf]{sf}} object.
+boundary of the MacLeish property, and return the resulting
+\code{\link[sf:sf]{sf::sf()}} object.
 
 Intersect a spatial layer with the MacLeish boundary layer
 }

@@ -6,10 +6,10 @@
 \title{Maple sap collection at MacLeish}
 \format{
 \describe{
- \item{when}{the date of collection}
- \item{sap}{how much sap was collected, in gallons}
- \item{Comments}{comments}
- \item{People}{who was there?}
+\item{when}{the date of collection}
+\item{sap}{how much sap was collected, in gallons}
+\item{Comments}{comments}
+\item{People}{who was there?}
 }
 }
 \usage{

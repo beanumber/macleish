@@ -9,3 +9,4 @@
 ^CRAN-RELEASE$
 ^rhub\.R$
 ^\.github$
+^vignettes/testgraphs\.Rmd$

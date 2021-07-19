@@ -5,24 +5,24 @@
 \alias{macleish_layers}
 \title{MacLeish spatial data}
 \format{
-A \code{list} of \code{\link[sf]{sf}} objects, each providing a different layer.
+A \code{list} of \code{\link[sf:sf]{sf::sf()}} objects, each providing a different layer.
 
 \describe{
- \item{landmarks}{Landmarks}
- \item{forests}{Type of dominant tree in individual forests, as 
- noted by Jesse Bellemare}
- \item{streams}{local streams}
- \item{challenge_courses}{Challenge courses on the property}
- \item{reservoir}{a reservoir}
- \item{buildings}{Buildings at MacLeish}
- \item{wetlands}{Wetland areas}
- \item{trails}{Hiking trails}
- \item{schools}{Schools in Massachusetts}
- \item{boundary}{the property boundary}
- \item{research}{research plots}
- \item{soil}{soil deposits used by Amy Rhodes}
- \item{contours_30ft}{30 foot contours}
- \item{contours_3m}{3 meter contours}
+\item{landmarks}{Landmarks}
+\item{forests}{Type of dominant tree in individual forests, as
+noted by Jesse Bellemare}
+\item{streams}{local streams}
+\item{challenge_courses}{Challenge courses on the property}
+\item{reservoir}{a reservoir}
+\item{buildings}{Buildings at MacLeish}
+\item{wetlands}{Wetland areas}
+\item{trails}{Hiking trails}
+\item{schools}{Schools in Massachusetts}
+\item{boundary}{the property boundary}
+\item{research}{research plots}
+\item{soil}{soil deposits used by Amy Rhodes}
+\item{contours_30ft}{30 foot contours}
+\item{contours_3m}{3 meter contours}
 }
 }
 \usage{
@@ -35,9 +35,9 @@ data contain information about various man-made and natural structures
 surrounding the field station.
 }
 \details{
-Each of the \code{\link[sf]{sf}} objects are projected in 
+Each of the \code{\link[sf:sf]{sf::sf()}} objects are projected in
 \code{epsg:4326} for easy integration with Google Maps or
-\code{\link[leaflet]{leaflet}} objects.
+\code{\link[leaflet:leaflet]{leaflet::leaflet()}} objects.
 }
 \examples{
 names(macleish_layers)

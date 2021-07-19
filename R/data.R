@@ -5,18 +5,18 @@
 #'
 #' @details The Macleish Field Station is a remote outpost owned by Smith
 #' College and used for field research. There are two weather stations on the 
-#' premises. One is called \code{WhatelyMet} and the other is \code{OrchardMet}.
+#' premises. One is called `WhatelyMet` and the other is `OrchardMet`.
 #' 
-#' The \code{WhatelyMet} station is located at (42.448470, -72.680553) and
-#' the \code{OrchardMet} station is at (42.449653, -72.680315).
+#' The `WhatelyMet` station is located at (42.448470, -72.680553) and
+#' the `OrchardMet` station is at (42.449653, -72.680315).
 #' 
-#' \code{WhatelyMet} is located at the end of Poplar Hill Road in Whately, 
-#' Massachusetts, USA. The meteorological instruments of \code{WhatelyMet} (except the 
+#' `WhatelyMet` is located at the end of Poplar Hill Road in Whately, 
+#' Massachusetts, USA. The meteorological instruments of `WhatelyMet` (except the 
 #' rain gauge) are mounted at the top of a tower 25.3 m tall, well above the 
 #' surrounding forest canopy. The tower is located on a local ridge at an 
 #' elevation 250.75m above sea level.
 #' 
-#' \code{OrchardMet} is located about 250 m north of the first tower in an open 
+#' `OrchardMet` is located about 250 m north of the first tower in an open 
 #' field next to an apple orchard. Full canopy trees (~20 m tall) are within 
 #' 30 m of this station. This station has a standard instrument configuration 
 #' with temperature, relative humidity, solar radiation, and barometric 
@@ -26,18 +26,18 @@
 #' ground surface 2 m south of the tower. The tower is located 258.1 m above 
 #' sea level. Data collection at OrchardMet began on June 27th, 2014. 
 #' 
-#' The variables shown above are weather data collected at \code{WhatelyMet} and 
-#' \code{OrchardMet} during 2015. Solar radiation is measured in two different ways: 
-#' see \code{SlrW_Avg}or the \code{PAR} variables for Photosynthetic Active Radiation.
+#' The variables shown above are weather data collected at `WhatelyMet` and 
+#' `OrchardMet` during 2015. Solar radiation is measured in two different ways: 
+#' see `SlrW_Avg`or the `PAR` variables for Photosynthetic Active Radiation.
 #' 
 #' Note that a loose wire resulted in erroneous temperature reading at OrchardMet
 #' in late November, 2015. 
 #' 
 #' @docType data
-#' @format For both, a data frame (\code{\link[dplyr]{tbl_df}}) with roughly 52,560 rows and 8 or 9 variables.
+#' @format For both, a data frame ([dplyr::tbl_df()]) with roughly 52,560 rows and 8 or 9 variables.
 #' 
-#' The following variables are values that are found in either the \code{whately_2015}
-#' or \code{orchard_2015} data tables.
+#' The following variables are values that are found in either the `whately_2015`
+#' or `orchard_2015` data tables.
 #' 
 #' All variables are averaged over the 10 minute interval unless otherwise noted.
 #' \describe{
@@ -52,7 +52,7 @@
 #'   \item{par_density}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average density of Watts/meters^2. One of two solar measurements for Orchard}
 #'   \item{par_total}{Photosynthetically Active Radiation (sunlight between 400 and 700 nm), in average total over measurement period of Watts/meters^2. One of two solar measurements for Orchard}
 #' }
-#' @source These data are recorded at \url{http://www.smith.edu/ceeds/macleish_monitoring.php} 
+#' @source These data are recorded at <http://www.smith.edu/ceeds/macleish_monitoring.php> 
 "whately_2015"
 
 #' @rdname whately_2015
@@ -72,16 +72,16 @@
 #' MacLeish spatial data
 #' 
 #' @description Shapefiles from the MacLeish Field Station. The field station
-#' itself is located at \code{lat = 42.449167}, \code{lon = -72.679389}. These
+#' itself is located at `lat = 42.449167`, `lon = -72.679389`. These
 #' data contain information about various man-made and natural structures
 #' surrounding the field station. 
 #' 
-#' @details Each of the \code{\link[sf]{sf}} objects are projected in 
-#' \code{epsg:4326} for easy integration with Google Maps or
-#' \code{\link[leaflet]{leaflet}} objects. 
+#' @details Each of the [sf::sf()] objects are projected in 
+#' `epsg:4326` for easy integration with Google Maps or
+#' [leaflet::leaflet()] objects. 
 #' 
 #' @docType data
-#' @format A \code{list} of \code{\link[sf]{sf}} objects, each providing a different layer.
+#' @format A `list` of [sf::sf()] objects, each providing a different layer.
 #' 
 #' \describe{
 #'  \item{landmarks}{Landmarks}
@@ -121,3 +121,45 @@
 #'  \item{People}{who was there?}
 #' }
 "maple_sap"
+
+#' MacLeish Data Plot 1
+#' @description Data on change in tree diameter (in centimeters)
+#' for parasitic Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
+#' Tree diameter was measured at 1.4 meters high above the ground.
+#' @docType data
+#' @seealso [tree_diameter2]
+#' @format 
+#' \describe{
+#'  \item{Module}{Module number that represents one of the 10 subplot modules that are 110 m
+#'  and 20 x 50 m. There are five 10 x 10 modules along central 50 m axis.}
+#'  \item{Tag}{Tag numbers used to identify each tree.} 
+#'  \item{Species}{Tree species include Red Maple (Acer rubrum), Sweet Birch (Betula lenta), Paper Birch (Betula papyrifera), American Beech (Fagus grandifolia), 
+#'  American witch-hazel (Hamamelis virginiana), Eastern White Pine (Pinus strobus), Northern Red Oak (Quercus rubra), and Eastern Hemlock (Tsuga canadensis).}
+#'  \item{Position}{Stage of growth for each individual tree. The emergent position are the tallest trees, followed by canopy, subcanopy, 
+#'  and finally, sapling trees, which are the smallest trees.}
+#'  \item{Year}{Data collected from 2010-2015 in the fall semesters.}
+#'  \item{Notes}{Notes collected on the wellbeing of tree species, including notes on death or poor health.}
+#'  \item{Diameter}{Tree diameter measured in centimeters and at 1.4 meters high above the ground.}
+#'  \item{People}{Data obtained from Jesse Bellemare and Smith College students from BIO364-365 courses.}
+#' }
+"tree_diameter1"
+
+#' MacLeish Data Plot 2
+#' @description Data on change in tree diameter (in centimeters) 
+#' for parasitic Hemlock Woolly Adelgid dominated areas on the Western side of MacLeish. 
+#' Tree diameter was measured at 1.4 meters high above the ground.
+#' @docType data
+#' @seealso [tree_diameter1]
+#' @format 
+#' \describe{
+#'  \item{Module}{Module number that represents one of the 10 subplot modules that are 110 m
+#'  and 20 x 50 m. There are five 10 x 10 modules along central 50 m axis.}
+#'  \item{Tag}{Tag numbers used to identify each tree.}
+#'  \item{Species}{Tree species include Red Maple (Acer rubrum), Sweet Birch (Betula lenta), American Beech (Fagus grandifolia), Eastern White Pine (Pinus strobus), 
+#'  Northern Red Oak (Quercus rubra), and Eastern Hemlock (Tsuga canadensis).}
+#'  \item{Year}{Data collected from 2009-2012 in the fall semesters.}
+#'  \item{Notes}{Notes collected on the wellbeing of tree species, including notes on death or poor health.}
+#'  \item{Diameter}{Tree diameter measured in centimeters and at 1.4 meters high above the ground.}
+#'  \item{People}{Data obtained from Jesse Bellemare and Smith College students from BIO364-365 courses.}
+#' }
+"tree_diameter2"

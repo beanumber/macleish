@@ -4,7 +4,7 @@ output:
     html_preview: true
 ---
 
-# macleish <img src='man/figures/logo.png' align="right" height="139" />
+# macleish <img src='man/figures/logo.png' align="right" height="139"/>
 
 [![R-CMD-check](https://github.com/beanumber/macleish/workflows/R-CMD-check/badge.svg)](https://github.com/beanumber/macleish/actions)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
@@ -13,7 +13,7 @@ The [Ada and Archibald MacLeish Field Station](http://www.smith.edu/ceeds/maclei
 
 ![MacLeish Field Station](inst/extdata/macleish_600px.jpg)
 
-This R package allows you to download and process weather data using the [ETL](http://www.github.com/beanumber/etl) framework from the MacLeish Field Station. It also contains shapefiles for contextualizing spatial information. 
+This R package allows you to download and process weather data using the [ETL](http://www.github.com/beanumber/etl) framework from the MacLeish Field Station. It also contains shapefiles for contextualizing spatial information.      
 
 ## To install
 
