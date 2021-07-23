@@ -1,14 +1,14 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.6.3)  19 JUL 2021 09:51
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.22)  22 JUL 2021 12:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Paper.t
+**C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Paper.t
 ex
 
-(c:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Paper.te
+(c:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Paper.te
 x
-LaTeX2e <2021-06-01>
-L3 programming layer <2021-06-01> (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-07-12> (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf
 -dist/tex/latex/base/article.cls
 Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
@@ -92,7 +92,7 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 )
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.
 sty
-Package: titlesec 2019/10/16 v2.13 Sectioning titles
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box50
 \beforetitleunit=\skip51
 \aftertitleunit=\skip52
@@ -433,7 +433,7 @@ File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.
 sty
-Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
 
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.
 sty
@@ -489,11 +489,11 @@ Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.de
 f
-File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
 )
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-
 langpatches.def
-File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
 nguages
 )
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.
@@ -507,7 +507,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 \Hy@SavedSpaceFactor=\count284
 
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Hyper figures OFF on input line 4192.
 Package hyperref Info: Link nesting OFF on input line 4197.
@@ -536,15 +536,15 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 \Fld@menulength=\count286
 \Field@Width=\dimen256
 \Fld@charsize=\dimen257
-Package hyperref Info: Hyper figures OFF on input line 6075.
-Package hyperref Info: Link nesting OFF on input line 6080.
-Package hyperref Info: Hyper index ON on input line 6083.
-Package hyperref Info: backreferencing OFF on input line 6090.
-Package hyperref Info: Link coloring OFF on input line 6095.
-Package hyperref Info: Link coloring with OCG OFF on input line 6100.
-Package hyperref Info: PDF/A mode OFF on input line 6105.
-LaTeX Info: Redefining \ref on input line 6145.
-LaTeX Info: Redefining \pageref on input line 6149.
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
 
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.
 sty
@@ -559,7 +559,7 @@ Package hyperref Info: Driver (autodetected): hxetex.
 
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.de
 f
-File: hxetex.def 2021-02-27 v7.00k Hyperref driver for XeTeX
+File: hxetex.def 2021-06-07 v7.00m Hyperref driver for XeTeX
 
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/string
 enc.sty
@@ -616,7 +616,7 @@ Package caption Info: hyperref package is loaded.
 )
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbo
 x.sty
-Package: tcolorbox 2021/05/21 version 4.50 text color boxes
+Package: tcolorbox 2021/06/14 version 4.51 text color boxes
 
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
@@ -1017,11 +1017,11 @@ sty
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/
 xparse.sty
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2021-06-01 L3 programming layer (loader) 
+Package: expl3 2021-07-12 L3 programming layer (loader) 
 
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backen
 d-xetex.def
-File: l3backend-xetex.def 2021-05-07 L3 backend support: XeTeX
+File: l3backend-xetex.def 2021-07-12 L3 backend support: XeTeX
 (|extractbb --version)
 \c__kernel_sys_dvipdfmx_version_int=\count439
 \l__color_backend_stack_int=\count440
@@ -1032,7 +1032,7 @@ File: l3backend-xetex.def 2021-05-07 L3 backend support: XeTeX
 \g__pdf_backend_annotation_int=\count444
 \g__pdf_backend_link_int=\count445
 ))
-Package: xparse 2021-06-01 L3 Experimental document command parser
+Package: xparse 2021-06-18 L3 Experimental document command parser
 )
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 
@@ -1173,7 +1173,7 @@ Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2021-06-01 L3 programming layer (loader) 
+(biblatex)             2021-07-12 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
@@ -1275,19 +1275,7 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 
 [2]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 431.
-
-Overfull \hbox (48.41139pt too wide) in paragraph at lines 468--468
-[]\TU/lmtt/m/n/10 ## -- Attaching packages ------------------------------------
---- tidyverse 1.3.1 -- 
- []
-
-
-Overfull \hbox (48.41139pt too wide) in paragraph at lines 478--478
-[]\TU/lmtt/m/n/10 ## -- Conflicts ------------------------------------------ ti
-dyverse_conflicts() -- 
- []
-
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 406.
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
@@ -1301,21 +1289,15 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [3]
-Overfull \hbox (74.66139pt too wide) in paragraph at lines 490--490
-[]\TU/lmtt/m/n/10 ## NOTE: Either Arial Narrow or Roboto Condensed fonts are re
-quired to use these themes. 
+Overfull \hbox (32.66139pt too wide) in paragraph at lines 488--488
+[]\TU/lmtt/m/n/10 ## $ notes    <chr> "Alive in 2009, dead in 2010", "Alive in 
+2009, dead in 2010"[] 
  []
 
 
-Overfull \hbox (79.91139pt too wide) in paragraph at lines 494--494
-[]\TU/lmtt/m/n/10 ##       Please use hrbrthemes::import_roboto_condensed() to 
-install Roboto Condensed and 
- []
-
-
-Overfull \hbox (58.91139pt too wide) in paragraph at lines 498--498
-[]\TU/lmtt/m/n/10 ##       if Arial Narrow is not on your system, please see ht
-tps://bit.ly/arialnarrow 
+Overfull \hbox (6.41139pt too wide) in paragraph at lines 502--502
+[]\TU/lmtt/m/n/10 ## $ species  <chr> "Eastern Hemlock", "Eastern Hemlock", "Ea
+stern Hemlock"[] 
  []
 
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
@@ -1331,115 +1313,13 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [4]
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 600--600
-[]\TU/lmtt/m/n/10 ## $ module   <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
- 1, 1, 1, 1, 1, 1, 1~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 601--601
-[]\TU/lmtt/m/n/10 ## $ tag      <dbl> 2001, 2001, 2001, 2001, 2001, 2001, 2002,
- 2002, 2002, 2002, 2~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 602--602
-[]\TU/lmtt/m/n/10 ## $ species  <chr> "Sweet Birch", "Sweet Birch", "Sweet Birc
-h", "Sweet Birch", "~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 603--603
-[]\TU/lmtt/m/n/10 ## $ position <chr> "subcanopy", "subcanopy", "subcanopy", "s
-ubcanopy", "subcanop~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 604--604
-[]\TU/lmtt/m/n/10 ## $ semester <chr> "Fall", "Fall", "Fall", "Fall", "Fall", "
-Fall", "Fall", "Fall~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 605--605
-[]\TU/lmtt/m/n/10 ## $ year     <dbl> 2015, 2014, 2013, 2012, 2011, 2010, 2015,
- 2014, 2013, 2012, 2~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 606--606
-[]\TU/lmtt/m/n/10 ## $ diameter <dbl> NA, NA, NA, NA, NA, NA, 10.5, 10.4, 10.5,
- 10.4, 10.2, 10.1, 6~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 607--607
-[]\TU/lmtt/m/n/10 ## $ notes    <chr> "Alive in 2009, dead in 2010", "Alive in 
-2009, dead in 2010",~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 619--619
-[]\TU/lmtt/m/n/10 ## $ module   <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
- 1, 1, 1, 1, 1, 1, 1~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 620--620
-[]\TU/lmtt/m/n/10 ## $ tag      <dbl> 2171, 2171, 2171, 2171, 2171, 2172, 2172,
- 2172, 2172, 2172, 2~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 621--621
-[]\TU/lmtt/m/n/10 ## $ species  <chr> "Eastern Hemlock", "Eastern Hemlock", "Ea
-stern Hemlock", "Eas~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 622--622
-[]\TU/lmtt/m/n/10 ## $ semester <chr> "Fall", "Fall", "Fall", "Fall", "Fall", "
-Fall", "Fall", "Fall~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 623--623
-[]\TU/lmtt/m/n/10 ## $ year     <dbl> 2016, 2012, 2011, 2010, 2009, 2016, 2012,
- 2011, 2010, 2009, 2~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 624--624
-[]\TU/lmtt/m/n/10 ## $ diameter <dbl> 28.2, 27.4, 27.2, 27.1, 27.0, 24.5, 23.2,
- 22.9, 22.5, 22.2, 2~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 625--625
-[]\TU/lmtt/m/n/10 ## $ notes    <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N
-A, NA, NA, NA, NA, N~[] 
- []
-
-File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
-plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
-<C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
-s/joss/resources/JOSS-logo.png>
-
-Package fancyhdr Warning: \headheight is too small (62.59596pt): 
-(fancyhdr)                Make it at least 63.55022pt, for example:
-(fancyhdr)                \setlength{\headheight}{63.55022pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
-
-[5]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pap
 er_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pape
 r_files/figure-latex/unnamed-chunk-7-1.pdf>
-File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pap
 er_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pape
 r_files/figure-latex/unnamed-chunk-8-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
@@ -1453,10 +1333,10 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
-[6]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pap
+[5]
+File: C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pap
 er_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pape
 r_files/figure-latex/unnamed-chunk-9-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
@@ -1470,108 +1350,24 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
+[6]
+File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
+plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
+<C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
+s/joss/resources/JOSS-logo.png>
+
+Package fancyhdr Warning: \headheight is too small (62.59596pt): 
+(fancyhdr)                Make it at least 63.55022pt, for example:
+(fancyhdr)                \setlength{\headheight}{63.55022pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
+
 [7]
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 732--732
-[]\TU/lmtt/m/n/10 ## $ when            <dttm> 2015-01-01 00:00:00, 2015-01-01 0
-0:10:00, 2015-01-01 ~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 733--733
-[]\TU/lmtt/m/n/10 ## $ temperature     <dbl> -9.32, -9.46, -9.44, -9.30, -9.32,
- -9.34, -9.30, -9.10~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 734--734
-[]\TU/lmtt/m/n/10 ## $ wind_speed      <dbl> 1.399, 1.506, 1.620, 1.141, 1.223,
- 1.090, 1.168, 1.307~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 735--735
-[]\TU/lmtt/m/n/10 ## $ wind_dir        <dbl> 225.4, 248.2, 258.3, 243.8, 238.4,
- 241.7, 242.3, 244.2~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 736--736
-[]\TU/lmtt/m/n/10 ## $ rel_humidity    <dbl> 54.55, 55.38, 56.18, 56.41, 56.87,
- 57.25, 57.71, 58.16~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 737--737
-[]\TU/lmtt/m/n/10 ## $ pressure        <int> 985, 985, 985, 985, 984, 984, 984,
- 984, 984, 984, 984,~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 738--738
-[]\TU/lmtt/m/n/10 ## $ solar_radiation <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-, 0, 0, 0, 0, 0, 0, ~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 739--739
-[]\TU/lmtt/m/n/10 ## $ rainfall        <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-, 0, 0, 0, 0, 0, 0, ~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 751--751
-[]\TU/lmtt/m/n/10 ## $ when         <dttm> 2015-01-01 00:00:00, 2015-01-01 00:1
-0:00, 2015-01-01 00:~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 752--752
-[]\TU/lmtt/m/n/10 ## $ temperature  <dbl> -9.62, -9.45, -9.52, -9.68, -9.56, -9
-.59, -9.51, -9.70, -~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 753--753
-[]\TU/lmtt/m/n/10 ## $ wind_speed   <dbl> 0.490, 0.517, 0.576, 0.522, 0.296, 0.
-382, 0.497, 0.781, 0~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 754--754
-[]\TU/lmtt/m/n/10 ## $ wind_dir     <dbl> 216.3, 209.6, 215.5, 199.3, 186.4, 18
-3.9, 195.6, 210.4, 2~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 755--755
-[]\TU/lmtt/m/n/10 ## $ rel_humidity <dbl> 61.97, 59.08, 58.69, 58.59, 57.32, 57
-.58, 56.97, 60.52, 6~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 756--756
-[]\TU/lmtt/m/n/10 ## $ pressure     <dbl> 1020, 1019, 1019, 1019, 1019, 1019, 1
-019, 1018, 1018, 101~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 757--757
-[]\TU/lmtt/m/n/10 ## $ par_density  <dbl> 0.548, 0.548, 0.548, 0.548, 0.548, 0.
-548, 0.548, 0.548, 0~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 758--758
-[]\TU/lmtt/m/n/10 ## $ par_total    <dbl> 0.088, 0.088, 0.088, 0.088, 0.088, 0.
-088, 0.088, 0.088, 0~[] 
- []
-
-
-Overfull \hbox (43.16139pt too wide) in paragraph at lines 759--759
-[]\TU/lmtt/m/n/10 ## $ rainfall     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-, 0, 0, 0, 0, 0, 0, ~[] 
- []
-
+File: C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pap
+er_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
+<use C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pape
+r_files/figure-latex/unnamed-chunk-12-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
@@ -1585,70 +1381,40 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [8]
-File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
-plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
-<C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
-s/joss/resources/JOSS-logo.png>
-
-Package fancyhdr Warning: \headheight is too small (62.59596pt): 
-(fancyhdr)                Make it at least 63.55022pt, for example:
-(fancyhdr)                \setlength{\headheight}{63.55022pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
-
-[9]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pap
-er_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpOUCXD9/preview-236449f3130a.dir/Pape
-r_files/figure-latex/unnamed-chunk-13-1.pdf>
-
-Underfull \hbox (badness 1810) in paragraph at lines 890--895
+Underfull \hbox (badness 1810) in paragraph at lines 680--685
 \TU/lmr/m/it/10 Change Biology\TU/lmr/m/n/10 . Retrieved from [][]$[][][][][] [
 ] [] [] [][][][][][][][][][][][][] [] [][][][][] [] [][][] [] [][][] [] [][][] 
 [] [][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--895
+Underfull \hbox (badness 10000) in paragraph at lines 680--685
 [][][] [] [][][][][] [] [][][][] [] [][][][][] [] [][][] [] [][][][][][][][][][
 ][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][] []
  []
 
-File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
-plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
-<C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
-s/joss/resources/JOSS-logo.png>
 
-Package fancyhdr Warning: \headheight is too small (62.59596pt): 
-(fancyhdr)                Make it at least 63.55022pt, for example:
-(fancyhdr)                \setlength{\headheight}{63.55022pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
-
-[10]
-Underfull \hbox (badness 1033) in paragraph at lines 908--915
+Underfull \hbox (badness 1033) in paragraph at lines 698--705
 \TU/lmr/m/n/10 by the decline of a foundation tree species, Tsuga canadensis(Pi
 naceae). \TU/lmr/m/it/10 Jour-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 908--915
+Underfull \hbox (badness 10000) in paragraph at lines 698--705
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][] [] [][][][][][][][][][][] [] [][][][][][][][] [] [][][][][]
 [][][][][][][][][][][][][][][] []
  []
 
 
-Overfull \hbox (54.46141pt too wide) in paragraph at lines 908--915
+Overfull \hbox (54.46141pt too wide) in paragraph at lines 698--705
 [] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [] [] [][] [] [][][][] [] [][][][][][][][][][][][][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 933--938
+Underfull \hbox (badness 10000) in paragraph at lines 723--728
 [][][][][][] [] [][][] [] [][][][][][][][] [] [] [] [][][][][][][][][][][][][][
 ][][][][][] [] [][][][][][][][][][][][][] [] [][][][][][][][][][] [] [][][][] [
 ]
@@ -1666,7 +1432,7 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
-[11] (./Paper.aux)
+[9] (./Paper.aux)
 Package rerunfilecheck Info: File `Paper.out' has not changed.
 (rerunfilecheck)             Checksum: E45F5D10F16704E1859279F72AEEE289;1509.
 Package logreq Info: Writing requests to 'Paper.run.xml'.
@@ -1674,12 +1440,12 @@ Package logreq Info: Writing requests to 'Paper.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33672 strings out of 478489
- 684894 string characters out of 5857834
- 1465195 words of memory out of 5000000
- 53447 multiletter control sequences out of 15000+600000
- 410302 words of font info for 75 fonts, out of 8000000 for 9000
+ 33670 strings out of 478474
+ 684702 string characters out of 5857599
+ 1464671 words of memory out of 5000000
+ 53465 multiletter control sequences out of 15000+600000
+ 410294 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,13n,95p,808b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Paper.pdf (11 pages).
+Output written on Paper.pdf (9 pages).
