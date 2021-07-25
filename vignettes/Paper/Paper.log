@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.22)  22 JUL 2021 12:14
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.25)  25 JUL 2021 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Paper.t
+**C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Paper.t
 ex
 
-(c:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Paper.te
+(c:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Paper.te
 x
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-07-12> (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf
@@ -1105,37 +1105,189 @@ y)
 Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
 )
-\@quotelevel=\count464
-\@quotereset=\count465
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.
+sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen289
+\lightrulewidth=\dimen290
+\cmidrulewidth=\dimen291
+\belowrulesep=\dimen292
+\belowbottomsep=\dimen293
+\aboverulesep=\dimen294
+\abovetopsep=\dimen295
+\cmidrulesep=\dimen296
+\cmidrulekern=\dimen297
+\defaultaddspace=\dimen298
+\@cmidla=\count464
+\@cmidlb=\count465
+\@aboverulesep=\dimen299
+\@belowrulesep=\dimen300
+\@thisruleclass=\count466
+\@lastruleclass=\count467
+\@thisrulewidth=\dimen301
+)
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.st
+y
+Package: longtable 2021-05-07 v4.16 Multi-page Table package (DPC)
+\LTleft=\skip92
+\LTright=\skip93
+\LTpre=\skip94
+\LTpost=\skip95
+\LTchunksize=\count468
+\LTcapwidth=\dimen302
+\LT@head=\box75
+\LT@firsthead=\box76
+\LT@foot=\box77
+\LT@lastfoot=\box78
+\LT@gbox=\box79
+\LT@cols=\count469
+\LT@rows=\count470
+\c@LT@tables=\count471
+\c@LT@chunks=\count472
+\LT@p@ftn=\toks42
+) (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
+\col@sep=\dimen303
+\ar@mcellbox=\box80
+\extrarowheight=\dimen304
+\NC@list=\toks43
+\extratabsurround=\skip96
+\backup@length=\skip97
+\ar@cellbox=\box81
+)
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.
+sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip98
+\multirow@cntb=\count473
+\multirow@dima=\skip99
+\bigstrutjot=\dimen305
+)
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.st
+y
+\wrapoverhang=\dimen306
+\WF@size=\dimen307
+\c@WF@wrappedlines=\count474
+\WF@box=\box82
+\WF@everypar=\toks44
+Package: wrapfig 2003/01/31  v 3.6
+) (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count475
+\float@exts=\toks45
+\float@box=\box83
+\@float@everytoks=\toks46
+\@floatcapt=\box84
+)
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.
+sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks47
+\minrowclearance=\skip100
+)
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscap
+e.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.st
+y
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+
+) (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.
+sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box85
+\sift@deathcycles=\count476
+\@vwid@loff=\dimen308
+\@vwid@roff=\dimen309
+)
+\c@taburow=\count477
+\tabu@nbcols=\count478
+\tabu@cnt=\count479
+\tabu@Xcol=\count480
+\tabu@alloc=\count481
+\tabu@nested=\count482
+\tabu@target=\dimen310
+\tabu@spreadtarget=\dimen311
+\tabu@naturalX=\dimen312
+\tabucolX=\dimen313
+\tabu@Xsum=\dimen314
+\extrarowdepth=\dimen315
+\abovetabulinesep=\dimen316
+\belowtabulinesep=\dimen317
+\tabustrutrule=\dimen318
+\tabu@thebody=\toks48
+\tabu@footnotes=\toks49
+\tabu@box=\box86
+\tabu@arstrutbox=\box87
+\tabu@hleads=\box88
+\tabu@vleads=\box89
+\tabu@cellskip=\skip101
+)
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/thr
+eeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box90
+)
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/th
+reeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+\TPTL@width=\skip102
+) (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box91
+\UL@hyphenbox=\box92
+\UL@skip=\skip103
+\UL@hook=\toks50
+\UL@height=\dimen319
+\UL@pe=\count483
+\UL@pixel=\dimen320
+\ULC@box=\box93
+Package: ulem 2019/11/18
+\ULdepth=\dimen321
+)
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.
+sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen322
+\c@nlinenum=\count484
+\TeXr@lab=\toks51
+)
+\@quotelevel=\count485
+\@quotereset=\count486
 (./Paper.aux)
 \openout1 = `Paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 232.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 246.
+LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 246.
+LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 246.
+LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 246.
+LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 246.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
-32.
+46.
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-Package hyperref Info: Link coloring ON on input line 232.
+LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 246.
+LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 246.
+LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 246.
+LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 246.
+LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 246.
+LaTeX Font Info:    ... okay on input line 246.
+Package hyperref Info: Link coloring ON on input line 246.
 
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.s
 ty
@@ -1149,16 +1301,25 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count466
+\c@section@level=\count487
 )
-LaTeX Info: Redefining \ref on input line 232.
-LaTeX Info: Redefining \pageref on input line 232.
-LaTeX Info: Redefining \nameref on input line 232.
+LaTeX Info: Redefining \ref on input line 246.
+LaTeX Info: Redefining \pageref on input line 246.
+LaTeX Info: Redefining \nameref on input line 246.
 (./Paper.out) (./Paper.out)
 \@outlinefile=\write6
 \openout6 = `Paper.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+
+(c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.
+sty
+Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
+)
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -1186,8 +1347,8 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Paper.bbl' not found.
 No file Paper.bbl.
-Package biblatex Info: Reference section=0 on input line 232.
-Package biblatex Info: Reference segment=0 on input line 232.
+Package biblatex Info: Reference section=0 on input line 246.
+Package biblatex Info: Reference segment=0 on input line 246.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1222,26 +1383,26 @@ Package biblatex Info: Reference segment=0 on input line 232.
 * \@reversemargintrue
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 233
+LaTeX Font Info:    Trying to load font information for U+msa on input line 247
 .
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 233
+LaTeX Font Info:    Trying to load font information for U+msb on input line 247
 .
 (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-Package hyperref Warning: Suppressing link with empty target on input line 259.
+Package hyperref Warning: Suppressing link with empty target on input line 273.
 
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 259.
+Package hyperref Warning: Suppressing link with empty target on input line 273.
 
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 259.
+Package hyperref Warning: Suppressing link with empty target on input line 273.
 
 
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
@@ -1257,7 +1418,7 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 316.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 330.
 [1
 
 ]
@@ -1275,7 +1436,7 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 
 [2]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 406.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 431.
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
@@ -1289,17 +1450,10 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [3]
-Overfull \hbox (32.66139pt too wide) in paragraph at lines 488--488
-[]\TU/lmtt/m/n/10 ## $ notes    <chr> "Alive in 2009, dead in 2010", "Alive in 
-2009, dead in 2010"[] 
- []
-
-
-Overfull \hbox (6.41139pt too wide) in paragraph at lines 502--502
-[]\TU/lmtt/m/n/10 ## $ species  <chr> "Eastern Hemlock", "Eastern Hemlock", "Ea
-stern Hemlock"[] 
- []
-
+File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
+er_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
+r_files/figure-latex/unnamed-chunk-5-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
@@ -1313,13 +1467,20 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [4]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pap
-er_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pape
-r_files/figure-latex/unnamed-chunk-7-1.pdf>
-File: C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pap
+Overfull \hbox (32.66139pt too wide) in paragraph at lines 521--521
+[]\TU/lmtt/m/n/10 ## $ notes    <chr> "Alive in 2009, dead in 2010", "Alive in 
+2009, dead in 2010"[] 
+ []
+
+
+Overfull \hbox (6.41139pt too wide) in paragraph at lines 535--535
+[]\TU/lmtt/m/n/10 ## $ species  <chr> "Eastern Hemlock", "Eastern Hemlock", "Ea
+stern Hemlock"[] 
+ []
+
+File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
 er_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
 r_files/figure-latex/unnamed-chunk-8-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
@@ -1334,10 +1495,14 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [5]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
 er_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
 r_files/figure-latex/unnamed-chunk-9-1.pdf>
+File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
+er_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
+<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
+r_files/figure-latex/unnamed-chunk-10-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
@@ -1351,6 +1516,10 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [6]
+File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
+er_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
+<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
+r_files/figure-latex/unnamed-chunk-13-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
@@ -1364,10 +1533,18 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [7]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pap
-er_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpUT8dG3/preview-8e4c2fdb2899.dir/Pape
-r_files/figure-latex/unnamed-chunk-12-1.pdf>
+Underfull \hbox (badness 1810) in paragraph at lines 687--692
+\TU/lmr/m/it/10 Change Biology\TU/lmr/m/n/10 . Retrieved from [][]$[][][][][] [
+] [] [] [][][][][][][][][][][][][] [] [][][][][] [] [][][] [] [][][] [] [][][] 
+[] [][] [] [][][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--692
+[][][] [] [][][][][] [] [][][][] [] [][][][][] [] [][][] [] [][][][][][][][][][
+][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][] []
+ []
+
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
 <C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/template
@@ -1381,40 +1558,27 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [8]
-Underfull \hbox (badness 1810) in paragraph at lines 680--685
-\TU/lmr/m/it/10 Change Biology\TU/lmr/m/n/10 . Retrieved from [][]$[][][][][] [
-] [] [] [][][][][][][][][][][][][] [] [][][][][] [] [][][] [] [][][] [] [][][] 
-[] [][] [] [][][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 680--685
-[][][] [] [][][][][] [] [][][][] [] [][][][][] [] [][][] [] [][][][][][][][][][
-][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][] []
- []
-
-
-Underfull \hbox (badness 1033) in paragraph at lines 698--705
+Underfull \hbox (badness 1033) in paragraph at lines 705--712
 \TU/lmr/m/n/10 by the decline of a foundation tree species, Tsuga canadensis(Pi
 naceae). \TU/lmr/m/it/10 Jour-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 698--705
+Underfull \hbox (badness 10000) in paragraph at lines 705--712
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][] [] [][][][][][][][][][][] [] [][][][][][][][] [] [][][][][]
 [][][][][][][][][][][][][][][] []
  []
 
 
-Overfull \hbox (54.46141pt too wide) in paragraph at lines 698--705
+Overfull \hbox (54.46141pt too wide) in paragraph at lines 705--712
 [] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [] [] [][] [] [][][][] [] [][][][][][][][][][][][][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 723--728
+Underfull \hbox (badness 10000) in paragraph at lines 730--735
 [][][][][][] [] [][][] [] [][][][][][][][] [] [] [] [][][][][][][][][][][][][][
 ][][][][][] [] [][][][][][][][][][][][][] [] [][][][][][][][][][] [] [][][][] [
 ]
@@ -1434,18 +1598,18 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 
 [9] (./Paper.aux)
 Package rerunfilecheck Info: File `Paper.out' has not changed.
-(rerunfilecheck)             Checksum: E45F5D10F16704E1859279F72AEEE289;1509.
+(rerunfilecheck)             Checksum: F2DA75F4F8B7180B080CD435CCC36EC5;1512.
 Package logreq Info: Writing requests to 'Paper.run.xml'.
 \openout1 = `Paper.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33670 strings out of 478474
- 684702 string characters out of 5857599
- 1464671 words of memory out of 5000000
- 53465 multiletter control sequences out of 15000+600000
- 410294 words of font info for 74 fonts, out of 8000000 for 9000
+ 35191 strings out of 478475
+ 708082 string characters out of 5857611
+ 1493123 words of memory out of 5000000
+ 54926 multiletter control sequences out of 15000+600000
+ 410400 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,13n,95p,808b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,13n,95p,808b,806s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Paper.pdf (9 pages).

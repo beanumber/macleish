@@ -43,7 +43,7 @@ By making this data accessible in an R Package with a simple interface, we hope 
 
 Computational analysis is becoming a crucial component of research in ecology. However, programming presents new challenges for ecological investigators who are unfamiliar with statistical applications. Even researchers that are versed in efficient programming may be restricted by knowledge of code. Therefore, interdisciplinary research between ecology and statistics remains limited in scope, depth, and quality (@Visser:2015). 
 
-Here, we create an R Package with a simple interface that permits access to weather, spatial, and photography data to inspire interdisciplinary collaboration. The R Package, also known as the MacLeish R Package, utilizes data from the Ada and Archibald MacLeish Field Station. 
+Here, we create an R Package with a simple interface that access to weather, spatial, and photography data to inspire interdisciplinary collaboration. The MacLeish R Package, utilizes data from the Ada and Archibald MacLeish Field Station. 
 
 The Ada and Archibald MacLeish Field Station is a 243-acre patchwork of forest and pasture land on top of a flat ridge in Whately, Massachusetts. The station is located about 11 miles from Smith College. The community at Smith College, including students, faculty, staff, and alum, pursue artistic inquiry, environmental research, outdoor education, and low-impact recreation at the MacLeish Field Station. Students are integral to the operation and maintenance of the field as stewards for the land, designers of programs, and participants in key decision-making (@SmithCollege:2021).
 
@@ -53,18 +53,27 @@ Likewise, other invasive species exist at the MacLeish Field Station. The autumn
 
 Within the MacLeish Field Station are a number of stations and administrative buildings that collect data and foster environmental education. For instance, the Whately and Orchard Weather Stations store historical and collect current meteorological weather data. The Smith College Observatory is frequently used by the astronomy department at Smith College for astronomical research. The Bechtel Environmental Classroom was created by the Environmental Science & Policy program using top-notch sustainable strategies. The classroom provides a meeting space for environmental laboratory and educational use (@SmithCollege:2021). Evidently, the MacLeish Field Station is highly interdisciplinary, appealing to multiple departments at once, and aims to inspire research in the arts, humanities, and natural sciences among the Smith College community. Through the MacLeish R Package, we hope to expand the opportunity for members of Smith College to pursue research, contribute to the R Package, and influence other institutions with analogous research sites to create more accessible programming interfaces.
 
-Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:2014 @Ignace:2018 @Guswa:2011 @Jackson:2018 @Guswa:2011 @Bassar:2015 @Wetzel:2017 @Visser:2015 @Moise:2021 @SmithCollege:2021
+Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:2014, @Ignace:2018, @Guswa:2011, @Jackson:2018, @Guswa:2011, @Bassar:2015, @Wetzel:2017, @Visser:2015, and @Moise:2021.
 
 # Statement of Need 
 
-- Enhancing accessibility for data to nonstatisticans 
-- Presenting current and historical meteorological data on forestry 
-- Creating the opportunity for expansion on ecological, conservation, and biodiversity research
-- Bringing together interdisciplinary research 
+The MacLeish Field Station is abundant with scientific inquiry, where the Smith College community explore the diverse ecosystem of plants and animals. Through a simple interface on RStudio, the `macleish` package offers: 
+
+  (i) access to data from open-source databases
+  (ii) interactive maps of the MacLeish Field Station and surrounding area 
+  (iii) meterogical reading data from historical and current databases 
+  (iv) access to data on tree diameter of different species infected by the Hemlock Woolly adelgid 
+  (v) access to a database of images of canopy over time 
+  
+Users may generate utilisable summary statistics and plots using the data from the `macleish` package. 
 
 # MacLeish R Package Main Functionalities
 
 Begin by using `install.packages(macleish)` to install the MacLeish package onto R, followed by loading the package through `library(macleish)`.
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.pos = 'H')
+```
 
 
 ```{r, message=FALSE, warning=FALSE}
@@ -81,6 +90,7 @@ library(leaflet)
 library(dplyr)
 library(imager)
 library(knitr)
+library(kableExtra)
 ```
 
 
@@ -123,7 +133,7 @@ map
 
 Here is an image of the MacLeish Field Station.
 
-```{r}
+```{r, echo = FALSE, fig.cap="Image of a map of the MacLeish Field Station."}
 load.image("http://masstrails.com/cache/1007_0.jpg") %>% 
   plot
 ```
@@ -146,7 +156,7 @@ The time frame varies between `tree_diameter1` (2010-2015) and `tree_diameter2` 
 
 For example, using the `tree_diameter1` dataset, the boxplot below demonstrates the distribution of diameter for different species of trees at different positions from 2010-2015. 
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species and position between 2010-2015."}
 w <- tree_diameter1 %>%
   mutate(position = fct_relevel(position,
                                 "emergent", "canopy", "subcanopy", 
@@ -163,7 +173,7 @@ w
 
 By viewing an individual species, the distribution of diameter varies based on the position of the species. For instance, the median diameter of emergent Eastern Hemlock trees is the greatest, despite having the smallest overall range. However, the overall range of the diameter of the canopy is the greatest. 
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter of Eastern Hemlock tree depending on position between 2010-2015."}
 w2 <- tree_diameter1 %>%
   mutate(position = fct_relevel(position,
                                 "emergent", "canopy", "subcanopy", 
@@ -180,7 +190,7 @@ w2
 
 Below is a box plot of the distribution of diameter based on different tree species from 2009-2012 using the `tree_diameter2` dataset. Using individual data points on top of the box plots reveals the underlying distribution of each group. 
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species between 2009-2016."}
 r <- tree_diameter2 %>%
   ggplot( aes(x=diameter, y=species)) +
   geom_boxplot() +
@@ -211,10 +221,11 @@ Furthermore, the ETL framework retrieves live and historical (2012-01-03 for Wha
 
 ## Phenocam functions
 
-The PhenoCam Network is an ecosystem phenology camera network that provides automated, near-surface remote sensing of canopy phenology across the northeastern United States and adjacent Canada, including the MacLeish Field Station. High-resolution digital cameras at the MacLeish Field Station take pictures of the canopy and upload them to the PhenoCam server every half hour. The PhenoCam Network permits analysis of archived images, providing an objective means by which canopy phenology can be monitored and quantiied at relatively low cost and with minimal expenses. 
+The PhenoCam Network is an ecosystem phenology camera network that provides automated, near-surface remote sensing of canopy phenology across the northeastern United States and adjacent Canada, including the MacLeish Field Station. High-resolution digital cameras at the MacLeish Field Station take pictures of the canopy and upload them to the PhenoCam server every half hour. The PhenoCam Network permits analysis of archived images, providing an objective means by which canopy phenology can be monitored and quantiied at relatively low cost and with minimal expenses.
+
 Here is an example of an image retreived from the PhenoCam Network.
 
-```{r}
+```{r, echo=FALSE, fig.cap="Image of the MacLeish Field Station taken above retrieved from the PhenoCam Network."}
 load.image("https://phenocam.sr.unh.edu/data/latest/macleish.jpg") %>% 
   plot
 ```
@@ -224,8 +235,9 @@ The function `get_macleish_image()` retreives an image from the PhenoCam Network
 
 # Application and Perspectives 
 
-- Initial uses 
-- Future applications 
+The `macleish` package is an R Package with a simple interface that access to weather, spatial, and photography data to inspire interdisciplinary collaboration among statiscians and ecologists.
+
+The `macleish` package is a dynamic project that was built with the interest of non-statiscians. It currently supports interdisciplinary collaboration to fester statistical application among the ecology community. More functions and data are expected to be compiled in the package over time that seems fit to users to support an increasing collection of statistical analyses and visualizations.
 
 # Acknowledgements
 
