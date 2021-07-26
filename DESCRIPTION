@@ -43,8 +43,7 @@ Suggests:
     markdown,
     mgcv,
     clifro,
-    testthat,
-    rmarkdown
+    testthat
 URL: http://github.com/beanumber/macleish
 BugReports: https://github.com/beanumber/macleish/issues
 RoxygenNote: 7.1.1

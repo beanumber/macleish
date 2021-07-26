@@ -69,12 +69,7 @@ Users may generate utilisable summary statistics and plots using the data from t
 
 # MacLeish R Package Main Functionalities
 
-Begin by using `install.packages(macleish)` to install the MacLeish package onto R, followed by loading the package through `library(macleish)`.
-
-```{r global_options, include=FALSE}
-knitr::opts_chunk$set(fig.pos = 'H')
-```
-
+To use the package, use `install.packages(macleish)` to install the `macleish` package onto R, followed by loading the package through `library(macleish)`:
 
 ```{r, message=FALSE, warning=FALSE}
 library(macleish)
