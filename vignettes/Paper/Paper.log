@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.25)  25 JUL 2021 13:59
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.25)  26 JUL 2021 09:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Paper.t
+**C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Paper.t
 ex
 
-(c:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Paper.te
+(c:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Paper.te
 x
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-07-12> (c:/Users/ebony/AppData/Roaming/TinyTeX/texmf
@@ -1450,9 +1450,9 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [3]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pap
 er_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pape
 r_files/figure-latex/unnamed-chunk-5-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
@@ -1478,9 +1478,9 @@ Overfull \hbox (6.41139pt too wide) in paragraph at lines 535--535
 stern Hemlock"[] 
  []
 
-File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pap
 er_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pape
 r_files/figure-latex/unnamed-chunk-8-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
@@ -1495,13 +1495,13 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [5]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pap
 er_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pape
 r_files/figure-latex/unnamed-chunk-9-1.pdf>
-File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pap
 er_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pape
 r_files/figure-latex/unnamed-chunk-10-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
@@ -1516,9 +1516,9 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [6]
-File: C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pap
+File: C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pap
 er_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
-<use C:/Users/ebony/AppData/Local/Temp/RtmpyyzlDv/preview-73a469fd1854.dir/Pape
+<use C:/Users/ebony/AppData/Local/Temp/RtmpKs5w7l/preview-8f446e951246.dir/Pape
 r_files/figure-latex/unnamed-chunk-13-1.pdf>
 File: C:/Users/ebony/OneDrive/Documents/R/win-library/4.1/rticles/rmarkdown/tem
 plates/joss/resources/JOSS-logo.png Graphic file (type bmp)
@@ -1533,14 +1533,14 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [7]
-Underfull \hbox (badness 1810) in paragraph at lines 687--692
+Underfull \hbox (badness 1810) in paragraph at lines 681--686
 \TU/lmr/m/it/10 Change Biology\TU/lmr/m/n/10 . Retrieved from [][]$[][][][][] [
 ] [] [] [][][][][][][][][][][][][] [] [][][][][] [] [][][] [] [][][] [] [][][] 
 [] [][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 687--692
+Underfull \hbox (badness 10000) in paragraph at lines 681--686
 [][][] [] [][][][][] [] [][][][] [] [][][][][] [] [][][] [] [][][][][][][][][][
 ][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][] []
  []
@@ -1558,27 +1558,27 @@ Package fancyhdr Warning: \headheight is too small (62.59596pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.95425pt}.
 
 [8]
-Underfull \hbox (badness 1033) in paragraph at lines 705--712
+Underfull \hbox (badness 1033) in paragraph at lines 699--706
 \TU/lmr/m/n/10 by the decline of a foundation tree species, Tsuga canadensis(Pi
 naceae). \TU/lmr/m/it/10 Jour-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--712
+Underfull \hbox (badness 10000) in paragraph at lines 699--706
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][] [] [][][][][][][][][][][] [] [][][][][][][][] [] [][][][][]
 [][][][][][][][][][][][][][][] []
  []
 
 
-Overfull \hbox (54.46141pt too wide) in paragraph at lines 705--712
+Overfull \hbox (54.46141pt too wide) in paragraph at lines 699--706
 [] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [] [] [][] [] [][][][] [] [][][][][][][][][][][][][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 730--735
+Underfull \hbox (badness 10000) in paragraph at lines 724--729
 [][][][][][] [] [][][] [] [][][][][][][][] [] [] [] [][][][][][][][][][][][][][
 ][][][][][] [] [][][][][][][][][][][][][] [] [][][][][][][][][][] [] [][][][] [
 ]
@@ -1610,6 +1610,6 @@ Here is how much of TeX's memory you used:
  54926 multiletter control sequences out of 15000+600000
  410400 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,13n,95p,808b,806s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,12n,95p,808b,806s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Paper.pdf (9 pages).

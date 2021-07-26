@@ -235,9 +235,7 @@ The function `get_macleish_image()` retreives an image from the PhenoCam Network
 
 # Application and Perspectives 
 
-The `macleish` package is an R Package with a simple interface that access to weather, spatial, and photography data to inspire interdisciplinary collaboration among statiscians and ecologists.
-
-The `macleish` package is a dynamic project that was built with the interest of non-statiscians. It currently supports interdisciplinary collaboration to fester statistical application among the ecology community. More functions and data are expected to be compiled in the package over time that seems fit to users to support an increasing collection of statistical analyses and visualizations.
+The `macleish` package is an R Package with a simple interface that access to weather, spatial, and photography data to inspire interdisciplinary collaboration among statiscians and ecologists. This is a dynamic project that was built with the interest of non-statiscians. It currently supports interdisciplinary collaboration to fester statistical application among the ecology community. More functions and data are expected to be compiled in the package over time that seems fit to users to support an increasing collection of statistical analyses and visualizations.
 
 # Acknowledgements
 
