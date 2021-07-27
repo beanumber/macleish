@@ -9,13 +9,13 @@ tags:
   - spatial analysis 
 authors:
   - name: Benjamin S. Baumer #Rose Goueth, Wencong Li, Weijia Zhang, Nicholas Horton, Albert Y. Kim, Dominique Kelly 
-    orcid: 0000-0003-0872-7098
+    orcid: 0000-0002-3279-0516
     affiliation: 1 # (Multiple affiliations must be quoted)
   - name: Dominique Kelly
-    orcid: 0000-0000-0000-0000
+    orcid: 0000-0001-7186-9385
     affiliation: 1
   - name: Albert Y. Kim
-    orcid: 0000-0000-0000-0000
+    orcid: 0000-0001-7824-306X
     affiliation: 1
 affiliations: 
 #Add other authors listed in description? 
