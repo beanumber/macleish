@@ -85,7 +85,7 @@ library(leaflet)
 library(dplyr)
 library(imager)
 library(knitr)
-library(kableExtra)
+library(qpdf)
 ```
 
 
