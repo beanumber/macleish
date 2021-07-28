@@ -233,6 +233,7 @@ The `macleish` package is an R Package with a simple interface that access to we
 
 # Acknowledgements
 
-We acknowledge contributions from...
+We acknowledge contributions from Jesse Bellemare, Paul Wetzel
+
 
 # References
