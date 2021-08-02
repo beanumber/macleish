@@ -113,6 +113,20 @@ library(macleish)
 ```
 
 
+```{r, echo=FALSE, results = FALSE, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+library(forcats)
+library(leaflet)
+library(dplyr)
+library(imager)
+library(knitr)
+library(qpdf)
+```
+
+
 ## Maps of MacLeish
 
 Shapefile-based maps of MacLeish Field Station are available in the `macleish_layers` data object. The following layers will be displayed on the map. 
