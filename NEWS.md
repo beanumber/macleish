@@ -1,3 +1,9 @@
+# macleish 0.3.7
+
+* Added tree diameter data 
+* Composed paper
+* Added references 
+
 # macleish 0.3.6
 
 * Added campsite layer

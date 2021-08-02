@@ -6,14 +6,16 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 notes
+0 errors | 1 warnings | 1 notes
 
-* checking CRAN incoming feasibility ... NOTE
-
-Possibly mis-spelled words in DESCRIPTION:
-  Whately (15:16, 17:41)
-
-Whately is not mis-spelled.
+* checking data for ASCII and uncompressed saves ... OK WARNING
+   
+  'qpdf' is needed for checks on size reduction of PDFs
+  
+* checking top-level files ... NOTE
+  
+  Non-standard file/directory found at top level:
+    'revdep'
 
 * Local and Travis-CI checks all pass.
 
