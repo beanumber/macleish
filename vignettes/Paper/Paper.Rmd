@@ -288,7 +288,6 @@ include_graphics("phenocam.jpeg")
 The function `get_macleish_image()` retrieves an image from the PhenoCam Network when the date and time are specified. 
 
 
-
 # Application and Perspectives 
 
 The `macleish` package is an R Package with a simple interface that access to weather, spatial, and photography data to inspire interdisciplinary collaboration among statisticians and ecologists. This is a dynamic project that was built with the interest of biologists. It currently supports interdisciplinary collaboration to foster statistical application among the ecology community. More functions and data are expected to be compiled in the package over time that seems fit to users to support an increasing collection of statistical analyses and visualizations.
