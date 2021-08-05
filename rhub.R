@@ -5,5 +5,6 @@ devtools::check_rhub(
   interactive = FALSE,
   platforms = rhub::platforms() %>%
     filter(!is.na(`cran-name`)) %>%
-    pull(name)
+    pull(name),
+  env_vars=c(R_COMPILE_AND_INSTALL_PACKAGES = "always")
 )

@@ -10,3 +10,4 @@
 ^rhub\.R$
 ^\.github$
 ^vignettes/testgraphs\.Rmd$
+^revdep$

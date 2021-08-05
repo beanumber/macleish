@@ -1,0 +1,6 @@
+etl_extract.etl_macleish
+                        Extract weather data
+macleish_layers         MacLeish spatial data
+maple_sap               Maple sap collection at MacLeish
+mass_gis                Retrieve elevation layers from MassGIS
+whately_2015            Weather data from Macleish Field Stations
