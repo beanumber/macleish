@@ -26,8 +26,10 @@
 
 ## CRAN Package Check Results for Package macleish
 
+Existing problems at https://cran.rstudio.com//web/checks/check_results_macleish.html:
 
-
+* r-release-macos-arm64 WARNING: None of the release macos test environments yield this warning
+* r-devel-windows-x86_64-gcc10-UCRT ERROR: None of the r-devel windows test environments yield this error
 
 
 ## Reverse dependencies
