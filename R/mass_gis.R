@@ -8,7 +8,7 @@
 #' transform the projection to EPSG:4326, compute their intersection with the
 #' boundary of the MacLeish property, and return the resulting 
 #' [sf::sf()] object. 
-#' @source http://www.mass.gov/anf/research-and-tech/it-serv-and-support/application-serv/office-of-geographic-information-massgis/datalayers/layerlist.html
+#' @source https://www.mass.gov/info-details/massgis-data-layers
 #' @export
 #' @examples 
 #' 

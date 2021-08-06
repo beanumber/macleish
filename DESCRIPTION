@@ -44,7 +44,7 @@ Suggests:
     mgcv,
     clifro,
     testthat
-URL: http://github.com/beanumber/macleish
+URL: https://github.com/beanumber/macleish
 BugReports: https://github.com/beanumber/macleish/issues
 RoxygenNote: 7.1.1
 Encoding: UTF-8

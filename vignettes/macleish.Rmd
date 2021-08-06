@@ -16,7 +16,7 @@ opts_chunk$set(fig.width = 6, fig.height = 4)
 
 ## MacLeish
 
-The [`macleish`](http://www.github.com/beanumber/macleish) package for R contains weather data collected at the [Ada & Archibald MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php) in Whately, MA, as well as spatial data detailing various features of the property. This vignette will illustrate how these data can be used. 
+The [`macleish`](https://www.github.com/beanumber/macleish) package for R contains weather data collected at the [Ada & Archibald MacLeish Field Station](https://www.smith.edu/about-smith/sustainable-smith/macleish) in Whately, MA, as well as spatial data detailing various features of the property. This vignette will illustrate how these data can be used. 
 
 ### Getting started:
 To start using the package, load the `macleish` package into your R session:
@@ -40,7 +40,7 @@ head(orchard_2015)
 tail(orchard_2015)
 ```
 
-To access data during wider time spans, make use of the [`etl` framework](http://www.github.com/beanumber/etl) to download the data and import it into a database. Please see the documentation for `etl_extract` for further details and examples. 
+To access data during wider time spans, make use of the [`etl` framework](https://www.github.com/beanumber/etl) to download the data and import it into a database. Please see the documentation for `etl_extract` for further details and examples. 
 
 ```{r, eval=FALSE}
 help("etl_extract.etl_macleish")
@@ -53,13 +53,13 @@ This portion of the vignette is largely a re-creation of the Macleish Field Stat
 
 #### Introduction to MacLeish Weather Stations
 
-Weather conditions at Smith College's [Ada & Archibald MacLeish Field Station](http://www.smith.edu/ceeds/macleish.php) are recorded at the **WhatelyMet** weather station. This weather collection site is located at the end of Poplar Hill Road in Whately, Massachusetts, USA (Latitude 42 deg. 26 min. 56 sec. N Longitude 72 deg. 40 min. 50 sec. W). The meteorological instruments of WhatelyMet (except the rain gauge) are mounted at the top of a tower 25.3 m tall, well above the surrounding forest canopy. The tower is located on a local ridge at an elevation 250.75m above sea level.
+Weather conditions at Smith College's [Ada & Archibald MacLeish Field Station](https://www.smith.edu/about-smith/sustainable-smith/macleish) are recorded at the **WhatelyMet** weather station. This weather collection site is located at the end of Poplar Hill Road in Whately, Massachusetts, USA (Latitude 42 deg. 26 min. 56 sec. N Longitude 72 deg. 40 min. 50 sec. W). The meteorological instruments of WhatelyMet (except the rain gauge) are mounted at the top of a tower 25.3 m tall, well above the surrounding forest canopy. The tower is located on a local ridge at an elevation 250.75m above sea level.
 
 ![MacLeish Field Station](../inst/extdata/macleish_600px.jpg)
 
 The second weather data collection site, known as **OrchardMet**, is located about 250 m north of the first tower in an open field next to an apple orchard. Full canopy trees (~20 m tall) are within 30 m of this station. This station has a standard instrument configuration with temperature, relative humidity, solar radiation, and barometric pressure measured between 1.5 and 2.0 m above the ground. Wind speed and direction are measured on a 10 m tall tower and precipitation is measured on the ground. Ground temperature is measured at 15 and 30 cm below the ground surface 2 m south of the tower. The tower is located 258.1 m above sea level. Data collection at OrchardMet began on June 27th, 2014. 
 
-This documentation describes the weather data collected at WhatelyMet and OrchardMet during 2015. It provides highlights of the year's weather as well as general trends that were observed. We hope that you find the documentation both interesting and useful. All data reported in this document are available through the [`macleish`](http://www.github.com/beanumber/macleish) package for R. 
+This documentation describes the weather data collected at WhatelyMet and OrchardMet during 2015. It provides highlights of the year's weather as well as general trends that were observed. We hope that you find the documentation both interesting and useful. All data reported in this document are available through the [`macleish`](https://www.github.com/beanumber/macleish) package for R. 
 
 ### Variables used in this documentation:
 
