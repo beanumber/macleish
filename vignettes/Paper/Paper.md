@@ -1,6 +1,6 @@
 ---
 title: 'The MacLeish Package: R Package for analyzing weather and spatial data'
-date: "`r Sys.Date()`"
+date: "2021-08-06"
 authors:
   - name: Benjamin S. Baumer #Rose Goueth, Wencong Li, Weijia Zhang, Nicholas Horton, Albert Y. Kim, Dominique Kelly 
     orcid: 0000-0002-3279-0516
@@ -28,39 +28,7 @@ output:
     number_sections: yes
 ---
 
-```{r, echo=FALSE, results = FALSE, warning=FALSE, message=FALSE}
-# knitr settings
-knitr::opts_chunk$set(
-  # Code output:
-  warning = FALSE,
-  message = FALSE,
-  echo = TRUE,
-  # Figure:
-  out.width = "100%",
-  fig.width = 16 / 2.5,
-  fig.height = 9 / 2.5,
-  fig.align = "center",
-  fig.show = "hold",
-  # Etc:
-  collapse = TRUE,
-  comment = "##"
-  # tidy = FALSE
-)
 
-library(tidyverse)
-library(ggplot2)
-library(hrbrthemes)
-library(viridis)
-library(forcats)
-library(leaflet)
-library(dplyr)
-library(imager)
-library(knitr)
-library(kableExtra)
-
-# Set output width for rticles:
-options(width = 70)
-```
 
 # Abstract
 
@@ -78,9 +46,14 @@ Here, we create an R Package with a simple interface that access to weather, spa
 
 The Ada and Archibald MacLeish Field Station is a 243-acre patchwork of forest and pasture land on top of a flat ridge in Whately, Massachusetts (See Figure \ref{fig:macleish}). The station is located about 11 miles from Smith College. The community at Smith College, including students, faculty, staff, and alum, pursue artistic inquiry, environmental research, outdoor education, and low-impact recreation at the MacLeish Field Station. Students are integral to the operation and maintenance of the field as stewards for the land, designers of programs, and participants in key decision-making (@SmithCollege:2021). 
 
-```{r macleish, echo = FALSE, fig.cap="Map of MacLeish Field Station, Whately, Massachusetts, USA.", out.width="50%"}
-knitr::include_graphics(path = "macleish.jpg")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{macleish} 
+
+}
+
+\caption{Map of MacLeish Field Station, Whately, Massachusetts, USA.}\label{fig:macleish}
+\end{figure}
 
 
 Although a diverse ecosystem exists in the MacLeish Field Station, invasive insects and fungus have drastically altered the forest composition. American chestnut trees were once the most common tree in New England forests. However, due to the lethal chestnut blight, a fungus from Asia, most chestnut trees died because of infection. To harbor the survival of the American chestnut tree, the tree was crossed with the Chinese chestnut tree, which is resistant to the blight, to create a blight-resistant hybrid. White pine trees were another victim of a fungus native to Asia, referred to as the white pine blister rust. Similar to the chestnut blight, the white pine blister is fatal. Although decades of effort to control the white pine blister rust conserved most of the white pine tree population, a combination of logging and the blister rust greatly reduced the composition of forests at MacLeish. Furthermore, the Eastern Hemlock tree is a martyr of the Hemlock Woolly Adelgid, an invasive insect native to Asia. High volumes of woolly adelgid populations can kill a tree within a few years by weighing down the branches and causing the needles to fall off. Finally, the beech scale insect is an invasive insect from Europe. The insect is capable of carrying the fungus Nectria coccinea, which is transmitted into the tree when the insects feed on beech sap. Nectria coccinea causes the bark of beech trees to blister and crack, making the tree susceptible to further infection by insects and other kinds of fungus. Beech trees infected with the fungus die within six years. Unfortunately, both the Hemlock Woolly adelgid and the beech scale insect are highly resistant to the cold and thrive during the warm. Therefore, trees are threatened by these insects year-round. Similarly, as the climate is projected to warm, the range of both insects will continue to expand (@Moise:2021). 
@@ -107,36 +80,33 @@ Users may generate usable summary statistics and plots using the data from the `
 
 To use the `macleish` package, first run `install.packages(macleish)` to install the package in R, then run the following code to load the package:
 
-```{r, message=FALSE, warning=FALSE}
+
+```r
 library(macleish)
 ```
 
 
-```{r, echo=FALSE, results = FALSE, warning=FALSE, message=FALSE}
-library(ggplot2)
-library(tidyverse)
-library(hrbrthemes)
-library(viridis)
-library(forcats)
-library(leaflet)
-library(dplyr)
-library(imager)
-library(knitr)
-library(qpdf)
-```
+
 
 
 ## Maps of MacLeish
 
 Shapefile-based maps of MacLeish Field Station are available in the `macleish_layers` data object. The following layers will be displayed on the map. 
 
-```{r}
+
+```r
 names(macleish_layers)
+##  [1] "landmarks"         "forests"           "streams"          
+##  [4] "challenge_courses" "buildings"         "wetlands"         
+##  [7] "boundary"          "research"          "soil"             
+## [10] "trails"            NA                  NA                 
+## [13] "camp_sites"        "elevation"
 ```
 
 Running the following code creates an interactive `leaflet` map for users to zoom in and out, identify the Orchard and Whately Weather Stations, locate the area of MacLeish Field Station, and pinpoint other geographical features such as bodies of water, roads, mountains, trails, and wildlife management areas. Figure \ref{fig:leafletmap} displays a static image of the resulting interactive map. 
 
-```{r}
+
+```r
 map <- leaflet() %>%
   addTiles() %>%
   addPolygons(
@@ -162,9 +132,19 @@ map <- leaflet() %>%
   )
 ```
 
-```{r leafletmap, fig.cap="Interactive `leaflet` map of the MacLeish Field Station.", out.width="50%"}
+
+```r
 include_graphics(path = "leaflet.png")
 ```
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{leaflet} 
+
+}
+
+\caption{Interactive `leaflet` map of the MacLeish Field Station.}\label{fig:leafletmap}
+\end{figure}
 
 
 
@@ -172,10 +152,12 @@ include_graphics(path = "leaflet.png")
 
 Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The time frame varies between `tree_diameter1` (2010-2015) and `tree_diameter2` (2009-2016), and `tree_diameter2` lacks data on position of individual trees. The datasets present change in tree diameter over a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid. See Tables \ref{tab:tree-diameter-1} and \ref{tab:tree-diameter-2}. 
 
-```{r, eval = FALSE}
+
+```r
 tree_diameter1
 ```
-```{r tree-diameter-1}
+
+```r
 tree_diameter1 %>% 
   head() %>% 
   select(-module) %>% 
@@ -191,10 +173,30 @@ tree_diameter1 %>%
   )
 ```
 
-```{r, eval = FALSE}
+\begin{table}[!h]
+
+\caption{\label{tab:tree-diameter-1}Tree diameter dataset 1.}
+\centering
+\begin{tabular}[t]{rlllrrl}
+\toprule
+tag & species & position & semester & year & diameter & notes\\
+\midrule
+2001 & Sweet Birch & subcanopy & Fall & 2015 & NA & Alive in 2009, dead in 2010\\
+2001 & Sweet Birch & subcanopy & Fall & 2014 & NA & Alive in 2009, dead in 2010\\
+2001 & Sweet Birch & subcanopy & Fall & 2013 & NA & Alive in 2009, dead in 2010\\
+2001 & Sweet Birch & subcanopy & Fall & 2012 & NA & Alive in 2009, dead in 2010\\
+2001 & Sweet Birch & subcanopy & Fall & 2011 & NA & Alive in 2009, dead in 2010\\
+2001 & Sweet Birch & subcanopy & Fall & 2010 & NA & Alive in 2009, dead in 2010\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+```r
 tree_diameter2
 ```
-```{r tree-diameter-2}
+
+```r
 tree_diameter2 %>% 
   head() %>% 
   select(-module) %>% 
@@ -210,65 +212,100 @@ tree_diameter2 %>%
   )
 ```
 
+\begin{table}[!h]
+
+\caption{\label{tab:tree-diameter-2}Tree diameter dataset 2.}
+\centering
+\begin{tabular}[t]{rllrrl}
+\toprule
+tag & species & semester & year & diameter & notes\\
+\midrule
+2171 & Eastern Hemlock & Fall & 2016 & 28.2 & NA\\
+2171 & Eastern Hemlock & Fall & 2012 & 27.4 & NA\\
+2171 & Eastern Hemlock & Fall & 2011 & 27.2 & NA\\
+2171 & Eastern Hemlock & Fall & 2010 & 27.1 & NA\\
+2171 & Eastern Hemlock & Fall & 2009 & 27.0 & NA\\
+2172 & Sweet Birch & Fall & 2016 & 24.5 & NA\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 For example, using the `tree_diameter1` dataset, the boxplot below demonstrates the distribution of diameter for different species of trees at different positions from 2010-2015.
 
-```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species and position between 2010-2015."}
-tree_diameter1 %>%
-  mutate(position = fct_relevel(position,
-                                "emergent", "canopy", "subcanopy", 
-                                "sapling")) %>%
-  ggplot( aes(x=diameter, y=species, fill=position)) +
-  geom_boxplot() +
-  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
-  scale_x_continuous(limits=c(0,60)) +
-  facet_wrap(~year) +
-  labs(x = "Diameter (cm)", y = "Species", fill = "Position", 
-       title = "Distribution of Diameter Between 2010-2015") +
-  theme(legend.position="bottom")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{/Users/rudeboybert/Documents/SURF/macleish/vignettes/Paper/Paper_files/figure-latex/unnamed-chunk-8-1} 
+
+}
+
+\caption{Boxplot of tree diameter depending on species and position between 2010-2015.}\label{fig:unnamed-chunk-8}
+\end{figure}
 
 By viewing an individual species, the distribution of diameter varies based on the position of the species. For instance, the median diameter of emergent Eastern Hemlock trees is the greatest, despite having the smallest overall range. However, the overall range of the diameter of the canopy is the greatest. 
 
-```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter of Eastern Hemlock tree depending on position between 2010-2015."}
-tree_diameter1 %>%
-  mutate(position = fct_relevel(position,
-                                "emergent", "canopy", "subcanopy", 
-                                "sapling")) %>%
-  ggplot(aes(x=diameter, y=species, fill=position)) +
-  geom_boxplot() +
-  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
-  scale_y_discrete(limits=c("Eastern Hemlock")) +
-  labs(x = "Diameter (cm)", y = "Species", fill = "Position", 
-       title = "Distribution of Diameter for Eastern Hemlock") +
-  theme(legend.position="bottom")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{/Users/rudeboybert/Documents/SURF/macleish/vignettes/Paper/Paper_files/figure-latex/unnamed-chunk-9-1} 
+
+}
+
+\caption{Boxplot of tree diameter of Eastern Hemlock tree depending on position between 2010-2015.}\label{fig:unnamed-chunk-9}
+\end{figure}
 
 Below is a box plot of the distribution of diameter based on different tree species from 2009-2012 using the `tree_diameter2` dataset. Using individual data points on top of the box plots reveals the underlying distribution of each group. 
 
-```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species between 2009-2016."}
-tree_diameter2 %>%
-  ggplot( aes(x=diameter, y=species)) +
-  geom_boxplot() +
-  geom_jitter(color="black", size=0.4, alpha=0.9) +
-  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
-  scale_x_continuous(limits=c(0,60)) +
-  facet_wrap(~year) +
-  labs(x = "Diameter (cm)", y = "Species", 
-       title = "Distribution of Diameter Between 2009-2016") +
-  theme(legend.position="bottom")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{/Users/rudeboybert/Documents/SURF/macleish/vignettes/Paper/Paper_files/figure-latex/unnamed-chunk-10-1} 
+
+}
+
+\caption{Boxplot of tree diameter depending on species between 2009-2016.}\label{fig:unnamed-chunk-10}
+\end{figure}
 
 
 ## Weather data
 
 Weather data from 2015 is available through `whately_2015` and `orchard_2015` data objects. Data was recorded every 10 minutes every day from 2015-01-01 to 2015-31-12.
 
-```{r}
+
+```r
 whately_2015
+## # A tibble: 52,560 x 8
+##    when                temperature wind_speed wind_dir rel_humidity
+##    <dttm>                    <dbl>      <dbl>    <dbl>        <dbl>
+##  1 2015-01-01 00:00:00       -9.32       1.40     225.         54.6
+##  2 2015-01-01 00:10:00       -9.46       1.51     248.         55.4
+##  3 2015-01-01 00:20:00       -9.44       1.62     258.         56.2
+##  4 2015-01-01 00:30:00       -9.3        1.14     244.         56.4
+##  5 2015-01-01 00:40:00       -9.32       1.22     238.         56.9
+##  6 2015-01-01 00:50:00       -9.34       1.09     242.         57.2
+##  7 2015-01-01 01:00:00       -9.3        1.17     242.         57.7
+##  8 2015-01-01 01:10:00       -9.1        1.31     244.         58.2
+##  9 2015-01-01 01:20:00       -9.07       1.31     226.         59.0
+## 10 2015-01-01 01:30:00       -8.99       1.81     220          59.3
+## # ... with 52,550 more rows, and 3 more variables: pressure <int>,
+## #   solar_radiation <dbl>, rainfall <dbl>
 ```
 
-```{r}
+
+```r
 orchard_2015
+## # A tibble: 52,547 x 9
+##    when                temperature wind_speed wind_dir rel_humidity
+##    <dttm>                    <dbl>      <dbl>    <dbl>        <dbl>
+##  1 2015-01-01 00:00:00       -9.62      0.49      216.         62.0
+##  2 2015-01-01 00:10:00       -9.45      0.517     210.         59.1
+##  3 2015-01-01 00:20:00       -9.52      0.576     216.         58.7
+##  4 2015-01-01 00:30:00       -9.68      0.522     199.         58.6
+##  5 2015-01-01 00:40:00       -9.56      0.296     186.         57.3
+##  6 2015-01-01 00:50:00       -9.59      0.382     184.         57.6
+##  7 2015-01-01 01:00:00       -9.51      0.497     196.         57.0
+##  8 2015-01-01 01:10:00       -9.7       0.781     210.         60.5
+##  9 2015-01-01 01:20:00       -9.7       0.787     217.         61.1
+## 10 2015-01-01 01:30:00       -9.34      0.693     209.         59.8
+## # ... with 52,537 more rows, and 4 more variables: pressure <dbl>,
+## #   par_density <dbl>, par_total <dbl>, rainfall <dbl>
 ```
 
 Furthermore, the ETL framework retrieves live and historical (2012-01-03 for Whately and 2014-06-27 for Orchard) weather data from both MacLeish Field Station weather monitors. 
@@ -280,9 +317,14 @@ The PhenoCam Network is an ecosystem phenology camera network that provides auto
 
 Figure \ref{fig:phenocam} displays an example of an image retrieved from the PhenoCam Network.
 
-```{r phenocam, echo=FALSE, fig.cap="Image of the MacLeish Field Station taken above retrieved from the PhenoCam Network."}
-include_graphics("phenocam.jpeg")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{phenocam} 
+
+}
+
+\caption{Image of the MacLeish Field Station taken above retrieved from the PhenoCam Network.}\label{fig:phenocam}
+\end{figure}
 
 The function `get_macleish_image()` retrieves an image from the PhenoCam Network when the date and time are specified. 
 
