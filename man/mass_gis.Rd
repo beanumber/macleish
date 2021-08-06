@@ -5,7 +5,7 @@
 \alias{macleish_intersect}
 \title{Retrieve elevation layers from MassGIS}
 \source{
-http://www.mass.gov/anf/research-and-tech/it-serv-and-support/application-serv/office-of-geographic-information-massgis/datalayers/layerlist.html
+https://www.mass.gov/info-details/massgis-data-layers
 }
 \usage{
 mass_gis(layer = "contours250k")
