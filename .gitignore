@@ -3,6 +3,8 @@
 .RData
 inst/doc
 .DS_Store
+revdev/
 
 # LaTeX files
 *.log
+
