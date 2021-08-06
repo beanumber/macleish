@@ -13,7 +13,7 @@ environmental research, outdoor education, and low-impact recreation.
 ![MacLeish Field Station](inst/extdata/macleish_600px.jpg)
 
 This R package allows you to download and process weather data using the
-[ETL](https://www.github.com/beanumber/etl) framework from the MacLeish
+[ETL](https://github.com/beanumber/etl) framework from the MacLeish
 Field Station. It also contains shapefiles for contextualizing spatial
 information.
 
@@ -65,7 +65,7 @@ glimpse(orchard_2015)
 Weather readings are logged every 10 minutes. Current and historical
 (dating back to 1/3/2012 for `whately` and 6/27/2014 for `orchard`)
 meteorological readings are available through the
-[ETL](https://www.github.com/beanumber/etl) framework. Please see the
+[ETL](https://github.com/beanumber/etl) framework. Please see the
 documentation for that package for more information about how this
 works.
 
@@ -154,4 +154,4 @@ leaflet() %>%
 
   - [Ada and Archibald MacLeish Field
     Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
-  - **[etl](https://www.github.com/beanumber/etl)**
+  - **[etl](https://github.com/beanumber/etl)**
