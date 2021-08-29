@@ -1,6 +1,9 @@
+library(sf)
+library(ggplot2)
+library(usethis)
+
 # Creates the macleish_layers list
 dsn <- path.expand("data-raw/macleish/")
-
 sf::st_layers(dsn)
 
 layers <- c("landmarks", "forests", "streams",
@@ -11,22 +14,18 @@ layers <- c("landmarks", "forests", "streams",
   "research", "soil", "trails")
 
 
-library(sf)
 macleish_layers <- lapply(layers, st_read, dsn = dsn)
 names(macleish_layers) <- layers
 
-# check to make sure they are all projected the same
-lapply(macleish_layers, st_crs)
 
-camp_sites <- tibble::tribble(
+# Add more layers
+macleish_layers[["camp_sites"]] <- tibble::tribble(
   ~name, ~lat, ~lon, 
   "Group Campsite", 42.450976, -72.678154, 
   "Remote Campsite", 42.458549, -72.679581
 ) %>%
   st_as_sf(coords = c("lon", "lat")) %>%
   st_set_crs(4326)
-
-macleish_layers[["camp_sites"]] <- camp_sites
 
 # rename forests field
 macleish_layers[["forests"]] <- macleish_layers %>%
@@ -38,10 +37,37 @@ macleish_layers[["elevation"]] <- macleish::mass_gis() %>%
   macleish::macleish_intersect() %>%
   st_transform(4326)
 
-# fix the projection string
-# proj4string(macleish_layers[[10]]) <- proj4string(macleish_layers[[1]])
 
-# macleish_layers <- lapply(macleish_layers, spTransform, CRSobj = CRS("+init=epsg:4326"))
+# Set coordinate reference system for entire list
+macleish_layers <- lapply(macleish_layers, st_transform, crs = 4326)
 
-save(macleish_layers, file = "data/macleish_layers.rda", compress = "xz")
+# https://stackoverflow.com/questions/61286108/error-in-cpl-transformx-crs-aoi-pipeline-reverse-ogrcreatecoordinatetrans
+for(i in 1:length(macleish_layers)){
+  st_crs(macleish_layers[[i]]) <- 4326
+}
+
+
+# check to make sure they are all projected the same
+lapply(macleish_layers, st_crs)
+
+
+# Test all layers
+names(macleish_layers)
+ggplot() +
+  geom_sf(data = macleish_layers[["landmarks"]]) +
+  geom_sf(data = macleish_layers[["forests"]]) +
+  geom_sf(data = macleish_layers[["streams"]]) +
+  geom_sf(data = macleish_layers[["challenge_courses"]]) +
+  geom_sf(data = macleish_layers[["buildings"]]) +
+  geom_sf(data = macleish_layers[["wetlands"]]) +
+  geom_sf(data = macleish_layers[["boundary"]]) +
+  geom_sf(data = macleish_layers[["research"]]) +
+  geom_sf(data = macleish_layers[["soil"]]) +
+  geom_sf(data = macleish_layers[["trails"]]) +
+  geom_sf(data = macleish_layers[["camp_sites"]]) +
+  geom_sf(data = macleish_layers[["elevation"]])
+
+
+# Save for package
+usethis::use_data(macleish_layers, overwrite = TRUE, compress = "xz")
 

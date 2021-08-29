@@ -1,3 +1,9 @@
+## Resubmission
+
+This is a resubmission of macleish v0.3.7 which I originally submitted on 2021-07-27. In this version I have addressed the ERRORS in https://cran.r-project.org/web/checks/check_results_macleish.html for r-patched-solaris-x86
+
+
+
 ## Test environments
 
 * local macOS install, R 4.0.2
@@ -14,6 +20,8 @@
     + Fedora Linux, R-devel, clang, gfortran
     + Fedora Linux, R-devel, GCC
     + macOS 10.13.6 High Sierra, R-release, CRAN's setup
+    + Oracle Solaris 10, x86, 32 bit, R-release
+    + Oracle Solaris 10, x86, 32 bit, R release, Oracle Developer Studio 12.6
     + Windows Server 2008 R2 SP1, R-devel, 32/64 bit
     + Windows Server 2008 R2 SP1, R-oldrel, 32/64 bit
     + Windows Server 2008 R2 SP1, R-release, 32/64 bit
@@ -21,13 +29,7 @@
 
 ## R CMD check results
 
-
-## CRAN Package Check Results for Package macleish
-
-Existing problems at https://cran.rstudio.com//web/checks/check_results_macleish.html:
-
-* r-release-macos-arm64 WARNING: None of the release macos test environments yield this warning
-* r-devel-windows-x86_64-gcc10-UCRT ERROR: None of the r-devel windows test environments yield this error
+Nothing of note
 
 
 ## Reverse dependencies
