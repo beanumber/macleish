@@ -1,8 +1,7 @@
-# macleish 0.3.7.9000
+# macleish 0.3.8
 
-* Development version
-
-
+* Cleaned-up naming an documentation for `macleish_layers`
+* Fixed coordinate reference system test fail on r-patched-solaris-x86
 
 # macleish 0.3.7
 

@@ -4,6 +4,7 @@
 ^data-raw$
 ^.*README\.Rmd$
 ^.*README\.html$
+^.*README\.md$
 ^.*README_files$
 ^cran-comments\.md$
 ^CRAN-RELEASE$

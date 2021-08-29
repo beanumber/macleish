@@ -89,16 +89,14 @@
 #'  noted by Jesse Bellemare}
 #'  \item{streams}{local streams}
 #'  \item{challenge_courses}{Challenge courses on the property}
-#'  \item{reservoir}{a reservoir}
 #'  \item{buildings}{Buildings at MacLeish}
 #'  \item{wetlands}{Wetland areas}
-#'  \item{trails}{Hiking trails}
-#'  \item{schools}{Schools in Massachusetts}
 #'  \item{boundary}{the property boundary}
 #'  \item{research}{research plots}
 #'  \item{soil}{soil deposits used by Amy Rhodes}
-#'  \item{contours_30ft}{30 foot contours}
-#'  \item{contours_3m}{3 meter contours}
+#'  \item{trails}{Hiking trails}
+#'  \item{camp_sites}{Two camp sites}
+#'  \item{elevation}{30 foot elevation contours}
 #' }
 #' 
 #' @examples 
@@ -108,7 +106,6 @@
 #' if (require(sf)) {
 #'  plot(macleish_layers[["buildings"]])
 #' }
-#' 
 "macleish_layers"
 
 #' Maple sap collection at MacLeish
