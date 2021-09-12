@@ -12,3 +12,4 @@
 ^\.github$
 ^vignettes/testgraphs\.Rmd$
 ^revdep$
+^vignettes/Paper$

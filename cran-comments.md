@@ -1,7 +1,9 @@
 ## Resubmission
 
-This is a resubmission of macleish v0.3.7 which I originally submitted on 2021-07-27. In this version I have addressed the ERRORS in https://cran.r-project.org/web/checks/check_results_macleish.html for r-patched-solaris-x86
+This is a resubmission of macleish v0.3.7 which I originally submitted on 2021-07-27. In this version I have:
 
+- Addressed the ERRORS in https://cran.r-project.org/web/checks/check_results_macleish.html for r-patched-solaris-x86
+- Reduced the package tarball size
 
 
 ## Test environments
