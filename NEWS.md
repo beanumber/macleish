@@ -1,3 +1,9 @@
+# macleish 0.3.8.9000
+
+* Development version
+* 
+
+
 # macleish 0.3.8
 
 * Cleaned-up naming an documentation for `macleish_layers`
