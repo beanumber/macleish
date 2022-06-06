@@ -1,8 +1,13 @@
 
 # macleish <img src='man/figures/logo.png' align="right" height="139"/>
 
+<!-- badges: start -->
+
 [![R-CMD-check](https://github.com/beanumber/macleish/workflows/R-CMD-check/badge.svg)](https://github.com/beanumber/macleish/actions)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+<!-- badges: end -->
 
 The [Ada and Archibald MacLeish Field
 Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
@@ -120,8 +125,7 @@ names(macleish_layers)
     ##  [1] "landmarks"         "forests"           "streams"          
     ##  [4] "challenge_courses" "buildings"         "wetlands"         
     ##  [7] "boundary"          "research"          "soil"             
-    ## [10] "trails"            NA                  NA                 
-    ## [13] "camp_sites"        "elevation"
+    ## [10] "trails"            "camp_sites"        "elevation"
 
 ``` r
 library(leaflet)
@@ -152,6 +156,6 @@ leaflet() %>%
 
 ## See also
 
-  - [Ada and Archibald MacLeish Field
+-   [Ada and Archibald MacLeish Field
     Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
-  - **[etl](https://github.com/beanumber/etl)**
+-   **[etl](https://github.com/beanumber/etl)**
