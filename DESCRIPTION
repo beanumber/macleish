@@ -6,8 +6,8 @@ Authors@R: c(
     person("Benjamin S.", "Baumer", email = "ben.baumer@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-3279-0516")),
     person("Rose", "Goueth", role = "aut"),
     person("Wencong", "Li", email = "liwencong1995@gmail.com", role = "aut"),
-    person("Weijia", "Zhang", email = "wzhang23@smith.edu", role = "aut"),
-    person("Nicholas", "Horton", email = "nhorton@amherst.edu", role = "aut"),
+    person("Weijia", "Zhang", email = "wzhang23@smith.edu", role = "ctb"),
+    person("Nicholas", "Horton", email = "nhorton@amherst.edu", role = "ctb"),
     person("Dominique", "Kelly", email = "djkelly@smith.edu", role = "aut", comment = c(ORCID = "0000-0001-7186-9385")),
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0001-7824-306X"))
     )
@@ -46,7 +46,7 @@ Suggests:
     testthat
 URL: https://github.com/beanumber/macleish
 BugReports: https://github.com/beanumber/macleish/issues
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0
 Encoding: UTF-8
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
