@@ -71,7 +71,7 @@ The Ada and Archibald MacLeish Field Station is a 243-acre patchwork of forest a
 
 ```{r download-trail-map, include=FALSE, eval=FALSE}
 download.file(
-  url = "http://masstrails.com/cache/1007_0.jpg", 
+  url = "http://masstrails.com/cache/1007_0.jpg",
   destfile = here::here("joss_paper", "macleish_trail_map.jpg")
 )
 ```
@@ -125,24 +125,24 @@ library(leaflet)
 map <- leaflet() %>%
   addTiles() %>%
   addPolygons(
-    data = macleish_layers[["boundary"]], 
+    data = macleish_layers[["boundary"]],
     weight = 1, fillOpacity = 0.1
   ) %>%
   addPolygons(
-    data = macleish_layers[["buildings"]], 
-    weight = 1, popup = ~ name
+    data = macleish_layers[["buildings"]],
+    weight = 1, popup = ~name
   ) %>%
   addPolylines(
-    data = macleish_layers[["trails"]], 
+    data = macleish_layers[["trails"]],
     weight = 1, color = "brown",
-    popup = ~ name
+    popup = ~name
   ) %>%
   addPolylines(
-    data = macleish_layers[["streams"]], 
+    data = macleish_layers[["streams"]],
     weight = 2
   ) %>%
   addMarkers(
-    data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)), 
+    data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)),
     popup = ~Label
   )
 ```
@@ -161,16 +161,16 @@ Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2
 tree_diameter1
 ```
 ```{r tree-diameter-1}
-tree_diameter1 %>% 
-  head() %>% 
-  select(-module) %>% 
+tree_diameter1 %>%
+  head() %>%
+  select(-module) %>%
   knitr::kable(
     format = "latex",
     caption = "Tree diameter dataset 1.",
     booktabs = TRUE,
     escape = FALSE,
     linesep = ""
-  ) %>% 
+  ) %>%
   kableExtra::kable_styling(
     latex_options = c("hold_position")
   )
@@ -180,16 +180,16 @@ tree_diameter1 %>%
 tree_diameter2
 ```
 ```{r tree-diameter-2}
-tree_diameter2 %>% 
-  head() %>% 
-  select(-module) %>% 
+tree_diameter2 %>%
+  head() %>%
+  select(-module) %>%
   knitr::kable(
     format = "latex",
     caption = "Tree diameter dataset 2.",
     booktabs = TRUE,
     escape = FALSE,
     linesep = ""
-  ) %>% 
+  ) %>%
   kableExtra::kable_styling(
     latex_options = c("hold_position")
   )
@@ -200,48 +200,58 @@ For example, using the `tree_diameter1` dataset, the boxplot below demonstrates 
 ```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species and position between 2010-2015."}
 library(ggplot2)
 tree_diameter1 %>%
-  mutate(position = fct_relevel(position,
-                                "emergent", "canopy", "subcanopy", 
-                                "sapling")) %>%
-  ggplot( aes(x=diameter, y=species, fill=position)) +
+  mutate(position = fct_relevel(
+    position,
+    "emergent", "canopy", "subcanopy",
+    "sapling"
+  )) %>%
+  ggplot(aes(x = diameter, y = species, fill = position)) +
   geom_boxplot() +
-  scale_fill_viridis_d(alpha=0.6, option="A") +
-  scale_x_continuous(limits=c(0,60)) +
+  scale_fill_viridis_d(alpha = 0.6, option = "A") +
+  scale_x_continuous(limits = c(0, 60)) +
   facet_wrap(~year) +
-  labs(x = "Diameter (cm)", y = "Species", fill = "Position", 
-       title = "Distribution of Diameter Between 2010-2015") +
-  theme(legend.position="bottom")
+  labs(
+    x = "Diameter (cm)", y = "Species", fill = "Position",
+    title = "Distribution of Diameter Between 2010-2015"
+  ) +
+  theme(legend.position = "bottom")
 ```
 
 By viewing an individual species, the distribution of diameter varies based on the position of the species. For instance, the median diameter of emergent Eastern Hemlock trees is the greatest, despite having the smallest overall range. However, the overall range of the diameter of the canopy is the greatest. 
 
 ```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter of Eastern Hemlock tree depending on position between 2010-2015."}
 tree_diameter1 %>%
-  mutate(position = fct_relevel(position,
-                                "emergent", "canopy", "subcanopy", 
-                                "sapling")) %>%
-  ggplot(aes(x=diameter, y=species, fill=position)) +
+  mutate(position = fct_relevel(
+    position,
+    "emergent", "canopy", "subcanopy",
+    "sapling"
+  )) %>%
+  ggplot(aes(x = diameter, y = species, fill = position)) +
   geom_boxplot() +
-  scale_fill_viridis_d(alpha=0.6, option="A") +
-  scale_y_discrete(limits=c("Eastern Hemlock")) +
-  labs(x = "Diameter (cm)", y = "Species", fill = "Position", 
-       title = "Distribution of Diameter for Eastern Hemlock") +
-  theme(legend.position="bottom")
+  scale_fill_viridis_d(alpha = 0.6, option = "A") +
+  scale_y_discrete(limits = c("Eastern Hemlock")) +
+  labs(
+    x = "Diameter (cm)", y = "Species", fill = "Position",
+    title = "Distribution of Diameter for Eastern Hemlock"
+  ) +
+  theme(legend.position = "bottom")
 ```
 
 Below is a box plot of the distribution of diameter based on different tree species from 2009-2012 using the `tree_diameter2` dataset. Using individual data points on top of the box plots reveals the underlying distribution of each group. 
 
 ```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species between 2009-2016."}
 tree_diameter2 %>%
-  ggplot( aes(x=diameter, y=species)) +
+  ggplot(aes(x = diameter, y = species)) +
   geom_boxplot() +
-  geom_jitter(color="black", size=0.4, alpha=0.9) +
-  scale_fill_viridis_d(alpha=0.6, option="A") +
-  scale_x_continuous(limits=c(0,60)) +
+  geom_jitter(color = "black", size = 0.4, alpha = 0.9) +
+  scale_fill_viridis_d(alpha = 0.6, option = "A") +
+  scale_x_continuous(limits = c(0, 60)) +
   facet_wrap(~year) +
-  labs(x = "Diameter (cm)", y = "Species", 
-       title = "Distribution of Diameter Between 2009-2016") +
-  theme(legend.position="bottom")
+  labs(
+    x = "Diameter (cm)", y = "Species",
+    title = "Distribution of Diameter Between 2009-2016"
+  ) +
+  theme(legend.position = "bottom")
 ```
 
 
