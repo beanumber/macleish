@@ -110,21 +110,6 @@ To use the `macleish` package, first run `install.packages(macleish)` to install
 library(macleish)
 ```
 
-
-```{r, echo=FALSE, results = FALSE, warning=FALSE, message=FALSE}
-library(ggplot2)
-library(tidyverse)
-library(hrbrthemes)
-library(viridis)
-library(forcats)
-library(leaflet)
-library(dplyr)
-library(imager)
-library(knitr)
-library(qpdf)
-```
-
-
 ## Maps of MacLeish
 
 Shapefile-based maps of MacLeish Field Station are available in the `macleish_layers` data object. The following layers will be displayed on the map. 
@@ -136,6 +121,7 @@ names(macleish_layers)
 Running the following code creates an interactive `leaflet` map for users to zoom in and out, identify the Orchard and Whately Weather Stations, locate the area of MacLeish Field Station, and pinpoint other geographical features such as bodies of water, roads, mountains, trails, and wildlife management areas. Figure \ref{fig:leafletmap} displays a static image of the resulting interactive map. 
 
 ```{r}
+library(leaflet)
 map <- leaflet() %>%
   addTiles() %>%
   addPolygons(
@@ -162,7 +148,7 @@ map <- leaflet() %>%
 ```
 
 ```{r leafletmap, fig.cap="Interactive `leaflet` map of the MacLeish Field Station.", out.width="50%"}
-include_graphics(path = "leaflet.png")
+knitr::include_graphics(path = "leaflet.png")
 ```
 
 
@@ -178,7 +164,7 @@ tree_diameter1
 tree_diameter1 %>% 
   head() %>% 
   select(-module) %>% 
-  kable(
+  knitr::kable(
     format = "latex",
     caption = "Tree diameter dataset 1.",
     booktabs = TRUE,
@@ -197,7 +183,7 @@ tree_diameter2
 tree_diameter2 %>% 
   head() %>% 
   select(-module) %>% 
-  kable(
+  knitr::kable(
     format = "latex",
     caption = "Tree diameter dataset 2.",
     booktabs = TRUE,
@@ -212,13 +198,14 @@ tree_diameter2 %>%
 For example, using the `tree_diameter1` dataset, the boxplot below demonstrates the distribution of diameter for different species of trees at different positions from 2010-2015.
 
 ```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species and position between 2010-2015."}
+library(ggplot2)
 tree_diameter1 %>%
   mutate(position = fct_relevel(position,
                                 "emergent", "canopy", "subcanopy", 
                                 "sapling")) %>%
   ggplot( aes(x=diameter, y=species, fill=position)) +
   geom_boxplot() +
-  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_fill_viridis_d(alpha=0.6, option="A") +
   scale_x_continuous(limits=c(0,60)) +
   facet_wrap(~year) +
   labs(x = "Diameter (cm)", y = "Species", fill = "Position", 
@@ -235,7 +222,7 @@ tree_diameter1 %>%
                                 "sapling")) %>%
   ggplot(aes(x=diameter, y=species, fill=position)) +
   geom_boxplot() +
-  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_fill_viridis_d(alpha=0.6, option="A") +
   scale_y_discrete(limits=c("Eastern Hemlock")) +
   labs(x = "Diameter (cm)", y = "Species", fill = "Position", 
        title = "Distribution of Diameter for Eastern Hemlock") +
@@ -249,7 +236,7 @@ tree_diameter2 %>%
   ggplot( aes(x=diameter, y=species)) +
   geom_boxplot() +
   geom_jitter(color="black", size=0.4, alpha=0.9) +
-  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  scale_fill_viridis_d(alpha=0.6, option="A") +
   scale_x_continuous(limits=c(0,60)) +
   facet_wrap(~year) +
   labs(x = "Diameter (cm)", y = "Species", 
@@ -280,7 +267,7 @@ The PhenoCam Network is an ecosystem phenology camera network that provides auto
 Figure \ref{fig:phenocam} displays an example of an image retrieved from the PhenoCam Network.
 
 ```{r phenocam, echo=FALSE, fig.cap="Image of the MacLeish Field Station taken above retrieved from the PhenoCam Network."}
-include_graphics("phenocam.jpeg")
+knitr::include_graphics("phenocam.jpeg")
 ```
 
 The function `get_macleish_image()` retrieves an image from the PhenoCam Network when the date and time are specified. 
