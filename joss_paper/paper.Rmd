@@ -69,8 +69,16 @@ Here, we create an R Package with a simple interface that access to weather, spa
 
 The Ada and Archibald MacLeish Field Station is a 243-acre patchwork of forest and pasture land on top of a flat ridge in Whately, Massachusetts (See Figure \ref{fig:macleish}). The station is located about 11 miles from Smith College. The community at Smith College, including students, faculty, staff, and alum, pursue artistic inquiry, environmental research, outdoor education, and low-impact recreation at the MacLeish Field Station. Students are integral to the operation and maintenance of the field as stewards for the land, designers of programs, and participants in key decision-making (@SmithCollege:2021). 
 
+```{r download-trail-map, include=FALSE, eval=FALSE}
+download.file(
+  url = "http://masstrails.com/cache/1007_0.jpg", 
+  destfile = here::here("joss_paper", "macleish_trail_map.jpg")
+)
+```
+
+
 ```{r macleish, echo = FALSE, fig.cap="Map of MacLeish Field Station, Whately, Massachusetts, USA.", out.width="50%"}
-knitr::include_graphics(path = "macleish.jpg")
+knitr::include_graphics(here::here("joss_paper", "macleish_trail_map.jpg"))
 ```
 
 
