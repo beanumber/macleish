@@ -147,6 +147,12 @@ map <- leaflet() %>%
   )
 ```
 
+```{r, eval=FALSE}
+# why doesn't this work?
+map
+```
+
+
 ```{r leafletmap, fig.cap="Interactive `leaflet` map of the MacLeish Field Station.", out.width="50%"}
 knitr::include_graphics(path = "leaflet.png")
 ```
@@ -277,7 +283,7 @@ The PhenoCam Network is an ecosystem phenology camera network that provides auto
 Figure \ref{fig:phenocam} displays an example of an image retrieved from the PhenoCam Network.
 
 ```{r phenocam, echo=FALSE, fig.cap="Image of the MacLeish Field Station taken above retrieved from the PhenoCam Network."}
-knitr::include_graphics("phenocam.jpeg")
+knitr::include_graphics(here::here("joss_paper", "phenocam.jpeg"))
 ```
 
 The function `get_macleish_image()` retrieves an image from the PhenoCam Network when the date and time are specified. 
