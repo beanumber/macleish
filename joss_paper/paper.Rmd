@@ -2,7 +2,7 @@
 title: 'The MacLeish Package: R Package for analyzing weather and spatial data'
 date: "`r Sys.Date()`"
 authors:
-  - name: Benjamin S. Baumer #Rose Goueth, Wencong Li, Weijia Zhang, Nicholas Horton, Albert Y. Kim, Dominique Kelly 
+  - name: Benjamin S. Baumer
     orcid: 0000-0002-3279-0516
     affiliation: 1
   - name: Dominique Kelly
@@ -14,8 +14,8 @@ authors:
 affiliations: 
  - name: Smith College, Northampton, Massachusetts, USA  
    index: 1
-bibliography: paper.bib
-csl: apa.csl
+bibliography: refs.bib
+biblio-style: apa
 tags:
   - R
   - forest
@@ -48,15 +48,6 @@ knitr::opts_chunk$set(
 )
 
 library(tidyverse)
-library(ggplot2)
-library(hrbrthemes)
-library(viridis)
-library(forcats)
-library(leaflet)
-library(dplyr)
-library(imager)
-library(knitr)
-library(kableExtra)
 
 # Set output width for rticles:
 options(width = 70)
@@ -186,7 +177,7 @@ tree_diameter1 %>%
     escape = FALSE,
     linesep = ""
   ) %>% 
-  kable_styling(
+  kableExtra::kable_styling(
     latex_options = c("hold_position")
   )
 ```
@@ -205,7 +196,7 @@ tree_diameter2 %>%
     escape = FALSE,
     linesep = ""
   ) %>% 
-  kable_styling(
+  kableExtra::kable_styling(
     latex_options = c("hold_position")
   )
 ```

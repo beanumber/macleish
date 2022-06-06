@@ -1,8 +1,8 @@
 ---
 title: 'The MacLeish Package: R Package for analyzing weather and spatial data'
-date: "2021-08-06"
+date: "2022-06-06"
 authors:
-  - name: Benjamin S. Baumer #Rose Goueth, Wencong Li, Weijia Zhang, Nicholas Horton, Albert Y. Kim, Dominique Kelly 
+  - name: Benjamin S. Baumer
     orcid: 0000-0002-3279-0516
     affiliation: 1
   - name: Dominique Kelly
@@ -14,8 +14,8 @@ authors:
 affiliations: 
  - name: Smith College, Northampton, Massachusetts, USA  
    index: 1
-bibliography: paper.bib
-csl: apa.csl
+bibliography: refs.bib
+biblio-style: apa
 tags:
   - R
   - forest
@@ -99,8 +99,7 @@ names(macleish_layers)
 ##  [1] "landmarks"         "forests"           "streams"          
 ##  [4] "challenge_courses" "buildings"         "wetlands"         
 ##  [7] "boundary"          "research"          "soil"             
-## [10] "trails"            NA                  NA                 
-## [13] "camp_sites"        "elevation"
+## [10] "trails"            "camp_sites"        "elevation"
 ```
 
 Running the following code creates an interactive `leaflet` map for users to zoom in and out, identify the Orchard and Whately Weather Stations, locate the area of MacLeish Field Station, and pinpoint other geographical features such as bodies of water, roads, mountains, trails, and wildlife management areas. Figure \ref{fig:leafletmap} displays a static image of the resulting interactive map. 
@@ -168,7 +167,7 @@ tree_diameter1 %>%
     escape = FALSE,
     linesep = ""
   ) %>% 
-  kable_styling(
+  kableExtra::kable_styling(
     latex_options = c("hold_position")
   )
 ```
@@ -207,7 +206,7 @@ tree_diameter2 %>%
     escape = FALSE,
     linesep = ""
   ) %>% 
-  kable_styling(
+  kableExtra::kable_styling(
     latex_options = c("hold_position")
   )
 ```
@@ -234,7 +233,7 @@ For example, using the `tree_diameter1` dataset, the boxplot below demonstrates 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{/Users/rudeboybert/Documents/SURF/macleish/vignettes/Paper/Paper_files/figure-latex/unnamed-chunk-8-1} 
+{\centering \includegraphics[width=1\linewidth]{paper_files/figure-latex/unnamed-chunk-8-1} 
 
 }
 
@@ -245,7 +244,7 @@ By viewing an individual species, the distribution of diameter varies based on t
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{/Users/rudeboybert/Documents/SURF/macleish/vignettes/Paper/Paper_files/figure-latex/unnamed-chunk-9-1} 
+{\centering \includegraphics[width=1\linewidth]{paper_files/figure-latex/unnamed-chunk-9-1} 
 
 }
 
@@ -256,7 +255,7 @@ Below is a box plot of the distribution of diameter based on different tree spec
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{/Users/rudeboybert/Documents/SURF/macleish/vignettes/Paper/Paper_files/figure-latex/unnamed-chunk-10-1} 
+{\centering \includegraphics[width=1\linewidth]{paper_files/figure-latex/unnamed-chunk-10-1} 
 
 }
 
