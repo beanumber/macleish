@@ -282,8 +282,13 @@ The PhenoCam Network is an ecosystem phenology camera network that provides auto
 
 Figure \ref{fig:phenocam} displays an example of an image retrieved from the PhenoCam Network.
 
+```{r, eval=FALSE, include=FALSE}
+download.file(phenocam(), here::here("joss_paper", "macleish_latest.jpg"))
+```
+
+
 ```{r phenocam, echo=FALSE, fig.cap="Image of the MacLeish Field Station taken above retrieved from the PhenoCam Network."}
-knitr::include_graphics(here::here("joss_paper", "phenocam.jpeg"))
+knitr::include_graphics(here::here("joss_paper", "macleish_latest.jpg"))
 ```
 
 The function `get_macleish_image()` retrieves an image from the PhenoCam Network when the date and time are specified. 

@@ -26,8 +26,10 @@ LazyData: TRUE
 Imports:
     dplyr,
     lubridate,
+    phenocamr,
     readr,
-    sf
+    sf,
+    stringr
 Depends:
     R (>= 3.5),
     etl
