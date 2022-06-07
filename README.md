@@ -154,6 +154,23 @@ leaflet() %>%
   )
 ```
 
+## Images
+
+You can download live and historical images from Phenocam.
+
+``` r
+phenocam_image_url()
+```
+
+    ## [1] "https://phenocam.sr.unh.edu/data/latest/macleish.jpg"
+
+``` r
+knitr::include_graphics(phenocam_image_url())
+knitr::include_graphics(phenocam_image_url("2021-12-25 12:05:05"))
+```
+
+<img src="https://phenocam.sr.unh.edu/data/latest/macleish.jpg" width="50%" /><img src="https://phenocam.sr.unh.edu/data/archive/macleish/2021/12/macleish_2021_12_25_120505.jpg" width="50%" />
+
 ## See also
 
 -   [Ada and Archibald MacLeish Field

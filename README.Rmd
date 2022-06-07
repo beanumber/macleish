@@ -110,6 +110,20 @@ leaflet() %>%
 
 ```
 
+## Images
+
+You can download live and historical images from Phenocam. 
+
+```{r}
+phenocam_image_url()
+```
+
+```{r figures-side, fig.show="hold", out.width="50%"}
+knitr::include_graphics(phenocam_image_url())
+knitr::include_graphics(phenocam_image_url("2021-12-25 12:05:05"))
+```
+
+
 ## See also
 
 - [Ada and Archibald MacLeish Field Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
