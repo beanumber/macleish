@@ -28,8 +28,10 @@ Imports:
     lubridate,
     phenocamr,
     readr,
+    rvest,
     sf,
-    stringr
+    stringr,
+    xml2
 Depends:
     R (>= 3.5),
     etl

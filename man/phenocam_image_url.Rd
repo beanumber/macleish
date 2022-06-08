@@ -26,11 +26,8 @@ phenocam_download(...)
 \item{x}{a Date}
 }
 \description{
-Retrieve images from Phenocam
-
-MacLeish Phenocam site info
-
-Download Phenocam time series data
+Phenocam contains over 70,000 images taken from MacLeish.
+Photos have been taken every 30 minutes since February 2017.
 }
 \examples{
 phenocam_image_url()
@@ -49,6 +46,9 @@ phenocam_download()
 df <- read_phenocam(file.path(tempdir(),"macleish_DB_1000_3day.csv"))
 print(str(df))
 }
+}
+\references{
+\url{https://phenocam.sr.unh.edu/webcam/sites/macleish/}
 }
 \seealso{
 \code{\link[phenocamr]{download_phenocam}}

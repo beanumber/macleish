@@ -1,10 +1,15 @@
+globalVariables("site")
+
 #' Retrieve images from Phenocam
+#' @description Phenocam contains over 70,000 images taken from MacLeish.
+#' Photos have been taken every 30 minutes since February 2017.
 #' @param when a string to be converted into a date-time
 #' @param ... currently ignored
 #' @export
+#' @references \url{https://phenocam.sr.unh.edu/webcam/sites/macleish/}
 #' @examples 
 #' phenocam_image_url()
-#' phenocam_image_url(Sys.time() - 100)
+#' phenocam_image_url("2021-12-25 12:05:05")
 
 phenocam_image_url <- function(when = NULL, ...) {
   if (is.null(when)) {
