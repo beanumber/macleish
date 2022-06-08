@@ -1,5 +1,5 @@
 ---
-title: 'MacLeish: An R Package for analyzing spatial, temporal, and photographic data for environmental research'
+title: 'MacLeish: An R package for monitoring environmental conditions in Whately, Massachusetts'
 date: "`r Sys.Date()`"
 authors:
   - name: Benjamin S. Baumer
@@ -26,6 +26,8 @@ output:
   rticles::joss_article:
     keep_md: yes
     number_sections: yes
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, echo=FALSE, results = FALSE, warning=FALSE, message=FALSE}
@@ -54,28 +56,27 @@ options(width = 70)
 
 
 knitr::write_bib(
-  c("etl", "phenocamr"),
+  c("etl", "phenocamr", "sf", "leaflet"),
   file = "pkgs.bib"
 )
 ```
 
 # Summary
 
-The Ada & Archibald MacLeish Field Station is a 250-acre patchwork of forest and pasture land in Whately, MA that presents the opportunity for all members of the Smith College community (students, faculty, staff, and alum) to pursue artistic inquiry, environmental research, outdoor education, and low-impact recreation. The `macleish` R package was created to analyze weather and spatial data based on the MacLeish Field Station.
+The Ada & Archibald MacLeish Field Station is a parcel of land in Whately, MA owned and operated by Smith College. 
+The `macleish` R package provides spatial, meteorological, and photographic data for monitoring environmental conditions at the site. 
+Numerous faculty use the MacLeish Field Station for research purposes. 
 
-The package includes the following functionality: multiple layers of map data coded as sf package objects, functions to access historical and live weather readings, data from ongoing forest ecology research, and functions to access photos from a PhenoCam (Phenology Camera) Network video camera mounted on the 25-meter tower records a daily photograph of the forest canopy.
+The `macleish` package includes multiple layers of spatial data, functions to access historical and live weather readings, data from ongoing forest ecology research, and functions to access photographs taken by a PhenoCam (Phenology Camera) Network digital camera mounted on the 25-meter WhatelyMet tower.
+The camera captures a photograph of the forest canopy every 30 minutes.
 
-By making this data accessible in an R Package with a simple interface, we hope the `macleish` R package will serve as an educational tool that fosters interdisciplinary collaboration within the Smith College community. At the moment, the package is mostly used in the Statistical & Data Science department, but computational confidence is expected to increase in the Biology department and Environmental Science & Policy program. Accordingly we hope the students in these programs not only use the package but also contribute to it. Furthermore, we view this package as a blueprint for other institutions that possess similar research sites to bring the related research communities together. 
+By making these data accessible in an R package with a simple interface, we hope the `macleish` R package will foster interdisciplinary collaboration within the Smith College community. 
 
-# Introduction 
+# About the MacLeish Field Station 
 
-Computational analysis is becoming a crucial component of research in ecology. However, programming presents new challenges for ecological investigators who are unfamiliar with statistical applications. Even researchers that are versed in efficient programming may be restricted by knowledge of code. Therefore, interdisciplinary research between ecology and statistics remains limited in scope, depth, and quality [@Visser:2015]. 
+From the [Smith College website]([Ada and Archibald MacLeish Field Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)):
 
-Here, we create an R Package with a simple interface that access to weather, spatial, and photography data to inspire interdisciplinary collaboration. The `macleish` Package, uses data from the Ada and Archibald MacLeish Field Station. 
-
-The [Ada and Archibald MacLeish Field Station](https://www.smith.edu/about-smith/sustainable-smith/macleish) is a 243-acre patchwork of forest and pasture land on top of a flat ridge in Whately, Massachusetts (See Figure \ref{fig:macleish}). 
-The station is located about 11 miles from Smith College. The community at Smith College, including students, faculty, staff, and alum, pursue artistic inquiry, environmental research, outdoor education, and low-impact recreation at the MacLeish Field Station. 
-Students are integral to the operation and maintenance of the field as stewards for the land, designers of programs, and participants in key decision-making. 
+> The Ada and Archibald MacLeish Field Station, a uniquely liberal arts field station, is a 250-acre patchwork of forest and pasture land in nearby Whately that provides opportunities for all members of the Smith community (students, faculty, staff, and alum) to pursue artistic inquiry, environmental research, outdoor education and low-impact recreation.  Students are integral to the field station: they help steward the land, design programs for their peers and participate in making key decisions in the operation of the field station. The Bechtel Environmental classroom provides meeting and dry laboratory space for MacLeish users. 
 
 ```{r download-trail-map, include=FALSE, eval=FALSE}
 download.file(
@@ -84,20 +85,20 @@ download.file(
 )
 ```
 
-
 ```{r macleish, echo = FALSE, fig.cap="Map of MacLeish Field Station, Whately, Massachusetts, USA.", out.width="50%"}
 knitr::include_graphics(here::here("joss_paper", "macleish_trail_map.jpg"))
 ```
-
-
-Although a diverse ecosystem exists in the MacLeish Field Station, invasive insects and fungus have drastically altered the forest composition. American chestnut trees were once the most common tree in New England forests. However, due to the lethal chestnut blight, a fungus from Asia, most chestnut trees died because of infection. To harbor the survival of the American chestnut tree, the tree was crossed with the Chinese chestnut tree, which is resistant to the blight, to create a blight-resistant hybrid. White pine trees were another victim of a fungus native to Asia, referred to as the white pine blister rust. Similar to the chestnut blight, the white pine blister is fatal. Although decades of effort to control the white pine blister rust conserved most of the white pine tree population, a combination of logging and the blister rust greatly reduced the composition of forests at MacLeish. Furthermore, the Eastern Hemlock tree is a martyr of the Hemlock Woolly Adelgid, an invasive insect native to Asia. High volumes of woolly adelgid populations can kill a tree within a few years by weighing down the branches and causing the needles to fall off. Finally, the beech scale insect is an invasive insect from Europe. The insect is capable of carrying the fungus Nectria coccinea, which is transmitted into the tree when the insects feed on beech sap. Nectria coccinea causes the bark of beech trees to blister and crack, making the tree susceptible to further infection by insects and other kinds of fungus. Beech trees infected with the fungus die within six years. Unfortunately, both the Hemlock Woolly adelgid and the beech scale insect are highly resistant to the cold and thrive during the warm. Therefore, trees are threatened by these insects year-round. Similarly, as the climate is projected to warm, the range of both insects will continue to expand [@Moise:2021]. 
-
-Likewise, other invasive species exist at the MacLeish Field Station. The autumn olive, Japanese barberry, multiflora rose, oriental bittersweet, and wild grape are all invasive species that contend with native Massachusetts plant species. The ability of these invasive species to produce an abundant quantity of seeds, grow quickly, and thrive without natural predators allow them to pose a serious threat to out-compete native species. Conservation research and efforts are ongoing to address the expansion of these invasive species [@Moise:2021]. 
-
-Within the MacLeish Field Station are a number of stations and administrative buildings that collect data and foster environmental education. For instance, the Whately and Orchard Weather Stations store historical and collect current meteorological weather data. The Smith College Observatory is frequently used by the astronomy department at Smith College for astronomical research. The Bechtel Environmental Classroom was created by the Environmental Science & Policy program using top-notch sustainable strategies. The classroom provides a meeting space for environmental laboratory and educational use. 
-Evidently, the [MacLeish Field Station](https://www.smith.edu/about-smith/sustainable-smith/macleish) is highly interdisciplinary, appealing to multiple departments at once, and aims to inspire research in the arts, humanities, and natural sciences among the Smith College community. Through the `macleish` Package, we hope to expand the opportunity for members of Smith College to pursue research, contribute to the R Package, and influence other institutions with analogous research sites to create more accessible programming interfaces.
-
-Examples of research conducted at MacLeish by Smith Faculty include @Zukswert:2014, @Ignace:2018, @Guswa:2011, @Jackson:2018, @Guswa:2011, @Bassar:2015, @Wetzel:2017, @Visser:2015, and @Moise:2021.
+Figure \ref{fig:macleish} shows a trail map illustrating the MacLeish property.
+@Moise:2021 provides an interactive history of the property. 
+Research by Smith faculty and students conducted at MacLeish includes 
+@guswa2012effect, 
+@guswa2012canopy,
+@zukswert2014forest, 
+@visser2015speeding, 
+@bassar2016changes, 
+@Wetzel:2017,
+@ignace2018decline, 
+@jackson2018potential.
 
 # Statement of Need 
 
@@ -113,7 +114,7 @@ Users may generate usable summary statistics and plots using the data from the `
 
 # Features
 
-To use the `macleish` package, first run `install.packages(macleish)` to install the package in R, then run the following code to load the package:
+To use the CRAN version of the `macleish` package, first run `install.packages(macleish)` to install the package, then load it:
 
 ```{r, message=FALSE, warning=FALSE}
 library(macleish)
@@ -121,39 +122,43 @@ library(macleish)
 
 ## Spatial data
 
-Shapefile-based maps of MacLeish Field Station are available in the `macleish_layers` data object. The following layers will be displayed on the map. 
+Spatial data from the MacLeish Field Station are available through the `macleish_layers` data object, which leverages the `sf` package [@R-sf]. 
+The following layers are available: 
 
 ```{r}
 names(macleish_layers)
 ```
 
-Running the following code creates an interactive `leaflet` map for users to zoom in and out, identify the Orchard and Whately Weather Stations, locate the area of MacLeish Field Station, and pinpoint other geographical features such as bodies of water, roads, mountains, trails, and wildlife management areas. Figure \ref{fig:leafletmap} displays a static image of the resulting interactive map. 
+Any `sf` objects can be placed on an interactive map created by the `leaflet` package [@R-leaflet].
+Figure \ref{fig:leafletmap} situates the MacLeish property in Whately, to the east of the Northampton Reservoir and to the west of the Mt. Esther Wildlife Management Area, pinpoints the OrchardMet and WhatelyMet weather stations, and depicts other geographical features such as streams and trails. 
+Figure \ref{fig:leafletmap} displays a static image of the resulting interactive map. 
 
 ```{r}
 library(leaflet)
-map <- leaflet() %>%
-  addTiles() %>%
+map <- leaflet() |>
+  addTiles() |>
   addPolygons(
     data = macleish_layers[["boundary"]],
     weight = 1, fillOpacity = 0.1
-  ) %>%
+  ) |>
   addPolygons(
     data = macleish_layers[["buildings"]],
     weight = 1, popup = ~name
-  ) %>%
+  ) |>
   addPolylines(
     data = macleish_layers[["trails"]],
     weight = 1, color = "brown",
     popup = ~name
-  ) %>%
+  ) |>
   addPolylines(
     data = macleish_layers[["streams"]],
     weight = 2
-  ) %>%
+  ) |>
   addMarkers(
     data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)),
     popup = ~Label
-  )
+  ) |>
+  setView(-72.67918, 42.44921, zoom = 14)
 ```
 
 ```{r, eval=FALSE}
@@ -161,29 +166,31 @@ map
 ```
 
 
-```{r leafletmap, fig.cap="Interactive `leaflet` map of the MacLeish Field Station.", out.width="50%"}
+```{r leafletmap, echo=FALSE, fig.cap="Screenshot from an interactive `leaflet` map of the MacLeish Field Station.", out.width="50%"}
 knitr::include_graphics(path = "leaflet.png")
 ```
 
 ## Research data
 
-Two tree plot datasets is available through `tree_diameter1` and `tree_diameter2`. The time frame varies between `tree_diameter1` (2010-2015) and `tree_diameter2` (2009-2016), and `tree_diameter2` lacks data on position of individual trees. The datasets present change in tree diameter over a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid. 
-See Tables \ref{tab:tree-diameter-1} and \ref{tab:tree-diameter-2}. 
+Two tree plot datasets are available: `tree_diameter1` and `tree_diameter2`. 
+The time frame differs between `tree_diameter1` (2010--2015) and `tree_diameter2` (2009--2016), and `tree_diameter2` lacks data on position of individual trees. 
+The datasets present change in tree diameter over a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid.
+Tables \ref{tab:tree-diameter-1} and \ref{tab:tree-diameter-2} show samples from these datasets. 
 
 ```{r, eval = FALSE}
 tree_diameter1
 ```
-```{r tree-diameter-1}
-tree_diameter1 %>%
-  head() %>%
-  select(-module) %>%
+```{r tree-diameter-1, echo=FALSE}
+tree_diameter1 |>
+  head() |>
+  select(-module) |>
   knitr::kable(
     format = "latex",
-    caption = "Tree diameter dataset 1.",
+    caption = "Sample of the first six rows of the first tree diameter dataset. \\label{tab:tree1}",
     booktabs = TRUE,
     escape = FALSE,
     linesep = ""
-  ) %>%
+  ) |>
   kableExtra::kable_styling(
     latex_options = c("hold_position")
   )
@@ -192,32 +199,32 @@ tree_diameter1 %>%
 ```{r, eval = FALSE}
 tree_diameter2
 ```
-```{r tree-diameter-2}
-tree_diameter2 %>%
-  head() %>%
-  select(-module) %>%
+```{r tree-diameter-2, echo=FALSE}
+tree_diameter2 |>
+  head() |>
+  select(-module) |>
   knitr::kable(
     format = "latex",
-    caption = "Tree diameter dataset 2.",
+    caption = "Sample of the first six rows of the second tree diameter dataset. \\label{tab:tree2}",
     booktabs = TRUE,
     escape = FALSE,
     linesep = ""
-  ) %>%
+  ) |>
   kableExtra::kable_styling(
     latex_options = c("hold_position")
   )
 ```
 
-For example, using the `tree_diameter1` dataset, the boxplot below demonstrates the distribution of diameter for different species of trees at different positions from 2010-2015.
+For example, using the `tree_diameter1` dataset, the boxplot in Figure \ref{fig:tree-diam} demonstrates the distribution of diameter for different species of trees at different positions from 2010--2015.
 
-```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species and position between 2010-2015."}
+```{r tree-diam, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species and position between 2010--2015."}
 library(ggplot2)
-tree_diameter1 %>%
+tree_diameter1 |>
   mutate(position = fct_relevel(
     position,
     "emergent", "canopy", "subcanopy",
     "sapling"
-  )) %>%
+  )) |>
   ggplot(aes(x = diameter, y = species, fill = position)) +
   geom_boxplot() +
   scale_fill_viridis_d(alpha = 0.6, option = "A") +
@@ -232,64 +239,25 @@ tree_diameter1 %>%
 
 By viewing an individual species, the distribution of diameter varies based on the position of the species. For instance, the median diameter of emergent Eastern Hemlock trees is the greatest, despite having the smallest overall range. However, the overall range of the diameter of the canopy is the greatest. 
 
-```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter of Eastern Hemlock tree depending on position between 2010-2015."}
-tree_diameter1 %>%
-  mutate(position = fct_relevel(
-    position,
-    "emergent", "canopy", "subcanopy",
-    "sapling"
-  )) %>%
-  ggplot(aes(x = diameter, y = species, fill = position)) +
-  geom_boxplot() +
-  scale_fill_viridis_d(alpha = 0.6, option = "A") +
-  scale_y_discrete(limits = c("Eastern Hemlock")) +
-  labs(
-    x = "Diameter (cm)", y = "Species", fill = "Position",
-    title = "Distribution of Diameter for Eastern Hemlock"
-  ) +
-  theme(legend.position = "bottom")
-```
-
-Below is a box plot of the distribution of diameter based on different tree species from 2009-2012 using the `tree_diameter2` dataset. 
-Using individual data points on top of the box plots reveals the underlying distribution of each group. 
-
-```{r, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species between 2009-2016."}
-tree_diameter2 %>%
-  ggplot(aes(x = diameter, y = species)) +
-  geom_boxplot() +
-  geom_jitter(color = "black", size = 0.4, alpha = 0.9) +
-  scale_fill_viridis_d(alpha = 0.6, option = "A") +
-  scale_x_continuous(limits = c(0, 60)) +
-  facet_wrap(~year) +
-  labs(
-    x = "Diameter (cm)", y = "Species",
-    title = "Distribution of Diameter Between 2009-2016"
-  ) +
-  theme(legend.position = "bottom")
-```
-
 
 ## Weather data
 
-Weather data from 2015 is available through `whately_2015` and `orchard_2015` data objects. Data was recorded every 10 minutes every day from 2015-01-01 to 2015-31-12.
+Weather data from 2015 is available through the `whately_2015` and `orchard_2015` data objects. 
+These data were recorded every 10 minutes every day from 2015-01-01 to 2015-31-12, and include measurements like temperature, wind speed, and relative humidity.
 
 ```{r}
-whately_2015
+head(whately_2015)
 ```
 
-```{r}
-orchard_2015
-```
-
-Furthermore, the ETL framework [@R-etl; @baumer2019grammar] retrieves live and historical (2012-01-03 for Whately and 2014-06-27 for Orchard) weather data from both MacLeish Field Station weather monitors. 
+Furthermore, live and historical (to present from 2012-01-03 for WhatelyMet and from 2014-06-27 for OrchardMet) weather data from both MacLeish Field Station weather monitors is available for download through functionality provided by the `etl` package [@R-etl; @baumer2019grammar].
 
 ## Photographic data
 
-The PhenoCam Network is an ecosystem phenology camera network that provides automated, near-surface remote sensing of canopy phenology across the northeastern United States and adjacent Canada, including the MacLeish Field Station. High-resolution digital cameras at the MacLeish Field Station take pictures of the canopy and upload them to the PhenoCam server every half hour. 
+The PhenoCam Network is an ecosystem phenology camera network that provides automated, near-surface remote sensing of canopy phenology across the northeastern United States and Canada. 
+One such high-resolution digital camera sits atop the WhatelyMet tower, takes pictures of the canopy every 30 minutes, and then uploads them to the PhenoCam server. 
 The PhenoCam Network permits analysis of archived images, providing an objective means by which canopy phenology can be monitored and quantified at relatively low cost and with minimal expenses.
-[@R-phenocamr]
 
-Figure \ref{fig:phenocam} displays an example of an image retrieved from the PhenoCam Network.
+Figure \ref{fig:phenocam} displays two examples of images retrieved from the PhenoCam Network by the `phenocam_image_url()` function, which leverages functionality provided by the `phenocamr` package [@R-phenocamr].
 
 ```{r, eval=FALSE, include=FALSE}
 download.file(phenocam_image_url(), here::here("joss_paper", "macleish_latest.jpg"))
@@ -302,17 +270,13 @@ knitr::include_graphics(here::here("joss_paper", "macleish_xmas.jpg"))
 knitr::include_graphics(here::here("joss_paper", "macleish_latest.jpg"))
 ```
 
-
-The function `get_macleish_image()` retrieves an image from the PhenoCam Network when the date and time are specified. 
-
-
 # Conclusion
 
-The `macleish` package is an R Package with a simple interface that access to weather, spatial, and photography data to inspire interdisciplinary collaboration among statisticians and ecologists. This is a dynamic project that was built with the interest of biologists. It currently supports interdisciplinary collaboration to foster statistical application among the ecology community. More functions and data are expected to be compiled in the package over time that seems fit to users to support an increasing collection of statistical analyses and visualizations.
+The `macleish` package for R has a simple interface that accesses to weather, meteorological, and photographic data to inspire interdisciplinary collaboration among statisticians and ecologists. 
 
 # Acknowledgements
 
-We acknowledge contributions from Jesse Bellemare and Paul Wetzel. 
+We acknowledge contributions from Jesse Bellemare, Paul Wetzel, Reid Bertone-Johnson, and Jon Caris. 
 
 
 # References
