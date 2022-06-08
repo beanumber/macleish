@@ -31,7 +31,7 @@ Photos have been taken every 30 minutes since February 2017.
 }
 \examples{
 phenocam_image_url()
-phenocam_image_url(Sys.time() - 100)
+phenocam_image_url("2021-12-25 12:05:05")
 \dontrun{
 phenocam_read_day_urls()
 }

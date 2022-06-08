@@ -13,7 +13,6 @@ layers <- c("landmarks", "forests", "streams",
   "boundary", 
   "research", "soil", "trails")
 
-
 macleish_layers <- lapply(layers, st_read, dsn = dsn)
 names(macleish_layers) <- layers
 
@@ -32,11 +31,36 @@ macleish_layers[["forests"]] <- macleish_layers %>%
   purrr::pluck("forests") %>%
   dplyr::rename(type = Sheet1__Na)
 
-# add 30 foot contours
+# add 30-foot contours
 macleish_layers[["elevation"]] <- macleish::mass_gis() %>%
   macleish::macleish_intersect() %>%
   st_transform(4326)
 
+# set units
+macleish_layers[["challenge_courses"]] <- macleish_layers |>
+  purrr::pluck("challenge_courses") %>%
+  mutate(ele = units::set_units(ele, "m"))
+macleish_layers[["wetlands"]] <- macleish_layers |>
+  purrr::pluck("wetlands") %>%
+  mutate(
+    area_acres = units::set_units(AREAACRES, "acre"),
+    area_sqmi = units::set_units(AREAACRES, "mi^2")
+  ) |>
+  select(-contains("AREA", ignore.case = FALSE))
+macleish_layers[["boundary"]] <- macleish_layers |>
+  purrr::pluck("boundary") %>%
+  mutate(
+    area = st_area(geometry),
+    area = units::set_units(area, "acre"),
+  ) |>
+  select(area)
+macleish_layers[["research"]] <- macleish_layers |>
+  purrr::pluck("research") %>%
+  mutate(
+    area = st_area(geometry),
+    area = units::set_units(area, "m^2"),
+  ) |>
+  select(-contains("Shape", ignore.case = FALSE))
 
 # Set coordinate reference system for entire list
 macleish_layers <- lapply(macleish_layers, st_transform, crs = 4326)
@@ -49,7 +73,6 @@ for(i in 1:length(macleish_layers)){
 
 # check to make sure they are all projected the same
 lapply(macleish_layers, st_crs)
-
 
 # Test all layers
 names(macleish_layers)
