@@ -61,7 +61,11 @@ From the [Smith College website]([Ada and Archibald MacLeish Field Station](http
 \end{figure}
 Figure \ref{fig:macleish} shows a trail map illustrating the MacLeish property.
 @Moise:2021 provides an interactive history of the property. 
-Research by Smith faculty and students conducted at MacLeish includes 
+
+# Statement of Need 
+
+The MacLeish Field Station is rife with scientific inquiry, as the Smith College community explores the diverse ecosystem of plants and animals. 
+While numerous research papers, including 
 @guswa2012effect, 
 @guswa2012canopy,
 @zukswert2014forest, 
@@ -69,19 +73,16 @@ Research by Smith faculty and students conducted at MacLeish includes
 @bassar2016changes, 
 @Wetzel:2017,
 @ignace2018decline, 
-@jackson2018potential.
+@jackson2018potential
+make use of the MacLeish property, the data supporting these research efforts is not centralized or easily accessible to the public.
+The `macleish` package offers easy, public access to:
 
-# Statement of Need 
-
-The MacLeish Field Station is abundant with scientific inquiry, where the Smith College community explore the diverse ecosystem of plants and animals. The `macleish` package offers access to
-
-1. Data from open-source databases
-1. interactive maps of the MacLeish Field Station and surrounding area 
-1. Meteorological reading data from historical and current databases 
-1. Data on tree diameter of different species infected by the Hemlock Woolly adelgid 
-1. A database of images of tree canopy over time 
+1. spatial data on building, landmarks, streams, trails, and other features of the MacLeish Field Station property 
+1. real-time and historical meteorological measurements
+1. carefully collected data on tree diameters of different species infected by the Hemlock Woolly adelgid 
+1. photographic images of the tree canopy over time 
   
-Users may generate usable summary statistics and plots using the data from the `macleish` package. 
+These data are already used in data science textbooks [@baumer2021mdsr] and new research efforts in progress. 
 
 # Features
 
@@ -261,10 +262,6 @@ Figure \ref{fig:phenocam} displays two examples of images retrieved from the Phe
 
 \caption{Images of the MacLeish Field Station retrieved from the PhenoCam Network by the \texttt{phenocam\_image\_url()} function. The image on the left was taken in June 2022, while the image on the right was taken in December 2021. }\label{fig:phenocam}
 \end{figure}
-
-# Conclusion
-
-The `macleish` package for R has a simple interface that accesses to weather, meteorological, and photographic data to inspire interdisciplinary collaboration among statisticians and ecologists. 
 
 # Acknowledgements
 
