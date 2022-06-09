@@ -10,6 +10,5 @@
 ^CRAN-RELEASE$
 ^rhub\.R$
 ^\.github$
-^vignettes/testgraphs\.Rmd$
 ^revdep$
-^vignettes/Paper$
+^joss_paper$

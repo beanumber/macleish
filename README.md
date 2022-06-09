@@ -1,8 +1,13 @@
 
 # macleish <img src='man/figures/logo.png' align="right" height="139"/>
 
+<!-- badges: start -->
+
 [![R-CMD-check](https://github.com/beanumber/macleish/workflows/R-CMD-check/badge.svg)](https://github.com/beanumber/macleish/actions)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/macleish)](https://cran.r-project.org/package=macleish)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+<!-- badges: end -->
 
 The [Ada and Archibald MacLeish Field
 Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
@@ -120,8 +125,7 @@ names(macleish_layers)
     ##  [1] "landmarks"         "forests"           "streams"          
     ##  [4] "challenge_courses" "buildings"         "wetlands"         
     ##  [7] "boundary"          "research"          "soil"             
-    ## [10] "trails"            NA                  NA                 
-    ## [13] "camp_sites"        "elevation"
+    ## [10] "trails"            "camp_sites"        "elevation"
 
 ``` r
 library(leaflet)
@@ -150,8 +154,25 @@ leaflet() %>%
   )
 ```
 
+## Images
+
+You can download live and historical images from Phenocam.
+
+``` r
+phenocam_image_url()
+```
+
+    ## [1] "https://phenocam.sr.unh.edu/data/latest/macleish.jpg"
+
+``` r
+knitr::include_graphics(phenocam_image_url())
+knitr::include_graphics(phenocam_image_url("2021-12-25 12:05:05"))
+```
+
+<img src="https://phenocam.sr.unh.edu/data/latest/macleish.jpg" width="50%" /><img src="https://phenocam.sr.unh.edu/data/archive/macleish/2021/12/macleish_2021_12_25_120505.jpg" width="50%" />
+
 ## See also
 
-  - [Ada and Archibald MacLeish Field
+-   [Ada and Archibald MacLeish Field
     Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
-  - **[etl](https://github.com/beanumber/etl)**
+-   **[etl](https://github.com/beanumber/etl)**
