@@ -6,16 +6,16 @@ globalVariables("site")
 #' @param when a string to be converted into a date-time
 #' @param ... currently ignored
 #' @export
-#' @references \url{https://phenocam.sr.unh.edu/webcam/sites/macleish/}
+#' @references \url{https://phenocam.nau.edu/webcam/sites/macleish/}
 #' @examples 
 #' phenocam_image_url()
 #' phenocam_image_url("2021-12-25 12:05:05")
 
 phenocam_image_url <- function(when = NULL, ...) {
   if (is.null(when)) {
-    url <- "https://phenocam.sr.unh.edu/data/latest/macleish.jpg"
+    url <- "https://phenocam.nau.edu/data/latest/macleish.jpg"
   } else if (datetime <- as.POSIXct(when)) {
-    url_stem <- "https://phenocam.sr.unh.edu/data/archive/macleish/"
+    url_stem <- "https://phenocam.nau.edu/data/archive/macleish/"
     url_slug <- format(datetime, "%Y/%m/macleish_%Y_%m_%d_%H%M%S.jpg")
     url <- paste0(url_stem, url_slug)
   } else {
@@ -35,7 +35,7 @@ phenocam_image_url <- function(when = NULL, ...) {
 phenocam_read_day_urls <- function(x = Sys.Date()) {
   the_date <- as.Date(x)
   url <- paste0(
-    "https://phenocam.sr.unh.edu/webcam/browse/macleish/",
+    "https://phenocam.nau.edu/webcam/browse/macleish/",
     format(the_date, "%Y/%m/%d/")
   )
   url |>
@@ -57,7 +57,7 @@ phenocam_read_day_urls <- function(x = Sys.Date()) {
 phenocam_read_monthly_midday_urls <- function(x = Sys.Date()) {
   the_date <- as.Date(x)
   url <- paste0(
-    "https://phenocam.sr.unh.edu/webcam/browse/macleish/",
+    "https://phenocam.nau.edu/webcam/browse/macleish/",
     format(the_date, "%Y/%m/")
   )
   url |>

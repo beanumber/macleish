@@ -55,7 +55,7 @@ print(str(df))
 }
 }
 \references{
-\url{https://phenocam.sr.unh.edu/webcam/sites/macleish/}
+\url{https://phenocam.nau.edu/webcam/sites/macleish/}
 }
 \seealso{
 \code{\link[phenocamr]{download_phenocam}}
