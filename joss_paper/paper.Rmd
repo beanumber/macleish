@@ -70,7 +70,7 @@ Numerous faculty use the MacLeish Field Station for research purposes.
 The `macleish` package includes multiple layers of spatial data, functions to access historical and live weather readings, data from ongoing forest ecology research, and functions to access photographs taken by a PhenoCam (Phenology Camera) Network digital camera mounted on the 25-meter WhatelyMet tower.
 The camera captures a photograph of the forest canopy every 30 minutes.
 
-By making these data accessible in an R package with a simple interface, we hope the `macleish` R package will foster interdisciplinary collaboration within the Smith College community. 
+By delivering data from a variety of sources in a common, easy-to-use interface, the `macleish` package fosters interdisciplinary collaborations within environmental research communities. 
 
 # About the MacLeish Field Station 
 
@@ -93,8 +93,8 @@ Figure \ref{fig:macleish} shows a trail map illustrating the MacLeish property.
 
 # Statement of Need 
 
-The MacLeish Field Station is rife with scientific inquiry, as the Smith College community explores the diverse ecosystem of plants and animals. 
-While numerous research papers, including 
+The MacLeish Field Station enables scientific inquiry, as the Smith College community explores the diverse ecosystem of plants and animals. 
+While numerous research projects (see 
 @guswa2012effect, 
 @guswa2012canopy,
 @zukswert2014forest, 
@@ -103,12 +103,13 @@ While numerous research papers, including
 @Wetzel:2017,
 @ignace2018decline, 
 @jackson2018potential
-make use of the MacLeish property, the data supporting these research efforts is not centralized or easily accessible to the public.
+for examples)
+make use of the MacLeish property, the data supporting these efforts is not centralized or easily accessible to the public.
 The `macleish` package offers easy, public access to:
 
 1. spatial data on building, landmarks, streams, trails, and other features of the MacLeish Field Station property 
 1. real-time and historical meteorological measurements
-1. carefully collected data on tree diameters of different species infected by the Hemlock Woolly adelgid 
+1. carefully collected data on tree diameters of different species infected by the [Hemlock Woolly adelgid](https://en.wikipedia.org/wiki/Hemlock_woolly_adelgid) 
 1. photographic images of the tree canopy over time 
   
 These data are already used in data science textbooks [@baumer2021mdsr] and new research efforts in progress. 
@@ -131,7 +132,7 @@ names(macleish_layers)
 ```
 
 Any `sf` objects can be placed on an interactive map created by the `leaflet` package [@R-leaflet].
-Figure \ref{fig:leafletmap} situates the MacLeish property in Whately, to the east of the Northampton Reservoir and to the west of the Mt. Esther Wildlife Management Area, pinpoints the OrchardMet and WhatelyMet weather stations, and depicts other geographical features such as streams and trails. 
+Figure \ref{fig:leafletmap} situates the MacLeish property in [Whately](https://en.wikipedia.org/wiki/Whately,_Massachusetts), to the east of the Northampton Reservoir and to the west of the Mt. Esther Wildlife Management Area, pinpoints the OrchardMet and WhatelyMet weather stations, and depicts other geographical features such as streams and trails. 
 Figure \ref{fig:leafletmap} displays a static image of the resulting interactive map. 
 
 ```{r}
@@ -175,7 +176,7 @@ knitr::include_graphics(path = "leaflet.png")
 
 Two tree plot datasets are available: `tree_diameter1` and `tree_diameter2`. 
 The time frame differs between `tree_diameter1` (2010--2015) and `tree_diameter2` (2009--2016), and `tree_diameter2` lacks data on position of individual trees. 
-The datasets present change in tree diameter over a set of years for two plots dominated by the parasites Hemlock Woolly Adelgid.
+The datasets present change in tree diameter over a set of years for two plots dominated by the parasitic Hemlock Woolly Adelgid.
 Tables \ref{tab:tree-diameter-1} and \ref{tab:tree-diameter-2} show samples from these datasets. 
 
 ```{r, eval = FALSE}
@@ -216,7 +217,7 @@ tree_diameter2 |>
   )
 ```
 
-For example, using the `tree_diameter1` dataset, the boxplot in Figure \ref{fig:tree-diam} demonstrates the distribution of diameter for different species of trees at different positions from 2010--2015.
+The boxplot in Figure \ref{fig:tree-diam} uses the `tree_diameter1` data set to demonstrate the distribution of diameter for different species of trees at different positions from 2010--2015.
 
 ```{r tree-diam, warning=FALSE, echo=FALSE, fig.cap="Boxplot of tree diameter depending on species and position between 2010--2015."}
 library(ggplot2)
@@ -238,7 +239,9 @@ tree_diameter1 |>
   theme(legend.position = "bottom")
 ```
 
-By viewing an individual species, the distribution of diameter varies based on the position of the species. For instance, the median diameter of emergent Eastern Hemlock trees is the greatest, despite having the smallest overall range. However, the overall range of the diameter of the canopy is the greatest. 
+By viewing an individual species, the distribution of diameter varies based on the position of the species. 
+For instance, the median diameter of emergent [Eastern Hemlock](https://en.wikipedia.org/wiki/Tsuga_canadensis) trees is the greatest, despite having the smallest overall range. 
+However, the overall range of the diameter of the canopy is the greatest. 
 
 
 ## Weather data
@@ -254,7 +257,7 @@ Furthermore, live and historical (to present from 2012-01-03 for WhatelyMet and 
 
 ## Photographic data
 
-The PhenoCam Network is an ecosystem phenology camera network that provides automated, near-surface remote sensing of canopy phenology across the northeastern United States and Canada. 
+The [PhenoCam Network](https://phenocam.nau.edu/webcam/) is an ecosystem phenology camera network that provides automated, near-surface remote sensing of canopy phenology across the northeastern United States and Canada. 
 One such high-resolution digital camera sits atop the WhatelyMet tower, takes pictures of the canopy every 30 minutes, and then uploads them to the PhenoCam server. 
 The PhenoCam Network permits analysis of archived images, providing an objective means by which canopy phenology can be monitored and quantified at relatively low cost and with minimal expenses.
 
@@ -273,7 +276,7 @@ knitr::include_graphics(here::here("joss_paper", "macleish_latest.jpg"))
 
 # Acknowledgements
 
-We acknowledge contributions from Jesse Bellemare, Paul Wetzel, Reid Bertone-Johnson, and Jon Caris. 
+We acknowledge a variety of contributions from Jesse Bellemare, Paul Wetzel, Reid Bertone-Johnson, Jon Caris, Rose Goueth, Wencong Li, Weijia Zhang, and Nicholas Horton. 
 
 
 # References
