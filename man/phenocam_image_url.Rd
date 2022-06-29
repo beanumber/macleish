@@ -3,7 +3,8 @@
 \name{phenocam_image_url}
 \alias{phenocam_image_url}
 \alias{phenocam_read_day_urls}
-\alias{phenocam_read_month_urls}
+\alias{phenocam_read_monthly_midday_urls}
+\alias{phenocam_image_url_midday}
 \alias{phenocam_info}
 \alias{phenocam_download}
 \title{Retrieve images from Phenocam}
@@ -12,7 +13,9 @@ phenocam_image_url(when = NULL, ...)
 
 phenocam_read_day_urls(x = Sys.Date())
 
-phenocam_read_month_urls(x = Sys.Date())
+phenocam_read_monthly_midday_urls(x = Sys.Date())
+
+phenocam_image_url_midday(x = Sys.Date())
 
 phenocam_info()
 
@@ -36,7 +39,11 @@ phenocam_image_url("2021-12-25 12:05:05")
 phenocam_read_day_urls()
 }
 \dontrun{
-phenocam_read_month_urls()
+phenocam_read_monthly_midday_urls()
+}
+\dontrun{
+phenocam_image_url_midday(Sys.Date() - 3)
+phenocam_image_url_midday(Sys.Date() - 365)
 }
 \dontrun{
 phenocam_info()

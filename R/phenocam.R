@@ -51,10 +51,10 @@ phenocam_read_day_urls <- function(x = Sys.Date()) {
 #' @export
 #' @examples 
 #' \dontrun{
-#' phenocam_read_month_urls()
+#' phenocam_read_monthly_midday_urls()
 #' }
 
-phenocam_read_month_urls <- function(x = Sys.Date()) {
+phenocam_read_monthly_midday_urls <- function(x = Sys.Date()) {
   the_date <- as.Date(x)
   url <- paste0(
     "https://phenocam.sr.unh.edu/webcam/browse/macleish/",
@@ -68,6 +68,22 @@ phenocam_read_month_urls <- function(x = Sys.Date()) {
     stringr::str_subset("macleish")
 }
 
+#' @rdname phenocam_image_url
+#' @export
+#' @examples 
+#' \dontrun{
+#' phenocam_image_url_midday(Sys.Date() - 3)
+#' phenocam_image_url_midday(Sys.Date() - 365)
+#' }
+
+phenocam_image_url_midday <- function(x = Sys.Date()) {
+  monthlies <- phenocam_read_monthly_midday_urls(x)
+  this_day <- format(as.Date(x), "%Y_%m_%d")
+  
+  monthlies |>
+    stringr::str_subset(this_day) |>
+    head(1)
+}
 
 #' MacLeish Phenocam site info
 #' @rdname phenocam_image_url
