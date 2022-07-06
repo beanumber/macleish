@@ -1,14 +1,6 @@
-## Resubmission
-
-This is a resubmission of macleish v0.3.7 which I originally submitted on 2021-07-27. In this version I have:
-
-- Addressed the ERRORS in https://cran.r-project.org/web/checks/check_results_macleish.html for r-patched-solaris-x86
-- Reduced the package tarball size
-
-
 ## Test environments
 
-* local macOS install, R 4.0.2
+* local Ubuntu install, R 4.2.1
 * win-builder (release, devel, oldrelease)
 * GitHub Actions
     + ubuntu-16.04: latest
@@ -33,8 +25,7 @@ This is a resubmission of macleish v0.3.7 which I originally submitted on 2021-0
 
 Nothing of note
 
-
 ## Reverse dependencies
 
-Reverse dependencies checked usinged revdepcheck::revdep_check()
+Reverse dependencies checked using revdepcheck::revdep_check()
 
