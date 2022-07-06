@@ -38,11 +38,11 @@ phenocam_read_day_urls <- function(x = Sys.Date()) {
     "https://phenocam.nau.edu/webcam/browse/macleish/",
     format(the_date, "%Y/%m/%d/")
   )
-  url |>
+  url %>%
     # need authentication to make this work!!
-    xml2::read_html() |>
-    rvest::html_elements("td") |>
-    rvest::html_elements("img") |>
+    xml2::read_html() %>%
+    rvest::html_elements("td") %>%
+    rvest::html_elements("img") %>%
     rvest::html_attr("src")
 }
 
@@ -60,11 +60,11 @@ phenocam_read_monthly_midday_urls <- function(x = Sys.Date()) {
     "https://phenocam.nau.edu/webcam/browse/macleish/",
     format(the_date, "%Y/%m/")
   )
-  url |>
-    xml2::read_html() |>
-    rvest::html_elements("td") |>
-    rvest::html_elements("img") |>
-    rvest::html_attr("src") |>
+  url %>%
+    xml2::read_html() %>%
+    rvest::html_elements("td") %>%
+    rvest::html_elements("img") %>%
+    rvest::html_attr("src") %>%
     stringr::str_subset("macleish")
 }
 
@@ -80,8 +80,8 @@ phenocam_image_url_midday <- function(x = Sys.Date()) {
   monthlies <- phenocam_read_monthly_midday_urls(x)
   this_day <- format(as.Date(x), "%Y_%m_%d")
   
-  monthlies |>
-    stringr::str_subset(this_day) |>
+  monthlies %>%
+    stringr::str_subset(this_day) %>%
     head(1)
 }
 
@@ -94,7 +94,7 @@ phenocam_image_url_midday <- function(x = Sys.Date()) {
 #' }
 
 phenocam_info <- function() {
-  phenocamr::list_sites() |>
+  phenocamr::list_sites() %>%
     dplyr::filter(site == "macleish")
 }
 
