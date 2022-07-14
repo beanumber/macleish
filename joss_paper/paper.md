@@ -1,6 +1,6 @@
 ---
 title: 'MacLeish: An R package for monitoring environmental conditions in Whately, Massachusetts'
-date: "2022-06-29"
+date: "2022-07-14"
 authors:
   - name: Benjamin S. Baumer
     orcid: 0000-0002-3279-0516
@@ -28,6 +28,8 @@ output:
     number_sections: yes
 editor_options: 
   chunk_output_type: console
+header-includes:
+  - \usepackage{booktabs}
 ---
 
 

@@ -28,6 +28,8 @@ output:
     number_sections: yes
 editor_options: 
   chunk_output_type: console
+header-includes:
+  - \usepackage{booktabs}
 ---
 
 ```{r, echo=FALSE, results = FALSE, warning=FALSE, message=FALSE}
