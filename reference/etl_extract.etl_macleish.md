@@ -29,24 +29,24 @@ etl_transform_help(obj, ...)
 ``` r
 macleish <- etl("macleish")
 #> No database was specified so I created one for you at:
-#> /tmp/RtmpcnRPC3/file1df17c085e23.sqlite3
+#> /tmp/Rtmp8gUcFE/file1ccf33293673.sqlite3
 str(macleish)
 #> List of 2
 #>  $ con  :Formal class 'SQLiteConnection' [package "RSQLite"] with 8 slots
 #>   .. ..@ ptr                :<externalptr> 
-#>   .. ..@ dbname             : chr "/tmp/RtmpcnRPC3/file1df17c085e23.sqlite3"
+#>   .. ..@ dbname             : chr "/tmp/Rtmp8gUcFE/file1ccf33293673.sqlite3"
 #>   .. ..@ loadable.extensions: logi TRUE
 #>   .. ..@ flags              : int 70
 #>   .. ..@ vfs                : chr ""
-#>   .. ..@ ref                :<environment: 0x55aa4fc6fff0> 
+#>   .. ..@ ref                :<environment: 0x55de4f995710> 
 #>   .. ..@ bigint             : chr "integer64"
 #>   .. ..@ extended_types     : logi FALSE
 #>  $ disco: NULL
 #>  - attr(*, "class")= chr [1:6] "etl_macleish" "etl" "src_SQLiteConnection" "src_dbi" ...
 #>  - attr(*, "pkg")= chr "macleish"
-#>  - attr(*, "dir")= chr "/tmp/RtmpcnRPC3"
-#>  - attr(*, "raw_dir")= chr "/tmp/RtmpcnRPC3/raw"
-#>  - attr(*, "load_dir")= chr "/tmp/RtmpcnRPC3/load"
+#>  - attr(*, "dir")= chr "/tmp/Rtmp8gUcFE"
+#>  - attr(*, "raw_dir")= chr "/tmp/Rtmp8gUcFE/raw"
+#>  - attr(*, "load_dir")= chr "/tmp/Rtmp8gUcFE/load"
 
 if (FALSE) { # \dontrun{
 macleish |>
