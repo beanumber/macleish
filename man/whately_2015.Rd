@@ -75,8 +75,8 @@ in late November, 2015.
 \dontrun{
 #' # loose wire anomalies
 if (require(dplyr) & require(ggplot2) & require(lubridate)) {
- orchard_2015 \%>\%
- filter(month(when) == 11) \%>\%
+ orchard_2015 |>
+ filter(month(when) == 11) |>
    ggplot(aes(x = when, y = temperature)) +
    geom_line() + geom_smooth()
 }

@@ -32,7 +32,7 @@ mass_gis <- function(layer = "contours250k") {
   lcl_shp <- file.path(dir, layer)
   utils::unzip(lcl_zip, exdir = lcl_shp)
   # list.files(dir)
-  sf::st_read(lcl_shp) %>%
+  sf::st_read(lcl_shp) |>
     sf::st_transform(4326)
 }
 

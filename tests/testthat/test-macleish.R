@@ -11,8 +11,8 @@ test_that("data integrity", {
   
   # # For some reason this test fails only on Oracle Solaris 10, x86, 32 bit, R-release
   # # via devtools::check_rhub(env_vars=c(R_COMPILE_AND_INSTALL_PACKAGES = "always"), platforms = "solaris-x86-patched")
-  # epsg <- macleish_layers %>%
-  #   purrr::map(sf::st_crs) %>%
+  # epsg <- macleish_layers |>
+  #   purrr::map(sf::st_crs) |>
   #   purrr::map_int(`$`, "epsg")
   # expect_true(all(epsg == 4326))
   

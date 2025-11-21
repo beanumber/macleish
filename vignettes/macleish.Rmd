@@ -82,9 +82,9 @@ In this example we visualize the trend of average daily temperature at the MacLe
 library(ggplot2)
 library(dplyr)
 library(lubridate)
-daily <- whately_2015 %>%
-  mutate(the_date = as.Date(when, tz = "EST")) %>%
-  group_by(the_date) %>%
+daily <- whately_2015 |>
+  mutate(the_date = as.Date(when, tz = "EST")) |>
+  group_by(the_date) |>
   summarize(
     N = n(), avg_temp = mean(temperature),
     max_temp = max(temperature),
@@ -114,47 +114,47 @@ if (require(mgcv)) {
 As shown in the table below, the monthly average temperature in 2015 ranged from -6.4 °C in January to 21.6°C in July. The large difference in recorded temperatures between the two stations in November was the result of a loose wire that resulted in erroneous temperature readings at the OrchardMet station (see below). 
 
 ```{r temp-table}
-monthly_w <- whately_2015 %>%
-  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
-  group_by(the_month) %>%
+monthly_w <- whately_2015 |>
+  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) |>
+  group_by(the_month) |>
   summarize(avg_temp = mean(temperature))
-monthly_o <- orchard_2015 %>%
-  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
-  group_by(the_month) %>%
+monthly_o <- orchard_2015 |>
+  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) |>
+  group_by(the_month) |>
   summarize(avg_temp = mean(temperature))
-monthly_w %>%
+monthly_w |>
   inner_join(monthly_o, by = "the_month")
 ```
 
 The highest recorded temperature at WhatelyMet was 33.08 °C on September 8th. The lowest recorded temperature was -22.28 °C on January 8th. 
 
 ```{r temp-extremes}
-whately_2015 %>%
-  arrange(desc(temperature)) %>%
+whately_2015 |>
+  arrange(desc(temperature)) |>
   head(1)
-whately_2015 %>%
-  arrange(temperature) %>%
+whately_2015 |>
+  arrange(temperature) |>
   head(1)
 ```
 
 The average daily temperature range recorded from both stations (daily maximum-minimum) was 10.4 °C. The maximum daily temperature range was 21.1 °C on May 8th at WhatelyMet. 
 
 ```{r}
-daily <- daily %>%
+daily <- daily |>
   mutate(temp_range = max_temp - min_temp)
-daily %>%
-  select(temp_range) %>%
+daily |>
+  select(temp_range) |>
   summary()
 ```
 
 The minimum daily temperature range was 2.1 °C and occurred on April 9th at WhatelyMet. However, daily temperature ranges of less than three degrees also occurred on April 7th, February 9th, June 1st, June 28th.
 
 ```{r}
-daily %>%
-  arrange(desc(temp_range)) %>%
+daily |>
+  arrange(desc(temp_range)) |>
   head(1)
-daily %>%
-  arrange(temp_range) %>%
+daily |>
+  arrange(temp_range) |>
   head()
 ```
 
@@ -163,8 +163,8 @@ daily %>%
 In late November, a loose wire in the OrchardMet station resulted in some erroneous temperature readings. We have left these readings in, but you should exercise caution when summarizing data that includes this time period. Imputation of these data would be a terrific exercise.
 
 ```{r orchard-anolomies}
-orchard_2015 %>%
-  filter(month(when) == 11) %>%
+orchard_2015 |>
+  filter(month(when) == 11) |>
   ggplot(aes(x = when, y = temperature)) +
   geom_line()
 ```
@@ -175,15 +175,15 @@ orchard_2015 %>%
 Percent average monthly relative humidity ranged from 56.4% (March) to 94% (December). Interestingly, WhatelyMet relative humidity values were notably higher than OrchardMet values starting in August. It is unclear why this pattern occurred during the last part of the year.
 
 ```{r humidity-table}
-monthly_w <- whately_2015 %>%
-  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
-  group_by(the_month) %>%
+monthly_w <- whately_2015 |>
+  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) |>
+  group_by(the_month) |>
   summarize(avg_humidity_w = mean(rel_humidity))
-monthly_o <- orchard_2015 %>%
-  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
-  group_by(the_month) %>%
+monthly_o <- orchard_2015 |>
+  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) |>
+  group_by(the_month) |>
   summarize(avg_humidity_o = mean(rel_humidity))
-monthly_w %>%
+monthly_w |>
   inner_join(monthly_o, by = "the_month")
 ```
 
@@ -196,14 +196,14 @@ OrchardMet is located in a woodland clearing where winds are buffeted by trees o
 
 ```{r, message=FALSE, warning=FALSE}
 require(clifro)
-orchard_2015 %>%
+orchard_2015 |>
   with(windrose(wind_speed, wind_dir))
 ```
 
 WhatelyMet is above the forest canopy and recorded winds frequently from the northwest, north, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
 
 ```{r, message=FALSE}
-whately_2015 %>%
+whately_2015 |>
   with(windrose(wind_speed, wind_dir))
 ```
 
@@ -213,32 +213,32 @@ whately_2015 %>%
 A total of 1306 mm of precipitation was recorded at WhatelyMet during 2015. 
 
 ```{r}
-whately_2015 %>%
+whately_2015 |>
   summarize(total_rainfall = sum(rainfall))
 ```
 
 Although precipitation is relatively evenly distributed across the year, precipitation totals were highest in June and lowest in May.
 
 ```{r rain-table}
-monthly_w <- whately_2015 %>%
-  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
-  group_by(the_month) %>%
+monthly_w <- whately_2015 |>
+  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) |>
+  group_by(the_month) |>
   summarize(total_precip_w = sum(rainfall))
-monthly_o <- orchard_2015 %>%
-  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) %>%
-  group_by(the_month) %>%
+monthly_o <- orchard_2015 |>
+  mutate(the_month = month(when, label = TRUE, abbr = FALSE)) |>
+  group_by(the_month) |>
   summarize(total_precip_o = sum(rainfall))
-monthly_w %>%
+monthly_w |>
   inner_join(monthly_o, by = "the_month")
 ```
 
 Since the data was recorded every ten minutes, we need to group the data daily in order to get the mean rainfall amount per day.
 
 ```{r, message=FALSE}
-daily_precip <- whately_2015 %>%
-  mutate(the_date = as.Date(when, tz = "EST")) %>%
-  group_by(the_date) %>%
-  summarize(N = n(), total_precip = sum(rainfall)) %>%
+daily_precip <- whately_2015 |>
+  mutate(the_date = as.Date(when, tz = "EST")) |>
+  group_by(the_date) |>
+  summarize(N = n(), total_precip = sum(rainfall)) |>
   mutate(
     cum_precip = cumsum(total_precip),
     cum_rescale = (cum_precip / max(cum_precip)) * max(total_precip)
@@ -274,16 +274,16 @@ These layers can be combined to provide a fuller picture of the activity at the 
 
 ```{r, eval=FALSE, message=FALSE}
 library(leaflet)
-leaflet() %>%
-  addTiles() %>%
+leaflet() |>
+  addTiles() |>
   addPolygons(
     data = macleish_layers[["boundary"]],
     weight = 1
-  ) %>%
+  ) |>
   addPolygons(
     data = macleish_layers[["buildings"]],
     weight = 1
-  ) %>%
+  ) |>
   addMarkers(
     data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)),
     popup = ~Label

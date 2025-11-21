@@ -13,7 +13,7 @@
 etl_transform_help(obj, ...)
 }
 \arguments{
-\item{obj}{an \code{\link[etl]{etl}} object}
+\item{obj}{an \link[etl]{etl} object}
 
 \item{...}{arguments passed to methods}
 }
@@ -26,42 +26,42 @@ macleish <- etl("macleish")
 str(macleish)
 
 \dontrun{
-macleish \%>\%
-  etl_extract() \%>\%
-  etl_transform() \%>\%
+macleish |>
+  etl_extract() |>
+  etl_transform() |>
   etl_load()
-whately <- macleish \%>\%
+whately <- macleish |>
   tbl("whately") 
-orchard <- macleish \%>\%
+orchard <- macleish |>
   tbl("orchard") 
   
-whately \%>\%
+whately |>
   summarize(N = n(), avg_temp = mean(temperature))
-orchard \%>\%
+orchard |>
   summarize(N = n(), avg_temp = mean(temperature))
   
 # check data types
-whately \%>\%
+whately |>
   glimpse()
 
 # if using SQLite, datetimes will get converted to integers
-whately <- whately \%>\%
+whately <- whately |>
   mutate(when_datetime = datetime(when, 'unixepoch'))
-whately \%>\%
+whately |>
   glimpse()
 
 # show the most recent data -- should be within the past hour
-whately \%>\%
-  collect() \%>\%
+whately |>
+  collect() |>
   tail()
 
 # show that no time-shifting is happening
 if (require(ggplot2)) {
-macleish \%>\%
-  tbl("whately") \%>\%
-  collect() \%>\%
-  mutate(when = lubridate::ymd_hms(when)) \%>\%
-  filter(lubridate::year(when) == 2012 & month(when) == 12 & day(when) == 20) \%>\%
+macleish |>
+  tbl("whately") |>
+  collect() |>
+  mutate(when = lubridate::ymd_hms(when)) |>
+  filter(lubridate::year(when) == 2012 & month(when) == 12 & day(when) == 20) |>
   ggplot(aes(x = when, y = temperature)) + geom_line()
 }
 }
