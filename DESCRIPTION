@@ -46,7 +46,6 @@ Suggests:
     rmarkdown,
     markdown,
     mgcv,
-    clifro,
     testthat
 URL: https://github.com/beanumber/macleish
 BugReports: https://github.com/beanumber/macleish/issues

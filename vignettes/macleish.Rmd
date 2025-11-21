@@ -195,16 +195,25 @@ Wind speed and direction is measured every second and then averaged and logged e
 OrchardMet is located in a woodland clearing where winds are buffeted by trees of the forest canopy. Most wind comes from the west and southwest, with 67% of the time less than 1 m/s. Wind speeds did not average over 3 m/s at any time of the year. 
 
 ```{r, message=FALSE, warning=FALSE}
-require(clifro)
 orchard_2015 |>
-  with(windrose(wind_speed, wind_dir))
+  mutate(wind_dir_bin = factor(floor(wind_dir / 31))) |>
+  ggplot(aes(y = wind_speed, x = wind_dir_bin)) +
+  geom_boxplot() +
+  coord_radial() +
+  scale_x_discrete("Wind direction (degrees from North)") +
+  scale_y_continuous("Wind speed (meters per second)")
 ```
 
 WhatelyMet is above the forest canopy and recorded winds frequently from the northwest, north, and south during the year. Average wind velocities were higher, with 46% of the measurements falling between 1 and 2 m/s, with maximum average velocities up to 6 m/s. 
 
 ```{r, message=FALSE}
-whately_2015 |>
-  with(windrose(wind_speed, wind_dir))
+whately_2015 |>  
+  mutate(wind_dir_bin = factor(floor(wind_dir / 31))) |>
+  ggplot(aes(y = wind_speed, x = wind_dir_bin)) +
+  geom_boxplot() +
+  coord_radial() +
+  scale_x_discrete("Wind direction (degrees from North)") +
+  scale_y_continuous("Wind speed (meters per second)")
 ```
 
 
