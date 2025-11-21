@@ -6,13 +6,11 @@
     + ubuntu-latest: devel, release
     + macOS-latest: release
 
-## Comments
-
-* This version fixes the failing vignette build by removing an old dependency
-
 ## R CMD check results
 
-Nothing of note
+0 errors | 0 warnings | 0 notes
+
+* This version fixes the failing vignette build by removing an old dependency
 
 ## Reverse dependencies
 
