@@ -47,7 +47,7 @@ Suggests:
     markdown,
     mgcv,
     testthat
-URL: https://github.com/beanumber/macleish
+URL: https://github.com/beanumber/macleish, http://beanumber.github.io/macleish/
 BugReports: https://github.com/beanumber/macleish/issues
 RoxygenNote: 7.3.3
 Encoding: UTF-8
