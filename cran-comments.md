@@ -11,6 +11,7 @@
 0 errors | 0 warnings | 0 notes
 
 * This version fixes the failing vignette build by removing an old dependency
+* Old URLs have been updated
 
 ## Reverse dependencies
 

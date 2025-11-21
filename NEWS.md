@@ -2,6 +2,7 @@
 
 * Removed `clifro` dependence
 * Added **pkgdown**
+* Updated old URLs
 
 # macleish 0.3.9
 
