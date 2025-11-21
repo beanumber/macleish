@@ -16,7 +16,7 @@ opts_chunk$set(fig.width = 6, fig.height = 4)
 
 ## MacLeish
 
-The [`macleish`](https://github.com/beanumber/macleish) package for R contains weather data collected at the [Ada & Archibald MacLeish Field Station](https://www.smith.edu/about-smith/sustainable-smith/macleish) in Whately, MA, as well as spatial data detailing various features of the property. This vignette will illustrate how these data can be used. 
+The [`macleish`](https://github.com/beanumber/macleish) package for R contains weather data collected at the [Ada & Archibald MacLeish Field Station](https://www.smith.edu/discover-smith/smith-action/sustainable-smith/macleish-field-station) in Whately, MA, as well as spatial data detailing various features of the property. This vignette will illustrate how these data can be used. 
 
 ### Getting started:
 To start using the package, load the `macleish` package into your R session:
@@ -53,7 +53,7 @@ This portion of the vignette is largely a re-creation of the Macleish Field Stat
 
 #### Introduction to MacLeish Weather Stations
 
-Weather conditions at Smith College's [Ada & Archibald MacLeish Field Station](https://www.smith.edu/about-smith/sustainable-smith/macleish) are recorded at the **WhatelyMet** weather station. This weather collection site is located at the end of Poplar Hill Road in Whately, Massachusetts, USA (Latitude 42 deg. 26 min. 56 sec. N Longitude 72 deg. 40 min. 50 sec. W). The meteorological instruments of WhatelyMet (except the rain gauge) are mounted at the top of a tower 25.3 m tall, well above the surrounding forest canopy. The tower is located on a local ridge at an elevation 250.75m above sea level.
+Weather conditions at Smith College's [Ada & Archibald MacLeish Field Station](https://www.smith.edu/discover-smith/smith-action/sustainable-smith/macleish-field-station) are recorded at the **WhatelyMet** weather station. This weather collection site is located at the end of Poplar Hill Road in Whately, Massachusetts, USA (Latitude 42 deg. 26 min. 56 sec. N Longitude 72 deg. 40 min. 50 sec. W). The meteorological instruments of WhatelyMet (except the rain gauge) are mounted at the top of a tower 25.3 m tall, well above the surrounding forest canopy. The tower is located on a local ridge at an elevation 250.75m above sea level.
 
 ![MacLeish Field Station](../inst/extdata/macleish_600px.jpg)
 
