@@ -28,7 +28,7 @@ All variables are averaged over the 10 minute interval unless otherwise noted.
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 52547 rows and 9 columns.
 }
 \source{
-These data are recorded at \url{https://www.smith.edu/about-smith/sustainable-smith/ceeds}
+These data are recorded at \url{https://www.smith.edu/discover-smith/smith-action/sustainable-smith/center-environment-ecological-design-sustainability}
 }
 \usage{
 whately_2015

@@ -10,7 +10,7 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 <!-- badges: end -->
 
 The [Ada and Archibald MacLeish Field
-Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
+Station](https://www.smith.edu/discover-smith/smith-action/sustainable-smith/macleish-field-station)
 is a 260-acre patchwork of forest and farmland located in West Whately,
 MA that provides opportunities for faculty and students to pursue
 environmental research, outdoor education, and low-impact recreation.
@@ -178,5 +178,5 @@ knitr::include_graphics(phenocam_image_url("2021-12-25 12:05:05"))
 ## See also
 
 - [Ada and Archibald MacLeish Field
-  Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
+  Station](https://www.smith.edu/discover-smith/smith-action/sustainable-smith/macleish-field-station)
 - **[etl](https://github.com/beanumber/etl)**
