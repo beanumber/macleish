@@ -4,7 +4,7 @@
 
 The [`macleish`](https://github.com/beanumber/macleish) package for R
 contains weather data collected at the [Ada & Archibald MacLeish Field
-Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
+Station](https://www.smith.edu/discover-smith/smith-action/sustainable-smith/macleish-field-station)
 in Whately, MA, as well as spatial data detailing various features of
 the property. This vignette will illustrate how these data can be used.
 
@@ -77,7 +77,7 @@ Field Station 2015 Weather Report.
 #### Introduction to MacLeish Weather Stations
 
 Weather conditions at Smith College’s [Ada & Archibald MacLeish Field
-Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
+Station](https://www.smith.edu/discover-smith/smith-action/sustainable-smith/macleish-field-station)
 are recorded at the **WhatelyMet** weather station. This weather
 collection site is located at the end of Poplar Hill Road in Whately,
 Massachusetts, USA (Latitude 42 deg. 26 min. 56 sec. N Longitude 72 deg.
