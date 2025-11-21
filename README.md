@@ -15,7 +15,11 @@ is a 260-acre patchwork of forest and farmland located in West Whately,
 MA that provides opportunities for faculty and students to pursue
 environmental research, outdoor education, and low-impact recreation.
 
-![MacLeish Field Station](inst/extdata/macleish_600px.jpg)
+<figure>
+<img src="inst/extdata/macleish_600px.jpg"
+alt="MacLeish Field Station" />
+<figcaption aria-hidden="true">MacLeish Field Station</figcaption>
+</figure>
 
 This R package allows you to download and process weather data using the
 [ETL](https://github.com/beanumber/etl) framework from the MacLeish
@@ -76,31 +80,31 @@ works.
 
 ``` r
 macleish <- etl("macleish")
-macleish %>%
+macleish |>
   etl_update()
 ```
 
 ``` r
-whately <- macleish %>%
+whately <- macleish |>
   tbl("whately")
-whately %>%
-  mutate(the_year = strftime('%Y', when)) %>%
-  group_by(the_year) %>%
+whately |>
+  mutate(the_year = strftime('%Y', when)) |>
+  group_by(the_year) |>
   summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(temperature))
 
-orchard <- macleish %>%
+orchard <- macleish |>
   tbl("orchard")
-orchard %>%
-  mutate(the_year = strftime('%Y', when)) %>%
-  group_by(the_year) %>%
+orchard |>
+  mutate(the_year = strftime('%Y', when)) |>
+  group_by(the_year) |>
   summarize(N = n(), begin = min(when), end = max(when), avg_temp = mean(temperature))
 ```
 
 ``` r
-daily <- whately %>%
-  mutate(the_date = date(when)) %>%
-  group_by(the_date) %>%
-  summarize(N = n(), avgTemp = mean(temperature)) %>%
+daily <- whately |>
+  mutate(the_date = date(when)) |>
+  group_by(the_date) |>
+  summarize(N = n(), avgTemp = mean(temperature)) |>
   collect()
 
 library(ggplot2)
@@ -129,25 +133,25 @@ names(macleish_layers)
 
 ``` r
 library(leaflet)
-leaflet() %>%
-  addTiles() %>%
+leaflet() |>
+  addTiles() |>
   addPolygons(
     data = macleish_layers[["boundary"]], 
     weight = 1, fillOpacity = 0.1
-  ) %>%
+  ) |>
   addPolygons(
     data = macleish_layers[["buildings"]], 
     weight = 1, popup = ~ name
-  ) %>%
+  ) |>
   addPolylines(
     data = macleish_layers[["trails"]], 
     weight = 1, color = "brown",
     popup = ~ name
-  ) %>%
+  ) |>
   addPolylines(
     data = macleish_layers[["streams"]], 
     weight = 2
-  ) %>%
+  ) |>
   addMarkers(
     data = filter(macleish_layers[["landmarks"]], grepl("Met", Label)), 
     popup = ~Label
@@ -173,6 +177,6 @@ knitr::include_graphics(phenocam_image_url("2021-12-25 12:05:05"))
 
 ## See also
 
--   [Ada and Archibald MacLeish Field
-    Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
--   **[etl](https://github.com/beanumber/etl)**
+- [Ada and Archibald MacLeish Field
+  Station](https://www.smith.edu/about-smith/sustainable-smith/macleish)
+- **[etl](https://github.com/beanumber/etl)**
