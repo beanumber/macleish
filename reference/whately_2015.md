@@ -74,7 +74,7 @@ An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
 ## Source
 
 These data are recorded at
-<https://www.smith.edu/about-smith/sustainable-smith/ceeds>
+<https://www.smith.edu/discover-smith/smith-action/sustainable-smith/center-environment-ecological-design-sustainability>
 
 ## Details
 
